@@ -6,12 +6,16 @@
     <title>Home</title>
     
     <!-- Link CSS -->
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/dip/style.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1><a href="{{ ('/index') }}"> Green Basket🌾</a></h1>
+        <h1>Green Basket🌾</h1>
+        <a href="{{ route('contact') }}" class="btn"><p>Contact Us</p></a>
+
     </div>
+    
+
 
     <!-- Link JS -->
     <script src="{{ asset('js/script.js') }}"></script>
