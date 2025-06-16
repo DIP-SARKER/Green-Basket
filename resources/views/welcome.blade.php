@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Green Basket🌾</h1>
+        <h1><a href="{{ ('/index') }}"> Green Basket🌾</a></h1>
     </div>
 
     <!-- Link JS -->
