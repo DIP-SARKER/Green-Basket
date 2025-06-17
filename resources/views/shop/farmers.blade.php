@@ -21,7 +21,7 @@
                     <a href="{{ route("farmers") }}" class="active">Farmers</a>
                     <a href="/recipes">Recipes</a>
                     <a href="#">How It Works</a>
-                    <a href="#">About</a>
+                    <a href="{{ route("about") }}">About</a>
                     <div class="search-container">
                         <span class="search-icon">🔍</span>
                         <input type="text" class="search-input" placeholder="Search products...">
@@ -97,11 +97,19 @@
 
                 <div class="farmer-card">
                     <div class="farmer-image">
+<<<<<<< HEAD
                         <img src="https://ajkerjamalpur.com/wp-content/uploads/2025/05/Aj-5-9-scaled.jpg"
                             alt="Farmer Rezaul & Nasima">
                     </div>
                     <div class="farmer-info">
                         <h3>Rezaul & Nasima Haque</h3>
+=======
+                        <img src="https://images.unsplash.com/photo-1744742427348-dfa786ffad9c?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Farmer Rezaul & Nasima">
+                    </div>
+                    <div class="farmer-info">
+                        <h3>Nasima Haque</h3>
+>>>>>>> Hridoy_5273
                         <div class="farmer-location">
                             <svg width="12" height="12" ...></svg>
                             Jashore Agro Valley, 90 km away
