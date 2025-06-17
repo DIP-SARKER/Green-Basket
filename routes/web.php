@@ -23,3 +23,7 @@ Route::get('/recipes', function () {
 Route::get('/farmers', function () {
     return view('shop.farmers');
 })->name('farmers');
+
+Route::get('/about', function () {
+    return view('shop.about');
+})->name('about');

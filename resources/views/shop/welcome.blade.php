@@ -19,7 +19,7 @@
                     <a href="{{ route('shop') }}">Shop</a>
                     <a href="{{ route("farmers") }}">Farmers</a>
                     <a href="{{ route("recipes") }}">Recipes</a>
-                    <a href="#">About</a>
+                    <a href="{{ route("about") }}">About</a>
                     <div class="search-container">
                         <span class="search-icon">🔍</span>
                         <input type="text" class="search-input" placeholder="Search products...">
