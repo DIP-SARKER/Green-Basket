@@ -38,122 +38,142 @@
             <p>Green Basket is revolutionizing the way fresh food reaches your table by bridging the gap between local farmers, fishers, and consumers.</p>
         </section>
 
-        <section class="mission-section">
-            <div class="container">
-                <h2 class="section-title">Our Mission</h2>
-                <p class="mission-statement">To empower local farmers and fishers while providing consumers with the freshest, most sustainable products directly from source to table.</p>
+<section class="mission-section">
+    <div class="container">
+        <h2 class="section-title">আমাদের লক্ষ্য</h2>
+        <p class="mission-statement">স্থানীয় কৃষক ও মৎস্যজীবীদের ক্ষমতায়ন এবং ভোক্তাদের টাটকা, টেকসই পণ্য সরাসরি উৎস থেকে টেবিলে পৌঁছে দেওয়া।</p>
+        
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">🌾</div>
+                <h3>কৃষক অগ্রাধিকার</h3>
+                <p>আমরা আয়ের ৮৫% সরাসরি কৃষক ও মৎস্যজীবীদের দেই, যাতে তারা তাদের পরিশ্রমের ন্যায্য মূল্য পায়।</p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon">🌍</div>
+                <h3>টেকসই পদ্ধতি</h3>
+                <p>আমরা পরিবেশবান্ধব চাষ ও মাছ ধরার প্রথা উৎসাহিত করি, যাতে ভবিষ্যৎ প্রজন্মের জন্য পরিবেশ রক্ষা করা যায়।</p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon">🏠</div>
+                <h3>সরাসরি আপনার কাছে</h3>
+                <p>মধ্যস্থতাকারী ছাড়াই, আমরা খামার থেকে টাটকা পণ্য সরাসরি আপনার দরজায় পৌঁছে দিই—যা উপকার করে উভয় পক্ষেরই।</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">আমাদের প্রভাব</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">আমাদের যাত্রা শুরু থেকে, আমরা স্থানীয় খাদ্যব্যবস্থা ও কমিউনিটিতে ইতিবাচক পরিবর্তন আনতে সক্ষম হয়েছি:</p>
+        
+        <div class="impact-stats">
+            <div class="stat-item">
+                <div class="stat-number">৩০০+</div>
+                <div class="stat-label">স্থানীয় কৃষক ও জেলেদের সহায়তা</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">৮৫%</div>
+                <div class="stat-label">উৎপাদকদের আয়ে অংশ</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">১৫K+</div>
+                <div class="stat-label">সন্তুষ্ট গ্রাহক</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">৪৫%</div>
+                <div class="stat-label">খাদ্য পরিবহন দূরত্বে হ্রাস</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">একজন কৃষকের গল্প</h2>
+        <div class="farmer-story">
+            <img src="https://updategroupbd.com/images/gallery/photos/super-fresh-agro-farm/3.jpg" alt="Farmer Rahim" class="farmer-photo">
+            <div class="farmer-content">
+                <h3>মিলুন রহিমের সঙ্গে - একজন জৈব কৃষক</h3>
+                <p>রহিম গত ১২ বছর ধরে জৈবভাবে চাষ করছেন। কিন্তু স্থানীয় বাজারে ন্যায্য মূল্য পাওয়া ছিল তার জন্য কঠিন, কারণ মধ্যস্বত্বভোগীরা অধিকাংশ লাভ নিয়ে যেত।</p>
                 
-                <div class="values-grid">
-                    <div class="value-card">
-                        <div class="value-icon">🌱</div>
-                        <h3>Farmer First</h3>
-                        <p>We give 85% of revenue directly back to our farmers and fishers, ensuring they earn fair compensation for their hard work.</p>
-                    </div>
-                    
-                    <div class="value-card">
-                        <div class="value-icon">♻️</div>
-                        <h3>Sustainability</h3>
-                        <p>We promote eco-friendly farming and fishing practices that protect our planet for future generations.</p>
-                    </div>
-                    
-                    <div class="value-card">
-                        <div class="value-icon">🏡</div>
-                        <h3>Direct to You</h3>
-                        <p>By eliminating middlemen, we deliver farm-fresh products to your door at prices that benefit both producers and consumers.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <h2 class="section-title">Our Impact</h2>
-                <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">Since our founding, we've created meaningful change in local food systems and communities:</p>
+                <p class="farmer-quote">"গ্রিন বাস্কেটের সঙ্গে যুক্ত হওয়ার পর আমার আয় দ্বিগুণ হয়েছে। এখন আমি উন্নত যন্ত্রপাতি কিনতে পারছি এবং সন্তানদের ভালো স্কুলে পাঠাতে পারছি। সবচেয়ে ভালো লাগে, আমার সবজি সরাসরি এমন পরিবারে যাচ্ছে যারা টাটকা খাবারকে গুরুত্ব দেয়।"</p>
                 
-                <div class="impact-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">250+</div>
-                        <div class="stat-label">Local Farmers Supported</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">85%</div>
-                        <div class="stat-label">Revenue to Producers</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">10K+</div>
-                        <div class="stat-label">Happy Customers</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">50%</div>
-                        <div class="stat-label">Reduced Food Miles</div>
-                    </div>
-                </div>
+                <p>রহিম এখন ৮ একর জমিতে ২৫ প্রজাতির জৈব সবজি চাষ করেন এবং স্থানীয় ৭ জনকে কর্মসংস্থান দিয়েছেন। তার পণ্য গ্রিন বাস্কেটের মাধ্যমে ২৪ ঘণ্টার মধ্যে গ্রাহকদের কাছে পৌঁছে যায়।</p>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
 
-        <section class="section">
-            <div class="container">
-                <h2 class="section-title">A Farmer's Story</h2>
-                <div class="farmer-story">
-                    <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Farmer Rajesh" class="farmer-photo">
-                    <div class="farmer-content">
-                        <h3>Meet Rajesh - Organic Farmer</h3>
-                        <p>Rajesh has been farming organically for 15 years but struggled to get fair prices for his produce through traditional markets. Middlemen would take most of the profit, leaving him barely enough to cover costs.</p>
-                        
-                        <p class="farmer-quote">"Since joining Green Basket, my income has doubled. I can now invest in better equipment and send my children to better schools. Most importantly, I know my produce goes directly to families who appreciate quality food."</p>
-                        
-                        <p>Rajesh now manages a 10-acre organic farm employing 8 local workers, growing over 30 varieties of vegetables that go directly to Green Basket customers within 24 hours of harvest.</p>
-                    </div>
+<section class="team-section">
+    <div class="container">
+        <h2 class="section-title">আমাদের টিম</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">একদল উদ্যমী তরুণ, যারা কৃষি ও খাদ্য ব্যবস্থার ইতিবাচক পরিবর্তনে বিশ্বাসী।</p>
+        
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Mamun" class="team-photo">
+                <div class="team-info">
+                    <h3>মো. মামুন অর রশিদ হৃদয়</h3>
+                    <p>প্রধান সমন্বয়কারী</p>
+                    <p>যিনি প্রযুক্তি ও কৃষকের মধ্যে সেতুবন্ধন গড়তে কাজ করছেন</p>
                 </div>
             </div>
-        </section>
+            
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Dip" class="team-photo">
+                <div class="team-info">
+                    <h3>দীপ সরকার</h3>
+                    <p>কমিউনিটি লিয়াজোঁ</p>
+                    <p>গ্রামীণ উদ্যোক্তা উন্নয়নে বিশেষ ভূমিকা রাখছেন</p>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Shakib" class="team-photo">
+                <div class="team-info">
+                    <h3>সাকিব খান</h3>
+                    <p>বাজার বিশ্লেষক</p>
+                    <p>দাম নির্ধারণ ও সরবরাহ চেইন বিশ্লেষণে দক্ষ</p>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1589156191108-c762ff4b96ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Moshiur" class="team-photo">
+                <div class="team-info">
+                    <h3>মশিউর রহমান</h3>
+                    <p>প্রযুক্তি কর্মকর্তা</p>
+                    <p>ডিজিটাল প্ল্যাটফর্ম ব্যবস্থাপনায় নিয়োজিত</p>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Sumaiya" class="team-photo">
+                <div class="team-info">
+                    <h3>সুমাইয়া তাবসসুম প্রমি</h3>
+                    <p>সৃজনশীল পরিচালক</p>
+                    <p>ব্র্যান্ডিং ও ভিজ্যুয়াল স্টোরিটেলিংয়ের দায়িত্বে</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-        <section class="team-section">
-            <div class="container">
-                <h2 class="section-title">Our Team</h2>
-                <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">Founded by food and agriculture enthusiasts committed to making a difference.</p>
-                
-                <div class="team-grid">
-                    <div class="team-member">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Founder & CEO" class="team-photo">
-                        <div class="team-info">
-                            <h3>Priya Sharma</h3>
-                            <p>Founder & CEO</p>
-                            <p>Former agricultural economist passionate about fair trade</p>
-                        </div>
-                    </div>
-                    
-                    <div class="team-member">
-                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Head of Farmer Relations" class="team-photo">
-                        <div class="team-info">
-                            <h3>Arjun Patel</h3>
-                            <p>Head of Farmer Relations</p>
-                            <p>Grew up on a farm and understands farmers' challenges firsthand</p>
-                        </div>
-                    </div>
-                    
-                    <div class="team-member">
-                        <img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Sustainability Officer" class="team-photo">
-                        <div class="team-info">
-                            <h3>Neha Gupta</h3>
-                            <p>Sustainability Officer</p>
-                            <p>Environmental scientist focused on sustainable agriculture</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <section class="section" style="text-align: center; background-color: var(--primary); color: var(--white); padding: 4rem 0;">
-            <div class="container">
-                <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">Join Our Movement</h2>
-                <p style="max-width: 700px; margin: 0 auto 2rem; font-size: 1.2rem;">Whether you're a farmer looking for fair markets or a consumer wanting fresher food, we'd love to have you with us.</p>
-                <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-                    <a href="#" class="cta-button" style="background-color: var(--white); color: var(--primary);">Shop Fresh</a>
-                    <a href="#" class="cta-button" style="background-color: transparent; border: 2px solid var(--white);">Sell With Us</a>
-                </div>
-            </div>
-        </section>
+<section class="section" style="text-align: center; background-color: var(--primary); color: var(--white); padding: 4rem 0;">
+    <div class="container">
+        <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">আমাদের সঙ্গে যুক্ত হোন</h2>
+        <p style="max-width: 700px; margin: 0 auto 2rem; font-size: 1.2rem;">আপনি যদি একজন উৎপাদক হয়ে থাকেন অথবা একজন সচেতন ক্রেতা, আমাদের এই যাত্রায় আপনি স্বাগত।</p>
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+            <a href="#" class="cta-button" style="background-color: var(--white); color: var(--primary);">টাটকা পণ্য কিনুন</a>
+            <a href="#" class="cta-button" style="background-color: transparent; border: 2px solid var(--white);">আমাদের সঙ্গে বিক্রি করুন</a>
+        </div>
+    </div>
+</section>
+
     </main>
 
     <!-- Footer -->
