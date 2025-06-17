@@ -1,104 +1,8 @@
-:root {
-            --primary: #2e7d32;
-            --primary-light: #60ad5e;
-            --primary-dark: #005005;
-            --text: #333333;
-            --text-light: #666666;
-            --bg: #f8f8f8;
-            --white: #ffffff;
-            --shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: var(--text);
-            background-color: var(--bg);
-            line-height: 1.6;
-        }
-        
-        /* Typography */
-        h1, h2, h3 {
-            font-weight: 600;
-            line-height: 1.2;
-        }
-        
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        /* Layout */
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: var(--white);
-            box-shadow: var(--shadow);
-            z-index: 100;
-        }
-        
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-        
-        .logo span {
-            color: var(--primary-dark);
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-        
-        .nav-links a {
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-        
-        .cta-button {
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 500;
-            transition: all 0.2s;
-        }
-        
-        .cta-button:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-2px);
-        }
+
         
         /* Hero Section */
         .hero {
-            height: 70vh;
+            height: 50vh;
             display: flex;
             align-items: center;
             padding-top: 80px;
@@ -274,13 +178,7 @@
         
         /* Responsive */
         @media (max-width: 768px) {
-            .navbar {
-                height: 70px;
-            }
-            
-            .nav-links {
-                display: none;
-            }
+
             
             .hero h1 {
                 font-size: 2.5rem;
