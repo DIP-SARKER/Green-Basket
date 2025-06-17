@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Green Basket - Farm to Table Delivery</title>
     <link rel="stylesheet" href="{{ asset('css\hridoy\styles_for_contact_us.css') }}">
-
+    <link rel="stylesheet" href="{{ asset("css\hridoy\basic.css") }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -15,27 +18,32 @@
                 <a href="{{ route('home') }}" class="logo">green<span>basket</span></a>
                 <div class="nav-links">
                     <a href="{{ route('shop') }}">Shop</a>
-                    <a href="#">Farmers</a>
-                    <a href="#">How It Works</a>
+                    <a href="{{ route("farmers") }}">Farmers</a>
+                    <a href="{{ route("recipes") }}">Recipes</a>
                     <a href="#">About</a>
+                    <div class="search-container">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" class="search-input" placeholder="Search products...">
+                    </div>
                     <a href="#" class="cta-button">Order Now</a>
                 </div>
             </nav>
         </div>
     </header>
-    
+
     <section class="contact-hero">
         <div class="container">
             <h1>Get in Touch</h1>
-            <p>We'd love to hear from you! Whether you have questions about our farm-fresh products, need help with an order, or just want to share feedback, our team is here to help.</p>
+            <p>We'd love to hear from you! Whether you have questions about our farm-fresh products, need help with an
+                order, or just want to share feedback, our team is here to help.</p>
         </div>
     </section>
-    
+
     <div class="container">
         <div class="contact-container">
             <div class="contact-info">
                 <h2>Contact Information</h2>
-                
+
                 <div class="info-item">
                     <div class="info-icon">
                         <i class="fas fa-map-marker-alt"></i>
@@ -45,7 +53,7 @@
                         <p>123 Organic Lane<br>Farmville, CA 12345</p>
                     </div>
                 </div>
-                
+
                 <div class="info-item">
                     <div class="info-icon">
                         <i class="fas fa-phone-alt"></i>
@@ -55,7 +63,7 @@
                         <p>+1 (555) 123-4567<br>Mon-Fri, 9am-5pm PST</p>
                     </div>
                 </div>
-                
+
                 <div class="info-item">
                     <div class="info-icon">
                         <i class="fas fa-envelope"></i>
@@ -65,7 +73,7 @@
                         <p>hello@greenbasket.com<br>We typically reply within 24 hours</p>
                     </div>
                 </div>
-                
+
                 <div class="info-item">
                     <div class="info-icon">
                         <i class="fas fa-clock"></i>
@@ -76,7 +84,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="contact-form">
                 <h2>Send Us a Message</h2>
                 <form>
@@ -84,32 +92,75 @@
                         <label for="name">Your Name</label>
                         <input type="text" id="name" placeholder="John Doe" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="email">Email Address</label>
                         <input type="email" id="email" placeholder="john@example.com" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="subject">Subject</label>
                         <input type="text" id="subject" placeholder="How can we help?">
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="message">Your Message</label>
                         <textarea id="message" placeholder="Tell us about your inquiry..." required></textarea>
                     </div>
-                    
+
                     <button type="submit" class="submit-btn">Send Message</button>
                 </form>
             </div>
         </div>
     </div>
-    
+
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <p class="footer-text">&copy; 2023 Green Basket. Fresh from our farm to your table.</p>
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Green Basket</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-top: 1rem;">Farm fresh groceries,
+                        delivered simple.</p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Shop</h3>
+                    <ul>
+                        <li><a href="#">Vegetables</a></li>
+                        <li><a href="#">Dairy</a></li>
+                        <li><a href="#">Meat</a></li>
+                        <li><a href="#">Seasonal</a></li>
+                        <li><a href="#">All Products</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>About</h3>
+                    <ul>
+                        <li><a href="#">Our Farmers</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Help</h3>
+                    <ul>
+                        <li><a href="{{ route('contact') }}">Contact</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Delivery Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2023 Green Basket. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 </body>
+
 </html>

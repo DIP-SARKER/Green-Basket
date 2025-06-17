@@ -16,3 +16,10 @@ Route::get('/shop', function () {
     return view('shop.shop');
 })->name('shop');
 
+Route::get('/recipes', function () {
+    return view('shop.recipes');
+})->name('recipes');
+
+Route::get('/farmers', function () {
+    return view('shop.farmers');
+})->name('farmers');

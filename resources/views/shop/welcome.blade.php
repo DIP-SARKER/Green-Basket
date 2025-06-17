@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Green Basket | Farm to Table</title>
     <link rel="stylesheet" href="{{ asset('css\hridoy\styles_for_index.css') }}">
+    <link rel="stylesheet" href="{{ asset("css\hridoy\basic.css") }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -15,9 +17,13 @@
                 <a href="{{ route('home') }}" class="logo">green<span>basket</span></a>
                 <div class="nav-links">
                     <a href="{{ route('shop') }}">Shop</a>
-                    <a href="#">Farmers</a>
-                    <a href="#">How It Works</a>
+                    <a href="{{ route("farmers") }}">Farmers</a>
+                    <a href="{{ route("recipes") }}">Recipes</a>
                     <a href="#">About</a>
+                    <div class="search-container">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" class="search-input" placeholder="Search products...">
+                    </div>
                     <a href="#" class="cta-button">Order Now</a>
                 </div>
             </nav>
@@ -217,7 +223,7 @@
             </div>
         </div>
     </footer>
-     <script src="{{ asset('js/script.js') }}"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
 </body>
 
 </html>
