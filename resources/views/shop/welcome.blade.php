@@ -12,9 +12,9 @@
     <header>
         <div class="container">
             <nav class="navbar">
-                <a href="#" class="logo">green<span>basket</span></a>
+                <a href="{{ route('home') }}" class="logo">green<span>basket</span></a>
                 <div class="nav-links">
-                    <a href="#">Shop</a>
+                    <a href="{{ route('shop') }}">Shop</a>
                     <a href="#">Farmers</a>
                     <a href="#">How It Works</a>
                     <a href="#">About</a>
@@ -204,7 +204,7 @@
                 <div class="footer-column">
                     <h3>Help</h3>
                     <ul>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="{{ route('contact') }}">Contact</a></li>
                         <li><a href="#">FAQs</a></li>
                         <li><a href="#">Delivery Info</a></li>
                         <li><a href="#">Returns</a></li>
