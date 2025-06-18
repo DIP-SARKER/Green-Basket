@@ -55,19 +55,19 @@
                         <h3>Farm Meats</h3>
                     </div>
                 </a>
-                <a href="{{ route('meatShop') }}">
+                <a href="{{ route('fishShop') }}">
                     <div class="category-card">
                         <h1>🐟</h1>
                         <h3>Freshwater Fish</h3>
                     </div>
                 </a>
-                <a href="{{ route('meatShop') }}">
+                <a href="{{ route('bakeryShop') }}">
                     <div class="category-card">
                         <h1>🥯</h1>
                         <h3>Bakery Delights</h3>
                     </div>
                 </a>
-                <a href="{{ route('meatShop') }}">
+                <a href="{{ route('dairyShop') }}">
                     <div class="category-card">
                         <h1>🥛</h1>
                         <h3>Dairy </h3>

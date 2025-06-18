@@ -28,6 +28,18 @@ Route::get('/shop/meatShop', function () {
     return view('consumer.shop.meatShop');
 })->name('meatShop');
 
+Route::get('/shop/fishShop', function () {
+    return view('consumer.shop.fishShop');
+})->name('fishShop');
+
+Route::get('/shop/dairyShop', function () {
+    return view('consumer.shop.dairyShop');
+})->name('dairyShop');
+
+Route::get('/shop/bakeryShop', function () {
+    return view('consumer.shop.bakeryShop');
+})->name('bakeryShop');
+
 Route::get('/recipes', function () {
     return view('consumer.recipes');
 })->name('recipes');

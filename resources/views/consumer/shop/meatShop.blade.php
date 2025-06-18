@@ -17,7 +17,7 @@
             <nav class="navbar">
                 <a href="{{ route('home') }}" class="logo">green<span>basket</span></a>
                 <div class="nav-links">
-                    <a href="{{ route('shop') }}">Shop</a>
+                    <a href="{{ route('shop') }}" class="active">Shop</a>
                     <a href="{{ route('farmers') }}">Farmers</a>
                     <a href="{{ route('recipes') }}">Recipes</a>
                     <a href="{{ route('about') }}">About</a>
