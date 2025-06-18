@@ -60,7 +60,7 @@
                     <div class="category-info">
                         <h3>Seasonal Vegetables</h3>
                         <p>Harvested at peak freshness, delivered within 24 hours</p>
-                        <a href="#" class="cta-button"
+                        <a href="{{ route('vegetableShop') }}" class="cta-button"
                             style="display: inline-block; padding: 0.5rem 1.25rem; font-size: 0.9rem;">Browse</a>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
                     <div class="category-info">
                         <h3>Fresh Fruits</h3>
                         <p>Fresh fruit, free from formalin and carbide.</p>
-                        <a href="#" class="cta-button"
+                        <a href="{{ route('fruitShop') }}" class="cta-button"
                             style="display: inline-block; padding: 0.5rem 1.25rem; font-size: 0.9rem;">Browse</a>
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                     <div class="category-info">
                         <h3>Ethical Meat</h3>
                         <p>Humanely raised, pasture-fed beef, poultry, and pork</p>
-                        <a href="#" class="cta-button"
+                        <a href="{{ route('meatShop') }}" class="cta-button"
                             style="display: inline-block; padding: 0.5rem 1.25rem; font-size: 0.9rem;">Browse</a>
                     </div>
                 </div>
@@ -103,7 +103,7 @@
                     <div class="category-info">
                         <h3>Freshwater Fish</h3>
                         <p>Locally sourced from clean rivers and ponds, free from chemicals</p>
-                        <a href="#" class="cta-button"
+                        <a href="{{ route('fishShop') }}" class="cta-button"
                             style="display: inline-block; padding: 0.5rem 1.25rem; font-size: 0.9rem;">Browse</a>
                     </div>
                 </div>
@@ -117,7 +117,7 @@
                     <div class="category-info">
                         <h3>Bakery Delights</h3>
                         <p>Artisan breads, wholesome loaves, and flaky pastries baked fresh daily</p>
-                        <a href="#" class="cta-button"
+                        <a href="{{ route('bakeryShop') }}" class="cta-button"
                             style="display: inline-block; padding: 0.5rem 1.25rem; font-size: 0.9rem;">Browse</a>
                     </div>
                 </div>
@@ -132,7 +132,7 @@
                     <div class="category-info">
                         <h3>Farm Dairy</h3>
                         <p>Grass-fed milk, artisan cheeses, and fresh yogurt</p>
-                        <a href="#" class="cta-button"
+                        <a href="{{ route('dairyShop') }}" class="cta-button"
                             style="display: inline-block; padding: 0.5rem 1.25rem; font-size: 0.9rem;">Browse</a>
                     </div>
                 </div>

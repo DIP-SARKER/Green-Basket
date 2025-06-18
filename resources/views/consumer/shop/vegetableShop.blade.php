@@ -62,7 +62,7 @@
         <div class="products-grid">
             <!-- Product 1 -->
             <div class="product-card">
-                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="product-image" style="background-image: url('https://www.jiomart.com/images/product/original/590003546/carrot-orange-500-g-product-images-o590003546-p590003546-0-202408070949.jpg?im=Resize=(420,420)');"></div>
                 <div class="product-info">
                     <h3 class="product-title">Organic Carrots</h3>
                     <p class="product-farmer">From Johnson Family Farm</p>
@@ -76,7 +76,7 @@
 
             <!-- Product 2 -->
             <div class="product-card">
-                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80');"></div>
+                <div class="product-image" style="background-image: url('https://freshorganicfoods.com.bd/wp-content/uploads/2025/01/Spinach-3-3.jpeg');"></div>
                 <div class="product-info">
                     <h3 class="product-title">Fresh Spinach</h3>
                     <p class="product-farmer">From Green Valley Acres</p>
@@ -90,7 +90,7 @@
 
             <!-- Product 3 -->
             <div class="product-card">
-                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1566842600175-97dca3c5ad38?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="product-image" style="background-image: url('https://grangettos.com/cdn/shop/articles/shutterstock_150989213_1600x.jpg?v=1617390588');"></div>
                 <div class="product-info">
                     <h3 class="product-title">Heirloom Tomatoes</h3>
                     <p class="product-farmer">From Sunny Slope Farm</p>
@@ -104,7 +104,7 @@
 
             <!-- Product 4 -->
             <div class="product-card">
-                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="product-image" style="background-image: url('https://www.effortlessfoodie.com/wp-content/uploads/2022/01/roasted-baby-potatoes-7.jpg');"></div>
                 <div class="product-info">
                     <h3 class="product-title">Baby Potatoes</h3>
                     <p class="product-farmer">From Harvest Moon Farm</p>
@@ -118,7 +118,7 @@
 
             <!-- Product 5 -->
             <div class="product-card">
-                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="product-image" style="background-image: url('https://grobrix.com/wp-content/uploads/2023/01/IMG_8399.jpg');"></div>
                 <div class="product-info">
                     <h3 class="product-title">Rainbow Chard</h3>
                     <p class="product-farmer">From Green Valley Acres</p>
@@ -132,7 +132,7 @@
 
             <!-- Product 6 -->
             <div class="product-card">
-                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="product-image" style="background-image: url('https://snaped.fns.usda.gov/sites/default/files/styles/crop_ratio_7_5/public/seasonal-produce/2018-05/zucchini.jpg.webp?itok=PH0PxpG4');"></div>
                 <div class="product-info">
                     <h3 class="product-title">Zucchini</h3>
                     <p class="product-farmer">From Sunny Slope Farm</p>
@@ -146,7 +146,7 @@
 
             <!-- Product 7 -->
             <div class="product-card">
-                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="product-image" style="background-image: url('https://d27p2a3djqwgnt.cloudfront.net/wp-content/uploads/2018/02/27060052/beets-2861272_1280.jpg');"></div>
                 <div class="product-info">
                     <h3 class="product-title">Beets</h3>
                     <p class="product-farmer">From Johnson Family Farm</p>
@@ -160,7 +160,7 @@
 
             <!-- Product 8 -->
             <div class="product-card">
-                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80');"></div>
+                <div class="product-image" style="background-image: url('https://littlesunnykitchen.com/wp-content/uploads/2021/10/Air-Fryer-Kale-Chips-4.jpg');"></div>
                 <div class="product-info">
                     <h3 class="product-title">Kale</h3>
                     <p class="product-farmer">From Harvest Moon Farm</p>

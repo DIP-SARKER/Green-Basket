@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🐟 Fresh Vegetables | Green Basket | Farm to Table</title>
+    <title>Fresh Fruits | Green Basket | Farm to Table</title>
     <link rel="stylesheet" href="{{ asset("css\hridoy\basic.css") }}">
     <link rel="stylesheet" href="{{asset("css/hridoy/vegetableShop.css")}}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -64,7 +64,7 @@
             <!-- Product 1 -->
             <div class="product-card">
                 <div class="product-image"
-                    style="background-image: url('https://images.unsplash.com/photo-1620214478032-6f0c0c26338a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                    style="background-image: url('https://www.greenlife.co.ke/wp-content/uploads/2022/04/Mangoes.jpg');">
                 </div>
                 <div class="product-info">
                     <h3 class="product-title">Rajshahi Mangoes</h3>
@@ -80,7 +80,7 @@
             <!-- Product 2 -->
             <div class="product-card">
                 <div class="product-image"
-                    style="background-image: url('https://images.unsplash.com/photo-1582727461732-4f2c98f2af91?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                    style="background-image: url('https://m.media-amazon.com/images/I/81F6bQaa2NL._UF1000,1000_QL80_.jpg');">
                 </div>
                 <div class="product-info">
                     <h3 class="product-title">Litchi (Lychee)</h3>
@@ -96,7 +96,7 @@
             <!-- Product 3 -->
             <div class="product-card">
                 <div class="product-image"
-                    style="background-image: url('https://images.unsplash.com/photo-1565895405138-e9747c10c6f2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                    style="background-image: url('https://cdn.mos.cms.futurecdn.net/7hMnhCqDFY6FHgHXHQ3wn9.jpg');">
                 </div>
                 <div class="product-info">
                     <h3 class="product-title">Guava (Amrud)</h3>
@@ -112,7 +112,7 @@
             <!-- Product 4 -->
             <div class="product-card">
                 <div class="product-image"
-                    style="background-image: url('https://images.unsplash.com/photo-1613477838667-4c0883b978b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                    style="background-image: url('https://www.gardenia.net/wp-content/uploads/2025/05/shutterstock_2453997129.jpg');">
                 </div>
                 <div class="product-info">
                     <h3 class="product-title">Jackfruit (Kathal)</h3>
@@ -128,7 +128,7 @@
             <!-- Product 5 -->
             <div class="product-card">
                 <div class="product-image"
-                    style="background-image: url('https://images.unsplash.com/photo-1576186726113-b2b3a9b259c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                    style="background-image: url('https://images.contentstack.io/v3/assets/bltcedd8dbd5891265b/blt66b8f1f45d70de9e/6665ec0febbbaa7d99a9f533/4440854-Banana-hero.jpg?q=70&width=3840&auto=webp');">
                 </div>
                 <div class="product-info">
                     <h3 class="product-title">Banana (Shagor Kola)</h3>
@@ -144,7 +144,7 @@
             <!-- Product 6 -->
             <div class="product-card">
                 <div class="product-image"
-                    style="background-image: url('https://images.unsplash.com/photo-1564166174575-46b106f5c2a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                    style="background-image: url('https://specialtyproduce.com/sppics/11176.png');">
                 </div>
                 <div class="product-info">
                     <h3 class="product-title">Wood Apple (Bael)</h3>

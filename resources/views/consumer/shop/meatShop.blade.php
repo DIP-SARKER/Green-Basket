@@ -64,7 +64,7 @@
             <!-- Product 1 -->
             <div class="product-card">
                 <div class="product-image"
-                    style="background-image: url('https://images.unsplash.com/photo-1600690237639-7c8a2a43755f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                    style="background-image: url('https://ottawavalleymeats.com/cdn/shop/collections/Chicken.png?v=1700680888');">
                 </div>
                 <div class="product-info">
                     <h3 class="product-title">Deshi Chicken (Free Range)</h3>
@@ -80,7 +80,7 @@
             <!-- Product 2 -->
             <div class="product-card">
                 <div class="product-image"
-                    style="background-image: url('https://images.unsplash.com/photo-1601314167094-f75ee18f0542?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                    style="background-image: url('https://cdn.britannica.com/68/143268-050-917048EA/Beef-loin.jpg');">
                 </div>
                 <div class="product-info">
                     <h3 class="product-title">Beef (Grass-Fed)</h3>
@@ -96,7 +96,7 @@
             <!-- Product 3 -->
             <div class="product-card">
                 <div class="product-image"
-                    style="background-image: url('https://images.unsplash.com/photo-1576568699714-6e77fc8993e4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                    style="background-image: url('https://admin.qualityfoods.com.bd/storage/product/2023-08-31-64f05d1ccb75f.png');">
                 </div>
                 <div class="product-info">
                     <h3 class="product-title">Deshi Mutton (Goat)</h3>
@@ -112,7 +112,7 @@
             <!-- Product 4 -->
             <div class="product-card">
                 <div class="product-image"
-                    style="background-image: url('https://images.unsplash.com/photo-1659024038612-7f6c3ae9aa2a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                    style="background-image: url('https://omak.co.nz/wp-content/uploads/whole-duck.jpg');">
                 </div>
                 <div class="product-info">
                     <h3 class="product-title">Duck (Has)</h3>
@@ -120,38 +120,6 @@
                     <p class="product-price">৳450/kg</p>
                     <div class="product-meta">
                         <span class="product-organic">Naturally Raised</span>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 5 -->
-            <div class="product-card">
-                <div class="product-image"
-                    style="background-image: url('https://images.unsplash.com/photo-1601979031925-d831fddd914d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Rui Fish (Rohu)</h3>
-                    <p class="product-farmer">From Mymensingh Fisheries</p>
-                    <p class="product-price">৳300/kg</p>
-                    <div class="product-meta">
-                        <span class="product-organic">Freshwater</span>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 6 -->
-            <div class="product-card">
-                <div class="product-image"
-                    style="background-image: url('https://images.unsplash.com/photo-1601979647767-661f676684d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Pabda Fish</h3>
-                    <p class="product-farmer">From Barisal River Catch</p>
-                    <p class="product-price">৳420/kg</p>
-                    <div class="product-meta">
-                        <span class="product-organic">Wild Caught</span>
                         <button class="add-to-cart">Add to Cart</button>
                     </div>
                 </div>
