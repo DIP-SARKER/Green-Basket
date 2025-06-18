@@ -4,26 +4,38 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('shop.welcome');
+    return view('consumer.welcome');
 })->name('home');
 
 
 Route::get('/contact', function () {
-    return view('shop.contact');
+    return view('consumer.contact');
 })->name('contact');
 
 Route::get('/shop', function () {
-    return view('shop.shop');
+    return view('consumer.shop.shop');
 })->name('shop');
 
+Route::get('/shop/vegetableShop', function () {
+    return view('consumer.shop.vegetableShop');
+})->name('vegetableShop');
+
+Route::get('/shop/fruitShop', function () {
+    return view('consumer.shop.fruitShop');
+})->name('fruitShop');
+
+Route::get('/shop/meatShop', function () {
+    return view('consumer.shop.meatShop');
+})->name('meatShop');
+
 Route::get('/recipes', function () {
-    return view('shop.recipes');
+    return view('consumer.recipes');
 })->name('recipes');
 
 Route::get('/farmers', function () {
-    return view('shop.farmers');
+    return view('consumer.farmers');
 })->name('farmers');
 
 Route::get('/about', function () {
-    return view('shop.about');
+    return view('consumer.about');
 })->name('about');

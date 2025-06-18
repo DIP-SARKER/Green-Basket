@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop | Green Basket - Farm to Table Delivery</title>
     <link rel="stylesheet" href="{{ asset("css\hridoy\basic.css") }}">
-    <link rel="stylesheet" href="css\hridoy\shop.css">
+    <link rel="stylesheet" href="{{ asset("css/hridoy/shop.css") }}">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -37,18 +37,25 @@
         <section class="category-banner">
             <h2 class="category-title">Shop by Category</h2>
             <div class="category-grid">
-                <div class="category-card">
-                    <i class="fas fa-apple-alt"></i>
-                    <h3>Fresh Fruits</h3>
-                </div>
-                <div class="category-card">
-                    <i class="fas fa-carrot"></i>
-                    <h3>Organic Vegetables</h3>
-                </div>
-                <div class="category-card">
-                    <i class="fas fa-drumstick-bite"></i>
-                    <h3>Farm Meats</h3>
-                </div>
+                <a href="{{ route("fruitShop") }}">
+                    <div class="category-card">
+                        <i class="fas fa-apple-alt"></i>
+                        <h3>Fresh Fruits</h3>
+                    </div>
+                </a>
+                <a href="{{ route("vegetableShop") }}">
+                    <div class="category-card">
+                        <i class="fas fa-carrot"></i>
+                        <h3>Organic Vegetables</h3>
+                    </div>
+                </a>
+                <a href="{{ route('meatShop') }}">
+                    <div class="category-card">
+                        <i class="fas fa-drumstick-bite"></i>
+                        <h3>Farm Meats</h3>
+                    </div>
+                </a>
+
             </div>
         </section>
 
