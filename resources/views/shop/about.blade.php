@@ -20,7 +20,6 @@
                     <a href="{{ route('shop') }}">Shop</a>
                     <a href="#">Farmers</a>
                     <a href="/recipes">Recipes</a>
-                    <a href="#">How It Works</a>
                     <a href="{{ route("about") }}" class="active">About</a>
                     <div class="search-container">
                         <span class="search-icon">🔍</span>
