@@ -18,9 +18,9 @@
                 <a href="{{ route('home') }}" class="logo">green<span>basket</span></a>
                 <div class="nav-links">
                     <a href="{{ route('shop') }}">Shop</a>
-                    <a href="#">Farmers</a>
-                    <a href="/recipes">Recipes</a>
-                    <a href="#">About</a>
+                    <a href="{{ route('farmers') }}">Farmers</a>
+                    <a href="{{ route('recipes') }}">Recipes</a>
+                    <a href="{{ route('about') }}">About</a>
                     <div class="search-container">
                         <span class="search-icon">🔍</span>
                         <input type="text" class="search-input" placeholder="Search products...">
