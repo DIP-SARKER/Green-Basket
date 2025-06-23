@@ -7,7 +7,7 @@
     <title>🥕 Organic Carrots | Green Basket | Farm Fresh Vegetables</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset("css/hridoy/basic.css") }}">
-    <link rel="stylesheet" href="{{ asset('css/hridoy/productpage.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/moshiur/productpage.css') }}">
 </head>
 
 <body>
