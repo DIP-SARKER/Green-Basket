@@ -8,56 +8,190 @@
     --white: #ffffff;
     --border: #e0e0e0;
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --success: #4caf50;
+    --warning: #ff9800;
+    --danger: #f44336;
+    --info: #2196f3;
+    --earth: #795548;
 }
 
-/* Footer */
-footer {
-    background-color: #009150;
-    color: var(--white);
-    padding: 4rem 0 2rem;
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    padding: 1.5rem 0;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+    z-index: 1000;
 }
 
-.footer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
+.sidebar-header {
+    padding: 0 1.5rem 1.5rem;
+    border-bottom: 1px solid var(--border);
 }
 
-.footer-column h3 {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-    color: var(--white);
+.sidebar-header h2 {
+    color: var(--primary);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.footer-column ul {
+.sidebar-header h2 i {
+    color: var(--primary-light);
+}
+
+.nav-links {
+    padding: 1.5rem 0;
+}
+
+.nav-links li {
     list-style: none;
+    margin-bottom: 0.25rem;
 }
 
-.footer-column ul li {
-    margin-bottom: 0.75rem;
+.nav-links a {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1.5rem;
+    color: var(--text);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-weight: 500;
 }
 
-.footer-column ul li a {
-    color: rgba(255, 255, 255, 0.7);
-    transition: color 0.2s;
-    font-size: 0.9rem;
+.nav-links a:hover {
+    background: rgba(46, 125, 50, 0.05);
+    color: var(--primary);
 }
 
-.footer-column ul li a:hover {
-    color: var(--white);
+.nav-links a.active {
+    background: rgba(46, 125, 50, 0.1);
+    color: var(--primary);
+    border-left: 4px solid var(--primary);
 }
 
-.footer-column p {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.9rem;
-    margin-top: 1rem;
+.nav-links a i {
+    width: 30px;
+    font-size: 1.1rem;
+}
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    margin-left: 250px;
+    padding: 1.5rem;
+}
+/* Header Content */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
 }
 
-.copyright {
-    text-align: center;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.5);
+.header h1 {
+    color: var(--primary-dark);
+    font-size: 1.8rem;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-info .notification {
+    position: relative;
+    cursor: pointer;
+}
+
+.user-info .notification i {
+    font-size: 1.3rem;
+    color: var(--text-light);
+}
+
+.user-info .notification .badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--danger);
+    color: white;
+    font-size: 0.7rem;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary-light);
+}
+
+.user-profile .name {
+    font-weight: 600;
+    color: var(--text);
+}
+
+.user-profile .role {
     font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 70px;
+    }
+
+    .sidebar .logo-text,
+    .sidebar .nav-text {
+        display: none;
+    }
+
+    .sidebar-header {
+        padding: 1rem 0.5rem;
+    }
+
+    .sidebar-header h2 {
+        justify-content: center;
+    }
+
+    .main-content {
+        margin-left: 70px;
+    }
+
+    .nav-links a {
+        justify-content: center;
+        padding: 0.8rem;
+    }
+
+    .nav-links a i {
+        width: auto;
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .user-profile .info {
+        display: none;
+    }
 }
