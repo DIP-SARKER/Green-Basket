@@ -65,3 +65,7 @@ Route::get('/admin/products', function () {
 Route::get('/admin/orders', function () {
     return view('admin.orders_management');
 })->name('orders-management');
+
+Route::get('/admin/farmers', function () {
+    return view('admin.farmers_management');
+})->name('farmers-management');

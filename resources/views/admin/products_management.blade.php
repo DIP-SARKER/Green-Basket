@@ -6,7 +6,7 @@
     <title>Products Management | E-commerce Admin</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-<link rel="stylesheet" href="{{ asset("css/dip/product_management.css") }}">
+<link rel="stylesheet" href="{{ asset("css/dip/products_management.css") }}">
 </head>
 <body>
     <!-- Sidebar Navigation -->
@@ -16,9 +16,9 @@
         </div>
         <ul class="nav-links">
             <li><a href="{{ route('admin-dashboard') }}"><i class="fas fa-tachometer-alt"></i> <span class="nav-text">Dashboard</span></a></li>
-            <li><a href="#" class="active"><i class="fas fa-shopping-bag"></i> <span class="nav-text">Products</span></a></li>
+            <li><a href="" class="active"><i class="fas fa-shopping-bag"></i> <span class="nav-text">Products</span></a></li>
             <li><a href="{{ route('orders-management') }}"><i class="fas fa-list"></i> <span class="nav-text">Orders</span></a></li>
-            <li><a href="#"><i class="fas fa-tractor"></i> <span class="nav-text">Farmers</span></a></li>
+            <li><a href="{{ route('farmers-management') }}"><i class="fas fa-tractor"></i> <span class="nav-text">Farmers</span></a></li>
             <li><a href="#"><i class="fas fa-users"></i> <span class="nav-text">Customers</span></a></li>
             <li><a href="#"><i class="fas fa-chart-line"></i> <span class="nav-text">Analytics</span></a></li>
             <li><a href="#"><i class="fas fa-tags"></i> <span class="nav-text">Discounts</span></a></li>
@@ -33,6 +33,9 @@
         <div class="header">
             <h1>Products Management</h1>
             <div class="header-actions">
+                                                    <button class="btn btn-primary">
+                    <i class="fas fa-plus"></i> Add New Product
+                </button>
                 <div class="user-info">
                     <div class="notification">
                         <i class="fas fa-bell"></i>
@@ -54,9 +57,7 @@
             <div class="section-header">
                 <h2>All Products</h2>
                 <div class="controls">
-                                    <button class="btn btn-primary">
-                    <i class="fas fa-plus"></i> Add New Product
-                </button>
+
                     <div class="search-box">
                         <i class="fas fa-search"></i>
                         <input type="text" placeholder="Search products...">

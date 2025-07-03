@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orders Management | E-commerce Admin</title>
+    <title>Farmers Management | E-commerce Admin</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="{{ asset("css/dip/orders_management.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/dip/farmers_management.css") }}">
 </head>
 <body>
     <!-- Sidebar Navigation -->
@@ -16,8 +16,8 @@
         <ul class="nav-links">
             <li><a href="{{ route('admin-dashboard') }}"><i class="fas fa-tachometer-alt"></i> <span class="nav-text">Dashboard</span></a></li>
             <li><a href="{{ route('products-management') }}"><i class="fas fa-shopping-bag"></i> <span class="nav-text">Products</span></a></li>
-            <li><a href="" class="active"><i class="fas fa-list"></i> <span class="nav-text">Orders</span></a></li>
-            <li><a href="{{ route('farmers-management') }}"><i class="fas fa-tractor"></i> <span class="nav-text">Farmers</span></a></li>
+            <li><a href="{{ route('orders-management') }}"><i class="fas fa-list"></i> <span class="nav-text">Orders</span></a></li>
+            <li><a href="" class="active"><i class="fas fa-tractor"></i> <span class="nav-text">Farmers</span></a></li>
             <li><a href="#"><i class="fas fa-users"></i> <span class="nav-text">Customers</span></a></li>
             <li><a href="#"><i class="fas fa-chart-line"></i> <span class="nav-text">Analytics</span></a></li>
             <li><a href="#"><i class="fas fa-tags"></i> <span class="nav-text">Discounts</span></a></li>
@@ -30,8 +30,11 @@
     <div class="main-content">
         <!-- Header -->
         <div class="header">
-            <h1>Orders Management</h1>
+            <h1>Farmers Management</h1>
             <div class="header-actions">
+                <button class="btn btn-earth">
+                    <i class="fas fa-user-plus"></i> Add New Farmer
+                </button>
                 <div class="user-info">
                     <div class="notification">
                         <i class="fas fa-bell"></i>
@@ -48,57 +51,57 @@
             </div>
         </div>
 
-        <!-- Order Stats -->
+        <!-- Farmer Stats -->
         <div class="stats-row">
             <div class="stat-card card-1">
                 <div class="stat-info">
-                    <h3>Total Orders</h3>
-                    <div class="value">1,240</div>
+                    <h3>Total Farmers</h3>
+                    <div class="value">286</div>
                     <div class="trend up">
-                        <i class="fas fa-arrow-up"></i> 8.3% from last month
+                        <i class="fas fa-arrow-up"></i> 12.5% from last month
                     </div>
                 </div>
                 <div class="stat-icon">
-                    <i class="fas fa-box-open"></i>
+                    <i class="fas fa-users"></i>
                 </div>
             </div>
 
             <div class="stat-card card-2">
                 <div class="stat-info">
-                    <h3>Pending Orders</h3>
-                    <div class="value">134</div>
-                    <div class="trend down">
-                        <i class="fas fa-arrow-down"></i> 1.2% from last month
+                    <h3>Active Farmers</h3>
+                    <div class="value">238</div>
+                    <div class="trend up">
+                        <i class="fas fa-arrow-up"></i> 7.2% from last month
                     </div>
                 </div>
                 <div class="stat-icon">
-                    <i class="fas fa-hourglass-half"></i>
+                    <i class="fas fa-user-check"></i>
                 </div>
             </div>
 
             <div class="stat-card card-3">
                 <div class="stat-info">
-                    <h3>Processing Orders</h3>
-                    <div class="value">87</div>
+                    <h3>New Farmers</h3>
+                    <div class="value">32</div>
                     <div class="trend up">
-                        <i class="fas fa-arrow-up"></i> 3.4% from last week
+                        <i class="fas fa-arrow-up"></i> 18.9% from last month
                     </div>
                 </div>
                 <div class="stat-icon">
-                    <i class="fas fa-sync-alt"></i>
+                    <i class="fas fa-seedling"></i>
                 </div>
             </div>
 
             <div class="stat-card card-4">
                 <div class="stat-info">
-                    <h3>Cancelled Orders</h3>
-                    <div class="value">67</div>
-                    <div class="trend down">
-                        <i class="fas fa-arrow-down"></i> 0.8% from last month
+                    <h3>Avg. Products</h3>
+                    <div class="value">14</div>
+                    <div class="trend up">
+                        <i class="fas fa-arrow-up"></i> 2.4% from last quarter
                     </div>
                 </div>
                 <div class="stat-icon">
-                    <i class="fas fa-times-circle"></i>
+                    <i class="fas fa-apple-alt"></i>
                 </div>
             </div>
         </div>
@@ -106,26 +109,23 @@
         <!-- Filters Panel -->
         <div class="filters-panel">
             <div class="filters-header">
-                <div class="filters-title">Filter Orders</div>
+                <div class="filters-title">Filter Farmers</div>
             </div>
             <div class="filters-row">
                 <div class="filter-group">
-                    <label class="filter-label">Order Status</label>
+                    <label class="filter-label">Account Status</label>
                     <select class="filter-select">
                         <option value="">All Statuses</option>
-                        <option value="pending">Pending</option>
-                        <option value="processing">Processing</option>
-                        <option value="shipped">Shipped</option>
-                        <option value="delivered">Delivered</option>
-                        <option value="cancelled">Cancelled</option>
+                        <option value="active">Active</option>
+                        <option value="pending">Pending Approval</option>
+                        <option value="inactive">Inactive</option>
                     </select>
                 </div>
                 
                 <div class="filter-group">
-                    <label class="filter-label">Date Range</label>
+                    <label class="filter-label">Registration Date</label>
                     <select class="filter-select">
                         <option value="">All Dates</option>
-                        <option value="today">Today</option>
                         <option value="week">This Week</option>
                         <option value="month">This Month</option>
                         <option value="quarter">This Quarter</option>
@@ -134,13 +134,19 @@
                 </div>
                 
                 <div class="filter-group">
-                    <label class="filter-label">Customer</label>
-                    <input type="text" class="filter-input" placeholder="Search customer...">
+                    <label class="filter-label">Location</label>
+                    <input type="text" class="filter-input" placeholder="City or region...">
                 </div>
                 
                 <div class="filter-group">
-                    <label class="filter-label">Order ID</label>
-                    <input type="text" class="filter-input" placeholder="Search order ID...">
+                    <label class="filter-label">Products Range</label>
+                    <select class="filter-select">
+                        <option value="">All Ranges</option>
+                        <option value="0-10">0-10 products</option>
+                        <option value="11-30">11-30 products</option>
+                        <option value="31-50">31-50 products</option>
+                        <option value="50+">50+ products</option>
+                    </select>
                 </div>
             </div>
             
@@ -154,14 +160,14 @@
             </div>
         </div>
 
-        <!-- Orders Section -->
-        <div class="orders-section">
+        <!-- Farmers Section -->
+        <div class="farmers-section">
             <div class="section-header">
-                <h2>All Orders</h2>
+                <h2>Registered Farmers</h2>
                 <div class="controls">
                     <div class="search-box">
                         <i class="fas fa-search"></i>
-                        <input type="text" placeholder="Search orders...">
+                        <input type="text" placeholder="Search farmers...">
                     </div>
                     <button class="filter-btn">
                         <i class="fas fa-download"></i> Export
@@ -169,179 +175,183 @@
                 </div>
             </div>
             
-            <table class="orders-table">
+            <table class="farmers-table">
                 <thead>
                     <tr>
-                        <th>Order ID</th>
-                        <th>Customer</th>
-                        <th>Date</th>
-                        <th>Amount</th>
+                        <th>Farmer ID</th>
+                        <th>Farmer Info</th>
+                        <th>Location</th>
+                        <th>Products</th>
                         <th>Status</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="order-id">#ORD-7841</td>
+                        <td class="farmer-id">#FARM-4215</td>
                         <td>
-                            <div class="customer-info">
-                                <div class="customer-avatar">
-                                    <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson">
+                            <div class="farmer-info">
+                                <div class="farmer-avatar">
+                                    <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Rajesh Kumar">
                                 </div>
                                 <div>
-                                    <div class="customer-name">Sarah Johnson</div>
-                                    <div class="customer-email">sarah@example.com</div>
+                                    <div class="farmer-name">Rajesh Kumar</div>
+                                    <div class="farmer-email">rajesh@example.com</div>
                                 </div>
                             </div>
                         </td>
-                        <td class="order-date">Oct 15, 2023</td>
-                        <td class="order-amount">৳1,285.50</td>
-                        <td><span class="status-badge status-delivered">Delivered</span></td>
+                        <td class="location"><i class="fas fa-map-marker-alt"></i> Punjab</td>
+                        <td class="products-count">24</td>
+                        <td><span class="status-badge status-active">Active</span></td>
                         <td>
                             <div class="actions">
                                 <button class="action-btn view"><i class="fas fa-eye"></i></button>
-                                <button class="action-btn"><i class="fas fa-print"></i></button>
+                                <button class="action-btn"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn deactivate"><i class="fas fa-ban"></i></button>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td class="order-id">#ORD-7840</td>
+                        <td class="farmer-id">#FARM-4214</td>
                         <td>
-                            <div class="customer-info">
-                                <div class="customer-avatar">
-                                    <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Michael Brown">
+                            <div class="farmer-info">
+                                <div class="farmer-avatar">
+                                    <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Priya Sharma">
                                 </div>
                                 <div>
-                                    <div class="customer-name">Michael Brown</div>
-                                    <div class="customer-email">michael@example.com</div>
+                                    <div class="farmer-name">Priya Sharma</div>
+                                    <div class="farmer-email">priya@example.com</div>
                                 </div>
                             </div>
                         </td>
-                        <td class="order-date">Oct 14, 2023</td>
-                        <td class="order-amount">৳752.25</td>
-                        <td><span class="status-badge status-processing">Processing</span></td>
+                        <td class="location"><i class="fas fa-map-marker-alt"></i> Maharashtra</td>
+                        <td class="products-count">42</td>
+                        <td><span class="status-badge status-active">Active</span></td>
                         <td>
                             <div class="actions">
                                 <button class="action-btn view"><i class="fas fa-eye"></i></button>
-                                <button class="action-btn"><i class="fas fa-check"></i></button>
-                                <button class="action-btn cancel"><i class="fas fa-times"></i></button>
+                                <button class="action-btn"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn deactivate"><i class="fas fa-ban"></i></button>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td class="order-id">#ORD-7839</td>
+                        <td class="farmer-id">#FARM-4213</td>
                         <td>
-                            <div class="customer-info">
-                                <div class="customer-avatar">
-                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Emma Davis">
+                            <div class="farmer-info">
+                                <div class="farmer-avatar">
+                                    <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Amit Patel">
                                 </div>
                                 <div>
-                                    <div class="customer-name">Emma Davis</div>
-                                    <div class="customer-email">emma@example.com</div>
+                                    <div class="farmer-name">Amit Patel</div>
+                                    <div class="farmer-email">amit@example.com</div>
                                 </div>
                             </div>
                         </td>
-                        <td class="order-date">Oct 14, 2023</td>
-                        <td class="order-amount">৳2,100.00</td>
+                        <td class="location"><i class="fas fa-map-marker-alt"></i> Gujarat</td>
+                        <td class="products-count">18</td>
                         <td><span class="status-badge status-pending">Pending</span></td>
                         <td>
                             <div class="actions">
                                 <button class="action-btn view"><i class="fas fa-eye"></i></button>
                                 <button class="action-btn"><i class="fas fa-check"></i></button>
-                                <button class="action-btn cancel"><i class="fas fa-times"></i></button>
+                                <button class="action-btn deactivate"><i class="fas fa-times"></i></button>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td class="order-id">#ORD-7838</td>
+                        <td class="farmer-id">#FARM-4212</td>
                         <td>
-                            <div class="customer-info">
-                                <div class="customer-avatar">
-                                    <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="James Wilson">
+                            <div class="farmer-info">
+                                <div class="farmer-avatar">
+                                    <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sunita Devi">
                                 </div>
                                 <div>
-                                    <div class="customer-name">James Wilson</div>
-                                    <div class="customer-email">james@example.com</div>
+                                    <div class="farmer-name">Sunita Devi</div>
+                                    <div class="farmer-email">sunita@example.com</div>
                                 </div>
                             </div>
                         </td>
-                        <td class="order-date">Oct 13, 2023</td>
-                        <td class="order-amount">৳899.99</td>
-                        <td><span class="status-badge status-delivered">Delivered</span></td>
+                        <td class="location"><i class="fas fa-map-marker-alt"></i> Bihar</td>
+                        <td class="products-count">7</td>
+                        <td><span class="status-badge status-inactive">Inactive</span></td>
                         <td>
                             <div class="actions">
                                 <button class="action-btn view"><i class="fas fa-eye"></i></button>
-                                <button class="action-btn"><i class="fas fa-print"></i></button>
+                                <button class="action-btn"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn"><i class="fas fa-power-off"></i></button>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td class="order-id">#ORD-7837</td>
+                        <td class="farmer-id">#FARM-4211</td>
                         <td>
-                            <div class="customer-info">
-                                <div class="customer-avatar">
-                                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Olivia Taylor">
+                            <div class="farmer-info">
+                                <div class="farmer-avatar">
+                                    <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Vijay Singh">
                                 </div>
                                 <div>
-                                    <div class="customer-name">Olivia Taylor</div>
-                                    <div class="customer-email">olivia@example.com</div>
+                                    <div class="farmer-name">Vijay Singh</div>
+                                    <div class="farmer-email">vijay@example.com</div>
                                 </div>
                             </div>
                         </td>
-                        <td class="order-date">Oct 12, 2023</td>
-                        <td class="order-amount">৳1,567.75</td>
-                        <td><span class="status-badge status-cancelled">Cancelled</span></td>
+                        <td class="location"><i class="fas fa-map-marker-alt"></i> Uttar Pradesh</td>
+                        <td class="products-count">35</td>
+                        <td><span class="status-badge status-active">Active</span></td>
                         <td>
                             <div class="actions">
                                 <button class="action-btn view"><i class="fas fa-eye"></i></button>
-                                <button class="action-btn"><i class="fas fa-redo"></i></button>
+                                <button class="action-btn"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn deactivate"><i class="fas fa-ban"></i></button>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td class="order-id">#ORD-7836</td>
+                        <td class="farmer-id">#FARM-4210</td>
                         <td>
-                            <div class="customer-info">
-                                <div class="customer-avatar">
-                                    <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="William Martinez">
+                            <div class="farmer-info">
+                                <div class="farmer-avatar">
+                                    <img src="https://randomuser.me/api/portraits/women/54.jpg" alt="Meena Reddy">
                                 </div>
                                 <div>
-                                    <div class="customer-name">William Martinez</div>
-                                    <div class="customer-email">william@example.com</div>
+                                    <div class="farmer-name">Meena Reddy</div>
+                                    <div class="farmer-email">meena@example.com</div>
                                 </div>
                             </div>
                         </td>
-                        <td class="order-date">Oct 12, 2023</td>
-                        <td class="order-amount">৳1,425.50</td>
-                        <td><span class="status-badge status-shipped">Shipped</span></td>
+                        <td class="location"><i class="fas fa-map-marker-alt"></i> Telangana</td>
+                        <td class="products-count">56</td>
+                        <td><span class="status-badge status-active">Active</span></td>
                         <td>
                             <div class="actions">
                                 <button class="action-btn view"><i class="fas fa-eye"></i></button>
-                                <button class="action-btn"><i class="fas fa-truck"></i></button>
+                                <button class="action-btn"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn deactivate"><i class="fas fa-ban"></i></button>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td class="order-id">#ORD-7835</td>
+                        <td class="farmer-id">#FARM-4209</td>
                         <td>
-                            <div class="customer-info">
-                                <div class="customer-avatar">
-                                    <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Sophia Anderson">
+                            <div class="farmer-info">
+                                <div class="farmer-avatar">
+                                    <img src="https://randomuser.me/api/portraits/men/37.jpg" alt="Sanjay Verma">
                                 </div>
                                 <div>
-                                    <div class="customer-name">Sophia Anderson</div>
-                                    <div class="customer-email">sophia@example.com</div>
+                                    <div class="farmer-name">Sanjay Verma</div>
+                                    <div class="farmer-email">sanjay@example.com</div>
                                 </div>
                             </div>
                         </td>
-                        <td class="order-date">Oct 11, 2023</td>
-                        <td class="order-amount">৳2,850.00</td>
-                        <td><span class="status-badge status-processing">Processing</span></td>
+                        <td class="location"><i class="fas fa-map-marker-alt"></i> Haryana</td>
+                        <td class="products-count">12</td>
+                        <td><span class="status-badge status-pending">Pending</span></td>
                         <td>
                             <div class="actions">
                                 <button class="action-btn view"><i class="fas fa-eye"></i></button>
                                 <button class="action-btn"><i class="fas fa-check"></i></button>
-                                <button class="action-btn cancel"><i class="fas fa-times"></i></button>
+                                <button class="action-btn deactivate"><i class="fas fa-times"></i></button>
                             </div>
                         </td>
                     </tr>
@@ -350,7 +360,7 @@
             
             <div class="pagination">
                 <div class="pagination-info">
-                    Showing 1 to 7 of 124 orders
+                    Showing 1 to 7 of 286 farmers
                 </div>
                 <div class="pagination-controls">
                     <button class="page-btn"><i class="fas fa-chevron-left"></i></button>
@@ -367,18 +377,18 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Order search functionality
+            // Farmer search functionality
             const searchInput = document.querySelector('.search-box input');
-            const tableRows = document.querySelectorAll('.orders-table tbody tr');
+            const tableRows = document.querySelectorAll('.farmers-table tbody tr');
             
             searchInput.addEventListener('input', function() {
                 const searchTerm = this.value.toLowerCase();
                 
                 tableRows.forEach(row => {
-                    const orderId = row.querySelector('.order-id').textContent.toLowerCase();
-                    const customerName = row.querySelector('.customer-name').textContent.toLowerCase();
+                    const farmerId = row.querySelector('.farmer-id').textContent.toLowerCase();
+                    const farmerName = row.querySelector('.farmer-name').textContent.toLowerCase();
                     
-                    if (orderId.includes(searchTerm) || customerName.includes(searchTerm)) {
+                    if (farmerId.includes(searchTerm) || farmerName.includes(searchTerm)) {
                         row.style.display = '';
                     } else {
                         row.style.display = 'none';
@@ -389,26 +399,28 @@
             // Action buttons functionality
             document.querySelectorAll('.action-btn').forEach(button => {
                 button.addEventListener('click', function() {
-                    const orderId = this.closest('tr').querySelector('.order-id').textContent;
-                    const action = this.querySelector('i').className;
+                    const farmerId = this.closest('tr').querySelector('.farmer-id').textContent;
+                    const actionIcon = this.querySelector('i').className;
                     
-                    if (action.includes('eye')) {
-                        alert(`View order details for: ${orderId}`);
-                    } else if (action.includes('check')) {
-                        if (confirm(`Mark ${orderId} as processed?`)) {
-                            alert(`Order ${orderId} marked as processed`);
+                    if (actionIcon.includes('eye')) {
+                        alert(`View farmer details for: ${farmerId}`);
+                    } else if (actionIcon.includes('edit')) {
+                        alert(`Edit farmer profile for: ${farmerId}`);
+                    } else if (actionIcon.includes('ban')) {
+                        if (confirm(`Deactivate farmer account: ${farmerId}?`)) {
+                            alert(`Farmer ${farmerId} deactivated`);
                         }
-                    } else if (action.includes('times')) {
-                        if (confirm(`Cancel order ${orderId}?`)) {
-                            alert(`Order ${orderId} cancelled`);
+                    } else if (actionIcon.includes('check')) {
+                        if (confirm(`Approve farmer account: ${farmerId}?`)) {
+                            alert(`Farmer ${farmerId} approved`);
                         }
-                    } else if (action.includes('print')) {
-                        alert(`Print invoice for: ${orderId}`);
-                    } else if (action.includes('truck')) {
-                        alert(`Track shipment for: ${orderId}`);
-                    } else if (action.includes('redo')) {
-                        if (confirm(`Restore cancelled order ${orderId}?`)) {
-                            alert(`Order ${orderId} restored`);
+                    } else if (actionIcon.includes('times')) {
+                        if (confirm(`Reject farmer application: ${farmerId}?`)) {
+                            alert(`Farmer application ${farmerId} rejected`);
+                        }
+                    } else if (actionIcon.includes('power-off')) {
+                        if (confirm(`Activate farmer account: ${farmerId}?`)) {
+                            alert(`Farmer ${farmerId} activated`);
                         }
                     }
                 });
@@ -426,6 +438,11 @@
                         row.style.display = 'none';
                     }
                 });
+            });
+            
+            // Add New Farmer button
+            document.querySelector('.btn-earth').addEventListener('click', function() {
+                alert('Opening new farmer registration form...');
             });
         });
     </script>
