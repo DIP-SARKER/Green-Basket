@@ -19,7 +19,7 @@
             <li><a href="" class="active"><i class="fas fa-shopping-bag"></i> <span class="nav-text">Products</span></a></li>
             <li><a href="{{ route('orders-management') }}"><i class="fas fa-list"></i> <span class="nav-text">Orders</span></a></li>
             <li><a href="{{ route('farmers-management') }}"><i class="fas fa-tractor"></i> <span class="nav-text">Farmers</span></a></li>
-            <li><a href="#"><i class="fas fa-users"></i> <span class="nav-text">Customers</span></a></li>
+            <li><a href="{{ route('customers-management') }}"><i class="fas fa-users"></i> <span class="nav-text">Customers</span></a></li>
             <li><a href="#"><i class="fas fa-chart-line"></i> <span class="nav-text">Analytics</span></a></li>
             <li><a href="#"><i class="fas fa-tags"></i> <span class="nav-text">Discounts</span></a></li>
             <li><a href="#"><i class="fas fa-comments"></i> <span class="nav-text">Support</span></a></li>
