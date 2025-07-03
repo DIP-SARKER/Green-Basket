@@ -53,6 +53,11 @@ Route::get('/about', function () {
 })->name('about');
 
 
-Route::get('/admin', function () {
+
+Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
 })->name('admin-dashboard');
+
+Route::get('/admin/products', function () {
+    return view('admin.products_management');
+})->name('products_management');

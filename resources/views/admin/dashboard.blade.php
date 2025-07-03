@@ -17,7 +17,7 @@
         </div>
         <ul class="nav-links">
             <li><a href="#" class="active"><i class="fas fa-tachometer-alt"></i> <span class="nav-text">Dashboard</span></a></li>
-            <li><a href="#"><i class="fas fa-shopping-bag"></i> <span class="nav-text">Products</span></a></li>
+            <li><a href="{{ route('products_management') }}"><i class="fas fa-shopping-bag"></i> <span class="nav-text">Products</span></a></li>
             <li><a href="#"><i class="fas fa-list"></i> <span class="nav-text">Orders</span></a></li>
             <li><a href="#"><i class="fas fa-tractor"></i> <span class="nav-text">Farmers</span></a></li>
             <li><a href="#"><i class="fas fa-users"></i> <span class="nav-text">Customers</span></a></li>
@@ -294,14 +294,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Simple active link switching
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-                    this.classList.add('active');
-                });
-            });
-
             // Chart initialization
             const ctx = document.getElementById('revenueChart').getContext('2d');
             
