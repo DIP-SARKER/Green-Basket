@@ -54,6 +54,10 @@ Route::get('/about', function () {
 
 
 
+Route::get('/admin', function () {
+    return view('admin.login');
+})->name('admin-login');
+
 Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
 })->name('admin-dashboard');
@@ -69,3 +73,7 @@ Route::get('/admin/orders', function () {
 Route::get('/admin/farmers', function () {
     return view('admin.farmers_management');
 })->name('farmers-management');
+
+Route::get('/admin/customers', function () {
+    return view('admin.customers_management');
+})->name('customers-management');
