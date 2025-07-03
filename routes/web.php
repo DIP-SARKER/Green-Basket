@@ -51,3 +51,8 @@ Route::get('/farmers', function () {
 Route::get('/about', function () {
     return view('consumer.about');
 })->name('about');
+
+
+Route::get('/admin', function () {
+    return view('admin.dashboard');
+})->name('admin-dashboard');

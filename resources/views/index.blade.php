@@ -26,6 +26,7 @@
                         <input type="text" class="search-input" placeholder="Search products...">
                     </div>
                     <a href="#" class="cta-button">Order Now</a>
+                    <a href="{{ route("admin-dashboard") }}">Test: Admin</a>
                 </div>
             </nav>
         </div>
