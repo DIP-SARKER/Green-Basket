@@ -60,4 +60,8 @@ Route::get('/admin/dashboard', function () {
 
 Route::get('/admin/products', function () {
     return view('admin.products_management');
-})->name('products_management');
+})->name('products-management');
+
+Route::get('/admin/orders', function () {
+    return view('admin.orders_management');
+})->name('orders-management');
