@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="{{ asset("css/dip/admin_dashboard.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/dip/common.css") }}">
     
 </head>
 <body>
@@ -21,10 +22,10 @@
             <li><a href="{{ route('orders-management') }}"><i class="fas fa-list"></i> <span class="nav-text">Orders</span></a></li>
             <li><a href="{{ route('farmers-management') }}"><i class="fas fa-tractor"></i> <span class="nav-text">Farmers</span></a></li>
             <li><a href="{{ route('customers-management') }}"><i class="fas fa-users"></i> <span class="nav-text">Customers</span></a></li>
-            <li><a href="#"><i class="fas fa-chart-line"></i> <span class="nav-text">Analytics</span></a></li>
-            <li><a href="#"><i class="fas fa-tags"></i> <span class="nav-text">Discounts</span></a></li>
-            <li><a href="#"><i class="fas fa-comments"></i> <span class="nav-text">Support</span></a></li>
-            <li><a href="#"><i class="fas fa-cog"></i> <span class="nav-text">Settings</span></a></li>
+            <li><a href="{{ route('analytics-dashboard') }}"><i class="fas fa-chart-line"></i> <span class="nav-text">Analytics</span></a></li>
+            <li><a href="{{ route('discounts-management') }}"><i class="fas fa-tags"></i> <span class="nav-text">Discounts</span></a></li>
+            <li><a href="{{ route('support-management') }}"><i class="fas fa-comments"></i> <span class="nav-text">Support</span></a></li>
+            <li><a href="{{ route('settings') }}"><i class="fas fa-cog"></i> <span class="nav-text">Settings</span></a></li>
         </ul>
     </aside>
 
@@ -39,9 +40,9 @@
                     <span class="badge">3</span>
                 </div>
                 <div class="user-profile">
-                    <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Admin">
+                    <img src="https://dip-sarker.github.io/DIP_SARKER/images/home.png" alt="Admin">
                     <div class="info">
-                        <div class="name">Alex Morgan</div>
+                        <div class="name">DIP SARKER</div>
                         <div class="role">Administrator</div>
                     </div>
                 </div>

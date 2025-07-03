@@ -77,3 +77,19 @@ Route::get('/admin/farmers', function () {
 Route::get('/admin/customers', function () {
     return view('admin.customers_management');
 })->name('customers-management');
+
+Route::get('/admin/analytics', function () {
+    return view('admin.analytics');
+})->name('analytics-dashboard');
+
+Route::get('/admin/discounts', function () {
+    return view('admin.discounts');
+})->name('discounts-management');
+
+Route::get('/admin/support', function () {
+    return view('admin.support');
+})->name('support-management');
+
+Route::get('/admin/settings', function () {
+    return view('admin.settings');
+})->name('settings');
