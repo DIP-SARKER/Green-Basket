@@ -52,6 +52,11 @@ Route::get('/about', function () {
     return view('consumer.about');
 })->name('about');
 
+Route::get('/login', function () {
+    return view('consumer.loginsignup.login'); })->name('login');
+Route::get('/signup', function () {
+    return view('consumer.loginsignup.signup'); })->name('signup');
+
 
 
 Route::get('/admin', function () {
