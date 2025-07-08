@@ -1,4 +1,4 @@
-.hero {
+.hero-farmer {
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
             background-size: cover;
             color: white;
@@ -7,12 +7,12 @@
             margin-bottom: 3rem;
         }
 
-        .hero h1 {
+        .hero-farmer h1 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
         }
 
-        .hero p {
+        .hero-farmer p {
             font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto 2rem;

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ asset('css/hridoy/styles_for_index.css') }}">
     <link rel="stylesheet" href="{{ asset("css/hridoy/basic.css") }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
 </head>
 <body>
 <!-- Navbar -->
@@ -21,13 +22,14 @@
                     <a href="{{ route("farmers") }}">Farmers</a>
                     <a href="{{ route("recipes") }}">Recipes</a>
                     <a href="{{ route("about") }}">About</a>
+                    <a href="{{ route('login') }}">Login</a>
+                    <a href="{{ route('signup') }}">Sign Up</a>
                     <div class="search-container">
                         <span class="search-icon">🔍</span>
                         <input type="text" class="search-input" placeholder="Search products...">
                     </div>
                     <a href="#" class="cta-button">Order Now</a>
-                    <a href="{{ route('login') }}">Login</a>
-                    <a href="">Sign Up</a>
+                    
                 </div>
             </nav>
         </div>
