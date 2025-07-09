@@ -1,4 +1,4 @@
-.hero {
+.hero-about {
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
@@ -8,12 +8,12 @@
             margin-bottom: 3rem;
         }
 
-        .hero h1 {
+        .hero-about h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
         }
 
-        .hero p {
+        .hero-about p {
             font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto;
