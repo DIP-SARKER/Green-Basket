@@ -54,9 +54,41 @@ Route::get('/about', function () {
 
 Route::get('/login', function () {
     return view('consumer.loginsignup.login'); })->name('login');
+
 Route::get('/signup', function () {
     return view('consumer.loginsignup.signup'); })->name('signup');
 
+Route::get('/deliveryinfo', function () {
+    return view('consumer.extra.deliveryinfo');
+})->name('deliveryinfo');
+
+Route::get('/faq', function () {
+    return view('consumer.extra.faq');
+})->name('faq');
+
+Route::get('/loyaltyprogram', function () {
+    return view('consumer.extra.loyaltyprogram');
+})->name('loyaltyprogram');
+
+Route::get('/paymentsecurity', function () {
+    return view('consumer.extra.paymentsecurity');
+})->name('paymentsecurity');
+
+Route::get('/referfriends', function () {
+    return view('consumer.extra.referfriends');
+})->name('referfriends');
+
+Route::get('/returnaproduct', function () {
+    return view('consumer.extra.returnaproduct');
+})->name('returnaproduct');
+
+Route::get('/sustainability', function () {
+    return view('consumer.extra.sustainability');
+})->name('sustainability');
+
+Route::get('/termsandcondition', function () {
+    return view('consumer.extra.termsandcondition');
+})->name('termsandcondition');
 
 
 Route::get('/admin', function () {

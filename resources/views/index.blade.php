@@ -61,7 +61,7 @@
                     <h3>About</h3>
                     <ul>
                         <li><a href="#">Our Farmers</a></li>
-                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="{{ route('sustainability') }}">Sustainability</a></li>
                         <li><a href="#">How It Works</a></li>
                         <li><a href="#">Blog</a></li>
                     </ul>

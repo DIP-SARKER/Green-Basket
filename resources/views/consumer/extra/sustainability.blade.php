@@ -16,7 +16,7 @@
                 <p>Green Basket's direct-to-consumer model reduces food waste, supports local farmers, and delivers fresher produce while minimizing environmental impact. In Bangladesh, where agriculture employs 40% of the workforce, our approach creates meaningful change.</p>
             </div>
             <div class="hero-image">
-                <img src="{{ asset('images/sustainability/farmer-market.jpg') }}" alt="Farmer delivering fresh produce">
+                <img src="{{ asset('https://static.vecteezy.com/system/resources/previews/051/293/787/non_2x/cartoon-farmer-vegetable-seller-holding-organic-fresh-vegetables-in-hand-vector.jpg') }}" alt="Farmer delivering fresh produce">
             </div>
         </div>
         
@@ -69,7 +69,7 @@
                     <p>By shortening supply chains, we're helping build food security for Bangladesh's growing population while protecting its agricultural heritage.</p>
                 </div>
                 <div class="focus-image">
-                    <img src="{{ asset('images/sustainability/bangladesh-farmers.jpg') }}" alt="Bangladeshi farmers in fields">
+                    <img src="{{ asset('https://www.tbsnews.net/sites/default/files/styles/big_3/public/images/2022/10/13/paddy_field.jpg') }}" alt="Bangladeshi farmers in fields">
                 </div>
             </div>
         </div>
@@ -80,22 +80,22 @@
             
             <div class="sdg-grid">
                 <div class="sdg-card">
-                    <img src="{{ asset('images/sustainability/sdg2.png') }}" alt="SDG 2: Zero Hunger">
+                    <img src="{{ asset('https://sdg.internationalpublishers.org/wp-content/uploads/2021/04/E_SDG-goals_Goal-02.png') }}" alt="SDG 2: Zero Hunger">
                     <h4>Zero Hunger</h4>
                     <p>Improving food access and reducing waste in urban Bangladesh</p>
                 </div>
                 <div class="sdg-card">
-                    <img src="{{ asset('images/sustainability/sdg12.png') }}" alt="SDG 12: Responsible Consumption">
+                    <img src="{{ asset('https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Sustainable_Development_Goal_12ResponsibleConsumption.svg/1200px-Sustainable_Development_Goal_12ResponsibleConsumption.svg.png') }}" alt="SDG 12: Responsible Consumption">
                     <h4>Responsible Consumption</h4>
                     <p>Promoting sustainable food systems and production</p>
                 </div>
                 <div class="sdg-card">
-                    <img src="{{ asset('images/sustainability/sdg13.png') }}" alt="SDG 13: Climate Action">
+                    <img src="{{ asset('https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Sustainable_Development_Goal_13Climate.svg/1200px-Sustainable_Development_Goal_13Climate.svg.png') }}" alt="SDG 13: Climate Action">
                     <h4>Climate Action</h4>
                     <p>Reducing agriculture's carbon footprint</p>
                 </div>
                 <div class="sdg-card">
-                    <img src="{{ asset('images/sustainability/sdg15.png') }}" alt="SDG 15: Life on Land">
+                    <img src="{{ asset('https://www.un.org/esa/ffd/ffddialogue/images/E_SDG%20goals_icons-individual-rgb-15.png') }}" alt="SDG 15: Life on Land">
                     <h4>Life on Land</h4>
                     <p>Supporting sustainable land use practices</p>
                 </div>
