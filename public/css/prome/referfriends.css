@@ -1,0 +1,463 @@
+/* Referral Program Page Styles */
+.referral-program {
+    padding: 4rem 0;
+    background-color: var(--white);
+}
+
+.program-title {
+    color: var(--primary-dark);
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-size: 2.2rem;
+}
+
+.program-subtitle {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.referral-hero {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    background-color: rgba(46, 125, 50, 0.05);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 4rem;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h2 {
+    color: var(--primary-dark);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.referral-stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.how-it-works {
+    margin-bottom: 4rem;
+}
+
+.how-it-works h2 {
+    text-align: center;
+    color: var(--primary-dark);
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.step {
+    background-color: var(--bg);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.step-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.step h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.step p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.referral-tools {
+    margin-bottom: 4rem;
+    padding: 2rem;
+    background-color: var(--bg);
+    border-radius: 8px;
+}
+
+.referral-tools h2 {
+    text-align: center;
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.referral-link-box {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.referral-link-box input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: none;
+    font-size: 0.95rem;
+    background-color: var(--white);
+}
+
+.referral-link-box button {
+    border-radius: 0;
+    border-left: 1px solid var(--border);
+    white-space: nowrap;
+}
+
+.link-note {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+.social-share {
+    margin-top: 2rem;
+}
+
+.social-share h3 {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.share-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.share-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.share-button.whatsapp {
+    background-color: #25D366;
+    color: white;
+}
+
+.share-button.facebook {
+    background-color: #1877F2;
+    color: white;
+}
+
+.share-button.messenger {
+    background-color: #006AFF;
+    color: white;
+}
+
+.share-button.email {
+    background-color: var(--white);
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.share-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.rewards-section {
+    margin-bottom: 4rem;
+}
+
+.rewards-section h2 {
+    text-align: center;
+    color: var(--primary-dark);
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.earnings-calculator {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--bg);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.calculator-input {
+    margin-bottom: 2rem;
+}
+
+.calculator-input label {
+    display: block;
+    margin-bottom: 1rem;
+    color: var(--text);
+    font-weight: 500;
+}
+
+.calculator-input input[type="range"] {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    background: var(--border);
+    border-radius: 4px;
+    outline: none;
+    margin-bottom: 0.5rem;
+}
+
+.calculator-input input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--primary);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.range-value {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.range-value span {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.calculator-result {
+    text-align: center;
+}
+
+.result-card {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    display: inline-block;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.result-amount {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+.result-label {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.calculator-result p {
+    color: var(--text-light);
+    margin-top: 1rem;
+}
+
+.calculator-result p strong {
+    color: var(--primary-dark);
+}
+
+.faq-section {
+    margin-bottom: 4rem;
+}
+
+.faq-section h2 {
+    text-align: center;
+    color: var(--primary-dark);
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.faq-item {
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+    text-align: left;
+    background-color: var(--white);
+    border: none;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--text);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.faq-toggle {
+    font-size: 1.5rem;
+    color: var(--primary);
+    transition: transform 0.3s;
+}
+
+.faq-answer {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    background-color: var(--bg);
+    transition: max-height 0.3s ease-out, padding 0.3s ease;
+}
+
+.faq-answer p {
+    padding: 1rem 0;
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+.faq-item.active .faq-question {
+    background-color: var(--primary-light);
+    color: var(--white);
+}
+
+.faq-item.active .faq-toggle {
+    transform: rotate(45deg);
+    color: var(--white);
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+    padding: 0 1.5rem;
+}
+
+.terms-notice {
+    background-color: rgba(46, 125, 50, 0.05);
+    padding: 1.5rem;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.terms-notice h3 {
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.terms-notice ul {
+    list-style-type: none;
+    padding-left: 1.25rem;
+}
+
+.terms-notice ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-light);
+}
+
+.terms-notice ul li:before {
+    content: "•";
+    color: var(--primary-light);
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .referral-program {
+        padding: 2rem 0;
+    }
+    
+    .referral-hero {
+        flex-direction: column;
+    }
+    
+    .referral-stats {
+        justify-content: center;
+    }
+    
+    .referral-link-box {
+        flex-direction: column;
+    }
+    
+    .referral-link-box input {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .referral-link-box button {
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid var(--border);
+    }
+    
+    .share-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .share-button {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+}
