@@ -1,0 +1,150 @@
+/* Terms of Service Page Styles */
+.terms-section {
+    padding: 4rem 0;
+    background-color: var(--white);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+.terms-title {
+    color: var(--primary-dark);
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-size: 2.2rem;
+}
+
+.terms-update {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+    font-size: 0.95rem;
+}
+
+.terms-intro {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    padding: 1.5rem;
+    background-color: rgba(46, 125, 50, 0.05);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.terms-intro p {
+    margin-bottom: 0;
+    font-size: 1.1rem;
+}
+
+.terms-section {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.section-heading {
+    color: var(--primary-dark);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.section-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 50%;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.terms-section ul {
+    list-style-type: none;
+    padding-left: 1.25rem;
+}
+
+.terms-section ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.terms-section ul li:before {
+    content: "•";
+    color: var(--primary-light);
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+.terms-section a {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.terms-contact {
+    text-align: center;
+    margin-top: 4rem;
+    padding: 2rem;
+    background-color: var(--bg);
+    border-radius: 8px;
+}
+
+.terms-contact h3 {
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.contact-methods {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--white);
+    border-radius: 50px;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s;
+    box-shadow: var(--shadow);
+}
+
+.contact-link:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .terms-section {
+        padding: 2rem 0;
+    }
+    
+    .terms-title {
+        font-size: 1.8rem;
+    }
+    
+    .contact-methods {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-link {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+}
