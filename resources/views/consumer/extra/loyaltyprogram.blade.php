@@ -17,7 +17,7 @@
                 <a href="{{ route('signup') }}" class="cta-button">Join Now</a>
             </div>
             <div class="hero-image">
-                <img src="{{ asset('images/loyalty/rewards-basket.png') }}" alt="Loyalty rewards">
+                <img src="{{ asset('https://imageio.forbes.com/specials-images/imageserve/64b562313734231d33e9bd01/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds') }}" alt="Loyalty rewards">
             </div>
         </div>
         

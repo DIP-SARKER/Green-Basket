@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{ asset('css/sakib/paymentsecurity.css') }}">
 @endpush
 
-@session('main-content')
+@section('main-content')
 <section class="payment-security">
     <div class="container">
         <h1 class="security-title">Payment Security</h1>
@@ -69,23 +69,23 @@
             <h2>Approved Payment Methods</h2>
             <div class="methods-grid">
                 <div class="method">
-                    <img src="{{ asset('images/payments/sslcommerz.png') }}" alt="SSLCommerz">
+                    <img src="{{ asset('https://incevio.com/storage/images/mgV8s7QkbnodO8HTqraMo6L26URURerUw6XFysKK.png') }}" alt="SSLCommerz">
                     <p>Card Payments</p>
                 </div>
                 <div class="method">
-                    <img src="{{ asset('images/payments/bkash.png') }}" alt="bKash">
+                    <img src="{{ asset('https://downloadr2.apkmirror.com/wp-content/uploads/2022/08/84/62f92578037f0.png') }}" alt="bKash">
                     <p>bKash</p>
                 </div>
                 <div class="method">
-                    <img src="{{ asset('images/payments/nagad.png') }}" alt="Nagad">
+                    <img src="{{ asset('https://play-lh.googleusercontent.com/9ps_d6nGKQzfbsJfMaFR0RkdwzEdbZV53ReYCS09Eo5MV-GtVylFD-7IHcVktlnz9Mo') }}" alt="Nagad">
                     <p>Nagad</p>
                 </div>
                 <div class="method">
-                    <img src="{{ asset('images/payments/rocket.png') }}" alt="Rocket">
+                    <img src="{{ asset('https://play-lh.googleusercontent.com/sDY6YSDobbm_rX-aozinIX5tVYBSea1nAyXYI4TJlije2_AF5_5aG3iAS7nlrgo0lk8') }}" alt="Rocket">
                     <p>Rocket</p>
                 </div>
                 <div class="method">
-                    <img src="{{ asset('images/payments/cod.png') }}" alt="Cash on Delivery">
+                    <img src="{{ asset('https://okcredit-blog-images-prod.storage.googleapis.com/2021/05/cashondelivery1.jpg') }}" alt="Cash on Delivery">
                     <p>Cash on Delivery</p>
                 </div>
             </div>
@@ -119,4 +119,4 @@
         </div>
     </div>
 </section>
-@endsession
+@endsection

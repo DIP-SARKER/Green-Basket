@@ -1,0 +1,254 @@
+/* Privacy Policy Page Styles */
+.privacy-policy {
+    padding: 4rem 0;
+    background-color: var(--white);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+.policy-title {
+    color: var(--primary-dark);
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-size: 2.2rem;
+}
+
+.policy-update {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+    font-size: 0.95rem;
+}
+
+.policy-intro {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    padding: 1.5rem;
+    background-color: rgba(46, 125, 50, 0.05);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.policy-intro p {
+    margin-bottom: 0;
+    font-size: 1.1rem;
+}
+
+.policy-section {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.section-heading {
+    color: var(--primary-dark);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.section-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 50%;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.subsection {
+    margin-bottom: 1.5rem;
+}
+
+.subsection h3 {
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+}
+
+.subsection ul {
+    list-style-type: none;
+    padding-left: 1.25rem;
+}
+
+.subsection ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subsection ul li:before {
+    content: "•";
+    color: var(--primary-light);
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+.usage-list {
+    list-style-type: none;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.usage-list li {
+    position: relative;
+    padding-left: 1.75rem;
+}
+
+.usage-list li:before {
+    content: "✓";
+    color: var(--primary);
+    position: absolute;
+    left: 0;
+}
+
+.disclosure-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.disclosure-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: var(--bg);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.disclosure-icon {
+    font-size: 1.5rem;
+}
+
+.security-section {
+    background-color: rgba(46, 125, 50, 0.03);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-bottom: none;
+}
+
+.security-measures {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.measure {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.measure-icon {
+    font-size: 1.5rem;
+}
+
+.security-note {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+.rights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.right-item {
+    background-color: var(--bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.right-item h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.right-item p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+.policy-contact {
+    text-align: center;
+    margin-top: 4rem;
+    padding: 2rem;
+    background-color: var(--bg);
+    border-radius: 8px;
+}
+
+.policy-contact h2 {
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.contact-methods {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--white);
+    border-radius: 50px;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s;
+    box-shadow: var(--shadow);
+}
+
+.contact-link:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .privacy-policy {
+        padding: 2rem 0;
+    }
+    
+    .policy-title {
+        font-size: 1.8rem;
+    }
+    
+    .usage-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-methods {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-link {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+}

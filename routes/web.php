@@ -86,6 +86,10 @@ Route::get('/sustainability', function () {
     return view('consumer.extra.sustainability');
 })->name('sustainability');
 
+Route::get('/privacypolicy', function () {
+    return view('consumer.extra.privacypolicy');
+})->name('privacypolicy');
+
 Route::get('/termsandcondition', function () {
     return view('consumer.extra.termsandcondition');
 })->name('termsandcondition');

@@ -50,7 +50,7 @@
             <h2 class="section-heading"><span class="section-icon">4</span> Delivery & Returns</h2>
             <ul>
                 <li>Delivery times may vary based on <strong>location and weather conditions</strong>.</li>
-                <li>Returns must comply with our <a href="{{ route('returns') }}">Return Policy</a>.</li>
+                <li>Returns must comply with our <a href="{{ route('returnaproduct') }}">Return Policy</a>.</li>
                 <li>Perishable goods (vegetables, dairy, meat) <strong>cannot be returned</strong> unless spoiled or damaged.</li>
             </ul>
         </div>

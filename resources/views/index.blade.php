@@ -64,6 +64,8 @@
                         <li><a href="{{ route('sustainability') }}">Sustainability</a></li>
                         <li><a href="#">How It Works</a></li>
                         <li><a href="#">Blog</a></li>
+                        <li><a href="{{ route('privacypolicy') }}">Privacy Policy</a></li>
+                        <li><a href="{{ route('termsandcondition') }}">Terms & Condition</a></li>
                     </ul>
                 </div>
 
@@ -71,9 +73,11 @@
                     <h3>Help</h3>
                     <ul>
                         <li><a href="{{ route('contact') }}">Contact</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Delivery Info</a></li>
-                        <li><a href="#">Returns</a></li>
+                        <li><a href="{{ route('faq') }}">FAQs</a></li>
+                        <li><a href="{{ route('deliveryinfo') }}">Delivery Info</a></li>
+                        <li><a href="{{ route('returnaproduct') }}">Returns</a></li>
+                        <li><a href="{{ route('loyaltyprogram') }}">Loyalty Program</a></li>
+                        <li><a href="{{ route('paymentsecurity') }}">Payment Security</a></li>
                     </ul>
                 </div>
             </div>
