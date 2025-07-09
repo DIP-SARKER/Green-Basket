@@ -58,6 +58,9 @@ Route::get('/login', function () {
 Route::get('/signup', function () {
     return view('consumer.loginsignup.signup'); })->name('signup');
 
+Route::get('/seasonal', function () {
+    return view('consumer.extra.seasonal');
+})->name('seasonal');
 Route::get('/deliveryinfo', function () {
     return view('consumer.extra.deliveryinfo');
 })->name('deliveryinfo');

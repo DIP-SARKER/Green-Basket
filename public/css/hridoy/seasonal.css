@@ -1,0 +1,371 @@
+/* Seasonal Produce Page Styles */
+.seasonal-produce {
+    padding: 4rem 0;
+    background-color: var(--white);
+}
+
+.seasonal-title {
+    color: var(--primary-dark);
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-size: 2.2rem;
+}
+
+.seasonal-subtitle {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.seasonal-intro {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    padding: 1.5rem;
+    background-color: rgba(46, 125, 50, 0.05);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.seasonal-intro p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.seasonal-intro ul {
+    list-style-type: none;
+    padding-left: 0;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.seasonal-intro ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    color: var(--text);
+}
+
+.seasonal-intro ul li:before {
+    content: "•";
+    color: var(--primary-light);
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+.seasonal-calendar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.season-card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s;
+}
+
+.season-card:hover {
+    transform: translateY(-5px);
+}
+
+.season-header {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.season-header h2 {
+    color: white;
+    margin: 0;
+    font-size: 1.3rem;
+    line-height: 1.3;
+}
+
+.season-icon {
+    font-size: 2rem;
+}
+
+/* Season-specific colors */
+.summer .season-header {
+    background-color: #e67e22; /* Mango orange */
+}
+
+.monsoon .season-header {
+    background-color: #3498db; /* Rain blue */
+}
+
+.autumn .season-header {
+    background-color: #e74c3c; /* Autumn red */
+}
+
+.hemonto .season-header {
+    background-color: #f39c12; /* Harvest gold */
+}
+
+.winter .season-header {
+    background-color: #2980b9; /* Winter blue */
+}
+
+.spring .season-header {
+    background-color: #2ecc71; /* Spring green */
+}
+
+.season-produce {
+    padding: 1.5rem;
+    background-color: var(--white);
+}
+
+.season-produce h3 {
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.produce-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+}
+
+.produce-item {
+    text-align: center;
+}
+
+.produce-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin: 0 auto 0.5rem;
+    display: block;
+}
+
+.produce-item p {
+    color: var(--text);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.season-tip {
+    padding: 1rem;
+    background-color: var(--bg);
+    font-size: 0.9rem;
+    color: var(--text-light);
+    border-top: 1px solid var(--border);
+}
+
+.season-tip strong {
+    color: var(--primary);
+}
+
+.seasonal-benefits {
+    margin-bottom: 4rem;
+}
+
+.seasonal-benefits h2 {
+    text-align: center;
+    color: var(--primary-dark);
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.benefit-card {
+    background-color: var(--bg);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.benefit-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.benefit-card h3 {
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+}
+
+.benefit-card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.seasonal-recipes {
+    margin-bottom: 4rem;
+}
+
+.seasonal-recipes h2 {
+    text-align: center;
+    color: var(--primary-dark);
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.recipe-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 0.5rem 1.5rem;
+    background-color: var(--bg);
+    border: none;
+    border-radius: 50px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tab-btn:hover {
+    background-color: var(--primary-light);
+    color: white;
+}
+
+.tab-btn.active {
+    background-color: var(--primary);
+    color: white;
+}
+
+.recipe-content {
+    display: none;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.recipe-content.active {
+    display: grid;
+}
+
+.recipe-card {
+    background-color: var(--bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.recipe-card h3 {
+    color: var(--primary-dark);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.recipe-card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.recipe-link {
+    color: var(--primary);
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.recipe-link:hover {
+    text-decoration: underline;
+}
+
+.seasonal-cta {
+    text-align: center;
+    padding: 3rem;
+    background-color: var(--bg);
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.seasonal-cta h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-dark);
+}
+
+.seasonal-cta p {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.cta-button {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.2s;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.cta-button.outline {
+    background-color: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.cta-button.outline:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .seasonal-produce {
+        padding: 2rem 0;
+    }
+    
+    .seasonal-calendar {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-buttons .cta-button {
+        width: 100%;
+        max-width: 250px;
+    }
+}

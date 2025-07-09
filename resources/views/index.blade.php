@@ -20,6 +20,7 @@
                 <div class="nav-links">
                     <a href="{{ route('shop') }}">Shop</a>
                     <a href="{{ route("farmers") }}">Farmers</a>
+                    <a href="{{ route('seasonal') }}">Seasonal</a>
                     <a href="{{ route("recipes") }}">Recipes</a>
                     <a href="{{ route("about") }}">About</a>
                     <a href="{{ route('login') }}">Login</a>
@@ -49,11 +50,11 @@
                 <div class="footer-column">
                     <h3>Shop</h3>
                     <ul>
-                        <li><a href="#">Vegetables</a></li>
-                        <li><a href="#">Dairy</a></li>
-                        <li><a href="#">Meat</a></li>
-                        <li><a href="#">Seasonal</a></li>
-                        <li><a href="#">All Products</a></li>
+                        <li><a href="{{ route('vegetableShop') }}">Vegetables</a></li>
+                        <li><a href="{{ route('dairyShop') }}">Dairy</a></li>
+                        <li><a href="{{ route('meatShop') }}">Meat</a></li>
+                        <li><a href="{{ route('seasonal') }}">Seasonal</a></li>
+                        <li><a href="{{ route('shop') }}">All Products</a></li>
                     </ul>
                 </div>
 
