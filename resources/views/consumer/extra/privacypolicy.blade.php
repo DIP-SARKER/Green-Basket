@@ -117,6 +117,6 @@
         </div>
     </div>
 </div>
-<script src="{{ asset('js/hridoy/script.js') }}"></script>
+<script src="{{ asset('js\hridoy\termscondition-privacy.js') }}"></script>
 
 @endsection

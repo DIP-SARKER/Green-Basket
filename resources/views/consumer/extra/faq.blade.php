@@ -122,5 +122,5 @@
         </div>
     </div>
 </section>
-<script src="{{ asset('js/hridoy/script.js') }}"></script>
+<script src="{{ asset('js/hridoy/faq.js') }}"></script>
 @endsection

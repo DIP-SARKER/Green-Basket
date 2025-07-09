@@ -66,6 +66,6 @@
             </div>
         </div>
     </main>
-    <script src="{{ asset('js/hridoy/script.js') }}"></script>
+    <script src="{{ asset('js/hridoy/signup-validation.js') }}"></script>
 
 @endsection

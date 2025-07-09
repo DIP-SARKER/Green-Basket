@@ -132,5 +132,5 @@
         </div>
     </div>
 </section>
-<script src="{{ asset('js/hridoy/script.js') }}"></script>
+<script src="{{ asset('js/hridoy/refer-friends.js') }}"></script>
 @endsection
