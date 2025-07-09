@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="{{ asset('images/referral/friends-sharing.png') }}" alt="Friends sharing Green Basket">
+                <img src="{{ asset('https://img.freepik.com/free-vector/social-media-network_74855-4575.jpg?semt=ais_hybrid&w=740') }}" alt="Friends sharing Green Basket">
             </div>
         </div>
         
@@ -132,5 +132,5 @@
         </div>
     </div>
 </section>
-
+<script src="{{ asset('js/hridoy/script.js') }}"></script>
 @endsection

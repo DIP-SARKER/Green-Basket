@@ -62,7 +62,7 @@
                     <ul>
                         <li><a href="#">Our Farmers</a></li>
                         <li><a href="{{ route('sustainability') }}">Sustainability</a></li>
-                        <li><a href="#">How It Works</a></li>
+                        <li><a href="{{ route('referfriends') }}">Refer Friends</a></li>
                         <li><a href="#">Blog</a></li>
                         <li><a href="{{ route('privacypolicy') }}">Privacy Policy</a></li>
                         <li><a href="{{ route('termsandcondition') }}">Terms & Condition</a></li>
