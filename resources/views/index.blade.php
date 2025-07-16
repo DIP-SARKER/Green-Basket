@@ -23,7 +23,7 @@
                     <a href="{{ route('seasonal') }}">Seasonal</a>
                     <a href="{{ route("recipes") }}">Recipes</a>
                     <a href="{{ route("about") }}">About</a>
-                    <a href="{{ route('login') }}">Login</a>
+                    <a href="{{ route('customer_authentication') }}">Login</a>
                     <a href="{{ route('signup') }}">Sign Up</a>
                     <div class="search-container">
                         <span class="search-icon">🔍</span>

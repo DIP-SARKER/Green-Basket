@@ -7,6 +7,14 @@ Route::get('/', function () {
     return view('consumer.welcome');
 })->name('home');
 
+Route::get('/login', function () {
+    return view('consumer.loginsignup.login'); })->name('login');
+
+Route::get('/customer_authentication', function () {
+    return view('consumer.loginsignup.customer_authentication'); })->name('customer_authentication');
+
+Route::get('/signup', function () {
+    return view('consumer.loginsignup.signup'); })->name('signup');
 
 Route::get('/contact', function () {
     return view('consumer.contact');
@@ -52,11 +60,7 @@ Route::get('/about', function () {
     return view('consumer.about');
 })->name('about');
 
-Route::get('/login', function () {
-    return view('consumer.loginsignup.login'); })->name('login');
 
-Route::get('/signup', function () {
-    return view('consumer.loginsignup.signup'); })->name('signup');
 
 Route::get('/seasonal', function () {
     return view('consumer.extra.seasonal');
