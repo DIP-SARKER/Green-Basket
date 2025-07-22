@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomerAuthController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -7,15 +8,18 @@ Route::get('/', function () {
     return view('consumer.welcome');
 })->name('home');
 
-Route::get('/login', function () {
-    return view('consumer.loginsignup.login'); })->name('login');
 
-Route::get('/customer_authentication', function () {
-    return view('consumer.loginsignup.customer_authentication'); })->name('customer_authentication');
+Route::get('/register', [CustomerAuthController::class,'showForm']);
+Route::post('/register', [CustomerAuthController::class,'register'])->name('registerbutton');
 
-Route::get('/signup', function () {
-    return view('consumer.loginsignup.signup'); })->name('signup');
+Route::get('/login', [CustomerAuthController::class,'showForm'] )->name('customer_auth');
+Route::post('/login', [CustomerAuthController::class,'login']);
+Route::post('/logout', [CustomerAuthController::class,'logout'])->name('');
 
+Route::get('/customerprofile', function () {
+    return view('consumer.customerProfile'); })->name('cprofile');
+
+ 
 Route::get('/contact', function () {
     return view('consumer.contact');
 })->name('contact');
