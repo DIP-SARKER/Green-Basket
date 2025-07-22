@@ -1,6 +1,7 @@
   @extends('index')
   @push('style')
   <title>Green Basket | Farm to Table</title>
+  <link rel="stylesheet" href="{{ asset('css/hridoy/styles_for_index.css') }}">
   @endpush
   
   @section('main-content')

@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @stack('style')
-    
+
     <!-- Link CSS -->
-    <link rel="stylesheet" href="{{ asset('css/hridoy/styles_for_index.css') }}">
+
     <link rel="stylesheet" href="{{ asset("css/hridoy/basic.css") }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
+
 </head>
+
 <body>
-<!-- Navbar -->
-<header>
+    <!-- Navbar -->
+    <header>
         <div class="container">
             <nav class="navbar">
+                <div class="menu-toggle" id="mobile-menu">
+                    ☰
+                </div>
+
                 <a href="{{ route('home') }}" class="logo">green<span>basket</span></a>
                 <div class="nav-links">
                     <a href="{{ route('shop') }}">Shop</a>
@@ -29,14 +35,14 @@
                         <input type="text" class="search-input" placeholder="Search products...">
                     </div>
                     <a href="#" class="cta-button">Order Now</a>
-                    
+
                 </div>
             </nav>
         </div>
     </header>
-@yield('main-content')
+    @yield('main-content')
 
-  <!-- Footer -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-grid">
@@ -89,4 +95,5 @@
     </footer>
     <script src="{{ asset('js/script.js') }}"></script>
 </body>
+
 </html>

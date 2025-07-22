@@ -130,51 +130,7 @@
             font-size: 0.9rem;
         }
         
-        /* Footer */
-        footer {
-            background-color: var(--primary-dark);
-            color: var(--white);
-            padding: 4rem 0 2rem;
-        }
         
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        
-        .footer-column h3 {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            color: var(--white);
-        }
-        
-        .footer-column ul {
-            list-style: none;
-        }
-        
-        .footer-column ul li {
-            margin-bottom: 0.75rem;
-        }
-        
-        .footer-column ul li a {
-            color: rgba(255,255,255,0.7);
-            transition: color 0.2s;
-            font-size: 0.9rem;
-        }
-        
-        .footer-column ul li a:hover {
-            color: var(--white);
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: rgba(255,255,255,0.5);
-            font-size: 0.8rem;
-        }
         
         /* Responsive */
         @media (max-width: 768px) {

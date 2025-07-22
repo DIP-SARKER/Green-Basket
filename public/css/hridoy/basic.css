@@ -197,6 +197,12 @@ footer {
     font-size: 0.8rem;
 }
 
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
 /* Responsive */
 @media (max-width: 768px) {
     .navbar {
@@ -217,6 +223,30 @@ footer {
     
     .footer-grid {
         grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+        display: none;
+        gap: 1rem;
+        box-shadow: var(--shadow);
+    }
+
+    .nav-links.show {
+        display: flex;
     }
 }
 

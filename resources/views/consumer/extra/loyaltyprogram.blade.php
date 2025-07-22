@@ -14,7 +14,7 @@
             <div class="hero-content">
                 <h2>Shop More, Save More</h2>
                 <p>Our loyalty program rewards you for supporting Bangladeshi farmers. The more you shop, the more you save!</p>
-                <a href="{{ route('signup') }}" class="cta-button">Join Now</a>
+                <a href="{{ route('customer_auth') }}" class="cta-button">Join Now</a>
             </div>
             <div class="hero-image">
                 <img src="{{ asset('https://imageio.forbes.com/specials-images/imageserve/64b562313734231d33e9bd01/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds') }}" alt="Loyalty rewards">
@@ -155,8 +155,8 @@
             <h3>Start Earning Today</h3>
             <p>Join thousands of members enjoying exclusive benefits while supporting local farmers.</p>
             <div class="cta-buttons">
-                <a href="{{ route('signup') }}" class="cta-button">Sign Up Free</a>
-                <a href="{{ route('login') }}" class="cta-button outline">Member Login</a>
+                <a href="{{ route('customer_auth') }}" class="cta-button">Sign Up Free</a>
+                <a href="{{ route('customer_auth') }}" class="cta-button outline">Member Login</a>
             </div>
         </div>
     </div>
