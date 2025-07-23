@@ -3,6 +3,7 @@
 use App\Http\Controllers\CustomerAuthController;
 use App\Http\Controllers\SellerAuthController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Seller\ProductController as SellerProductController;
 
 
 Route::get('/', function () {
@@ -160,3 +161,10 @@ Route::post('/seller/logout', [SellerAuthController::class,'logout'])->name('sel
 
 Route::get('/sellerProfile', function () {
     return view('seller.sellerProfile'); });
+
+
+
+Route::prefix('seller')->middleware('auth:seller')->group(function() {
+    Route::get('/products/create', [SellerProductController::class, 'create'])->name('seller.products.create');
+    Route::post('/products', [SellerProductController::class, 'store'])->name('seller.products.store');
+});

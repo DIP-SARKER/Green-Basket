@@ -10,19 +10,18 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        // create_products_table
-        // Schema::create('products', function (Blueprint $table) {
-        //     $table->increments('product_id');
-        //     $table->unsignedInteger('farmer_id');
-        //     $table->unsignedInteger('category_id');
-        //     $table->string('name');
-        //     $table->text('description')->nullable();
-        //     $table->string('image_url')->nullable();
-        //     $table->timestamps();
-
-        //     $table->foreign('farmer_id')->references('farmer_id')->on('farmers');
-        //     $table->foreign('category_id')->references('category_id')->on('categories');
-        // });
+        Schema::create('products', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('seller_id')->constrained('sellers')->onDelete('cascade');
+            $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
+            $table->string('name');
+            $table->text('description');
+            $table->decimal('price', 10, 2);
+            $table->integer('stock_quantity');
+            $table->string('image_url')->nullable();
+            $table->boolean('status')->default(true); // true = active
+            $table->timestamps();
+        });
 
     }
 
