@@ -11,17 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('reviews', function (Blueprint $table) {
-            $table->increments('review_id');
-    $table->unsignedBigInteger('user_id');
-    $table->unsignedInteger('product_id');
-    $table->tinyInteger('rating');
-    $table->text('comment')->nullable();
-    $table->timestamps();
+    //     Schema::create('reviews', function (Blueprint $table) {
+    //         $table->increments('review_id');
+    // $table->unsignedBigInteger('user_id');
+    // $table->unsignedInteger('product_id');
+    // $table->tinyInteger('rating');
+    // $table->text('comment')->nullable();
+    // $table->timestamps();
 
-    $table->foreign('user_id')->references('user_id')->on('users');
-    $table->foreign('product_id')->references('product_id')->on('products');
-        });
+    // $table->foreign('user_id')->references('user_id')->on('users');
+    // $table->foreign('product_id')->references('product_id')->on('products');
+    //     });
     }
 
     /**

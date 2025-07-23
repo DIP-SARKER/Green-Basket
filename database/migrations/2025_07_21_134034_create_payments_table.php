@@ -11,16 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('payments', function (Blueprint $table) {
-            $table->increments('payment_id');
-    $table->unsignedInteger('order_id');
-    $table->decimal('amount',10,2);
-    $table->enum('method',['rocket','nagad','bkash','cash_on_delivery']);
-    $table->enum('status',['pending','completed','failed'])->default('pending');
-    $table->timestamps();
+    //     Schema::create('payments', function (Blueprint $table) {
+    //         $table->increments('payment_id');
+    // $table->unsignedInteger('order_id');
+    // $table->decimal('amount',10,2);
+    // $table->enum('method',['rocket','nagad','bkash','cash_on_delivery']);
+    // $table->enum('status',['pending','completed','failed'])->default('pending');
+    // $table->timestamps();
 
-    $table->foreign('order_id')->references('order_id')->on('orders');
-        });
+    // $table->foreign('order_id')->references('order_id')->on('orders');
+    //     });
     }
 
     /**

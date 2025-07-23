@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Seller;
+
 return [
 
     /*
@@ -45,6 +47,11 @@ return [
             'driver'=> 'session',
             'provider'=> 'customers',
         ],
+
+        'seller'=> [
+            'driver'=> 'session',
+            'provider'=> 'sellers',
+        ],
     ],
 
     /*
@@ -77,6 +84,11 @@ return [
         'customers'=> [
             'driver' => 'eloquent',
             'model' => App\Models\Customer::class,
+        ],
+
+        'sellers'=> [
+            'driver'=> 'eloquent',
+            'model'=> App\Models\Seller::class,
         ],
     ],
 

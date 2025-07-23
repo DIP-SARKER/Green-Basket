@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CustomerAuthController;
+use App\Http\Controllers\SellerAuthController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -12,9 +13,10 @@ Route::get('/', function () {
 Route::get('/register', [CustomerAuthController::class,'showForm']);
 Route::post('/register', [CustomerAuthController::class,'register'])->name('registerbutton');
 
-Route::get('/login', [CustomerAuthController::class,'showForm'] )->name('customer_auth');
-Route::post('/login', [CustomerAuthController::class,'login']);
-Route::post('/logout', [CustomerAuthController::class,'logout'])->name('');
+Route::get('/customer/login', [CustomerAuthController::class,'showForm'])->name('customer_auth');
+Route::post('/customer/login', [CustomerAuthController::class,'login']);
+Route::post('/customer/logout', [CustomerAuthController::class,'logout'])->name('customer_logout');
+
 
 Route::get('/customerprofile', function () {
     return view('consumer.customerProfile'); })->name('cprofile');
@@ -145,3 +147,16 @@ Route::get('/admin/support', function () {
 Route::get('/admin/settings', function () {
     return view('admin.settings');
 })->name('settings');
+
+
+
+
+Route::get('/sellerregister', [SellerAuthController::class,'showForm']);
+Route::post('/sellerregister', [SellerAuthController::class,'register']);
+Route::get('/seller/login', [SellerAuthController::class,'showForm'])->name('seller_auth');
+Route::post('/seller/login', [SellerAuthController::class,'login']);
+Route::post('/seller/logout', [SellerAuthController::class,'logout'])->name('seller_logout');
+
+
+Route::get('/sellerProfile', function () {
+    return view('seller.sellerProfile'); });
