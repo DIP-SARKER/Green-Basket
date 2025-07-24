@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="{{ asset('css/hridoy/customer_auth.css') }}">
 @endpush
 
-@section('main-content')
+@section('main-content') 
 
 <div class="auth-container">
     <div id="register-form" class="auth-form ">

@@ -51,4 +51,4 @@ class ProductController extends Controller
         return redirect()->route('seller.products.create')->with('success', 'Product added successfully.');
     }
 
-}
+} 
