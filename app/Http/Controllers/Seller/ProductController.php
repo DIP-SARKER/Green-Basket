@@ -44,7 +44,7 @@ class ProductController extends Controller
             'description' => $request->description,
             'price' => $request->price,
             'stock_quantity' => $request->stock_quantity,
-            'image' => $imagePath,
+            'image_url' => $imagePath,
             'status' => true,
         ]);
 

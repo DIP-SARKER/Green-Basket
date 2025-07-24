@@ -49,7 +49,7 @@
         @enderror
 
         <label>Product Image URL (optional):</label><br>
-        <input type="url" name="image" placeholder="https://example.com/image.jpg" value="{{ old('image') }}"><br>
+        <input type="url" name="image_url" placeholder="https://example.com/image.jpg" value="{{ old('image') }}"><br>
 
         @error('image')
             <p style="color: red;">{{ $message }}</p>

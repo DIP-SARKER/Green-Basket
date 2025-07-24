@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CustomerAuthController;
 use App\Http\Controllers\SellerAuthController;
+use App\Http\Middleware\AuthSeller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Seller\ProductController as SellerProductController;
 
@@ -11,18 +12,19 @@ Route::get('/', function () {
 })->name('home');
 
 
-Route::get('/register', [CustomerAuthController::class,'showForm']);
-Route::post('/register', [CustomerAuthController::class,'register'])->name('registerbutton');
+Route::get('/register', [CustomerAuthController::class, 'showForm']);
+Route::post('/register', [CustomerAuthController::class, 'register'])->name('registerbutton');
 
-Route::get('/customer/login', [CustomerAuthController::class,'showForm'])->name('customer_auth');
-Route::post('/customer/login', [CustomerAuthController::class,'login']);
-Route::post('/customer/logout', [CustomerAuthController::class,'logout'])->name('customer_logout');
+Route::get('/customer/login', [CustomerAuthController::class, 'showForm'])->name('customer_auth');
+Route::post('/customer/login', [CustomerAuthController::class, 'login']);
+Route::post('/customer/logout', [CustomerAuthController::class, 'logout'])->name('customer_logout');
 
 
 Route::get('/customerprofile', function () {
-    return view('consumer.customerProfile'); })->name('cprofile');
+    return view('consumer.customerProfile');
+})->name('cprofile');
 
- 
+
 Route::get('/contact', function () {
     return view('consumer.contact');
 })->name('contact');
@@ -152,19 +154,21 @@ Route::get('/admin/settings', function () {
 
 
 
-Route::get('/sellerregister', [SellerAuthController::class,'showForm']);
-Route::post('/sellerregister', [SellerAuthController::class,'register']);
-Route::get('/seller/login', [SellerAuthController::class,'showForm'])->name('seller_auth');
-Route::post('/seller/login', [SellerAuthController::class,'login']);
-Route::post('/seller/logout', [SellerAuthController::class,'logout'])->name('seller_logout');
+Route::get('/sellerregister', [SellerAuthController::class, 'showForm']);
+Route::post('/sellerregister', [SellerAuthController::class, 'register']);
+Route::get('/seller/login', [SellerAuthController::class, 'showForm'])->name('seller_auth');
+Route::post('/seller/login', [SellerAuthController::class, 'login']);
+Route::post('/seller/logout', [SellerAuthController::class, 'logout'])->name('seller_logout');
 
 
 Route::get('/sellerProfile', function () {
-    return view('seller.sellerProfile'); });
+    return view('seller.sellerProfile');
+});
 
 
-
-Route::prefix('seller')->middleware('auth:seller')->group(function() {
+Route::middleware([AuthSeller::class])->group(function () {
     Route::get('/products/create', [SellerProductController::class, 'create'])->name('seller.products.create');
     Route::post('/products', [SellerProductController::class, 'store'])->name('seller.products.store');
 });
+
+
