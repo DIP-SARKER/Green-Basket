@@ -4,6 +4,7 @@ use App\Http\Controllers\CustomerAuthController;
 use App\Http\Controllers\SellerAuthController;
 use App\Http\Middleware\AuthSeller;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Seller\ProductController as SellerProductController;
 
 
@@ -29,9 +30,7 @@ Route::get('/contact', function () {
     return view('consumer.contact');
 })->name('contact');
 
-Route::get('/shop', function () {
-    return view('consumer.shop.shop');
-})->name('shop');
+Route::get('/shop',[ProductController::class,'index'])->name('shop');
 
 Route::get('/shop/vegetableShop', function () {
     return view('consumer.shop.vegetableShop');
@@ -170,5 +169,6 @@ Route::middleware([AuthSeller::class])->group(function () {
     Route::get('/products/create', [SellerProductController::class, 'create'])->name('seller.products.create');
     Route::post('/products', [SellerProductController::class, 'store'])->name('seller.products.store');
 });
+
 
 

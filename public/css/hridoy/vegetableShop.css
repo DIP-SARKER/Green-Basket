@@ -1,8 +1,8 @@
 /* vegetables.css */
 /* Hero Banner */
 .hero-banner {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                url('https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
     background-size: cover;
     background-position: center;
     color: var(--white);
@@ -34,7 +34,7 @@
 }
 
 .badge {
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(255, 255, 255, 0.2);
     padding: 0.75rem 1.5rem;
     border-radius: 50px;
     display: flex;
@@ -108,6 +108,8 @@
     font-weight: 600;
 }
 
+
+
 .add-to-cart {
     background-color: var(--primary);
     color: white;
@@ -141,29 +143,34 @@
     transition: all 0.2s;
 }
 
-.filter-btn.active, .filter-btn:hover {
+.filter-btn.active,
+.filter-btn:hover {
     background: var(--primary);
     color: white;
 }
+
+
+
+
 
 /* Responsive */
 @media (max-width: 768px) {
     .hero-banner {
         padding: 3rem 1rem;
     }
-    
+
     .hero-banner h1 {
         font-size: 2rem;
     }
-    
+
     .hero-banner p {
         font-size: 1rem;
     }
-    
+
     .trust-badges {
         gap: 1rem;
     }
-    
+
     .badge {
         padding: 0.5rem 1rem;
         font-size: 0.8rem;
@@ -175,12 +182,13 @@
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
     }
-    
+
     .product-image {
         height: 150px;
     }
-    
+
     .product-info {
         padding: 1rem;
     }
+
 }

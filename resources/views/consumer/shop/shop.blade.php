@@ -2,6 +2,11 @@
 @push('style')
 <title>Shop | Green Basket</title>
 <link rel="stylesheet" href="{{ asset('css/hridoy/shop.css') }}">
+<style>
+    nav svg{
+        display: none;
+    }
+</style>
 @endpush
 
 @section('main-content')
@@ -52,165 +57,30 @@
         </section>
 
         <!-- Featured Products -->
-        <section class="section">
-            <h2 class="section-title">Fresh From Our Farms</h2>
-            <div class="products-grid">
-                <!-- Product 1 -->
+        <!-- Products Grid -->
+        <div class="products-grid">
+            @forelse ($products as $product)
                 <div class="product-card">
                     <div class="product-image"
-                        style="background-image: url('https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')">
+                        style="background-image: url('{{ $product->image_url ?? asset('default-fruit.jpg') }}');">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-title">Organic Apples</h3>
-                        <p class="product-seller">Sunny Valley Orchard</p>
-                        <p class="product-price">$3.99/lb</p>
-                        <button class="add-to-cart">Add to Basket</button>
+                        <h3 class="product-title">{{ $product->name }}</h3>
+                        <p class="product-farmer">{{ $product->seller->name ?? 'Local Farmer' }}</p>
+                        <p class="product-price">৳{{ $product->price }}</p>
+                        <div class="product-meta">
+                            <span class="product-organic">Fresh & Local</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Product 2 -->
-                <div class="product-card">
-                    <div class="product-image"
-                        style="background-image: url('https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Heirloom Tomatoes</h3>
-                        <p class="product-seller">Green Thumb Farm</p>
-                        <p class="product-price">$4.50/lb</p>
-                        <button class="add-to-cart">Add to Basket</button>
-                    </div>
-                </div>
-
-                <!-- Product 3 -->
-                <div class="product-card">
-                    <div class="product-image"
-                        style="background-image: url('https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Grass-Fed Ribeye</h3>
-                        <p class="product-seller">Pasture Prime Ranch</p>
-                        <p class="product-price">$18.99/lb</p>
-                        <button class="add-to-cart">Add to Basket</button>
-                    </div>
-                </div>
-
-                <!-- Product 4 -->
-                <div class="product-card">
-                    <div class="product-image"
-                        style="background-image: url('https://images.unsplash.com/photo-1550258987-190a2d41a8ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Organic Strawberries</h3>
-                        <p class="product-seller">Berry Best Farms</p>
-                        <p class="product-price">$5.99/lb</p>
-                        <button class="add-to-cart">Add to Basket</button>
-                    </div>
-                </div>
-
-                <!-- Product 5 -->
-                <div class="product-card">
-                    <div class="product-image"
-                        style="background-image: url('https://images.unsplash.com/photo-1518977956812-cd3dbadaaf31?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Rainbow Carrots</h3>
-                        <p class="product-seller">Roots & Shoots Farm</p>
-                        <p class="product-price">$2.99/bunch</p>
-                        <button class="add-to-cart">Add to Basket</button>
-                    </div>
-                </div>
-
-                <!-- Product 6 -->
-                <div class="product-card">
-                    <div class="product-image"
-                        style="background-image: url('https://images.unsplash.com/photo-1603048719539-4cf0b6b51f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Free-Range Chicken</h3>
-                        <p class="product-seller">Clover Field Poultry</p>
-                        <p class="product-price">$8.99/lb</p>
-                        <button class="add-to-cart">Add to Basket</button>
-                    </div>
-                </div>
-
-                <!-- Product 7 -->
-                <div class="product-card">
-                    <div class="product-image"
-                        style="background-image: url('https://images.unsplash.com/photo-1603363891890-5b5d8f8c78cf?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Sweet Corn</h3>
-                        <p class="product-seller">Golden Harvest Farm</p>
-                        <p class="product-price">$2.99/ea</p>
-                        <button class="add-to-cart">Add to Basket</button>
-                    </div>
-                </div>
-
-                <!-- Product 8 -->
-                <div class="product-card">
-                    <div class="product-image"
-                        style="background-image: url('https://images.unsplash.com/photo-1599058917214-51cfa2f4cc9b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Farm Fresh Eggs</h3>
-                        <p class="product-seller">Sunny Side Farm</p>
-                        <p class="product-price">$3.50/dozen</p>
-                        <button class="add-to-cart">Add to Basket</button>
-                    </div>
-                </div>
-
-                <!-- Product 9 -->
-                <div class="product-card">
-                    <div class="product-image"
-                        style="background-image: url('https://images.unsplash.com/photo-1598565302691-3a58641d7e6d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Local Honey</h3>
-                        <p class="product-seller">Bee Happy Apiary</p>
-                        <p class="product-price">$10.00/jar</p>
-                        <button class="add-to-cart">Add to Basket</button>
-                    </div>
-                </div>
-
-                <!-- Product 10 -->
-                <div class="product-card">
-                    <div class="product-image"
-                        style="background-image: url('https://images.unsplash.com/photo-1595433707802-0a020735f225?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Seasonal Pumpkin</h3>
-                        <p class="product-seller">Autumn Farms</p>
-                        <p class="product-price">$1.99/lb</p>
-                        <button class="add-to-cart">Add to Basket</button>
-                    </div>
-                </div>
-
-                <!-- Product 11 -->
-                <div class="product-card">
-                    <div class="product-image"
-                        style="background-image: url('https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Organic Avocados</h3>
-                        <p class="product-seller">Green Earth Orchards</p>
-                        <p class="product-price">$1.50/each</p>
-                        <button class="add-to-cart">Add to Basket</button>
-                    </div>
-                </div>
-
-                <!-- Product 12 -->
-                <div class="product-card">
-                    <div class="product-image"
-                        style="background-image: url('https://images.unsplash.com/photo-1615031304569-18fac89039f7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Heritage Pork Chops</h3>
-                        <p class="product-seller">Old Country Butchers</p>
-                        <p class="product-price">$7.99/lb</p>
-                        <button class="add-to-cart">Add to Basket</button>
-                    </div>
-                </div>
-        </section>
+            @empty
+                <p>No fruits available at the moment.</p>
+            @endforelse
+        </div>
+        <div class="pagination-wrapper" >
+            {{ $products->links() }}
+        </div>
 
         <!-- Featured Sellers -->
         <section class="section">

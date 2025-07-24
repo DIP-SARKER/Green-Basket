@@ -8,7 +8,7 @@ class Product extends Model
 {
     //
     protected $fillable = [
-        'seller_id',    // ✅ Add this
+        'seller_id',    
         'category_id',
         'name',
         'description',
@@ -17,6 +17,14 @@ class Product extends Model
         'image_url',
         'status',
     ];
+
+    public function seller(){
+        return $this->belongsTo(Seller::class);
+    }
+
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
 
 
 }
