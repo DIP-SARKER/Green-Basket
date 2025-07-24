@@ -13,7 +13,7 @@
                 <h1>Farm fresh, delivered simple</h1>
                 <p>Straight from local farmers to your table. No middlemen, just the freshest vegetables, dairy, and
                     meat at fair prices.</p>
-                <a href="#" class="cta-button">Shop Seasonal Produce</a>
+                <a href="{{ route('shop') }}" class="cta-button">Shop Seasonal Produce</a>
             </div>
         </div>
     </section>
@@ -36,7 +36,7 @@
                     <div class="category-info">
                         <h3>Seasonal Vegetables</h3>
                         <p>Harvested at peak freshness, delivered within 24 hours</p>
-                        <a href="{{ route('vegetableShop') }}" class="cta-button"
+                        <a href="{{ route('shop.category', ['id' => 1]) }}" class="cta-button"
                             style="display: inline-block; padding: 0.5rem 1.25rem; font-size: 0.9rem;">Browse</a>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                     <div class="category-info">
                         <h3>Fresh Fruits</h3>
                         <p>Fresh fruit, free from formalin and carbide.</p>
-                        <a href="{{ route('fruitShop') }}" class="cta-button"
+                        <a href="{{ route('shop.category', ['id' => 2]) }}" class="cta-button"
                             style="display: inline-block; padding: 0.5rem 1.25rem; font-size: 0.9rem;">Browse</a>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
                     <div class="category-info">
                         <h3>Ethical Meat</h3>
                         <p>Humanely raised, pasture-fed beef, poultry, and pork</p>
-                        <a href="{{ route('meatShop') }}" class="cta-button"
+                        <a href="{{ route('shop.category', ['id' => 3]) }}" class="cta-button"
                             style="display: inline-block; padding: 0.5rem 1.25rem; font-size: 0.9rem;">Browse</a>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
                     <div class="category-info">
                         <h3>Freshwater Fish</h3>
                         <p>Locally sourced from clean rivers and ponds, free from chemicals</p>
-                        <a href="{{ route('fishShop') }}" class="cta-button"
+                        <a href="{{ route('shop.category', ['id' => 4]) }}" class="cta-button"
                             style="display: inline-block; padding: 0.5rem 1.25rem; font-size: 0.9rem;">Browse</a>
                     </div>
                 </div>
@@ -93,7 +93,7 @@
                     <div class="category-info">
                         <h3>Bakery Delights</h3>
                         <p>Artisan breads, wholesome loaves, and flaky pastries baked fresh daily</p>
-                        <a href="{{ route('bakeryShop') }}" class="cta-button"
+                        <a href="{{ route('shop.category', ['id' => 8]) }}" class="cta-button"
                             style="display: inline-block; padding: 0.5rem 1.25rem; font-size: 0.9rem;">Browse</a>
                     </div>
                 </div>
@@ -108,7 +108,7 @@
                     <div class="category-info">
                         <h3>Farm Dairy</h3>
                         <p>Grass-fed milk, artisan cheeses, and fresh yogurt</p>
-                        <a href="{{ route('dairyShop') }}" class="cta-button"
+                        <a href="{{ route('shop.category', ['id' => 5]) }}" class="cta-button"
                             style="display: inline-block; padding: 0.5rem 1.25rem; font-size: 0.9rem;">Browse</a>
                     </div>
                 </div>

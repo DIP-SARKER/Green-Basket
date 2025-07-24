@@ -48,21 +48,9 @@
             <div class="footer-grid">
                 <div class="footer-column">
                     <h3>Green Basket</h3>
-                    <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-top: 1rem;">Farm fresh groceries,
+                    <p>Farm fresh groceries,
                         delivered simple.</p>
                 </div>
-
-                <div class="footer-column">
-                    <h3>Shop</h3>
-                    <ul>
-                        <li><a href="{{ route('vegetableShop') }}">Vegetables</a></li>
-                        <li><a href="{{ route('dairyShop') }}">Dairy</a></li>
-                        <li><a href="{{ route('meatShop') }}">Meat</a></li>
-                        <li><a href="{{ route('seasonal') }}">Seasonal</a></li>
-                        <li><a href="{{ route('shop') }}">All Products</a></li>
-                    </ul>
-                </div>
-
                 <div class="footer-column">
                     <h3>About</h3>
                     <ul>

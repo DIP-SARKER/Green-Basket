@@ -1,47 +1,47 @@
 /* shop.css */
-/* Category Banner */
+
 .category-banner {
-    margin-top: 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #f8f8f8;
+    border-radius: 8px;
 }
 
-.category-title {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    font-size: 1.25rem;
-    color: var(--primary-dark);
-}
-
-.category-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.category-filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
 }
 
+.filter-btn {
+    text-decoration: none;
+    border: 1px solid #28a745;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    background-color: #fff;
+    color: #28a745;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: #28a745;
+    color: #fff;
+}
+
 .category-card {
-    background-color: var(--primary-light);
-    border-radius: 0.5rem;
-    padding: 1.5rem;
     text-align: center;
-    color: darkslategray;
-    transition: all 0.3s;
-    cursor: pointer;
-}
-
-.category-card:hover {
-    background-color: var(--primary-dark);
-    transform: translateY(-5px);
-    color: var(--white);
-}
-
-.category-card i {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
 }
 
 .category-card h3 {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    margin: 0;
 }
+
 
 /* Products Section */
 .products-grid {

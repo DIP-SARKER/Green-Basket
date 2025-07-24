@@ -1,60 +1,40 @@
 @extends('index')
 @push('style')
-<title>Shop | Green Basket</title>
-<link rel="stylesheet" href="{{ asset('css/hridoy/shop.css') }}">
-<style>
-    nav svg{
-        display: none;
-    }
-</style>
+    <title>Shop | Green Basket</title>
+    <link rel="stylesheet" href="{{ asset('css/hridoy/shop.css') }}">
+    <style>
+        nav svg {
+            display: none;
+        }
+    </style>
 @endpush
 
 @section('main-content')
     <main class="container">
-        <!-- Category Banner -->
+        
+
+
+        <!-- Category Filter -->
         <section class="category-banner">
-            <h2 class="category-title">Shop by Category</h2>
-            <div class="category-grid">
-                <a href="{{ route("fruitShop") }}">
+            <div class="category-filter">
+                <a href="{{ route('shop') }}" class="filter-btn {{ !isset($category) ? 'active' : '' }}">
                     <div class="category-card">
-                        <h1>🍏</h1>
-                        <h3>Fresh Fruits</h3>
-                    </div>
-                </a>
-                <a href="{{ route("vegetableShop") }}">
-                    <div class="category-card">
-                        <h1>🥕</h1>
-                        <h3>Organic Vegetables</h3>
-                    </div>
-                </a>
-                <a href="{{ route('meatShop') }}">
-                    <div class="category-card">
-                        <h1>🍗</h1>
-                        <h3>Farm Meats</h3>
-                    </div>
-                </a>
-                <a href="{{ route('fishShop') }}">
-                    <div class="category-card">
-                        <h1>🐟</h1>
-                        <h3>Freshwater Fish</h3>
-                    </div>
-                </a>
-                <a href="{{ route('bakeryShop') }}">
-                    <div class="category-card">
-                        <h1>🥯</h1>
-                        <h3>Bakery Delights</h3>
-                    </div>
-                </a>
-                <a href="{{ route('dairyShop') }}">
-                    <div class="category-card">
-                        <h1>🥛</h1>
-                        <h3>Dairy </h3>
+                        <h3>All</h3>
                     </div>
                 </a>
 
+                @foreach ($categories as $cat)
+                    <a href="{{ route('shop.category', $cat->id) }}"
+                        class="filter-btn {{ (isset($category) && $category->id == $cat->id) ? 'active' : '' }}">
+                        <div class="category-card">
+                            <h3>{{ $cat->name }}</h3>
+                        </div>
 
+                    </a>
+                @endforeach
             </div>
         </section>
+
 
         <!-- Featured Products -->
         <!-- Products Grid -->
@@ -78,7 +58,7 @@
                 <p>No fruits available at the moment.</p>
             @endforelse
         </div>
-        <div class="pagination-wrapper" >
+        <div class="pagination-wrapper">
             {{ $products->links() }}
         </div>
 
