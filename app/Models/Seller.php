@@ -8,6 +8,6 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class Seller extends Authenticatable
 {
     //
-    protected $fillable = ['name', 'email', 'phone', 'address', 'password'];
+    protected $fillable = ['name', 'email', 'phone', 'address', 'password', 'products', 'status'];
     protected $hidden = ['password'];
 }

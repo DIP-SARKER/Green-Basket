@@ -156,6 +156,34 @@
     color: var(--text-light);
 }
 
+.action-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(46, 125, 50, 0.05);
+    color: var(--primary);
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+}
+
+.action-btn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.action-btn.delete {
+    background: rgba(244, 67, 54, 0.05);
+    color: var(--danger);
+}
+
+.action-btn.delete:hover {
+    background: var(--danger);
+    color: white;
+}
 /* Responsive */
 @media (max-width: 768px) {
     .sidebar {

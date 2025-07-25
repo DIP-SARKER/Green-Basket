@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Seller\ProductController as SellerProductController;
 use App\Http\Controllers\admin\ProductController as AdminProductController;
+use App\Http\Controllers\admin\SellerController as AdminSellerController;
 
 
 Route::get('/', function () {
@@ -95,11 +96,8 @@ Route::get('/admin', function () {
     return view('admin.login');
 })->name('admin-login');
 
-Route::get('/admin/dashboard', function () {
-    return view('admin.dashboard');
-})->name('admin-dashboard');
 
-Route::get('/admin/overview', function () {
+Route::get('/admin/dashboard', function () {
     return view('admin.overview');
 })->name('admin-overview');
 
@@ -109,6 +107,10 @@ Route::get('/admin/products', [AdminProductController::class, 'index'])->name('p
 Route::patch('/admin/products/{id}/toggle-activity', [AdminProductController::class, 'toggleActivity'])->name('products.toggleStatus');
 Route::delete('/admin/products/{id}/delete', [AdminProductController::class, 'delete'])->name('products.delete');
 
+Route::get('/admin/farmers', [AdminSellerController::class, 'index'])->name('sellers-management');
+Route::put('/admin/farmers/{id}/update', [AdminSellerController::class, 'update'])->name('sellers.update');
+Route::delete('/admin/farmers/{id}/delete', [AdminSellerController::class, 'delete'])->name('sellers.delete');
+
 
 
 
@@ -116,9 +118,6 @@ Route::get('/admin/orders', function () {
     return view('admin.orders_management');
 })->name('orders-management');
 
-Route::get('/admin/farmers', function () {
-    return view('admin.farmers_management');
-})->name('farmers-management');
 
 Route::get('/admin/customers', function () {
     return view('admin.customers_management');

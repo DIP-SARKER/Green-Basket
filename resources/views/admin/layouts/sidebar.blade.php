@@ -1,4 +1,7 @@
 <aside class="sidebar">
+    <div class="sidebar-header">
+        <h2>Green-Basket</h2>
+    </div>
     <ul class="nav-links">
         <li class="{{ request()->routeIs('admin-overview') ? 'active' : '' }}">
             <a href="{{ route('admin-overview') }}">
@@ -18,8 +21,8 @@
             </a>
         </li>
 
-        <li class="{{ request()->routeIs('farmers-management') ? 'active' : '' }}">
-            <a href="{{ route('farmers-management') }}">
+        <li class="{{ request()->routeIs('sellers-management') ? 'active' : '' }}">
+            <a href="{{ route('sellers-management') }}">
                 <i class="fas fa-tractor"></i> <span class="nav-text">Farmers</span>
             </a>
         </li>

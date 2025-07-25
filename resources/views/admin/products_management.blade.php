@@ -130,26 +130,35 @@
 
              // Action buttons event listeners
              document.querySelectorAll('.action-btn').forEach(button => {
-                 button.addEventListener('click', function() {
+                 button.addEventListener('click', function(event) {
                      const action = this.querySelector('i').className;
                      const row = this.closest('tr');
-                     const productName = row.querySelector('.product-name').textContent;
+                     const productName = row.querySelector('.product-name').textContent.trim();
                      const productStatus = row.dataset.status ===
-                         '1'; // Convert "1" or "0" to boolean
+                     '1'; // Convert "1" or "0" to boolean
 
                      if (action.includes('toggle')) {
                          if (productStatus) {
-                             alert(`Do you want to remove listing of the product: ${productName}?`);
+                             if (!confirm(
+                                     `Do you want to remove listing of the product: ${productName}?`
+                                     )) {
+                                 event.preventDefault(); // Prevent if user cancels
+                             }
                          } else {
-                             alert(`Do you want to list the product: ${productName}?`);
+                             if (!confirm(`Do you want to list the product: ${productName}?`)) {
+                                 event.preventDefault();
+                             }
                          }
                      } else if (action.includes('trash')) {
-                         if (confirm(`Are you sure you want to delete ${productName}?`)) {
+                         if (!confirm(`Are you sure you want to delete ${productName}?`)) {
+                             event.preventDefault();
+                         } else {
                              alert(`${productName} has been successfully deleted.`);
                          }
                      }
                  });
              });
+
 
          });
      </script>

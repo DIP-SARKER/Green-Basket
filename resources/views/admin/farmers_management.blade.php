@@ -11,7 +11,7 @@
          <div class="stat-card card-1">
              <div class="stat-info">
                  <h3>Total Farmers</h3>
-                 <div class="value">286</div>
+                 <div class="value">{{ $totalSellers }}</div>
                  <div class="trend up">
                      <i class="fas fa-arrow-up"></i> 12.5% from last month
                  </div>
@@ -24,7 +24,7 @@
          <div class="stat-card card-2">
              <div class="stat-info">
                  <h3>Active Farmers</h3>
-                 <div class="value">238</div>
+                 <div class="value">{{ $activeSellers }}</div>
                  <div class="trend up">
                      <i class="fas fa-arrow-up"></i> 7.2% from last month
                  </div>
@@ -37,7 +37,7 @@
          <div class="stat-card card-3">
              <div class="stat-info">
                  <h3>New Farmers</h3>
-                 <div class="value">32</div>
+                 <div class="value">{{ $newSellers }}</div>
                  <div class="trend up">
                      <i class="fas fa-arrow-up"></i> 18.9% from last month
                  </div>
@@ -50,7 +50,7 @@
          <div class="stat-card card-4">
              <div class="stat-info">
                  <h3>Avg. Products</h3>
-                 <div class="value">14</div>
+                 <div class="value">{{ $avgProducts }}</div>
                  <div class="trend up">
                      <i class="fas fa-arrow-up"></i> 2.4% from last quarter
                  </div>
@@ -130,188 +130,117 @@
              </div>
          </div>
 
-         <table class="farmers-table">
-             <thead>
-                 <tr>
-                     <th>Farmer ID</th>
-                     <th>Farmer Info</th>
-                     <th>Location</th>
-                     <th>Products</th>
-                     <th>Status</th>
-                     <th>Actions</th>
-                 </tr>
-             </thead>
-             <tbody>
-                 <tr>
-                     <td class="farmer-id">#FARM-4215</td>
-                     <td>
-                         <div class="farmer-info">
-                             <div class="farmer-avatar">
-                                 <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Rajesh Kumar">
-                             </div>
-                             <div>
-                                 <div class="farmer-name">Rajesh Kumar</div>
-                                 <div class="farmer-email">rajesh@example.com</div>
-                             </div>
-                         </div>
-                     </td>
-                     <td class="location"><i class="fas fa-map-marker-alt"></i> Punjab</td>
-                     <td class="products-count">24</td>
-                     <td><span class="status-badge status-active">Active</span></td>
-                     <td>
-                         <div class="actions">
-                             <button class="action-btn view"><i class="fas fa-eye"></i></button>
-                             <button class="action-btn"><i class="fas fa-edit"></i></button>
-                             <button class="action-btn deactivate"><i class="fas fa-ban"></i></button>
-                         </div>
-                     </td>
-                 </tr>
-                 <tr>
-                     <td class="farmer-id">#FARM-4214</td>
-                     <td>
-                         <div class="farmer-info">
-                             <div class="farmer-avatar">
-                                 <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Priya Sharma">
-                             </div>
-                             <div>
-                                 <div class="farmer-name">Priya Sharma</div>
-                                 <div class="farmer-email">priya@example.com</div>
-                             </div>
-                         </div>
-                     </td>
-                     <td class="location"><i class="fas fa-map-marker-alt"></i> Maharashtra</td>
-                     <td class="products-count">42</td>
-                     <td><span class="status-badge status-active">Active</span></td>
-                     <td>
-                         <div class="actions">
-                             <button class="action-btn view"><i class="fas fa-eye"></i></button>
-                             <button class="action-btn"><i class="fas fa-edit"></i></button>
-                             <button class="action-btn deactivate"><i class="fas fa-ban"></i></button>
-                         </div>
-                     </td>
-                 </tr>
-                 <tr>
-                     <td class="farmer-id">#FARM-4213</td>
-                     <td>
-                         <div class="farmer-info">
-                             <div class="farmer-avatar">
-                                 <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Amit Patel">
-                             </div>
-                             <div>
-                                 <div class="farmer-name">Amit Patel</div>
-                                 <div class="farmer-email">amit@example.com</div>
-                             </div>
-                         </div>
-                     </td>
-                     <td class="location"><i class="fas fa-map-marker-alt"></i> Gujarat</td>
-                     <td class="products-count">18</td>
-                     <td><span class="status-badge status-pending">Pending</span></td>
-                     <td>
-                         <div class="actions">
-                             <button class="action-btn view"><i class="fas fa-eye"></i></button>
-                             <button class="action-btn"><i class="fas fa-check"></i></button>
-                             <button class="action-btn deactivate"><i class="fas fa-times"></i></button>
-                         </div>
-                     </td>
-                 </tr>
-                 <tr>
-                     <td class="farmer-id">#FARM-4212</td>
-                     <td>
-                         <div class="farmer-info">
-                             <div class="farmer-avatar">
-                                 <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sunita Devi">
-                             </div>
-                             <div>
-                                 <div class="farmer-name">Sunita Devi</div>
-                                 <div class="farmer-email">sunita@example.com</div>
-                             </div>
-                         </div>
-                     </td>
-                     <td class="location"><i class="fas fa-map-marker-alt"></i> Bihar</td>
-                     <td class="products-count">7</td>
-                     <td><span class="status-badge status-inactive">Inactive</span></td>
-                     <td>
-                         <div class="actions">
-                             <button class="action-btn view"><i class="fas fa-eye"></i></button>
-                             <button class="action-btn"><i class="fas fa-edit"></i></button>
-                             <button class="action-btn"><i class="fas fa-power-off"></i></button>
-                         </div>
-                     </td>
-                 </tr>
-                 <tr>
-                     <td class="farmer-id">#FARM-4211</td>
-                     <td>
-                         <div class="farmer-info">
-                             <div class="farmer-avatar">
-                                 <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Vijay Singh">
-                             </div>
-                             <div>
-                                 <div class="farmer-name">Vijay Singh</div>
-                                 <div class="farmer-email">vijay@example.com</div>
-                             </div>
-                         </div>
-                     </td>
-                     <td class="location"><i class="fas fa-map-marker-alt"></i> Uttar Pradesh</td>
-                     <td class="products-count">35</td>
-                     <td><span class="status-badge status-active">Active</span></td>
-                     <td>
-                         <div class="actions">
-                             <button class="action-btn view"><i class="fas fa-eye"></i></button>
-                             <button class="action-btn"><i class="fas fa-edit"></i></button>
-                             <button class="action-btn deactivate"><i class="fas fa-ban"></i></button>
-                         </div>
-                     </td>
-                 </tr>
-                 <tr>
-                     <td class="farmer-id">#FARM-4210</td>
-                     <td>
-                         <div class="farmer-info">
-                             <div class="farmer-avatar">
-                                 <img src="https://randomuser.me/api/portraits/women/54.jpg" alt="Meena Reddy">
-                             </div>
-                             <div>
-                                 <div class="farmer-name">Meena Reddy</div>
-                                 <div class="farmer-email">meena@example.com</div>
-                             </div>
-                         </div>
-                     </td>
-                     <td class="location"><i class="fas fa-map-marker-alt"></i> Telangana</td>
-                     <td class="products-count">56</td>
-                     <td><span class="status-badge status-active">Active</span></td>
-                     <td>
-                         <div class="actions">
-                             <button class="action-btn view"><i class="fas fa-eye"></i></button>
-                             <button class="action-btn"><i class="fas fa-edit"></i></button>
-                             <button class="action-btn deactivate"><i class="fas fa-ban"></i></button>
-                         </div>
-                     </td>
-                 </tr>
-                 <tr>
-                     <td class="farmer-id">#FARM-4209</td>
-                     <td>
-                         <div class="farmer-info">
-                             <div class="farmer-avatar">
-                                 <img src="https://randomuser.me/api/portraits/men/37.jpg" alt="Sanjay Verma">
-                             </div>
-                             <div>
-                                 <div class="farmer-name">Sanjay Verma</div>
-                                 <div class="farmer-email">sanjay@example.com</div>
-                             </div>
-                         </div>
-                     </td>
-                     <td class="location"><i class="fas fa-map-marker-alt"></i> Haryana</td>
-                     <td class="products-count">12</td>
-                     <td><span class="status-badge status-pending">Pending</span></td>
-                     <td>
-                         <div class="actions">
-                             <button class="action-btn view"><i class="fas fa-eye"></i></button>
-                             <button class="action-btn"><i class="fas fa-check"></i></button>
-                             <button class="action-btn deactivate"><i class="fas fa-times"></i></button>
-                         </div>
-                     </td>
-                 </tr>
-             </tbody>
-         </table>
+         <div class="farmers-container">
+             <div class="table-wrapper">
+                 <table class="farmers-table">
+                     <thead>
+                         <tr>
+                             <th>Farmer ID</th>
+                             <th>Farmer Info</th>
+                             <th>Phone No</th>
+                             <th>Location</th>
+                             <th>Products</th>
+                             <th>Status</th>
+                             <th>Actions</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         @foreach ($sellers as $seller)
+                             <tr data-id="{{ $seller->id }}">
+                                 <td class="farmer-id">#Farmer-{{ str_pad($seller->id, 4, '0', STR_PAD_LEFT) }}</td>
+                                 <td>
+                                     <div class="farmer-info">
+                                         <div class="farmer-avatar">
+                                             <img src="https://randomuser.me/api/portraits/{{ $loop->index % 2 == 0 ? 'men' : 'women' }}/{{ 20 + $loop->index }}.jpg"
+                                                 alt="{{ $seller->name }}">
+                                         </div>
+                                         <div>
+                                             <div class="farmer-name">{{ $seller->name }}</div>
+                                             <div class="farmer-email">{{ $seller->email ?? 'N/A' }}</div>
+                                         </div>
+                                     </div>
+                                 </td>
+                                 <td class="phone">{{ $seller->phone }}</td>
+                                 <td class="location"><i class="fas fa-map-marker-alt"></i>
+                                     {{ $seller->address ?? 'Unknown' }}</td>
+                                 <td class="products-count">{{ $seller->products }}</td>
+                                 <td>
+                                     @if ($seller->status)
+                                         <span class="status-badge status-active">Active</span>
+                                     @else
+                                         <span class="status-badge status-inactive">Inactive</span>
+                                     @endif
+                                 </td>
+                                 <td>
+                                     <div class="actions">
+                                         <button class="action-btn edit-btn" title="Edit Farmer">
+                                             <i class="fas fa-edit"></i>
+                                         </button>
+
+                                         <form action="{{ route('sellers.delete', $seller->id) }}" method="POST"
+                                             style="display:inline;">
+                                             @csrf
+                                             @method('DELETE')
+                                             <button type="submit" class="action-btn delete" title="Delete Farmer">
+                                                 <i class="fas fa-trash"></i>
+                                             </button>
+                                         </form>
+                                     </div>
+                                 </td>
+                             </tr>
+                         @endforeach
+                     </tbody>
+                 </table>
+             </div>
+
+             <!-- ✅ Edit Form (Fixed) -->
+             <div class="form-wrapper" id="editFormWrapper" style="display: none;">
+                 <form action="" method="POST" id="editFarmerForm" class="edit-farmer-form">
+                     @csrf
+                     @method('PUT')
+
+                     <div class="form-group">
+                         <label>Name:</label>
+                         <input type="text" name="name" required>
+                     </div>
+
+                     <div class="form-group">
+                         <label>Email:</label>
+                         <input type="email" name="email">
+                     </div>
+
+                     <div class="form-group">
+                         <label>Phone:</label>
+                         <input type="text" name="phone" required>
+                     </div>
+
+                     <div class="form-group">
+                         <label>Address:</label>
+                         <input type="text" name="address">
+                     </div>
+
+                     <div class="form-group">
+                         <label>Products:</label>
+                         <input type="number" name="products" min="0" required>
+                     </div>
+
+                     <div class="form-group">
+                         <label>Status:</label>
+                         <select name="status" required>
+                             <option value="1">Active</option>
+                             <option value="0">Inactive</option>
+                         </select>
+                     </div>
+
+                     <input type="hidden" name="id" id="editSellerId">
+
+                     <div class="form-group">
+                         <button type="submit" class="btn btn-primary">Update Farmer</button>
+                         <button type="button" class="btn btn-outline" id="cancelEdit">Cancel</button>
+                     </div>
+                 </form>
+             </div>
+         </div>
 
          <div class="pagination">
              <div class="pagination-info">
@@ -332,72 +261,75 @@
  @push('script')
      <script>
          document.addEventListener('DOMContentLoaded', function() {
-             // Farmer search functionality
-             const searchInput = document.querySelector('.search-box input');
              const tableRows = document.querySelectorAll('.farmers-table tbody tr');
 
+             // Search functionality
+             const searchInput = document.querySelector('.search-box input');
              searchInput.addEventListener('input', function() {
-                 const searchTerm = this.value.toLowerCase();
-
+                 const term = this.value.toLowerCase();
                  tableRows.forEach(row => {
-                     const farmerId = row.querySelector('.farmer-id').textContent.toLowerCase();
-                     const farmerName = row.querySelector('.farmer-name').textContent.toLowerCase();
-
-                     if (farmerId.includes(searchTerm) || farmerName.includes(searchTerm)) {
-                         row.style.display = '';
-                     } else {
-                         row.style.display = 'none';
-                     }
+                     const id = row.querySelector('.farmer-id').textContent.toLowerCase();
+                     const name = row.querySelector('.farmer-name').textContent.toLowerCase();
+                     row.style.display = id.includes(term) || name.includes(term) ? '' : 'none';
                  });
              });
 
-             // Action buttons functionality
+             // Confirm toggle & delete
              document.querySelectorAll('.action-btn').forEach(button => {
+                 button.addEventListener('click', function(e) {
+                     const action = this.querySelector('i').className;
+                     const row = this.closest('tr');
+                     const farmerName = row.querySelector('.farmer-name').textContent.trim();
+                     if (action.includes('trash')) {
+                         if (!confirm(`Are you sure you want to delete farmer: ${farmerName}?`)) {
+                             e.preventDefault();
+                         }
+                     }
+                 });
+             });
+
+             // ✅ Edit button functionality
+             document.querySelectorAll('.edit-btn').forEach(button => {
                  button.addEventListener('click', function() {
-                     const farmerId = this.closest('tr').querySelector('.farmer-id').textContent;
-                     const actionIcon = this.querySelector('i').className;
+                     const row = this.closest('tr');
+                     const id = row.dataset.id;
+                     const farmerName = row.querySelector('.farmer-name').textContent.trim();
 
-                     if (actionIcon.includes('eye')) {
-                         alert(`View farmer details for: ${farmerId}`);
-                     } else if (actionIcon.includes('edit')) {
-                         alert(`Edit farmer profile for: ${farmerId}`);
-                     } else if (actionIcon.includes('ban')) {
-                         if (confirm(`Deactivate farmer account: ${farmerId}?`)) {
-                             alert(`Farmer ${farmerId} deactivated`);
-                         }
-                     } else if (actionIcon.includes('check')) {
-                         if (confirm(`Approve farmer account: ${farmerId}?`)) {
-                             alert(`Farmer ${farmerId} approved`);
-                         }
-                     } else if (actionIcon.includes('times')) {
-                         if (confirm(`Reject farmer application: ${farmerId}?`)) {
-                             alert(`Farmer application ${farmerId} rejected`);
-                         }
-                     } else if (actionIcon.includes('power-off')) {
-                         if (confirm(`Activate farmer account: ${farmerId}?`)) {
-                             alert(`Farmer ${farmerId} activated`);
-                         }
+                     // ✅ Confirmation before editing
+                     if (!confirm(`Do you want to edit farmer: ${farmerName}?`)) {
+                         return; // Stop if user cancels
                      }
+
+                     // ✅ Populate form
+                     const form = document.getElementById('editFarmerForm');
+                     form.name.value = row.querySelector('.farmer-name').textContent.trim();
+                     form.email.value = row.querySelector('.farmer-email').textContent.trim() !==
+                         'N/A' ?
+                         row.querySelector('.farmer-email').textContent.trim() :
+                         '';
+                     form.phone.value = row.querySelector('.phone').textContent.trim();
+                     form.address.value = row.querySelector('.location').textContent.replace(
+                         /^📍\s*/, '').trim();
+                     form.products.value = row.querySelector('.products-count').textContent.trim();
+                     form.status.value = row.querySelector('.status-badge').classList.contains(
+                             'status-active') ?
+                         '1' :
+                         '0';
+
+                     document.getElementById('editSellerId').value = id;
+
+
+                     form.action = `{{ route('sellers.update', ':id') }}`.replace(':id', id);
+
+
+                     document.getElementById('editFormWrapper').style.display = 'block';
                  });
              });
 
-             // Status filter functionality
-             const statusFilter = document.querySelector('select.filter-select');
-             statusFilter.addEventListener('change', function() {
-                 const status = this.value;
-                 tableRows.forEach(row => {
-                     const rowStatus = row.querySelector('.status-badge').className.includes(status);
-                     if (!status || rowStatus) {
-                         row.style.display = '';
-                     } else {
-                         row.style.display = 'none';
-                     }
-                 });
-             });
 
-             // Add New Farmer button
-             document.querySelector('.btn-earth').addEventListener('click', function() {
-                 alert('Opening new farmer registration form...');
+             // Cancel Edit
+             document.getElementById('cancelEdit').addEventListener('click', () => {
+                 document.getElementById('editFormWrapper').style.display = 'none';
              });
          });
      </script>

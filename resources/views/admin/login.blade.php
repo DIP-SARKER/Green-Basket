@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,183 +32,267 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            padding: 1rem; /* p-4 */
+            padding: 1rem;
+            /* p-4 */
             margin: 0;
             box-sizing: border-box;
         }
 
         .login-container {
             background-color: var(--white);
-            border-radius: 0.75rem; /* rounded-xl */
-            box-shadow: var(--shadow); /* shadow-custom */
+            border-radius: 0.75rem;
+            /* rounded-xl */
+            box-shadow: var(--shadow);
+            /* shadow-custom */
             display: flex;
-            flex-direction: column; /* flex-col */
+            flex-direction: column;
+            /* flex-col */
             width: 100%;
-            max-width: 64rem; /* max-w-4xl */
+            max-width: 64rem;
+            /* max-w-4xl */
             overflow: hidden;
         }
 
         /* Left Section (Image/Illustration) */
         .left-section {
-            display: none; /* hidden */
-            background-color: var(--primary); /* primary-bg */
-            align-items: center; /* items-center */
-            justify-content: center; /* justify-center */
-            padding: 2rem; /* p-8 */
-            text-align: center; /* text-center */
+            display: none;
+            /* hidden */
+            background-color: var(--primary);
+            /* primary-bg */
+            align-items: center;
+            /* items-center */
+            justify-content: center;
+            /* justify-center */
+            padding: 2rem;
+            /* p-8 */
+            text-align: center;
+            /* text-center */
         }
 
         .left-section h1 {
-            color: var(--white); /* white-color */
-            font-size: 2.25rem; /* text-4xl */
-            font-weight: 700; /* font-bold */
-            margin-bottom: 1rem; /* mb-4 */
+            color: var(--white);
+            /* white-color */
+            font-size: 2.25rem;
+            /* text-4xl */
+            font-weight: 700;
+            /* font-bold */
+            margin-bottom: 1rem;
+            /* mb-4 */
         }
 
         .left-section p {
-            color: rgba(255, 255, 255, 0.8); /* text-white-color text-opacity-80 */
-            font-size: 1.125rem; /* text-lg */
+            color: rgba(255, 255, 255, 0.8);
+            /* text-white-color text-opacity-80 */
+            font-size: 1.125rem;
+            /* text-lg */
         }
 
         .left-section i {
-            font-size:10rem; color: var(--primary-light); margin-top:2rem;
+            font-size: 10rem;
+            color: var(--primary-light);
+            margin-top: 2rem;
         }
 
         /* Right Section (Login Form) */
         .right-section {
-            width: 100%; /* w-full */
-            padding: 2rem; /* p-8 */
+            width: 100%;
+            /* w-full */
+            padding: 2rem;
+            /* p-8 */
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
         .right-section h2 {
-            font-size: 1.875rem; /* text-3xl */
-            font-weight: 700; /* font-bold */
-            text-align: center; /* text-center */
-            color: var(--primary); /* primary-text */
-            margin-bottom: 2rem; /* mb-8 */
+            font-size: 1.875rem;
+            /* text-3xl */
+            font-weight: 700;
+            /* font-bold */
+            text-align: center;
+            /* text-center */
+            color: var(--primary);
+            /* primary-text */
+            margin-bottom: 2rem;
+            /* mb-8 */
         }
 
         .form-group {
-            margin-bottom: 1.5rem; /* space-y-6 equivalent for direct children */
+            margin-bottom: 1.5rem;
+            /* space-y-6 equivalent for direct children */
         }
 
         .form-group label {
-            display: block; /* block */
-            font-size: 0.875rem; /* text-sm */
-            font-weight: 500; /* font-medium */
-            color: var(--text); /* text-text-color */
-            margin-bottom: 0.5rem; /* mb-2 */
+            display: block;
+            /* block */
+            font-size: 0.875rem;
+            /* text-sm */
+            font-weight: 500;
+            /* font-medium */
+            color: var(--text);
+            /* text-text-color */
+            margin-bottom: 0.5rem;
+            /* mb-2 */
         }
 
         .input-field {
-            width: 100%; /* w-full */
-            padding: 0.75rem 1rem; /* px-4 py-3 */
-            border-radius: 0.5rem; /* rounded-lg */
-            border: 1px solid var(--border); /* input-field border */
-            color: var(--text); /* input-field color */
-            transition: border-color 0.2s ease, box-shadow 0.2s ease; /* transition duration-200 */
+            width: 100%;
+            /* w-full */
+            padding: 0.75rem 1rem;
+            /* px-4 py-3 */
+            border-radius: 0.5rem;
+            /* rounded-lg */
+            border: 1px solid var(--border);
+            /* input-field border */
+            color: var(--text);
+            /* input-field color */
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            /* transition duration-200 */
         }
 
         .input-field:focus {
-            border-color: var(--primary); /* focus:border-primary */
-            outline: none; /* focus:outline-none */
-            box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.2); /* focus:ring-2 focus:ring-primary-light focus:ring-opacity-50 */
+            border-color: var(--primary);
+            /* focus:border-primary */
+            outline: none;
+            /* focus:outline-none */
+            box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.2);
+            /* focus:ring-2 focus:ring-primary-light focus:ring-opacity-50 */
         }
 
         .form-options {
-            display: flex; /* flex */
-            align-items: center; /* items-center */
-            justify-content: space-between; /* justify-between */
-            margin-bottom: 1.5rem; /* space-y-6 equivalent */
+            display: flex;
+            /* flex */
+            align-items: center;
+            /* items-center */
+            justify-content: space-between;
+            /* justify-between */
+            margin-bottom: 1.5rem;
+            /* space-y-6 equivalent */
         }
 
         .remember-me {
-            display: flex; /* flex */
-            align-items: center; /* items-center */
+            display: flex;
+            /* flex */
+            align-items: center;
+            /* items-center */
         }
 
         .remember-me input[type="checkbox"] {
-            height: 1rem; /* h-4 */
-            width: 1rem; /* w-4 */
-            color: var(--primary); /* text-primary */
-            border-radius: 0.25rem; /* rounded */
-            border: 1px solid var(--border); /* border-border */
+            height: 1rem;
+            /* h-4 */
+            width: 1rem;
+            /* w-4 */
+            color: var(--primary);
+            /* text-primary */
+            border-radius: 0.25rem;
+            /* rounded */
+            border: 1px solid var(--border);
+            /* border-border */
             outline: none;
-            accent-color: var(--primary); /* For better browser compatibility */
+            accent-color: var(--primary);
+            /* For better browser compatibility */
         }
 
         .remember-me label {
-            margin-left: 0.5rem; /* ml-2 */
-            display: block; /* block */
-            font-size: 0.875rem; /* text-sm */
-            color: var(--text-light); /* text-text-light-color */
+            margin-left: 0.5rem;
+            /* ml-2 */
+            display: block;
+            /* block */
+            font-size: 0.875rem;
+            /* text-sm */
+            color: var(--text-light);
+            /* text-text-light-color */
         }
 
         .forgot-password-link {
-            font-size: 0.875rem; /* text-sm */
-            color: var(--primary); /* primary-text */
+            font-size: 0.875rem;
+            /* text-sm */
+            color: var(--primary);
+            /* primary-text */
             text-decoration: none;
         }
 
         .forgot-password-link:hover {
-            text-decoration: underline; /* hover:underline */
+            text-decoration: underline;
+            /* hover:underline */
         }
 
         .btn-primary {
-            width: 100%; /* w-full */
-            padding: 0.75rem 1rem; /* py-3 px-4 */
-            border-radius: 0.5rem; /* rounded-lg */
-            font-weight: 600; /* font-semibold */
-            background-color: var(--primary); /* btn-primary background */
-            color: var(--white); /* btn-primary color */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
-            transition: background-color 0.3s ease, box-shadow 0.3s ease; /* transition duration-300 ease-in-out */
+            width: 100%;
+            /* w-full */
+            padding: 0.75rem 1rem;
+            /* py-3 px-4 */
+            border-radius: 0.5rem;
+            /* rounded-lg */
+            font-weight: 600;
+            /* font-semibold */
+            background-color: var(--primary);
+            /* btn-primary background */
+            color: var(--white);
+            /* btn-primary color */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* shadow-md */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            /* transition duration-300 ease-in-out */
             border: none;
             cursor: pointer;
         }
 
         .btn-primary:hover {
-            background-color: var(--primary-dark); /* hover:bg-primary-dark */
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* hover:shadow-lg */
+            background-color: var(--primary-dark);
+            /* hover:bg-primary-dark */
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            /* hover:shadow-lg */
         }
 
         .support-text {
-            margin-top: 2rem; /* mt-8 */
-            text-align: center; /* text-center */
-            font-size: 0.875rem; /* text-sm */
-            color: var(--text-light); /* text-text-light-color */
+            margin-top: 2rem;
+            /* mt-8 */
+            text-align: center;
+            /* text-center */
+            font-size: 0.875rem;
+            /* text-sm */
+            color: var(--text-light);
+            /* text-text-light-color */
         }
 
         .support-text a {
-            color: var(--primary); /* primary-text */
+            color: var(--primary);
+            /* primary-text */
             text-decoration: none;
         }
 
         .support-text a:hover {
-            text-decoration: underline; /* hover:underline */
+            text-decoration: underline;
+            /* hover:underline */
         }
 
         /* Responsive adjustments */
-        @media (min-width: 768px) { /* md: breakpoint */
+        @media (min-width: 768px) {
+
+            /* md: breakpoint */
             .login-container {
-                flex-direction: row; /* md:flex-row */
+                flex-direction: row;
+                /* md:flex-row */
             }
 
             .left-section {
-                display: flex; /* md:flex */
-                width: 50%; /* md:w-1/2 */
+                display: flex;
+                /* md:flex */
+                width: 50%;
+                /* md:w-1/2 */
             }
 
             .right-section {
-                width: 50%; /* md:w-1/2 */
-                padding: 3rem; /* md:p-12 */
+                width: 50%;
+                /* md:w-1/2 */
+                padding: 3rem;
+                /* md:p-12 */
             }
         }
     </style>
 </head>
+
 <body>
     <div class="login-container">
         <!-- Left Section (Image/Illustration) -->
@@ -229,13 +314,13 @@
                 <div class="form-group">
                     <label for="email">Email Address</label>
                     <input type="email" id="email" name="email" placeholder="you@example.com"
-                           class="input-field" required>
+                        class="input-field" required>
                 </div>
 
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="••••••••"
-                           class="input-field" required>
+                    <input type="password" id="password" name="password" placeholder="••••••••" class="input-field"
+                        required>
                 </div>
 
                 <div class="form-options">
@@ -259,17 +344,19 @@
             </p>
         </div>
     </div>
-    
+
     <script>
         document.querySelector('.btn-primary').addEventListener('click', function(event) {
             event.preventDefault();
-            if (document.getElementById('email').value === 'admin' || document.getElementById('password').value === 'admin') {
-                window.location.href = "{{ route('admin-dashboard') }}";
-            }else {
+            if (document.getElementById('email').value === 'admin' || document.getElementById('password').value ===
+                'admin') {
+                window.location.href = "{{ route('admin-overview') }}";
+            } else {
                 alert('Invalid credentials! Please try again.');
             }
         });
     </script>
 
 </body>
+
 </html>
