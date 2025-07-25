@@ -11,7 +11,7 @@
 
 @section('main-content')
     <main class="container">
-        
+
 
 
         <!-- Category Filter -->
@@ -38,8 +38,10 @@
 
         <!-- Featured Products -->
         <!-- Products Grid -->
+
         <div class="products-grid">
             @forelse ($products as $product)
+                <a href="{{ route('product.show', $product->id) }}" class="product-card-link">
                 <div class="product-card">
                     <div class="product-image"
                         style="background-image: url('{{ $product->image_url ?? asset('default-fruit.jpg') }}');">
@@ -54,6 +56,7 @@
                         </div>
                     </div>
                 </div>
+                </a>
             @empty
                 <p>No fruits available at the moment.</p>
             @endforelse

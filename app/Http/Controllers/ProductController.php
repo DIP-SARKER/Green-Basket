@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\Review;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -31,4 +32,15 @@ class ProductController extends Controller
 
         return view('consumer.shop.shop', compact('products', 'categories', 'category'));
     }
+
+    public function show($id)
+    {
+        $product = Product::with('seller')->findOrFail($id);
+
+        // assuming you defined reviews() relation in Product model
+        $reviews = $product->reviews()->with('customer')->latest()->get();
+
+        return view('consumer.shop.show', compact('product', 'reviews'));
+    }
+
 }

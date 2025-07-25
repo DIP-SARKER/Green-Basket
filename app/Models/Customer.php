@@ -9,10 +9,18 @@ class Customer extends Authenticatable
 {
     //
     protected $fillable = [
-        "name","phone","password",
-    ] ;
+        "name",
+        "phone",
+        "password",
+    ];
 
     protected $hidden = [
         "password",
-    ] ;
+    ];
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
+
 }

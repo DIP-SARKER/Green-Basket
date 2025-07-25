@@ -10,6 +10,11 @@
 
     <link rel="stylesheet" href="{{ asset("css/hridoy/basic.css") }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{{ asset('favicon/favicon-96x96.png') }}" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="{{ asset('favicon/favicon.svg') }}" />
+    <link rel="shortcut icon" href="{{ asset('favicon/favicon.ico') }}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('favicon/apple-touch-icon.png') }}" />
+    <link rel="manifest" href="{{ asset('favicon/site.webmanifest') }}" />
 
 </head>
 
@@ -29,7 +34,13 @@
                     <a href="{{ route('seasonal') }}">Seasonal</a>
                     <a href="{{ route("recipes") }}">Recipes</a>
                     <a href="{{ route("about") }}">About</a>
-                    <a href="{{ route('customer_auth') }}">Login/SignUp</a>
+                    @if(Auth::guard('customer')->check())
+                        <a href="{{ route('cprofile') }}">{{ Auth::guard('customer')->user()->name }}</a>
+                    @else
+                        <a href="{{ route('customer_auth') }}">Login/SignUp</a>
+                    @endif
+
+
                     <div class="search-container">
                         <span class="search-icon">🔍</span>
                         <input type="text" class="search-input" placeholder="Search products...">
