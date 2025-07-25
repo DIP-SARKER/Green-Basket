@@ -18,6 +18,9 @@ class DatabaseSeeder extends Seeder
             SellerSeeder::class,
             CategorySeeder::class,
             ProductSeeder::class,
+            CustomerSeeder::class,
+            ReviewSeeder::class,
+
         ]);
 
         // User::factory()->create([
