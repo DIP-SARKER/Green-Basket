@@ -10,15 +10,14 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('sellers', function (Blueprint $table) {
+        Schema::create('admins', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 50);
-            $table->string('email', 100)->nullable();
-            $table->string('phone', 20)->unique();
-            $table->text('address')->nullable();
+            $table->string('name');
+            $table->string('email')->unique();
             $table->string('password');
-            $table->unsignedInteger('products')->default(0);
-            $table->boolean('status')->default(true); // true = active
+            $table->string('phone')->nullable();
+            $table->string('avatar')->nullable(); // profile image URL
+            // $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -28,7 +27,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('sellers');
+        Schema::dropIfExists('admins');
     }
 };
-?>

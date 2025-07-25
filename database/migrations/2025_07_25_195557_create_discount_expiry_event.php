@@ -10,13 +10,10 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('categories', function (Blueprint $table) {
-            $table->id();
-            $table->string('name', 50);
-            $table->text('description')->nullable();
-            $table->timestamps();
-        });
-
+        // Schema::create('discount_expiry_event', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->timestamps();
+        // });
     }
 
     /**
@@ -24,6 +21,8 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('categories');
+        // Schema::dropIfExists('discount_expiry_event');
     }
 };
+
+// 👉👉👉Need to create an event for daily updattation also neet to turn on "SET GLOBAL event_scheduler = ON;"
