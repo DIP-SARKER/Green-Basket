@@ -69,7 +69,7 @@
     color: var(--primary);
 }
 
-.nav-links a.active {
+.nav-links li.active a {
     background: rgba(46, 125, 50, 0.1);
     color: var(--primary);
     border-left: 4px solid var(--primary);

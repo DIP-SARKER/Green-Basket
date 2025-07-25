@@ -6,6 +6,7 @@ use App\Http\Middleware\AuthSeller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Seller\ProductController as SellerProductController;
+use App\Http\Controllers\admin\ProductController as AdminProductController;
 
 
 Route::get('/', function () {
@@ -30,8 +31,8 @@ Route::get('/contact', function () {
     return view('consumer.contact');
 })->name('contact');
 
-Route::get('/shop',[ProductController::class,'index'])->name('shop');
-Route::get('/shop/category/{id}',[ProductController::class,'category'])->name('shop.category');
+Route::get('/shop', [ProductController::class, 'index'])->name('shop');
+Route::get('/shop/category/{id}', [ProductController::class, 'category'])->name('shop.category');
 
 
 
@@ -98,9 +99,18 @@ Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
 })->name('admin-dashboard');
 
-Route::get('/admin/products', function () {
-    return view('admin.products_management');
-})->name('products-management');
+Route::get('/admin/overview', function () {
+    return view('admin.overview');
+})->name('admin-overview');
+
+
+
+Route::get('/admin/products', [AdminProductController::class, 'index'])->name('products-management');
+Route::patch('/admin/products/{id}/toggle-activity', [AdminProductController::class, 'toggleActivity'])->name('products.toggleStatus');
+Route::delete('/admin/products/{id}/delete', [AdminProductController::class, 'delete'])->name('products.delete');
+
+
+
 
 Route::get('/admin/orders', function () {
     return view('admin.orders_management');
