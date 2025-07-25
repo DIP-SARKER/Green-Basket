@@ -8,7 +8,7 @@ class Product extends Model
 {
     //
     protected $fillable = [
-        'seller_id',    
+        'seller_id',
         'category_id',
         'name',
         'description',
@@ -18,13 +18,21 @@ class Product extends Model
         'status',
     ];
 
-    public function seller(){
+    public function seller()
+    {
         return $this->belongsTo(Seller::class);
     }
 
-    public function category(){
+    public function category()
+    {
         return $this->belongsTo(Category::class);
     }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
+
 
 
 }

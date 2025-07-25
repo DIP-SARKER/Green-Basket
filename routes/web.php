@@ -33,6 +33,7 @@ Route::get('/contact', function () {
 
 Route::get('/shop', [ProductController::class, 'index'])->name('shop');
 Route::get('/shop/category/{id}', [ProductController::class, 'category'])->name('shop.category');
+Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.show');
 
 
 
