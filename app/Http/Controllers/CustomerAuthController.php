@@ -33,7 +33,7 @@ class CustomerAuthController extends Controller
         Auth::guard('customer')->login($customer);
 
 
-        return redirect('/customerprofile')->with('name', $customer->name);
+        return redirect('/customer/profile')->with('name', $customer->name);
 
     }
 
@@ -48,7 +48,7 @@ class CustomerAuthController extends Controller
         if (Auth::guard('customer')->attempt($credential)) {
             $request->session()->regenerate();
             $customer = Auth::guard('customer')->user();
-            return redirect()->intended('/customerprofile')->with('name',$customer->name);
+            return redirect()->intended('/customer/profile')->with('name', $customer->name);
         }
 
         return back()->withErrors([
@@ -56,7 +56,15 @@ class CustomerAuthController extends Controller
         ]);
     }
 
-    public function logout(Request $request){
+    public function showProfile(Request $request)
+    {
+        $customer = Auth::guard('customer')->user();
+        return view('consumer.customerProfile', compact('customer'));
+    }
+
+
+    public function logout(Request $request)
+    {
         Auth::guard('customer')->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();

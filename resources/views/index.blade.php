@@ -34,7 +34,13 @@
                     <a href="{{ route('seasonal') }}">Seasonal</a>
                     <a href="{{ route("recipes") }}">Recipes</a>
                     <a href="{{ route("about") }}">About</a>
-                    <a href="{{ route('customer_auth') }}">Login/SignUp</a>
+                    @if(Auth::guard('customer')->check())
+                        <a href="{{ route('cprofile') }}">{{ Auth::guard('customer')->user()->name }}</a>
+                    @else
+                        <a href="{{ route('customer_auth') }}">Login/SignUp</a>
+                    @endif
+
+
                     <div class="search-container">
                         <span class="search-icon">🔍</span>
                         <input type="text" class="search-input" placeholder="Search products...">

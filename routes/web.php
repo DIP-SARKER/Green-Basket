@@ -20,11 +20,12 @@ Route::post('/register', [CustomerAuthController::class, 'register'])->name('reg
 Route::get('/customer/login', [CustomerAuthController::class, 'showForm'])->name('customer_auth');
 Route::post('/customer/login', [CustomerAuthController::class, 'login']);
 Route::post('/customer/logout', [CustomerAuthController::class, 'logout'])->name('customer_logout');
+Route::get('/customer/profile', [CustomerAuthController::class,'showProfile'])->name('cprofile');
 
 
-Route::get('/customerprofile', function () {
-    return view('consumer.customerProfile');
-})->name('cprofile');
+// Route::get('/customerprofile', function () {
+//     return view('consumer.customerProfile');
+// })->name('cprofile');
 
 
 Route::get('/contact', function () {
