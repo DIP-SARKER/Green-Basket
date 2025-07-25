@@ -38,6 +38,13 @@ class CustomerSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
+            [
+                'name'=> 'Hridoy',
+                'phone' => '01973395967',
+                'password'=> Hash::make('password'),
+                'created_at'=> now(),
+                'updated_at'=> now(),
+            ],
         ]);
     }
 }
