@@ -17,15 +17,16 @@
                 <p class="price">৳<span id="total-price">{{ $product->price }}</span> for <span id="item-count">1</span>
                     item(s)</p>
                 <input type="hidden" id="unit-price" value="{{ $product->price }}">
+                <p class="stock">Available: {{ $product->stock_quantity }} items in stock.</p>
 
                 <!-- Quantity Selector -->
-                <form action="#" method="POST">
+                <form action="{{ route('cart.add',$product->id) }}" method="POST">
                     @csrf
                     <label for="quantity">Quantity:</label>
-                    <input type="number" name="quantity" id="quantity" value="1" min="1">
-
+                    <input type="number" name="quantity" id="quantity" value="1" min="1" max="{{ $product->stock_quantity }}">
                     <button type="submit" class="add-to-cart-btn">Add to Cart</button>
                 </form>
+                
             </div>
         </section>
 

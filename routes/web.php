@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CustomerAuthController;
 use App\Http\Controllers\SellerAuthController;
+use App\Http\Middleware\AuthCustomer;
 use App\Http\Middleware\AuthSeller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
@@ -21,6 +23,12 @@ Route::get('/customer/login', [CustomerAuthController::class, 'showForm'])->name
 Route::post('/customer/login', [CustomerAuthController::class, 'login']);
 Route::post('/customer/logout', [CustomerAuthController::class, 'logout'])->name('customer_logout');
 Route::get('/customer/profile', [CustomerAuthController::class,'showProfile'])->name('cprofile');
+
+Route::middleware([AuthCustomer::class])->group(function () {
+    Route::get('/cart', [CartController::class, 'showCart'])->name('cart.index');
+    Route::post('/cart/add/{id}', [CartController::class, 'addToCart'])->name('cart.add');
+    Route::get('/cart/remove/{id}', [CartController::class, 'removeFromCart'])->name('cart.remove');
+});
 
 
 // Route::get('/customerprofile', function () {
