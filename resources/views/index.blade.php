@@ -26,7 +26,6 @@
                 <div class="menu-toggle" id="mobile-menu">
                     ☰
                 </div>
-
                 <a href="{{ route('home') }}" class="logo">green<span>basket</span></a>
                 <div class="nav-links">
                     <a href="{{ route('shop') }}">Shop</a>
@@ -39,14 +38,10 @@
                     @else
                         <a href="{{ route('customer_auth') }}">Login/SignUp</a>
                     @endif
-
-
                     <div class="search-container">
                         <span class="search-icon">🔍</span>
                         <input type="text" class="search-input" placeholder="Search products...">
                     </div>
-                    <a href="#" class="cta-button">Order Now</a>
-
                 </div>
             </nav>
         </div>

@@ -15,7 +15,7 @@ class ProductController extends Controller
             ->latest()
             ->paginate(12);
 
-        $categories = Category::all(); // ✅ fetch categories
+        $categories = Category::all(); 
 
         return view('consumer.shop.shop', compact('products', 'categories'));
     }
