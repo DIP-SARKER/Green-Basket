@@ -2,6 +2,9 @@
 
 # 🛒 GreenBasket
 
+![Logo](public/favicon/favicon.svg)
+
+
 **GreenBasket** is a modern **D2C (Direct-to-Consumer)** e-commerce platform built using **Laravel (PHP)** along with **HTML, CSS, and JavaScript**. It bridges the gap between **producers** and **consumers**, allowing sellers to advertise and sell their products directly—eliminating middlemen, increasing transparency, and ensuring fair pricing.
 
 ---
