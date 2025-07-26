@@ -42,20 +42,20 @@
         <div class="products-grid">
             @forelse ($products as $product)
                 <a href="{{ route('product.show', $product->id) }}" class="product-card-link">
-                <div class="product-card">
-                    <div class="product-image"
-                        style="background-image: url('{{ $product->image_url ?? asset('default-fruit.jpg') }}');">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">{{ $product->name }}</h3>
-                        <p class="product-farmer">{{ $product->seller->name ?? 'Local Farmer' }}</p>
-                        <p class="product-price">৳{{ $product->price }}</p>
-                        <div class="product-meta">
-                            <span class="product-organic">Fresh & Local</span>
-                            <button class="add-to-cart">Add to Cart</button>
+                    <div class="product-card">
+                        <div class="product-image"
+                            style="background-image: url('{{ $product->image_url ?? asset('default-fruit.jpg') }}');">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">{{ $product->name }}</h3>
+                            <p class="product-farmer">{{ $product->seller->name ?? 'Local Farmer' }}</p>
+                            <p class="product-price">৳{{ $product->price }}</p>
+                            <div class="product-meta">
+                                <span class="product-organic">Fresh & Local</span>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
                         </div>
                     </div>
-                </div>
                 </a>
             @empty
                 <p>No fruits available at the moment.</p>
