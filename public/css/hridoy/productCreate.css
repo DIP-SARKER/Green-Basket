@@ -1,0 +1,125 @@
+/* Container */
+.product-form-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: #f9f9fb;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Title */
+.form-title {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+/* Form Layout */
+.product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-size: 15px;
+  font-weight: 500;
+  color: #555;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  padding: 14px 18px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: #4a6bff;
+  box-shadow: 0 0 0 4px rgba(74, 107, 255, 0.1);
+  outline: none;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+/* Custom Select Dropdown Arrow */
+.form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 18px;
+}
+
+/* Submit Button */
+.submit-button {
+  background-color: #4a6bff;
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  align-self: flex-end;
+}
+
+.submit-button:hover {
+  background-color: #3a5bef;
+}
+
+/* Feedback Messages */
+.success-message {
+  background-color: #e0f7f1;
+  color: #2e7d32;
+  border-radius: 6px;
+  padding: 14px 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.error-message {
+  color: #d32f2f;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.error-list {
+  background-color: #fce4e4;
+  color: #c62828;
+  padding: 15px 20px;
+  border-radius: 8px;
+  list-style: none;
+  margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .product-form-container {
+    padding: 30px 20px;
+  }
+
+  .form-title {
+    font-size: 26px;
+  }
+}

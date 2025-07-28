@@ -162,7 +162,7 @@ Route::post('/seller/logout', [SellerAuthController::class, 'logout'])->name('se
 
 
 
-Route::get('/sellerProfile', [SellerAuthController::class,'showProfile'])->name('sellerProfile');
+Route::get('/seller/profile', [SellerAuthController::class,'showProfile'])->name('sellerProfile');
 Route::middleware([AuthSeller::class])->group(function () {
     Route::get('/products/create', [SellerProductController::class, 'create'])->name('seller.products.create');
     Route::post('/products', [SellerProductController::class, 'store'])->name('seller.products.store');
