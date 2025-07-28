@@ -1,69 +1,84 @@
 @extends('index')
+@push('style')
+<title>Add Product | GreenBasket</title>
+<link rel="stylesheet" href="{{ asset('css/hridoy/productCreate.css') }}">
+@endpush
 
 @section('main-content')
-    <h2>Add New Product</h2>
+    <div class="product-form-container">
+        <h2 class="form-title">Add New Product</h2>
 
-    @if(session('success'))
-        <p style="color: green;">{{ session('success') }}</p>
-    @endif
+        @if(session('success'))
+            <p class="success-message">{{ session('success') }}</p>
+        @endif
 
-    <form method="POST" action="{{ route('seller.products.store') }}" enctype="multipart/form-data">
-        @csrf
+        <form class="product-form" method="POST" action="{{ route('seller.products.store') }}" enctype="multipart/form-data">
+            @csrf
 
-        <label>Category:</label><br>
-        <select name="category_id" required>
-            <option value="">Select Category</option>
-            @foreach($categories as $category)
-                <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
-                    {{ $category->name }}
-                </option>
-            @endforeach
-        </select>
-        @error('category_id')
-            <p style="color: red;">{{ $message }}</p>
-        @enderror
-        <br>
+            <div class="form-group">
+                <label class="form-label">Category:</label>
+                <select class="form-select" name="category_id" required>
+                    <option value="">Select Category</option>
+                    @foreach($categories as $category)
+                        <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
+                            {{ $category->name }}
+                        </option>
+                    @endforeach
+                </select>
+                @error('category_id')
+                    <p class="error-message">{{ $message }}</p>
+                @enderror
+            </div>
 
-        <label>Name:</label><br>
-        <input type="text" name="name" value="{{ old('name') }}" required><br>
-        @error('name')
-            <p style="color: red;">{{ $message }}</p>
-        @enderror
+            <div class="form-group">
+                <label class="form-label">Name:</label>
+                <input class="form-input" type="text" name="name" value="{{ old('name') }}" required>
+                @error('name')
+                    <p class="error-message">{{ $message }}</p>
+                @enderror
+            </div>
 
-        <label>Description:</label><br>
-        <textarea name="description" required>{{ old('description') }}</textarea><br>
-        @error('description')
-            <p style="color: red;">{{ $message }}</p>
-        @enderror
+            <div class="form-group">
+                <label class="form-label">Description:</label>
+                <textarea class="form-textarea" name="description" required>{{ old('description') }}</textarea>
+                @error('description')
+                    <p class="error-message">{{ $message }}</p>
+                @enderror
+            </div>
 
-        <label>Price:</label><br>
-        <input type="number" name="price" value="{{ old('price') }}" step="0.01" required><br>
-        @error('price')
-            <p style="color: red;">{{ $message }}</p>
-        @enderror
+            <div class="form-group">
+                <label class="form-label">Price:</label>
+                <input class="form-input" type="number" name="price" value="{{ old('price') }}" step="0.01" required>
+                @error('price')
+                    <p class="error-message">{{ $message }}</p>
+                @enderror
+            </div>
 
-        <label>Stock Quantity:</label><br>
-        <input type="number" name="stock_quantity" value="{{ old('stock_quantity') }}" required><br>
-        @error('stock_quantity')
-            <p style="color: red;">{{ $message }}</p>
-        @enderror
+            <div class="form-group">
+                <label class="form-label">Stock Quantity:</label>
+                <input class="form-input" type="number" name="stock_quantity" value="{{ old('stock_quantity') }}" required>
+                @error('stock_quantity')
+                    <p class="error-message">{{ $message }}</p>
+                @enderror
+            </div>
 
-        <label>Product Image URL (optional):</label><br>
-        <input type="url" name="image_url" placeholder="https://example.com/image.jpg" value="{{ old('image') }}"><br>
+            <div class="form-group">
+                <label class="form-label">Product Image URL (optional):</label>
+                <input class="form-input" type="url" name="image_url" placeholder="https://example.com/image.jpg" value="{{ old('image') }}">
+                @error('image')
+                    <p class="error-message">{{ $message }}</p>
+                @enderror
+            </div>
 
-        @error('image')
-            <p style="color: red;">{{ $message }}</p>
-        @enderror
+            <button class="submit-button" type="submit">Add Product</button>
+        </form>
 
-        <button type="submit">Add Product</button>
-    </form>
-
-    {{-- Show message --}}
-    @if ($errors->any())
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    @endif
+        @if ($errors->any())
+            <ul class="error-list">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        @endif
+    </div>
 @endsection
