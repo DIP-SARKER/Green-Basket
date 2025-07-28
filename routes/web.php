@@ -163,9 +163,12 @@ Route::post('/seller/logout', [SellerAuthController::class, 'logout'])->name('se
 
 
 Route::get('/seller/profile', [SellerAuthController::class,'showProfile'])->name('sellerProfile');
-Route::middleware([AuthSeller::class])->group(function () {
-    Route::get('/products/create', [SellerProductController::class, 'create'])->name('seller.products.create');
-    Route::post('/products', [SellerProductController::class, 'store'])->name('seller.products.store');
+// Route::middleware([AuthSeller::class])->group(function () {
+//     Route::get('/products/create', [SellerProductController::class, 'create'])->name('seller.products.create');
+//     Route::post('/products', [SellerProductController::class, 'store'])->name('seller.products.store');
+// });
+Route::middleware(['auth:seller'])->prefix('seller')->name('seller.')->group(function () {
+    Route::resource('products',SellerProductController::class);
 });
 
 
