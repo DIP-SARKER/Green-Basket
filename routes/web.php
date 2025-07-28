@@ -161,11 +161,9 @@ Route::post('/seller/login', [SellerAuthController::class, 'login']);
 Route::post('/seller/logout', [SellerAuthController::class, 'logout'])->name('seller_logout');
 
 
-Route::get('/sellerProfile', function () {
-    return view('seller.sellerProfile');
-});
 
 
+Route::get('/sellerProfile', [SellerAuthController::class,'showProfile'])->name('sellerProfile');
 Route::middleware([AuthSeller::class])->group(function () {
     Route::get('/products/create', [SellerProductController::class, 'create'])->name('seller.products.create');
     Route::post('/products', [SellerProductController::class, 'store'])->name('seller.products.store');

@@ -10,4 +10,12 @@ class Seller extends Authenticatable
     //
     protected $fillable = ['name', 'email', 'phone', 'address', 'password'];
     protected $hidden = ['password'];
+
+    public function products(){
+        return $this->hasMany(Product::class);
+    }
+
+    public function reviews(){
+        return $this->hasMany(Review::class);
+    }
 }
