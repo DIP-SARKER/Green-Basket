@@ -53,10 +53,10 @@
                         <div class="product-name">{{ $product->name }}</div>
                         <div class="product-price">${{ number_format($product->price, 2) }}</div>
                         <div class="edit-delete-buttons">
-                            <a href="#">
+                            <a href="{{ route('seller.products.edit', $product->id) }}">
                                 <button class="edit-button">Edit</button>
                             </a>
-                            <form action="#" method="POST"
+                            <form action="{{ route('seller.products.destroy', $product->id) }}" method="POST"
                                 style="display:inline-block;">
                                 @csrf
                                 @method('DELETE')
