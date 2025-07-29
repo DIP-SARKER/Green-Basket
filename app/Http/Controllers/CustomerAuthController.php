@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Customer;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Controllers\OrderController;
+use App\Models\Order;
+use App\Models\Cart;
+use App\Http\Controllers\CartController;
 
 class CustomerAuthController extends Controller
 {
@@ -57,10 +61,17 @@ class CustomerAuthController extends Controller
     }
 
     public function showProfile(Request $request)
-    {
-        $customer = Auth::guard('customer')->user();
-        return view('consumer.customerProfile', compact('customer'));
-    }
+{
+    $customer = Auth::guard('customer')->user();
+    
+    $orders = $customer->orders()->orderBy('created_at', 'desc')->get();
+    $cartItems = $customer->cartItems()->with('product')->get();
+    $cartTotal = $cartItems->sum(function($item) {
+        return $item->product ? $item->product->price * $item->quantity : 0;
+    });
+    
+    return view('consumer.customerProfile', compact('customer', 'orders', 'cartItems', 'cartTotal'));
+}
 
 
     public function logout(Request $request)

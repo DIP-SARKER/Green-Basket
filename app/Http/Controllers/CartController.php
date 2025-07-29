@@ -88,7 +88,8 @@ class CartController extends Controller
         $cartItem->quantity = $quantity;
         $cartItem->save();
 
-        return redirect()->route('cart.index')->with('success', 'Cart updated successfully!');
+        return redirect()->back()->with('success', 'Cart updated successfully!');
+
     }
 
 
