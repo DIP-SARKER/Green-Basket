@@ -12,9 +12,9 @@ return new class extends Migration {
     {
         Schema::create('sellers', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->nullable();
-            $table->string('phone')->unique();
+            $table->string('name', 50);
+            $table->string('email', 100)->nullable();
+            $table->string('phone', 20)->unique();
             $table->text('address')->nullable();
             $table->string('password');
             $table->unsignedInteger('products')->default(0);

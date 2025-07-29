@@ -14,11 +14,23 @@
     --info: #2196f3;
     --earth: #795548;
 }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    display: flex;
+    min-height: 100vh;
+}
 /* Sidebar Styles */
 .sidebar {
     width: 250px;
-    background: var(--white);
+    background: var(--primary-light);
     box-shadow: var(--shadow);
     padding: 1.5rem 0;
     position: fixed;
@@ -29,20 +41,38 @@
 }
 
 .sidebar-header {
-    padding: 0 1.5rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     border-bottom: 1px solid var(--border);
+    padding: 2rem 0;
 }
 
-.sidebar-header h2 {
+.sidebar-header .logo {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    background-color: var(--bg);
+    border-radius: 50%;
+    padding: 0.5rem;
+    height: 40px;
+    width: 40px;
+    text-align: center;
     color: var(--primary);
-    font-size: 1.5rem;
+}
+.sidebar-header .logo i {
+    align-self: center;
+    font-size: 22px;
+}
+.sidebar-header .logo-text {
+    color: var(--bg);
+    font-size: 1.8rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
 }
-
-.sidebar-header h2 i {
-    color: var(--primary-light);
+.sidebar-header .logo-text span {
+    color: var(--primary-dark);
 }
 
 .nav-links {
@@ -65,14 +95,16 @@
 }
 
 .nav-links a:hover {
-    background: rgba(46, 125, 50, 0.05);
-    color: var(--primary);
+    background: rgba(46, 125, 50, 0.3);
+    color: var(--border);
+    border: 1px solid var(--border);
+    border-right: none;
 }
 
 .nav-links li.active a {
-    background: rgba(46, 125, 50, 0.1);
-    color: var(--primary);
-    border-left: 4px solid var(--primary);
+    background: rgba(46, 125, 50, 0.5);
+    color: var(--white);
+    border-left: 4px solid var(--white);
 }
 
 .nav-links a i {
@@ -92,7 +124,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem;
-    padding-bottom: 1rem;
+    padding: 1rem;
     border-bottom: 1px solid var(--border);
 }
 
@@ -183,6 +215,37 @@
 .action-btn.delete:hover {
     background: var(--danger);
     color: white;
+}
+
+.btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+.btn-outline:hover {
+    background: rgba(46, 125, 50, 0.05);
 }
 /* Responsive */
 @media (max-width: 768px) {

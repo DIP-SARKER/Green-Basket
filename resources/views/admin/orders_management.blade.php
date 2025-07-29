@@ -7,59 +7,6 @@
  @endpush
  @section('dashboard-content')
      <!-- Order Stats -->
-     <div class="stats-row">
-         <div class="stat-card card-1">
-             <div class="stat-info">
-                 <h3>Total Orders</h3>
-                 <div class="value">1,240</div>
-                 <div class="trend up">
-                     <i class="fas fa-arrow-up"></i> 8.3% from last month
-                 </div>
-             </div>
-             <div class="stat-icon">
-                 <i class="fas fa-box-open"></i>
-             </div>
-         </div>
-
-         <div class="stat-card card-2">
-             <div class="stat-info">
-                 <h3>Pending Orders</h3>
-                 <div class="value">134</div>
-                 <div class="trend down">
-                     <i class="fas fa-arrow-down"></i> 1.2% from last month
-                 </div>
-             </div>
-             <div class="stat-icon">
-                 <i class="fas fa-hourglass-half"></i>
-             </div>
-         </div>
-
-         <div class="stat-card card-3">
-             <div class="stat-info">
-                 <h3>Processing Orders</h3>
-                 <div class="value">87</div>
-                 <div class="trend up">
-                     <i class="fas fa-arrow-up"></i> 3.4% from last week
-                 </div>
-             </div>
-             <div class="stat-icon">
-                 <i class="fas fa-sync-alt"></i>
-             </div>
-         </div>
-
-         <div class="stat-card card-4">
-             <div class="stat-info">
-                 <h3>Cancelled Orders</h3>
-                 <div class="value">67</div>
-                 <div class="trend down">
-                     <i class="fas fa-arrow-down"></i> 0.8% from last month
-                 </div>
-             </div>
-             <div class="stat-icon">
-                 <i class="fas fa-times-circle"></i>
-             </div>
-         </div>
-     </div>
 
      <!-- Filters Panel -->
      <div class="filters-panel">

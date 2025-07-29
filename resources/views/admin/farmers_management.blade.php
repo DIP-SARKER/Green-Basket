@@ -6,60 +6,7 @@
      <h1>Farmers Management</h1>
  @endpush
  @section('dashboard-content')
-     <!-- Farmer Stats -->
-     <div class="stats-row">
-         <div class="stat-card card-1">
-             <div class="stat-info">
-                 <h3>Total Farmers</h3>
-                 <div class="value">{{ $totalSellers }}</div>
-                 <div class="trend up">
-                     <i class="fas fa-arrow-up"></i> 12.5% from last month
-                 </div>
-             </div>
-             <div class="stat-icon">
-                 <i class="fas fa-users"></i>
-             </div>
-         </div>
-
-         <div class="stat-card card-2">
-             <div class="stat-info">
-                 <h3>Active Farmers</h3>
-                 <div class="value">{{ $activeSellers }}</div>
-                 <div class="trend up">
-                     <i class="fas fa-arrow-up"></i> 7.2% from last month
-                 </div>
-             </div>
-             <div class="stat-icon">
-                 <i class="fas fa-user-check"></i>
-             </div>
-         </div>
-
-         <div class="stat-card card-3">
-             <div class="stat-info">
-                 <h3>New Farmers</h3>
-                 <div class="value">{{ $newSellers }}</div>
-                 <div class="trend up">
-                     <i class="fas fa-arrow-up"></i> 18.9% from last month
-                 </div>
-             </div>
-             <div class="stat-icon">
-                 <i class="fas fa-seedling"></i>
-             </div>
-         </div>
-
-         <div class="stat-card card-4">
-             <div class="stat-info">
-                 <h3>Avg. Products</h3>
-                 <div class="value">{{ $avgProducts }}</div>
-                 <div class="trend up">
-                     <i class="fas fa-arrow-up"></i> 2.4% from last quarter
-                 </div>
-             </div>
-             <div class="stat-icon">
-                 <i class="fas fa-apple-alt"></i>
-             </div>
-         </div>
-     </div>
+     
 
      <!-- Filters Panel -->
      <div class="filters-panel">

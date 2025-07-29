@@ -20,23 +20,8 @@ class SellerController extends Controller
     public function index()
     {
         $sellers = Seller::all();
-
-        $totalSellers = $sellers->count();
-
-        $activeSellers = $sellers->where('status', true)->count();
-
-        $newSellers = Seller::where('status', true)
-            ->where('created_at', '>=', Carbon::now()->subDays(30))
-            ->count();
-
-        $avgProducts = $sellers->avg('products');
-
         return view('admin.farmers_management', compact(
             'sellers',
-            'totalSellers',
-            'activeSellers',
-            'newSellers',
-            'avgProducts'
         ));
     }
 

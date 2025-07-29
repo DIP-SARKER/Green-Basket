@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Seller;
 use Illuminate\Support\Facades\Hash;
 
-class SellerSeeder extends Seeder
+class SellersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.

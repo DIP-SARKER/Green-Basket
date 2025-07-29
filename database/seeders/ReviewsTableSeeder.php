@@ -8,7 +8,7 @@ use App\Models\Review;
 use App\Models\Product;
 use App\Models\Customer;
 
-class ReviewSeeder extends Seeder
+class ReviewsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.

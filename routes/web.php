@@ -10,6 +10,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Seller\ProductController as SellerProductController;
 use App\Http\Controllers\admin\ProductController as AdminProductController;
 use App\Http\Controllers\admin\SellerController as AdminSellerController;
+use App\Http\Controllers\admin\CustomerController as AdminCustomerController;
 
 
 Route::get('/', function () {
@@ -23,7 +24,7 @@ Route::post('/register', [CustomerAuthController::class, 'register'])->name('reg
 Route::get('/customer/login', [CustomerAuthController::class, 'showForm'])->name('customer_auth');
 Route::post('/customer/login', [CustomerAuthController::class, 'login']);
 Route::post('/customer/logout', [CustomerAuthController::class, 'logout'])->name('customer_logout');
-Route::get('/customer/profile', [CustomerAuthController::class,'showProfile'])->name('cprofile');
+Route::get('/customer/profile', [CustomerAuthController::class, 'showProfile'])->name('cprofile');
 
 Route::middleware([AuthCustomer::class])->group(function () {
     Route::get('/cart', [CartController::class, 'showCart'])->name('cart.index');
@@ -121,17 +122,13 @@ Route::get('/admin/farmers', [AdminSellerController::class, 'index'])->name('sel
 Route::put('/admin/farmers/{id}/update', [AdminSellerController::class, 'update'])->name('sellers.update');
 Route::delete('/admin/farmers/{id}/delete', [AdminSellerController::class, 'delete'])->name('sellers.delete');
 
-
+Route::get('/admin/customers', [AdminCustomerController::class, 'index'])->name('customers-management');
+Route::put('/admin/customers/{id}/update', [AdminCustomerController::class, 'update'])->name('customers.update');
 
 
 Route::get('/admin/orders', function () {
     return view('admin.orders_management');
 })->name('orders-management');
-
-
-Route::get('/admin/customers', function () {
-    return view('admin.customers_management');
-})->name('customers-management');
 
 Route::get('/admin/analytics', function () {
     return view('admin.analytics');
@@ -171,5 +168,7 @@ Route::middleware(['auth:seller'])->prefix('seller')->name('seller.')->group(fun
     Route::resource('products',SellerProductController::class);
 });
 
-
+Route::get('/seller/dashboard', function () {
+    return view('seller.dashboard.sellerdashboard');
+})->name('seller-overview');
 
