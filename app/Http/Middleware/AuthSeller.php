@@ -17,9 +17,11 @@ class AuthSeller
     public function handle(Request $request, Closure $next): Response
     {
         if (!auth('seller')->check()) {
-            abort(403, 'Unauthorized');
+            return redirect()->route('seller_auth');
         }
 
         return $next($request);
     }
+
+
 }

@@ -163,14 +163,21 @@ Route::post('/seller/logout', [SellerAuthController::class, 'logout'])->name('se
 
 
 
-Route::get('/seller/profile', [SellerAuthController::class,'showProfile'])->name('sellerProfile');
-// Route::middleware([AuthSeller::class])->group(function () {
-//     Route::get('/products/create', [SellerProductController::class, 'create'])->name('seller.products.create');
-//     Route::post('/products', [SellerProductController::class, 'store'])->name('seller.products.store');
-// });
-Route::middleware(['auth:seller'])->prefix('seller')->name('seller.')->group(function () {
-    Route::resource('products',SellerProductController::class);
+use App\Http\Controllers\Seller\SellerDashboardController;
+
+Route::prefix('seller')->name('seller.')->middleware([AuthSeller::class])->group(function () {
+    
+    // Seller Dashboard
+    Route::get('/', [SellerDashboardController::class, 'index'])->name('dashboard');
+
+    Route::get('/allProducts', [SellerDashboardController::class,'showAllProducts'])->name('allProducts');
+
+    // Seller Product Resource
+    Route::resource('products', SellerProductController::class);
+
+    Route::get('/index', [SellerProductController::class,'index']);
+
+    // Profile or other routes
+    Route::get('/profile', [SellerAuthController::class, 'showProfile'])->name('profile');
 });
-
-
 

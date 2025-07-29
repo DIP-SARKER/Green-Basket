@@ -1,0 +1,316 @@
+/* Seller Dashboard Styles */
+
+        /* Container */
+        .seller-dashboard-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f8fafc;
+            min-height: 100vh;
+        }
+
+        /* Dashboard Header */
+        .dashboard-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.15);
+        }
+
+        .dashboard-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0 0 0.5rem 0;
+            letter-spacing: -0.02em;
+        }
+
+        .dashboard-header p {
+            font-size: 1.1rem;
+            margin: 0;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        /* Stats Section */
+        .dashboard-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: #64748b;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #1e293b;
+            line-height: 1.2;
+        }
+
+        /* Quick Actions */
+        .quick-actions {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+            min-height: 44px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 4px 14px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+            color: white;
+            text-decoration: none;
+        }
+
+        .btn-outline-secondary {
+            background: white;
+            color: #475569;
+            border: 2px solid #e2e8f0;
+        }
+
+        .btn-outline-secondary:hover {
+            background: #f8fafc;
+            border-color: #cbd5e1;
+            color: #334155;
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+
+        /* Recent Orders Section */
+        .recent-orders-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        .recent-orders-section h4 {
+            font-size: 1.375rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin: 0 0 1.5rem 0;
+            letter-spacing: -0.01em;
+        }
+
+        /* Table Styles */
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0;
+            background: white;
+        }
+
+        .table thead {
+            background: #f8fafc;
+        }
+
+        .table th {
+            padding: 1rem 0.75rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: #475569;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .table td {
+            padding: 1rem 0.75rem;
+            border-bottom: 1px solid #f1f5f9;
+            color: #334155;
+            font-size: 0.875rem;
+        }
+
+        .table tbody tr {
+            transition: background-color 0.2s ease;
+        }
+
+        .table tbody tr:hover {
+            background-color: #f8fafc;
+        }
+
+        .table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* No orders message */
+        .recent-orders-section p {
+            color: #64748b;
+            font-style: italic;
+            text-align: center;
+            padding: 2rem 0;
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .seller-dashboard-container {
+                padding: 1rem;
+            }
+
+            .dashboard-header {
+                padding: 2rem 1.5rem;
+                text-align: center;
+            }
+
+            .dashboard-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .dashboard-stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .stat-card {
+                padding: 1.5rem 1rem;
+                text-align: center;
+            }
+
+            .quick-actions {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .recent-orders-section {
+                padding: 1.5rem 1rem;
+                overflow-x: auto;
+            }
+
+            .table {
+                min-width: 600px;
+            }
+
+            .table th,
+            .table td {
+                padding: 0.75rem 0.5rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .dashboard-header h2 {
+                font-size: 1.25rem;
+            }
+
+            .dashboard-header p {
+                font-size: 1rem;
+            }
+
+            .stat-value {
+                font-size: 1.875rem;
+            }
+
+            .recent-orders-section h4 {
+                font-size: 1.125rem;
+            }
+        }
+
+        /* Loading states and animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .seller-dashboard-container>* {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .dashboard-stats .stat-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .dashboard-stats .stat-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .dashboard-stats .stat-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .dashboard-stats .stat-card:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        /* Focus states for accessibility */
+        .btn:focus {
+            outline: 2px solid #667eea;
+            outline-offset: 2px;
+        }
+
+        .table th:focus,
+        .table td:focus {
+            outline: 2px solid #667eea;
+            outline-offset: -2px;
+        }

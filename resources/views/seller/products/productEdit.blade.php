@@ -1,4 +1,4 @@
-@extends('index')
+@extends('seller.seller-index')
 @push('style')
     <title>Edit Products Details | Green Basket</title>
 @endpush
@@ -70,7 +70,7 @@
             <!-- Submit -->
             <div class="form-group mt-3">
                 <button type="submit" class="btn btn-primary">Update Product</button>
-                <a href="{{ route('sellerProfile') }}" class="btn btn-secondary">Cancel</a>
+                <a href="{{ route('seller.profile') }}" class="btn btn-secondary">Cancel</a>
             </div>
         </form>
     </div>

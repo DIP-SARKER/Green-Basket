@@ -15,6 +15,16 @@ class ProductController extends Controller
     {
         $this->middleware('auth:seller');
     }
+
+    public function index()
+    {
+        $categories = Category::all();
+        $products = Product::where('seller_id', Auth::id())
+                          ->with('category')
+                          ->paginate(10);
+        
+        return view('seller.products.index', compact('products','categories'));
+    }
     public function create()
     {
 
