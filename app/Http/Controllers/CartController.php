@@ -65,4 +65,31 @@ class CartController extends Controller
 
         return redirect()->back()->with('success', 'Item removed from cart!');
     }
+
+    public function updateQuantity(Request $request, $product_id)
+    {
+        $customer = Auth::guard('customer')->user();
+        $quantity = max((int) $request->input('quantity'), 1);
+
+        $cartItem = Cart::where('customer_id', $customer->id)
+            ->where('product_id', $product_id)
+            ->first();
+
+        if (!$cartItem) {
+            return redirect()->route('cart.index')->with('error', 'Item not found in cart.');
+        }
+
+        $product = $cartItem->product;
+
+        if ($quantity > $product->stock_quantity) {
+            return redirect()->route('cart.index')->with('error', 'Only ' . $product->stock_quantity . ' items in stock.');
+        }
+
+        $cartItem->quantity = $quantity;
+        $cartItem->save();
+
+        return redirect()->route('cart.index')->with('success', 'Cart updated successfully!');
+    }
+
+
 }

@@ -11,6 +11,7 @@ use App\Http\Controllers\Seller\ProductController as SellerProductController;
 use App\Http\Controllers\admin\ProductController as AdminProductController;
 use App\Http\Controllers\admin\SellerController as AdminSellerController;
 use App\Http\Controllers\admin\CustomerController as AdminCustomerController;
+use App\Http\Controllers\OrderController;
 
 
 Route::get('/', function () {
@@ -30,6 +31,12 @@ Route::middleware([AuthCustomer::class])->group(function () {
     Route::get('/cart', [CartController::class, 'showCart'])->name('cart.index');
     Route::post('/cart/add/{id}', [CartController::class, 'addToCart'])->name('cart.add');
     Route::get('/cart/remove/{id}', [CartController::class, 'removeFromCart'])->name('cart.remove');
+    Route::put('/cart/update/{product_id}', [CartController::class, 'updateQuantity'])->name('cart.update');
+
+
+    Route::post('/checkout', [OrderController::class, 'checkout'])->name('checkout');
+    Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
+    Route::get('/orders/{id}', [OrderController::class, 'show'])->name('orders.show');
 });
 
 

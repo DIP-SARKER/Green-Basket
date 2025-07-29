@@ -148,7 +148,22 @@
                         @endphp
                         <tr class="cart-row">
                             <td class="cart-td" data-label="Product">{{ $item->product->name }}</td>
-                            <td class="cart-td" data-label="Qty">{{ $item->quantity }}</td>
+
+                            <td class="cart-td" data-label="Qty">
+                                <form action="{{ route('cart.update', $item->product_id) }}" method="POST"
+                                    style="display: inline-flex;">
+                                    @csrf
+                                    @method('PUT')
+                                    <input type="number" name="quantity" value="{{ $item->quantity }}" min="1"
+                                        style="width: 60px; padding: 5px; margin-right: 6px; text-align: center;" />
+                                    <button type="submit"
+                                        style="background: #2a6538; color: white; border: none; padding: 5px 10px; border-radius: 4px; font-size: 13px; cursor: pointer;">
+                                        Update
+                                    </button>
+                                </form>
+                            </td>
+
+
                             <td class="cart-td" data-label="Price">৳{{ number_format($item->product->price, 2) }}</td>
                             <td class="cart-td" data-label="Subtotal">৳{{ number_format($subtotal, 2) }}</td>
                             <td class="cart-td" data-label="Remove">
@@ -160,6 +175,18 @@
                         <td colspan="3" class="cart-total-label">Total:</td>
                         <td class="cart-total-amount">৳{{ number_format($total, 2) }}</td>
                     </tr>
+                    <tr>
+                        <td colspan="5" style="text-align: right; padding-top: 20px;">
+                            <form action="{{ route('checkout') }}" method="POST">
+                                @csrf
+                                <button type="submit"
+                                    style="background-color: #2a6538; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-weight: bold; font-size: 16px; cursor: pointer;">
+                                    Proceed to Checkout
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+
                 </tbody>
             </table>
         @endif
