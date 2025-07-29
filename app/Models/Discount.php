@@ -21,9 +21,13 @@ class Discount extends Model
     ];
 
     protected $casts = [
-        'value' => 'decimal:2',
         'start_date' => 'datetime',
         'end_date' => 'datetime',
         'status' => 'boolean',
     ];
+
+    public function getStatusLabelAttribute()
+    {
+        return now()->greaterThan($this->end_date) ? 'expired' : ($this->status ? 'active' : 'expired');
+    }
 }

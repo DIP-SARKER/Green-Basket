@@ -193,16 +193,6 @@
     color: white;
 }
 
-.action-btn.view {
-    background: rgba(33, 150, 243, 0.05);
-    color: var(--info);
-}
-
-.action-btn.view:hover {
-    background: var(--info);
-    color: white;
-}
-
 .action-btn.deactivate {
     background: rgba(244, 67, 54, 0.05);
     color: var(--danger);
@@ -274,87 +264,6 @@
     display: flex;
     justify-content: flex-end;
     gap: 0.75rem;
-}
-
-/* Stats */
-.stats-row {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(240px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-.stat-card {
-    background: var(--white);
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-    padding: 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    transition: transform 0.3s ease;
-}
-
-.stat-card:hover {
-    transform: translateY(-5px);
-}
-
-.stat-info h3 {
-    font-size: 1rem;
-    color: var(--text-light);
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-}
-
-.stat-info .value {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--text);
-}
-
-.stat-info .trend {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-}
-
-.trend.up {
-    color: var(--success);
-}
-
-.trend.down {
-    color: var(--danger);
-}
-
-.stat-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-}
-
-.card-1 .stat-icon {
-    background: rgba(76, 175, 80, 0.15);
-    color: var(--success);
-}
-
-.card-2 .stat-icon {
-    background: rgba(33, 150, 243, 0.15);
-    color: var(--info);
-}
-
-.card-3 .stat-icon {
-    background: rgba(255, 152, 0, 0.15);
-    color: var(--warning);
-}
-
-.card-4 .stat-icon {
-    background: rgba(33, 150, 243, 0.15);
-    color: var(--info);
 }
 
 /* Pagination */
