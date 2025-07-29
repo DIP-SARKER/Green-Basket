@@ -867,11 +867,11 @@
 
     <script>
         // Simple interactivity for the dashboard
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Set active nav item
             const navItems = document.querySelectorAll('.nav-item');
             navItems.forEach(item => {
-                item.addEventListener('click', function() {
+                item.addEventListener('click', function () {
                     navItems.forEach(i => i.classList.remove('active'));
                     this.classList.add('active');
                 });
@@ -880,7 +880,7 @@
             // Add ripple effect to buttons
             const buttons = document.querySelectorAll('.btn');
             buttons.forEach(button => {
-                button.addEventListener('click', function(e) {
+                button.addEventListener('click', function (e) {
                     const ripple = document.createElement('span');
                     ripple.classList.add('ripple');
                     const rect = button.getBoundingClientRect();
