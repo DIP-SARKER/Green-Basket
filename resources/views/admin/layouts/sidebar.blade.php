@@ -1,6 +1,9 @@
 <aside class="sidebar">
     <div class="sidebar-header">
-        <h2>Green-Basket</h2>
+        <div class="logo">
+            <i class="fas fa-leaf"></i>
+        </div>
+        <h2 class="logo-text">Green <span>Basket</span></h2>
     </div>
     <ul class="nav-links">
         <li class="{{ request()->routeIs('admin-overview') ? 'active' : '' }}">

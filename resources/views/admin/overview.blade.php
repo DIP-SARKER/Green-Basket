@@ -7,6 +7,8 @@
 @endpush
 @section('dashboard-content')
     <div class="stats-row">
+
+        <!-- 💰 REVENUE -->
         <div class="stat-card card-1">
             <div class="stat-info">
                 <h3>Total Revenue</h3>
@@ -15,51 +17,22 @@
                     <i class="fas fa-arrow-up"></i> 12.5% from last month
                 </div>
             </div>
-            <div class="stat-icon">
-                <i class="fas fa-sack-dollar"></i>
-            </div>
+            <div class="stat-icon"><i class="fas fa-sack-dollar"></i></div>
         </div>
 
+        <!-- 📦 ORDERS -->
         <div class="stat-card card-2">
             <div class="stat-info">
-                <h3>Orders</h3>
+                <h3>Total Orders</h3>
                 <div class="value">1,240</div>
                 <div class="trend up">
                     <i class="fas fa-arrow-up"></i> 8.3% from last month
                 </div>
             </div>
-            <div class="stat-icon">
-                <i class="fas fa-box-open"></i>
-            </div>
+            <div class="stat-icon"><i class="fas fa-box-open"></i></div>
         </div>
 
         <div class="stat-card card-3">
-            <div class="stat-info">
-                <h3>Farmers</h3>
-                <div class="value">5,840</div>
-                <div class="trend up">
-                    <i class="fas fa-arrow-up"></i> 5.2% from last month
-                </div>
-            </div>
-            <div class="stat-icon">
-                <i class="fas fa-tractor"></i>
-            </div>
-        </div>
-
-        <div class="stat-card card-4">
-            <div class="stat-info">
-                <h3>Customers</h3>
-                <div class="value">7,210</div>
-                <div class="trend up">
-                    <i class="fas fa-arrow-up"></i> 6.8% from last month
-                </div>
-            </div>
-            <div class="stat-icon">
-                <i class="fas fa-user-friends"></i>
-            </div>
-        </div>
-
-        <div class="stat-card card-5">
             <div class="stat-info">
                 <h3>Pending Orders</h3>
                 <div class="value">134</div>
@@ -67,25 +40,21 @@
                     <i class="fas fa-arrow-down"></i> 1.2% from last month
                 </div>
             </div>
-            <div class="stat-icon">
-                <i class="fas fa-hourglass-half"></i>
-            </div>
+            <div class="stat-icon"><i class="fas fa-hourglass-half"></i></div>
         </div>
 
-        <div class="stat-card card-6">
+        <div class="stat-card card-4">
             <div class="stat-info">
-                <h3>Pending Orders Amount</h3>
-                <div class="value">৳1,420</div>
-                <div class="trend down">
-                    <i class="fas fa-arrow-down"></i> 1.2% from last month
+                <h3>Processing Orders</h3>
+                <div class="value">87</div>
+                <div class="trend up">
+                    <i class="fas fa-arrow-up"></i> 3.4% from last week
                 </div>
             </div>
-            <div class="stat-icon">
-                <i class="fas fa-coins"></i>
-            </div>
+            <div class="stat-icon"><i class="fas fa-sync-alt"></i></div>
         </div>
 
-        <div class="stat-card card-7">
+        <div class="stat-card card-5">
             <div class="stat-info">
                 <h3>Cancelled Orders</h3>
                 <div class="value">67</div>
@@ -93,42 +62,185 @@
                     <i class="fas fa-arrow-down"></i> 0.8% from last month
                 </div>
             </div>
-            <div class="stat-icon">
-                <i class="fas fa-times-circle"></i>
+            <div class="stat-icon"><i class="fas fa-times-circle"></i></div>
+        </div>
+
+        <!-- 🛒 PRODUCTS -->
+        <div class="stat-card card-17">
+            <div class="stat-info">
+                <h3>Total Products</h3>
+                <div class="value">5,420</div>
+                <div class="trend up">
+                    <i class="fas fa-arrow-up"></i> 9.8% from last month
+                </div>
             </div>
+            <div class="stat-icon"><i class="fas fa-cubes"></i></div>
+        </div>
+
+        <div class="stat-card card-18">
+            <div class="stat-info">
+                <h3>Active Products</h3>
+                <div class="value">4,850</div>
+                <div class="trend up">
+                    <i class="fas fa-arrow-up"></i> 7.1% from last month
+                </div>
+            </div>
+            <div class="stat-icon"><i class="fas fa-box"></i></div>
+        </div>
+
+        <div class="stat-card card-19">
+            <div class="stat-info">
+                <h3>Out of Stock Products</h3>
+                <div class="value">320</div>
+                <div class="trend down">
+                    <i class="fas fa-arrow-down"></i> 3.4% from last month
+                </div>
+            </div>
+            <div class="stat-icon"><i class="fas fa-exclamation-triangle"></i></div>
+        </div>
+
+        <div class="stat-card card-20">
+            <div class="stat-info">
+                <h3>New Products</h3>
+                <div class="value">215</div>
+                <div class="trend up">
+                    <i class="fas fa-arrow-up"></i> 11.2% from last month
+                </div>
+            </div>
+            <div class="stat-icon"><i class="fas fa-plus-circle"></i></div>
+        </div>
+
+        <!-- 👨‍🌾 FARMERS -->
+        <div class="stat-card card-6">
+            <div class="stat-info">
+                <h3>Total Farmers</h3>
+                <div class="value">527</div>
+                <div class="trend up">
+                    <i class="fas fa-arrow-up"></i> 12.5% from last month
+                </div>
+            </div>
+            <div class="stat-icon"><i class="fas fa-users"></i></div>
+        </div>
+
+        <div class="stat-card card-7">
+            <div class="stat-info">
+                <h3>Active Farmers</h3>
+                <div class="value">51</div>
+                <div class="trend up">
+                    <i class="fas fa-arrow-up"></i> 7.2% from last month
+                </div>
+            </div>
+            <div class="stat-icon"><i class="fas fa-user-check"></i></div>
         </div>
 
         <div class="stat-card card-8">
             <div class="stat-info">
-                <h3>Cancelled Orders Amount</h3>
-                <div class="value">৳620</div>
-                <div class="trend down">
-                    <i class="fas fa-arrow-down"></i> 0.8% from last month
+                <h3>New Farmers</h3>
+                <div class="value">342</div>
+                <div class="trend up">
+                    <i class="fas fa-arrow-up"></i> 18.9% from last month
                 </div>
             </div>
-            <div class="stat-icon">
-                <i class="fas fa-money-bill-wave"></i>
-            </div>
+            <div class="stat-icon"><i class="fas fa-seedling"></i></div>
         </div>
+
+        <!-- 👥 CUSTOMERS -->
+        <div class="stat-card card-9">
+            <div class="stat-info">
+                <h3>Total Customers</h3>
+                <div class="value">32,134</div>
+                <div class="trend up">
+                    <i class="fas fa-arrow-up"></i> 8.7% from last month
+                </div>
+            </div>
+            <div class="stat-icon"><i class="fas fa-users"></i></div>
+        </div>
+
+        <div class="stat-card card-10">
+            <div class="stat-info">
+                <h3>Active Customers</h3>
+                <div class="value">1,512</div>
+                <div class="trend up">
+                    <i class="fas fa-arrow-up"></i> 5.3% from last month
+                </div>
+            </div>
+            <div class="stat-icon"><i class="fas fa-user-check"></i></div>
+        </div>
+
+        <div class="stat-card card-11">
+            <div class="stat-info">
+                <h3>New Customers</h3>
+                <div class="value">243</div>
+                <div class="trend up">
+                    <i class="fas fa-arrow-up"></i> 12.1% from last month
+                </div>
+            </div>
+            <div class="stat-icon"><i class="fas fa-user-plus"></i></div>
+        </div>
+
+        <!-- 🏷️ DISCOUNTS -->
+        <div class="stat-card card-14">
+            <div class="stat-info">
+                <h3>Total Discounts</h3>
+                <div class="value">20</div>
+                <div class="trend up">
+                    <i class="fas fa-arrow-up"></i> 4.5% from last month
+                </div>
+            </div>
+            <div class="stat-icon"><i class="fas fa-tags"></i></div>
+        </div>
+
+        <div class="stat-card card-15">
+            <div class="stat-info">
+                <h3>Active Discounts</h3>
+                <div class="value">5</div>
+                <div class="trend up">
+                    <i class="fas fa-arrow-up"></i> 6.7% from last month
+                </div>
+            </div>
+            <div class="stat-icon"><i class="fas fa-percentage"></i></div>
+        </div>
+
+        <div class="stat-card card-16">
+            <div class="stat-info">
+                <h3>Expired Discounts</h3>
+                <div class="value">15</div>
+                <div class="trend down">
+                    <i class="fas fa-arrow-down"></i> 2.3% from last month
+                </div>
+            </div>
+            <div class="stat-icon"><i class="fas fa-ban"></i></div>
+        </div>
+
+        <!-- 🎟️ TICKETS -->
+        <div class="stat-card card-12">
+            <div class="stat-info">
+                <h3>Total Tickets</h3>
+                <div class="value">248</div>
+                <div class="trend up">
+                    <i class="fas fa-arrow-up"></i> 8.2% from last week
+                </div>
+            </div>
+            <div class="stat-icon"><i class="fas fa-ticket-alt"></i></div>
+        </div>
+
+        <div class="stat-card card-13">
+            <div class="stat-info">
+                <h3>Open Tickets</h3>
+                <div class="value">42</div>
+                <div class="trend down">
+                    <i class="fas fa-arrow-down"></i> 3.1% from last week
+                </div>
+            </div>
+            <div class="stat-icon"><i class="fas fa-envelope-open"></i></div>
+        </div>
+
     </div>
+
+
 
     <!-- Charts and Tables -->
     <div class="dashboard-content">
-        <div class="chart-container">
-            <div class="section-header">
-                <h2>Revenue Overview</h2>
-                <a href="#">View Report <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="chart-filters">
-                <button class="chart-filter-btn" data-period="week">Weekly</button>
-                <button class="chart-filter-btn" data-period="month">Monthly</button>
-                <button class="chart-filter-btn active" data-period="quarter">Quarterly</button>
-            </div>
-            <div class="chart-wrapper">
-                <canvas id="revenueChart"></canvas>
-            </div>
-        </div>
-
         <div class="top-products">
             <div class="section-header">
                 <h2>Top Selling Products</h2>
@@ -190,163 +302,63 @@
                 <div class="product-sales">57 sales</div>
             </div>
         </div>
-
-    </div>
-
-    <div class="recent-orders">
-        <div class="section-header">
-            <h2>Recent Orders</h2>
-            <a href="#">View All <i class="fas fa-arrow-right"></i></a>
+        <div class="recent-orders">
+            <div class="section-header">
+                <h2>Recent Orders</h2>
+                <a href="#">View All <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Customer</th>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#ORD-7841</td>
+                        <td>Sarah Johnson</td>
+                        <td>Oct 15, 2023</td>
+                        <td>৳128.50</td>
+                        <td><span class="status completed">Completed</span></td>
+                    </tr>
+                    <tr>
+                        <td>#ORD-7840</td>
+                        <td>Michael Brown</td>
+                        <td>Oct 14, 2023</td>
+                        <td>৳75.25</td>
+                        <td><span class="status processing">Processing</span></td>
+                    </tr>
+                    <tr>
+                        <td>#ORD-7839</td>
+                        <td>Emma Davis</td>
+                        <td>Oct 14, 2023</td>
+                        <td>৳210.00</td>
+                        <td><span class="status pending">Pending</span></td>
+                    </tr>
+                    <tr>
+                        <td>#ORD-7838</td>
+                        <td>James Wilson</td>
+                        <td>Oct 13, 2023</td>
+                        <td>৳89.99</td>
+                        <td><span class="status completed">Completed</span></td>
+                    </tr>
+                    <tr>
+                        <td>#ORD-7837</td>
+                        <td>Olivia Taylor</td>
+                        <td>Oct 12, 2023</td>
+                        <td>৳156.75</td>
+                        <td><span class="status cancelled">Cancelled</span></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Order ID</th>
-                    <th>Customer</th>
-                    <th>Date</th>
-                    <th>Amount</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>#ORD-7841</td>
-                    <td>Sarah Johnson</td>
-                    <td>Oct 15, 2023</td>
-                    <td>৳128.50</td>
-                    <td><span class="status completed">Completed</span></td>
-                </tr>
-                <tr>
-                    <td>#ORD-7840</td>
-                    <td>Michael Brown</td>
-                    <td>Oct 14, 2023</td>
-                    <td>৳75.25</td>
-                    <td><span class="status processing">Processing</span></td>
-                </tr>
-                <tr>
-                    <td>#ORD-7839</td>
-                    <td>Emma Davis</td>
-                    <td>Oct 14, 2023</td>
-                    <td>৳210.00</td>
-                    <td><span class="status pending">Pending</span></td>
-                </tr>
-                <tr>
-                    <td>#ORD-7838</td>
-                    <td>James Wilson</td>
-                    <td>Oct 13, 2023</td>
-                    <td>৳89.99</td>
-                    <td><span class="status completed">Completed</span></td>
-                </tr>
-                <tr>
-                    <td>#ORD-7837</td>
-                    <td>Olivia Taylor</td>
-                    <td>Oct 12, 2023</td>
-                    <td>৳156.75</td>
-                    <td><span class="status cancelled">Cancelled</span></td>
-                </tr>
-            </tbody>
-        </table>
+
     </div>
 @endsection
 @push('script')
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Chart initialization
-            const ctx = document.getElementById('revenueChart').getContext('2d');
-
-            // Chart data
-            const chartData = {
-                week: {
-                    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                    data: [18200, 21500, 19300, 24700, 26100, 30500, 28900],
-                    label: 'Weekly Revenue'
-                },
-                month: {
-                    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
-                    data: [98000, 105000, 112000, 124000],
-                    label: 'Monthly Revenue'
-                },
-                quarter: {
-                    labels: ['Jul', 'Aug', 'Sep', 'Oct'],
-                    data: [425000, 437000, 468000, 502000],
-                    label: 'Quarterly Revenue'
-                }
-            };
-
-            // Create the chart
-            const revenueChart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: chartData.quarter.labels,
-                    datasets: [{
-                        label: chartData.quarter.label + ' (in ৳)',
-                        data: chartData.quarter.data,
-                        backgroundColor: 'rgba(46, 125, 50, 0.1)',
-                        borderColor: 'rgba(46, 125, 50, 1)',
-                        borderWidth: 2,
-                        pointBackgroundColor: 'rgba(46, 125, 50, 1)',
-                        pointRadius: 5,
-                        pointHoverRadius: 7,
-                        tension: 0.3,
-                        fill: true
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'top',
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    return `৳${context.parsed.y.toLocaleString()}`;
-                                }
-                            }
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            ticks: {
-                                callback: function(value) {
-                                    return '৳' + value.toLocaleString();
-                                }
-                            },
-                            grid: {
-                                color: 'rgba(0, 0, 0, 0.05)'
-                            }
-                        },
-                        x: {
-                            grid: {
-                                display: false
-                            }
-                        }
-                    }
-                }
-            });
-
-            // Chart period switching
-            document.querySelectorAll('.chart-filter-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    // Remove active class from all buttons
-                    document.querySelectorAll('.chart-filter-btn').forEach(b =>
-                        b.classList.remove('active'));
-
-                    // Add active class to clicked button
-                    this.classList.add('active');
-
-                    // Get period
-                    const period = this.dataset.period;
-
-                    // Update chart
-                    revenueChart.data.labels = chartData[period].labels;
-                    revenueChart.data.datasets[0].data = chartData[period].data;
-                    revenueChart.data.datasets[0].label = chartData[period].label + ' (in ৳)';
-                    revenueChart.update();
-                });
-            });
-        });
-    </script>
+    <script></script>
 @endpush

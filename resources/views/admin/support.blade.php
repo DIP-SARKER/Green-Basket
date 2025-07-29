@@ -6,60 +6,6 @@
      <h1>Support</h1>
  @endpush
  @section('dashboard-content')
-     <!-- Stats Cards -->
-     <div class="stats-row">
-         <div class="stat-card card-1">
-             <div class="stat-info">
-                 <h3>Total Tickets</h3>
-                 <div class="value">248</div>
-                 <div class="trend up">
-                     <i class="fas fa-arrow-up"></i> 8.2% from last week
-                 </div>
-             </div>
-             <div class="stat-icon">
-                 <i class="fas fa-ticket-alt"></i>
-             </div>
-         </div>
-
-         <div class="stat-card card-2">
-             <div class="stat-info">
-                 <h3>Open Tickets</h3>
-                 <div class="value">42</div>
-                 <div class="trend down">
-                     <i class="fas fa-arrow-down"></i> 3.1% from last week
-                 </div>
-             </div>
-             <div class="stat-icon">
-                 <i class="fas fa-envelope-open"></i>
-             </div>
-         </div>
-
-         <div class="stat-card card-3">
-             <div class="stat-info">
-                 <h3>Avg. Response Time</h3>
-                 <div class="value">6h 24m</div>
-                 <div class="trend up">
-                     <i class="fas fa-arrow-up"></i> 18 min improvement
-                 </div>
-             </div>
-             <div class="stat-icon">
-                 <i class="fas fa-clock"></i>
-             </div>
-         </div>
-
-         <div class="stat-card card-4">
-             <div class="stat-info">
-                 <h3>Satisfaction Rate</h3>
-                 <div class="value">94%</div>
-                 <div class="trend up">
-                     <i class="fas fa-arrow-up"></i> 2.3% from last month
-                 </div>
-             </div>
-             <div class="stat-icon">
-                 <i class="fas fa-smile"></i>
-             </div>
-         </div>
-     </div>
 
      <!-- Support Content -->
      <div class="support-container">
