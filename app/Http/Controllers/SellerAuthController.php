@@ -36,7 +36,7 @@ class SellerAuthController extends Controller
 
         Auth::login($seller);
 
-        return redirect("/sellerProfile")->with('name', $seller->name);
+        return redirect("/seller")->with('name', $seller->name);
 
     }
     public function login(Request $request)
@@ -51,7 +51,7 @@ class SellerAuthController extends Controller
             $request->session()->regenerate();
             $seller = Auth::guard('seller')->user();
             // dd($seller); 
-            return redirect("/sellerProfile")->with('name', $seller->name);
+            return redirect("/seller")->with('name', $seller->name);
         }
 
         return back()->withErrors([

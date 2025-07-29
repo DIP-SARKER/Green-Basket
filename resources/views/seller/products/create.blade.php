@@ -1,7 +1,7 @@
-@extends('index')
+@extends('seller.seller-index')
 @push('style')
 <title>Add Product | GreenBasket</title>
-<link rel="stylesheet" href="{{ asset('css/hridoy/productCreate.css') }}">
+<link rel="stylesheet" href="{{ asset('css/hridoy/seller/create.css') }}">
 @endpush
 
 @section('main-content')
