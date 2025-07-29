@@ -10,7 +10,7 @@
     <!-- Profile Header -->
     <div class="profile-header">
         <div class="profile-picture">
-            <img src="{{ $seller->profile_picture ?? 'https://via.placeholder.com/150' }}" alt="Profile Picture">
+            <img src="{{ $seller->profile_picture ?? 'https://images.unsplash.com/photo-1493106819501-66d381c466f1?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }}" alt="Profile Picture">
         </div>
         <div class="profile-info">
             <h2>{{ $seller->name }}</h2>

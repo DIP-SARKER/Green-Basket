@@ -87,10 +87,11 @@ class ProductController extends Controller
             'description' => $request->description,
             'price' => $request->price,
             'stock_quantity' => $request->stock_quantity,
+            'status' => $request->has('status') ? 1 : 0,
             'image_url' => $request->image_url,
         ]);
 
-        return redirect()->route('sellerProfile')->with('success', 'Product Updated Successfully!');
+        return redirect()->route('seller.allProducts')->with('success', 'Product Updated Successfully!');
     }
 
     public function destroy($id)

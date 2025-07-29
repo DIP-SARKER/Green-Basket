@@ -4,111 +4,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Seller Dashboard</title>
     @stack('style')
-    <title>FarmConnect - Farmer Dashboard</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/hridoy/seller/index.css') }}">
 
 </head>
 
 <body>
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <div class="logo-container">
-            <div class="logo">
-                <i class="fas fa-leaf"></i>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <a href="{{ route('seller.dashboard') }}" class="sidebar-brand">SellerHUB</a>
             </div>
-            <div class="logo-text">FarmConnect</div>
-        </div>
 
-        <div class="nav-item active">
-            <a href="{{ route('seller.dashboard') }}"><i class="fas fa-home"></i>
-                <span class="nav-text">Dashboard</span></a>
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Main</div>
+                    <div class="nav-item">
+                        <a href="{{ route('seller.dashboard') }}"
+                            class="nav-link {{ Request::routeIs('seller.dashboard') ? 'active' : '' }}">
+                            <span class="nav-icon">📊</span>
+                            Dashboard
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="{{ route('seller.allProducts') }}"
+                            class="nav-link {{ Request::routeIs('seller.products.*') ? 'active' : '' }}">
+                            <span class="nav-icon">📦</span>
+                            Products
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="" class="nav-link {{ Request::routeIs('seller.orders.*') ? 'active' : '' }}">
+                            <span class="nav-icon">🛒</span>
+                            Orders
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="" class="nav-link {{ Request::routeIs('seller.customers.*') ? 'active' : '' }}">
+                            <span class="nav-icon">👥</span>
+                            Customers
+                        </a>
+                    </div>
+                </div>
 
-        </div>
-        <div class="nav-item">
-            <a href="{{ route('seller.allProducts') }}">
-                <i class="fas fa-shopping-basket"></i>
-                <span class="nav-text">Products</span>
-            </a>
+                <div class="nav-section">
+                    <div class="nav-section-title">Analytics</div>
+                    <div class="nav-item">
+                        <a href="" class="nav-link {{ Request::routeIs('seller.reports.sales') ? 'active' : '' }}">
+                            <span class="nav-icon">📈</span>
+                            Sales Reports
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="" class="nav-link {{ Request::routeIs('seller.reports.revenue') ? 'active' : '' }}">
+                            <span class="nav-icon">💰</span>
+                            Revenue
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="" class="nav-link {{ Request::routeIs('seller.inventory.*') ? 'active' : '' }}">
+                            <span class="nav-icon">📋</span>
+                            Inventory
+                        </a>
+                    </div>
+                </div>
 
-        </div>
-        <div class="nav-item">
-            <i class="fas fa-file-invoice-dollar"></i>
-            <span class="nav-text">Orders</span>
-        </div>
-        <div class="nav-item">
-            <i class="fas fa-chart-line"></i>
-            <span class="nav-text">Analytics</span>
-        </div>
-        <div class="nav-item">
-            <i class="fas fa-truck"></i>
-            <span class="nav-text">Delivery</span>
-        </div>
-        <div class="nav-item">
-            <i class="fas fa-comments"></i>
-            <span class="nav-text">Messages</span>
-        </div>
-        <div class="nav-item">
-            <i class="fas fa-cog"></i>
-            <span class="nav-text">Settings</span>
-        </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">Settings</div>
+                    <div class="nav-item">
+                        <a href="" class="nav-link {{ Request::routeIs('seller.settings.*') ? 'active' : '' }}">
+                            <span class="nav-icon">⚙️</span>
+                            Store Settings
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="{{ route('seller.profile') }}" class="nav-link {{ Request::routeIs('seller.profile.*') ? 'active' : '' }}">
+                            <span class="nav-icon">👤</span>
+                            Profile
+                        </a>
+                    </div>
+                </div>
 
-        <div class="farmer-info">
-            <div class="farmer-avatar">
-                <i class="fas fa-user"></i>
+
+            </nav>
+
+            <!-- Logout Section at Bottom -->
+            <div class="sidebar-footer">
+                <div class="nav-item">
+                    <form method="POST" action="{{ route('seller_logout') }}" class="logout-form">
+                        @csrf
+                        <button type="submit" class="nav-link logout-btn">
+                            <span class="nav-icon">🚪</span>
+                            Logout
+                        </button>
+                    </form>
+                </div>
             </div>
-            <div class="farmer-details">
-                <div class="farmer-name">{{ Auth::guard('seller')->user()->name }}</div>
-                <div class="farmer-type">Organic Produce Farm</div>
+        </aside>
+        </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <button class="mobile-menu-btn" onclick="toggleSidebar()">☰</button>
+                    <h1 class="page-title">@yield('page-title', 'Dashboard')</h1>
+                </div>
+                <div class="header-right">
+                    <div class="header-actions">
+                        @yield('header-actions')
+                        <button class="notification-btn">🔔</button>
+                        <button class="profile-btn" onclick="window.location.href='{{ route('seller.profile') }}'">
+                            <div class="profile-avatar">
+                                {{ strtoupper(substr(Auth::guard('seller')->user()->name ?? 'U', 0, 2)) }}
+                            </div>
+                        </button>
+
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <div class="content-area">
+                @yield('main-content')
             </div>
-        </div>
-    </div>
-
-    @yield('main-content')
-
-    <div class="dashboard-footer">
-        FarmConnect Seller Dashboard • © 2023 All Rights Reserved
-    </div>
+        </main>
     </div>
 
     <script>
-        // Simple interactivity for the dashboard
-        document.addEventListener('DOMContentLoaded', function () {
-            // Set active nav item
-            const navItems = document.querySelectorAll('.nav-item');
-            navItems.forEach(item => {
-                item.addEventListener('click', function () {
-                    navItems.forEach(i => i.classList.remove('active'));
-                    this.classList.add('active');
-                });
-            });
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
 
-            // Add ripple effect to buttons
-            const buttons = document.querySelectorAll('.btn');
-            buttons.forEach(button => {
-                button.addEventListener('click', function (e) {
-                    const ripple = document.createElement('span');
-                    ripple.classList.add('ripple');
-                    const rect = button.getBoundingClientRect();
-                    const size = Math.max(rect.width, rect.height);
-                    const x = e.clientX - rect.left - size / 2;
-                    const y = e.clientY - rect.top - size / 2;
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener('click', function (event) {
+            const sidebar = document.getElementById('sidebar');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
 
-                    ripple.style.width = ripple.style.height = size + 'px';
-                    ripple.style.left = x + 'px';
-                    ripple.style.top = y + 'px';
-                    ripple.style.backgroundColor = 'rgba(255,255,255,0.4)';
-
-                    button.appendChild(ripple);
-
-                    setTimeout(() => {
-                        ripple.remove();
-                    }, 600);
-                });
-            });
+            if (window.innerWidth <= 768 &&
+                !sidebar.contains(event.target) &&
+                !menuBtn.contains(event.target) &&
+                sidebar.classList.contains('active')) {
+                sidebar.classList.remove('active');
+            }
         });
+
+        // Handle window resize
+        window.addEventListener('resize', function () {
+            const sidebar = document.getElementById('sidebar');
+            if (window.innerWidth > 768) {
+                sidebar.classList.remove('active');
+            }
+        });
+
+        @yield('additional-scripts')
     </script>
 </body>
 

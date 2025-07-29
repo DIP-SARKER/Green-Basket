@@ -1,6 +1,7 @@
 @extends('seller.seller-index')
 @push('style')
     <title>Edit Products Details | Green Basket</title>
+    <link rel="stylesheet" href="{{ asset('css/hridoy/seller/editProduct.css') }}">
 @endpush
 
 @section('main-content')
@@ -58,6 +59,16 @@
                     value="{{ old('stock_quantity', $product->stock_quantity) }}">
                 @error('stock_quantity') <small class="text-danger">{{ $message }}</small> @enderror
             </div>
+
+            <!-- Product Status Toggle -->
+            <div class="form-group">
+                <label for="status">Product Status</label><br>
+                <label class="switch">
+                    <input type="checkbox" name="status" value="1" {{ old('status', $product->status) ? 'checked' : '' }}>
+                    <span class="slider"></span>
+                </label>
+            </div>
+
 
             <!-- Image URL -->
             <div class="form-group">

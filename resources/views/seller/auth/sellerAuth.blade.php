@@ -1,11 +1,11 @@
-@extends('index')
 
-@push('style')
+
+
 <title>Seller Authentication | Green Basket | Farm to Table</title>
 <link rel="stylesheet" href="{{ asset('css/hridoy/customer_auth.css') }}">
-@endpush
 
-@section('main-content')
+
+
 
 <div class="auth-container">
     <h3>হে কৃষক গরিবীর জীবন বাদ দিতে যদি আগ্রহী হোন, এখানে প্রবেশ করুন🙇‍♂️</h3>
@@ -39,10 +39,6 @@
 
 </script>
 
-@push('script')
-<script>
 
-</script>
-@endpush
 
-@endsection
+
