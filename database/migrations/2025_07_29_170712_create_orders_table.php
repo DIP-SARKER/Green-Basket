@@ -20,6 +20,10 @@ return new class extends Migration
 
             $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
         });
+
+        Schema::table('orders', function (Blueprint $table) {
+        $table->uuid('transaction_id')->nullable()->after('total_price');
+    });
     }
 
     /**
@@ -28,5 +32,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('orders');
+        Schema::table('orders', function (Blueprint $table) {
+        $table->dropColumn('transaction_id');
+    });
     }
 };

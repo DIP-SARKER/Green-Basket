@@ -9,6 +9,7 @@ use App\Models\Product;
 use App\Models\Order;
 use App\Models\OrderItem;
 use Illuminate\Support\Facades\DB;
+use App\Http\Middleware\AuthCustomer;
 
 
 
@@ -16,6 +17,7 @@ use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
+
 
     public function index()
     {

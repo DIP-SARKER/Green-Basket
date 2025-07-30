@@ -12,6 +12,7 @@ use App\Http\Controllers\admin\ProductController as AdminProductController;
 use App\Http\Controllers\admin\SellerController as AdminSellerController;
 use App\Http\Controllers\admin\CustomerController as AdminCustomerController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PaymentController;
 
 
 Route::get('/', function () {
@@ -37,8 +38,14 @@ Route::middleware([AuthCustomer::class])->group(function () {
     Route::post('/checkout', [OrderController::class, 'checkout'])->name('checkout');
     Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
     Route::get('/orders/{id}', [OrderController::class, 'show'])->name('orders.show');
+
 });
 
+Route::get('/pay-now/{orderId}', [PaymentController::class, 'payNow'])->name('payment.pay');
+
+Route::post('/payment/success', [PaymentController::class, 'success'])->name('payment.success');
+Route::match(['get', 'post'], '/payment/fail', [PaymentController::class, 'fail'])->name('payment.fail');
+Route::match(['get', 'post'], '/payment/cancel', [PaymentController::class, 'cancel'])->name('payment.cancel');
 
 // Route::get('/customerprofile', function () {
 //     return view('consumer.customerProfile');
@@ -169,16 +176,16 @@ Route::post('/seller/logout', [SellerAuthController::class, 'logout'])->name('se
 use App\Http\Controllers\Seller\SellerDashboardController;
 
 Route::prefix('seller')->name('seller.')->middleware([AuthSeller::class])->group(function () {
-    
+
     // Seller Dashboard
     Route::get('/', [SellerDashboardController::class, 'index'])->name('dashboard');
 
-    Route::get('/allProducts', [SellerDashboardController::class,'showAllProducts'])->name('allProducts');
+    Route::get('/allProducts', [SellerDashboardController::class, 'showAllProducts'])->name('allProducts');
 
     // Seller Product Resource
     Route::resource('products', SellerProductController::class);
 
-    Route::get('/index', [SellerProductController::class,'index']);
+    Route::get('/index', [SellerProductController::class, 'index']);
 
     // Profile or other routes
     Route::get('/profile', [SellerAuthController::class, 'showProfile'])->name('profile');
