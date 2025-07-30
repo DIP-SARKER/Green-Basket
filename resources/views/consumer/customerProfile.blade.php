@@ -564,6 +564,10 @@
                             <span class="info-value">{{ $customer->phone ?? 'Not provided' }}</span>
                         </div>
                         <div class="info-item">
+                            <span class="info-label">Address:</span>
+                            <span class="info-value">{{ $customer->address ?? 'Not provided' }}</span>
+                        </div>
+                        <div class="info-item">
                             <span class="info-label">Member Since:</span>
                             <span class="info-value">{{ $customer->created_at->format('M d, Y') }}</span>
                         </div>

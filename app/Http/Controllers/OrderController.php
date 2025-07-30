@@ -29,14 +29,23 @@ class OrderController extends Controller
     public function checkout(Request $request)
     {
         $customer = Auth::guard("customer")->user();
-        $cartItems = Cart::with("product")->where("customer_id", $customer->id)->get();
+
+        $selectedCartItemIds = $request->input('selected_items', []); // from checkbox inputs
+
+        if (empty($selectedCartItemIds)) {
+            return redirect()->back()->with("error", "No items selected for checkout.");
+        }
+
+        $cartItems = Cart::with("product")
+            ->where("customer_id", $customer->id)
+            ->whereIn("id", $selectedCartItemIds)
+            ->get();
 
         if ($cartItems->isEmpty()) {
-            return redirect()->back()->with("error", "Your cart is empty!");
+            return redirect()->back()->with("error", "No valid cart items found.");
         }
 
         $total = 0;
-
         foreach ($cartItems as $item) {
             $total += $item->product->price * $item->quantity;
         }
@@ -60,19 +69,19 @@ class OrderController extends Controller
                 $item->product->decrement('stock_quantity', $item->quantity);
             }
 
-            Cart::where('customer_id', $customer->id)->delete();
-
+            // Only delete selected items
+            Cart::whereIn('id', $selectedCartItemIds)->delete();
 
             DB::commit();
 
-            return redirect()->route('orders.index')->with('success', 'Order Placed Successfully!');
+            return redirect()->route('orders.index')->with('success', 'Order placed successfully!');
         } catch (\Exception $e) {
             DB::rollBack();
             \Log::error('Checkout failed: ' . $e->getMessage());
             return redirect()->back()->with('error', 'Checkout failed. Please try again.');
         }
-
     }
+
 
     public function show($id)
     {

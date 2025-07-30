@@ -25,12 +25,16 @@ class CustomerAuthController extends Controller
         $request->validate([
             'name' => 'required',
             'phone' => 'required|regex:/^01[3-9]\d{8}$/',
+            'email'=> 'required|email',
+            'address' => 'required',
             'password' => 'required|confirmed|min:8'
         ]);
 
         $customer = Customer::create([
             'name' => $request->name,
             'phone' => $request->phone,
+            'email'=> $request->email,
+            'address'=> $request->address,
             'password' => Hash::make($request->password),
         ]);
 

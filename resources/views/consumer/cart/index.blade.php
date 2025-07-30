@@ -123,72 +123,70 @@
 @endpush
 
 @section('main-content')
-    <div class="cart-wrapper">
-        <h2 class="cart-title">Your Cart</h2>
+<div class="cart-wrapper">
+    <h2 class="cart-title">Your Cart</h2>
 
-        @if($cartItems->isEmpty())
-            <p class="empty-message">Your cart is empty.</p>
-        @else
-            <table class="cart-table">
-                <thead class="cart-header">
-                    <tr>
-                        <th class="cart-th">Product</th>
-                        <th class="cart-th">Qty</th>
-                        <th class="cart-th">Price</th>
-                        <th class="cart-th">Subtotal</th>
-                        <th class="cart-th">Remove</th>
-                    </tr>
-                </thead>
-                <tbody class="cart-body">
-                    @php $total = 0; @endphp
-                    @foreach($cartItems as $item)
-                        @php
-                            $subtotal = $item->quantity * $item->product->price;
-                            $total += $subtotal;
-                        @endphp
-                        <tr class="cart-row">
-                            <td class="cart-td" data-label="Product">{{ $item->product->name }}</td>
-
-                            <td class="cart-td" data-label="Qty">
-                                <form action="{{ route('cart.update', $item->product_id) }}" method="POST"
-                                    style="display: inline-flex;">
-                                    @csrf
-                                    @method('PUT')
-                                    <input type="number" name="quantity" value="{{ $item->quantity }}" min="1"
-                                        style="width: 60px; padding: 5px; margin-right: 6px; text-align: center;" />
-                                    <button type="submit"
-                                        style="background: #2a6538; color: white; border: none; padding: 5px 10px; border-radius: 4px; font-size: 13px; cursor: pointer;">
-                                        Update
-                                    </button>
-                                </form>
-                            </td>
-
-
-                            <td class="cart-td" data-label="Price">৳{{ number_format($item->product->price, 2) }}</td>
-                            <td class="cart-td" data-label="Subtotal">৳{{ number_format($subtotal, 2) }}</td>
-                            <td class="cart-td" data-label="Remove">
-                                <a href="{{ route('cart.remove', $item->product_id) }}" class="btn-remove">Remove</a>
-                            </td>
-                        </tr>
-                    @endforeach
-                    <tr class="cart-total-row">
-                        <td colspan="3" class="cart-total-label">Total:</td>
-                        <td class="cart-total-amount">৳{{ number_format($total, 2) }}</td>
-                    </tr>
-                    <tr>
-                        <td colspan="5" style="text-align: right; padding-top: 20px;">
-                            <form action="{{ route('checkout') }}" method="POST">
+    @if($cartItems->isEmpty())
+        <p class="empty-message">Your cart is empty.</p>
+    @else
+        <table class="cart-table">
+            <thead class="cart-header">
+                <tr>
+                    <th class="cart-th">Select</th>
+                    <th class="cart-th">Product</th>
+                    <th class="cart-th">Qty</th>
+                    <th class="cart-th">Price</th>
+                    <th class="cart-th">Subtotal</th>
+                    <th class="cart-th">Remove</th>
+                </tr>
+            </thead>
+            <tbody class="cart-body">
+                @php $total = 0; @endphp
+                @foreach($cartItems as $item)
+                    @php
+                        $subtotal = $item->quantity * $item->product->price;
+                        $total += $subtotal;
+                    @endphp
+                    <tr class="cart-row">
+                        <td class="cart-td">
+                            <input type="checkbox" form="checkout-form" name="selected_items[]" value="{{ $item->id }}">
+                        </td>
+                        <td class="cart-td">{{ $item->product->name }}</td>
+                        <td class="cart-td">
+                            <form action="{{ route('cart.update', $item->product_id) }}" method="POST" style="display: inline-flex;">
                                 @csrf
+                                @method('PUT')
+                                <input type="number" name="quantity" value="{{ $item->quantity }}" min="1"
+                                    style="width: 60px; padding: 5px; margin-right: 6px; text-align: center;" />
                                 <button type="submit"
-                                    style="background-color: #2a6538; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-weight: bold; font-size: 16px; cursor: pointer;">
-                                    Proceed to Checkout
+                                    style="background: #2a6538; color: white; border: none; padding: 5px 10px; border-radius: 4px; font-size: 13px; cursor: pointer;">
+                                    Update
                                 </button>
                             </form>
                         </td>
+                        <td class="cart-td">৳{{ number_format($item->product->price, 2) }}</td>
+                        <td class="cart-td">৳{{ number_format($subtotal, 2) }}</td>
+                        <td class="cart-td">
+                            <a href="{{ route('cart.remove', $item->product_id) }}" class="btn-remove">Remove</a>
+                        </td>
                     </tr>
+                @endforeach
+                <tr class="cart-total-row">
+                    <td colspan="3" class="cart-total-label">Total:</td>
+                    <td class="cart-total-amount">৳{{ number_format($total, 2) }}</td>
+                </tr>
+            </tbody>
+        </table>
 
-                </tbody>
-            </table>
-        @endif
-    </div>
+        <!-- Checkout Form (outside table) -->
+        <form id="checkout-form" action="{{ route('checkout') }}" method="POST" style="text-align: right; padding-top: 20px;">
+            @csrf
+            <button type="submit"
+                style="background-color: #2a6538; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-weight: bold; font-size: 16px; cursor: pointer;">
+                Proceed to Checkout (Selected Items Only)
+            </button>
+        </form>
+    @endif
+</div>
+
 @endsection
