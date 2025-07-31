@@ -7,6 +7,7 @@ use App\Http\Middleware\AuthCustomer;
 use App\Http\Middleware\AuthSeller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SupportTicketController;
 use App\Http\Controllers\Seller\ProductController as SellerProductController;
 use App\Http\Controllers\admin\ProductController as AdminProductController;
 use App\Http\Controllers\admin\SellerController as AdminSellerController;
@@ -132,6 +133,11 @@ Route::prefix('admin')->group(function () {
     Route::put('/discounts/{discount}', [AdminDiscountController::class, 'update'])->name('discounts.update');
     Route::delete('/discounts/{discount}', [AdminDiscountController::class, 'destroy'])->name('discounts.delete');
 
+    Route::get('/support', [SupportTicketController::class, 'index'])->name('support-management');
+    Route::get('/support/{ticket_id}', [SupportTicketController::class, 'show'])->name('support.show');
+    Route::post('/support/{ticket_id}/reply', [SupportTicketController::class, 'reply'])->name('support.reply');
+    Route::post('/support/{ticket_id}/resolve', [SupportTicketController::class, 'resolve'])->name('support.resolve');
+
 });
 
 
@@ -143,10 +149,6 @@ Route::get('/admin/orders', function () {
 Route::get('/admin/analytics', function () {
     return view('admin.analytics');
 })->name('analytics-dashboard');
-
-Route::get('/admin/support', function () {
-    return view('admin.support');
-})->name('support-management');
 
 Route::get('/admin/settings', function () {
     return view('admin.settings');
