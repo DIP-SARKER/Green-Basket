@@ -1,5 +1,3 @@
-
-
 /* ===== Discounts Page Styles ===== */
 
 .discounts-page {
@@ -11,7 +9,7 @@
 /* Container Layout */
 .discounts-container {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3.5fr 1fr;
     gap: 2rem;
 }
 
@@ -102,6 +100,7 @@
 /* Discount Code */
 .discount-code {
     background: rgba(46, 125, 50, 0.1);
+    color: var(--primary-dark);
     padding: 0.2rem 0.5rem;
     border-radius: 3px;
     font-weight: 500;

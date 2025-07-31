@@ -6,7 +6,6 @@
      <h1>Support</h1>
  @endpush
  @section('dashboard-content')
-
      <!-- Support Content -->
      <div class="support-container">
          <div class="ticket-list">
@@ -24,148 +23,31 @@
              </div>
 
              <div class="tickets">
-                 <!-- Ticket Item 1 -->
-                 <div class="ticket-item active">
-                     <div class="ticket-header">
-                         <div class="ticket-title">
-                             <i class="fas fa-circle text-danger"></i>
-                             Order Not Delivered
+                 @foreach ($tickets as $ticket)
+                     <div class="ticket-item {{ $loop->first ? 'active' : '' }}">
+                         <div class="ticket-header">
+                             <div class="ticket-title">
+                                 <i
+                                     class="fas fa-circle text-{{ $ticket->priority == 'high' ? 'danger' : ($ticket->priority == 'medium' ? 'warning' : 'success') }}"></i>
+                                 {{ $ticket->subject }}
+                             </div>
+                             <div class="priority priority-{{ $ticket->priority }}">{{ ucfirst($ticket->priority) }}
+                                 Priority</div>
                          </div>
-                         <div class="priority priority-high">High Priority</div>
-                     </div>
-                     <div class="ticket-customer">
-                         <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Customer">
-                         <span>Sarah Johnson</span>
-                     </div>
-                     <div class="ticket-excerpt">
-                         My order #ORD-7841 was supposed to be delivered yesterday but hasn't arrived. Can you please check
-                         the status?
-                     </div>
-                     <div class="ticket-meta">
-                         <span><i class="far fa-clock"></i> 2 hours ago</span>
-                         <span class="status-badge status-open">Open</span>
-                         <span>#TKT-7841</span>
-                     </div>
-                 </div>
-
-                 <!-- Ticket Item 2 -->
-                 <div class="ticket-item">
-                     <div class="ticket-header">
-                         <div class="ticket-title">
-                             <i class="fas fa-circle text-warning"></i>
-                             Product Quality Issue
+                         <div class="ticket-customer">
+                             <img src="{{ $ticket->customer_image }}" alt="Customer">
+                             <span>{{ $ticket->customer_name }}</span>
                          </div>
-                         <div class="priority priority-medium">Medium Priority</div>
-                     </div>
-                     <div class="ticket-customer">
-                         <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Customer">
-                         <span>Michael Brown</span>
-                     </div>
-                     <div class="ticket-excerpt">
-                         The mangoes I received were not ripe and some were bruised. I would like a refund for the damaged
-                         items.
-                     </div>
-                     <div class="ticket-meta">
-                         <span><i class="far fa-clock"></i> 5 hours ago</span>
-                         <span class="status-badge status-pending">Pending</span>
-                         <span>#TKT-7839</span>
-                     </div>
-                 </div>
-
-                 <!-- Ticket Item 3 -->
-                 <div class="ticket-item">
-                     <div class="ticket-header">
-                         <div class="ticket-title">
-                             <i class="fas fa-circle text-success"></i>
-                             Payment Method Question
+                         <div class="ticket-excerpt">
+                             {{ $ticket->excerpt }}
                          </div>
-                         <div class="priority priority-low">Low Priority</div>
-                     </div>
-                     <div class="ticket-customer">
-                         <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Customer">
-                         <span>Emma Davis</span>
-                     </div>
-                     <div class="ticket-excerpt">
-                         Can I use multiple payment methods for a single order? I want to split between bKash and credit
-                         card.
-                     </div>
-                     <div class="ticket-meta">
-                         <span><i class="far fa-clock"></i> Yesterday</span>
-                         <span class="status-badge status-open">Open</span>
-                         <span>#TKT-7838</span>
-                     </div>
-                 </div>
-
-                 <!-- Ticket Item 4 -->
-                 <div class="ticket-item">
-                     <div class="ticket-header">
-                         <div class="ticket-title">
-                             <i class="fas fa-circle text-warning"></i>
-                             Account Verification Issue
+                         <div class="ticket-meta">
+                             <span><i class="far fa-clock"></i> {{ $ticket->submitted_at->diffForHumans() }}</span>
+                             <span class="status-badge status-{{ $ticket->status }}">{{ ucfirst($ticket->status) }}</span>
+                             <span>#{{ $ticket->ticket_id }}</span>
                          </div>
-                         <div class="priority priority-medium">Medium Priority</div>
                      </div>
-                     <div class="ticket-customer">
-                         <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Customer">
-                         <span>James Wilson</span>
-                     </div>
-                     <div class="ticket-excerpt">
-                         I'm having trouble verifying my farmer account. The documents I uploaded keep getting rejected.
-                     </div>
-                     <div class="ticket-meta">
-                         <span><i class="far fa-clock"></i> 2 days ago</span>
-                         <span class="status-badge status-pending">Pending</span>
-                         <span>#TKT-7835</span>
-                     </div>
-                 </div>
-
-                 <!-- Ticket Item 5 -->
-                 <div class="ticket-item">
-                     <div class="ticket-header">
-                         <div class="ticket-title">
-                             <i class="fas fa-circle text-danger"></i>
-                             Wrong Item Delivered
-                         </div>
-                         <div class="priority priority-high">High Priority</div>
-                     </div>
-                     <div class="ticket-customer">
-                         <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Customer">
-                         <span>Olivia Taylor</span>
-                     </div>
-                     <div class="ticket-excerpt">
-                         I ordered 2kg of Ilish fish but received Rohu instead. This is unacceptable as I needed it for a
-                         special occasion.
-                     </div>
-                     <div class="ticket-meta">
-                         <span><i class="far fa-clock"></i> 3 days ago</span>
-                         <span class="status-badge status-open">Open</span>
-                         <span>#TKT-7832</span>
-                     </div>
-                 </div>
-
-                 <!-- Ticket Item 6 -->
-                 <div class="ticket-item">
-                     <div class="ticket-header">
-                         <div class="ticket-title">
-                             <i class="fas fa-circle text-success"></i>
-                             Bulk Order Inquiry
-                         </div>
-                         <div class="priority priority-low">Low Priority</div>
-                     </div>
-                     <div class="ticket-customer">
-                         <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Customer">
-                         <span>Robert Martinez</span>
-                     </div>
-                     <div class="ticket-excerpt">
-                         I run a restaurant and would like to place regular bulk orders. Do you offer special pricing for
-                         businesses?
-                     </div>
-                     <div class="ticket-meta">
-                         <span><i class="far fa-clock"></i> 4 days ago</span>
-                         <span class="status-badge status-resolved">Resolved</span>
-                         <span>#TKT-7829</span>
-                     </div>
-                 </div>
+                 @endforeach
              </div>
          </div>
 

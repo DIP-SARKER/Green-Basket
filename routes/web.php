@@ -7,12 +7,14 @@ use App\Http\Middleware\AuthCustomer;
 use App\Http\Middleware\AuthSeller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SupportTicketController;
 use App\Http\Controllers\Seller\ProductController as SellerProductController;
 use App\Http\Controllers\admin\ProductController as AdminProductController;
 use App\Http\Controllers\admin\SellerController as AdminSellerController;
 use App\Http\Controllers\admin\CustomerController as AdminCustomerController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\admin\DiscountController as AdminDiscountController;
 
 
 Route::get('/', function () {
@@ -127,17 +129,31 @@ Route::get('/admin/dashboard', function () {
 })->name('admin-overview');
 
 
+Route::prefix('admin')->group(function () {
 
-Route::get('/admin/products', [AdminProductController::class, 'index'])->name('products-management');
-Route::patch('/admin/products/{id}/toggle-activity', [AdminProductController::class, 'toggleActivity'])->name('products.toggleStatus');
-Route::delete('/admin/products/{id}/delete', [AdminProductController::class, 'delete'])->name('products.delete');
+    Route::get('/products', [AdminProductController::class, 'index'])->name('products-management');
+    Route::patch('/products/{id}/toggle-activity', [AdminProductController::class, 'toggleActivity'])->name('products.toggleStatus');
+    Route::delete('/products/{id}/delete', [AdminProductController::class, 'delete'])->name('products.delete');
 
-Route::get('/admin/farmers', [AdminSellerController::class, 'index'])->name('sellers-management');
-Route::put('/admin/farmers/{id}/update', [AdminSellerController::class, 'update'])->name('sellers.update');
-Route::delete('/admin/farmers/{id}/delete', [AdminSellerController::class, 'delete'])->name('sellers.delete');
+    Route::get('/farmers', [AdminSellerController::class, 'index'])->name('sellers-management');
+    Route::put('/farmers/{id}/update', [AdminSellerController::class, 'update'])->name('sellers.update');
+    Route::delete('/farmers/{id}/delete', [AdminSellerController::class, 'delete'])->name('sellers.delete');
 
-Route::get('/admin/customers', [AdminCustomerController::class, 'index'])->name('customers-management');
-Route::put('/admin/customers/{id}/update', [AdminCustomerController::class, 'update'])->name('customers.update');
+    Route::get('/customers', [AdminCustomerController::class, 'index'])->name('customers-management');
+    Route::put('/customers/{id}/update', [AdminCustomerController::class, 'update'])->name('customers.update');
+
+    Route::get('/discounts', [AdminDiscountController::class, 'index'])->name('discounts-management');
+    Route::post('/discounts', [AdminDiscountController::class, 'store'])->name('discounts.store');
+    Route::put('/discounts/{discount}', [AdminDiscountController::class, 'update'])->name('discounts.update');
+    Route::delete('/discounts/{discount}', [AdminDiscountController::class, 'destroy'])->name('discounts.delete');
+
+    Route::get('/support', [SupportTicketController::class, 'index'])->name('support-management');
+    Route::get('/support/{ticket_id}', [SupportTicketController::class, 'show'])->name('support.show');
+    Route::post('/support/{ticket_id}/reply', [SupportTicketController::class, 'reply'])->name('support.reply');
+    Route::post('/support/{ticket_id}/resolve', [SupportTicketController::class, 'resolve'])->name('support.resolve');
+
+});
+
 
 
 Route::get('/admin/orders', function () {
@@ -147,14 +163,6 @@ Route::get('/admin/orders', function () {
 Route::get('/admin/analytics', function () {
     return view('admin.analytics');
 })->name('analytics-dashboard');
-
-Route::get('/admin/discounts', function () {
-    return view('admin.discounts');
-})->name('discounts-management');
-
-Route::get('/admin/support', function () {
-    return view('admin.support');
-})->name('support-management');
 
 Route::get('/admin/settings', function () {
     return view('admin.settings');
@@ -173,6 +181,7 @@ Route::post('/seller/logout', [SellerAuthController::class, 'logout'])->name('se
 
 
 
+<<<<<<< HEAD
 use App\Http\Controllers\Seller\SellerDashboardController;
 
 Route::prefix('seller')->name('seller.')->middleware([AuthSeller::class])->group(function () {
@@ -189,6 +198,15 @@ Route::prefix('seller')->name('seller.')->middleware([AuthSeller::class])->group
 
     // Profile or other routes
     Route::get('/profile', [SellerAuthController::class, 'showProfile'])->name('profile');
+=======
+Route::get('/seller/profile', [SellerAuthController::class, 'showProfile'])->name('sellerProfile');
+// Route::middleware([AuthSeller::class])->group(function () {
+//     Route::get('/products/create', [SellerProductController::class, 'create'])->name('seller.products.create');
+//     Route::post('/products', [SellerProductController::class, 'store'])->name('seller.products.store');
+// });
+Route::middleware(['auth:seller'])->prefix('seller')->name('seller.')->group(function () {
+    Route::resource('products', SellerProductController::class);
+>>>>>>> dip
 });
 
 Route::get('/seller/dashboard', function () {

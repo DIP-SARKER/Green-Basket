@@ -1,271 +1,241 @@
- @extends('admin.dashboard')
- @push('style')
-     <link rel="stylesheet" href="{{ asset('css/dip/discounts.css') }}">
- @endpush
- @push('title')
-     <h1>Discounts Management</h1>
- @endpush
- @section('dashboard-content')
-     <!-- Discounts Content -->
-     <div class="discounts-page">
-         <div class="discounts-container">
-             <div class="discounts-list">
-                 <div class="discounts-filters">
-                     <div class="filter-group">
-                         <button class="filter-btn active">All Discounts</button>
-                         <button class="filter-btn">Active</button>
-                         <button class="filter-btn">Upcoming</button>
-                         <button class="filter-btn">Expired</button>
-                     </div>
-                     <div class="search-box">
-                         <i class="fas fa-search"></i>
-                         <input type="text" placeholder="Search discounts...">
-                     </div>
-                 </div>
+@extends('admin.dashboard')
 
-                 <table class="discounts-table">
-                     <thead>
-                         <tr>
-                             <th>Discount Name</th>
-                             <th>Code</th>
-                             <th>Type</th>
-                             <th>Value</th>
-                             <th>Dates</th>
-                             <th>Uses</th>
-                             <th>Status</th>
-                             <th>Actions</th>
-                         </tr>
-                     </thead>
-                     <tbody>
-                         <tr>
-                             <td>Summer Sale</td>
-                             <td><span class="discount-code">SUMMER25</span></td>
-                             <td><span class="discount-type type-percent">Percentage</span></td>
-                             <td>25%</td>
-                             <td>Jun 1 - Aug 31</td>
-                             <td>1,245</td>
-                             <td><span class="status-badge status-active">Active</span></td>
-                             <td>
-                                 <div class="actions">
-                                     <div class="action-btn edit-btn"><i class="fas fa-pen"></i></div>
-                                     <div class="action-btn delete-btn"><i class="fas fa-trash"></i></div>
-                                 </div>
-                             </td>
-                         </tr>
-                         <tr>
-                             <td>First Order Discount</td>
-                             <td><span class="discount-code">WELCOME10</span></td>
-                             <td><span class="discount-type type-fixed">Fixed</span></td>
-                             <td>৳100</td>
-                             <td>Jan 1 - Dec 31</td>
-                             <td>845</td>
-                             <td><span class="status-badge status-active">Active</span></td>
-                             <td>
-                                 <div class="actions">
-                                     <div class="action-btn edit-btn"><i class="fas fa-pen"></i></div>
-                                     <div class="action-btn delete-btn"><i class="fas fa-trash"></i></div>
-                                 </div>
-                             </td>
-                         </tr>
-                         <tr>
-                             <td>Winter Clearance</td>
-                             <td><span class="discount-code">WINTER30</span></td>
-                             <td><span class="discount-type type-percent">Percentage</span></td>
-                             <td>30%</td>
-                             <td>Dec 1 - Dec 31</td>
-                             <td>0</td>
-                             <td><span class="status-badge status-upcoming">Upcoming</span></td>
-                             <td>
-                                 <div class="actions">
-                                     <div class="action-btn edit-btn"><i class="fas fa-pen"></i></div>
-                                     <div class="action-btn delete-btn"><i class="fas fa-trash"></i></div>
-                                 </div>
-                             </td>
-                         </tr>
-                         <tr>
-                             <td>Eid Special</td>
-                             <td><span class="discount-code">EID2023</span></td>
-                             <td><span class="discount-type type-fixed">Fixed</span></td>
-                             <td>৳150</td>
-                             <td>Apr 20 - Apr 25</td>
-                             <td>1,780</td>
-                             <td><span class="status-badge status-expired">Expired</span></td>
-                             <td>
-                                 <div class="actions">
-                                     <div class="action-btn edit-btn"><i class="fas fa-pen"></i></div>
-                                     <div class="action-btn delete-btn"><i class="fas fa-trash"></i></div>
-                                 </div>
-                             </td>
-                         </tr>
-                         <tr>
-                             <td>Farmers Appreciation</td>
-                             <td><span class="discount-code">FARMER15</span></td>
-                             <td><span class="discount-type type-percent">Percentage</span></td>
-                             <td>15%</td>
-                             <td>May 1 - May 15</td>
-                             <td>342</td>
-                             <td><span class="status-badge status-expired">Expired</span></td>
-                             <td>
-                                 <div class="actions">
-                                     <div class="action-btn edit-btn"><i class="fas fa-pen"></i></div>
-                                     <div class="action-btn delete-btn"><i class="fas fa-trash"></i></div>
-                                 </div>
-                             </td>
-                         </tr>
-                         <tr>
-                             <td>Green Friday</td>
-                             <td><span class="discount-code">GREEN20</span></td>
-                             <td><span class="discount-type type-percent">Percentage</span></td>
-                             <td>20%</td>
-                             <td>Nov 24 - Nov 26</td>
-                             <td>0</td>
-                             <td><span class="status-badge status-draft">Draft</span></td>
-                             <td>
-                                 <div class="actions">
-                                     <div class="action-btn edit-btn"><i class="fas fa-pen"></i></div>
-                                     <div class="action-btn delete-btn"><i class="fas fa-trash"></i></div>
-                                 </div>
-                             </td>
-                         </tr>
-                     </tbody>
-                 </table>
-             </div>
+@push('style')
+    <link rel="stylesheet" href="{{ asset('css/dip/discounts.css') }}">
+@endpush
 
-             <div class="discount-form">
-                 <h2 style="margin-bottom: 1.5rem;">Create New Discount</h2>
+@push('title')
+    <h1>Discounts Management</h1>
+@endpush
 
-                 <div class="form-group">
-                     <label for="discountName">Discount Name</label>
-                     <input type="text" id="discountName" class="form-control" placeholder="Summer Sale">
-                 </div>
+@section('dashboard-content')
+    <div class="discounts-page">
+        <div class="discounts-container">
+            <!-- ✅ Table Section -->
+            <div class="discounts-list">
+                <div class="discounts-filters">
+                    <div class="filter-group">
+                        <button class="filter-btn active" data-status="all">All Discounts</button>
+                        <button class="filter-btn" data-status="active">Active</button>
+                        <button class="filter-btn" data-status="expired">Expired</button>
+                    </div>
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchDiscount" placeholder="Search discounts...">
+                    </div>
+                </div>
 
-                 <div class="form-group">
-                     <label for="discountCode">Discount Code</label>
-                     <input type="text" id="discountCode" class="form-control" placeholder="SUMMER25">
-                 </div>
+                <table class="discounts-table">
+                    <thead>
+                        <tr>
+                            <th>Discount Name</th>
+                            <th>Code</th>
+                            <th>Type</th>
+                            <th>Value</th>
+                            <th>Dates</th>
+                            <th>Uses</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="discountTableBody">
+                        @foreach ($discounts as $discount)
+                            <tr data-id="{{ $discount->id }}" data-name="{{ $discount->name }}"
+                                data-code="{{ $discount->code }}" data-type="{{ $discount->discount_type }}"
+                                data-value="{{ $discount->value }}" data-start="{{ $discount->start_date }}"
+                                data-end="{{ $discount->end_date }}" data-usage="{{ $discount->usage_limit }}"
+                                data-status="{{ $discount->status }}">
+                                <td>{{ $discount->name }}</td>
+                                <td><span class="discount-code">{{ $discount->code }}</span></td>
+                                <td>
+                                    <span
+                                        class="discount-type {{ $discount->discount_type == 'percentage' ? 'type-percent' : 'type-fixed' }}">
+                                        {{ ucfirst($discount->discount_type) }}
+                                    </span>
+                                </td>
+                                <td>
+                                    {{ $discount->discount_type == 'percentage' ? $discount->value . '%' : '৳' . $discount->value }}
+                                </td>
+                                <td>
+                                    {{ \Illuminate\Support\Str::substr($discount->start_date, 0, 10) }} ➖
+                                    {{ \Illuminate\Support\Str::substr($discount->end_date, 0, 10) }}
+                                </td>
 
-                 <div class="form-group">
-                     <label>Discount Type</label>
-                     <div class="radio-group">
-                         <div class="radio-option">
-                             <input type="radio" id="typePercentage" name="discountType" checked>
-                             <label for="typePercentage">Percentage</label>
-                         </div>
-                         <div class="radio-option">
-                             <input type="radio" id="typeFixed" name="discountType">
-                             <label for="typeFixed">Fixed Amount</label>
-                         </div>
-                     </div>
-                 </div>
+                                <td>{{ $discount->usage_limit ?? '∞' }}</td>
+                                <td>
+                                    @if ($discount->status == 1)
+                                        <span class="status-badge status-active">Active</span>
+                                    @else
+                                        <span class="status-badge status-inactive">Expired</span>
+                                    @endif
+                                </td>
+                                <td>
+                                    <div class="actions">
+                                        <div class="action-btn edit-btn"><i class="fas fa-edit"></i></div>
+                                        <div class="action-btn delete"><i class="fas fa-trash"></i></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
 
-                 <div class="form-group">
-                     <label for="discountValue">Discount Value</label>
-                     <input type="number" id="discountValue" class="form-control" placeholder="25">
-                     <small class="text-muted">Enter percentage (e.g., 25) or fixed amount (e.g., 100)</small>
-                 </div>
 
-                 <div class="form-row">
-                     <div class="form-group">
-                         <label for="startDate">Start Date</label>
-                         <input type="date" id="startDate" class="form-control">
-                     </div>
+            <!-- ✅ Form Section -->
+            <div class="discount-form">
+                <h2 id="formTitle">Create New Discount</h2>
 
-                     <div class="form-group">
-                         <label for="endDate">End Date</label>
-                         <input type="date" id="endDate" class="form-control">
-                     </div>
-                 </div>
+                <form id="discountForm" method="POST" action="{{ route('discounts.store') }}">
+                    @csrf
+                    <input type="hidden" name="id" id="discountId">
 
-                 <div class="form-group">
-                     <label for="maxUses">Maximum Uses (Optional)</label>
-                     <input type="number" id="maxUses" class="form-control" placeholder="Unlimited">
-                 </div>
+                    <div class="form-group">
+                        <label>Discount Name</label>
+                        <input type="text" id="discountName" name="name" required>
+                    </div>
 
-                 <div class="form-actions">
-                     <button class="btn btn-outline">Cancel</button>
-                     <button class="btn btn-primary">Create Discount</button>
-                 </div>
+                    <div class="form-group">
+                        <label>Discount Code</label>
+                        <input type="text" id="discountCode" name="code" required>
+                    </div>
 
-                 <div class="stats-summary">
-                     <div class="stat-item">
-                         <div class="value">8</div>
-                         <div class="label">Active Discounts</div>
-                     </div>
-                     <div class="stat-item">
-                         <div class="value">1,245</div>
-                         <div class="label">Total Uses</div>
-                     </div>
-                     <div class="stat-item">
-                         <div class="value">৳24,580</div>
-                         <div class="label">Total Savings</div>
-                     </div>
-                     <div class="stat-item">
-                         <div class="value">12%</div>
-                         <div class="label">Conversion Rate</div>
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </div>
- @endsection
- @push('script')
-     <script>
-        //  document.addEventListener('DOMContentLoaded', function() {
-        //      // Highlight active filter
-        //      const filterBtns = document.querySelectorAll('.filter-btn');
-        //      filterBtns.forEach(btn => {
-        //          btn.addEventListener('click', function() {
-        //              filterBtns.forEach(b => b.classList.remove('active'));
-        //              this.classList.add('active');
-        //          });
-        //      });
+                    <div class="form-group">
+                        <label>Discount Type</label>
+                        <div>
+                            <input type="radio" name="discount_type" value="percentage" checked> Percentage
+                            <input type="radio" name="discount_type" value="fixed"> Fixed Amount
+                        </div>
+                    </div>
 
-        //      // Form validation
-        //      const discountForm = document.querySelector('.discount-form');
-        //      discountForm.addEventListener('submit', function(e) {
-        //          e.preventDefault();
+                    <div class="form-group">
+                        <label>Discount Value</label>
+                        <input type="number" id="discountValue" name="value" required>
+                    </div>
 
-        //          const discountName = document.getElementById('discountName').value;
-        //          const discountCode = document.getElementById('discountCode').value;
+                    <div class="form-group">
+                        <label>Start Date</label>
+                        <input type="date" id="startDate" name="start_date" required>
+                    </div>
 
-        //          if (!discountName || !discountCode) {
-        //              alert('Please fill in all required fields');
-        //              return;
-        //          }
+                    <div class="form-group">
+                        <label>End Date</label>
+                        <input type="date" id="endDate" name="end_date" required>
+                    </div>
 
-        //          // In a real app, this would submit the form to the server
-        //          alert('Discount created successfully!');
-        //          discountForm.reset();
-        //      });
+                    <div class="form-group">
+                        <label>Usage</label>
+                        <input type="number" id="Usage" name="usage_limit">
+                    </div>
 
-        //      // Edit button functionality
-        //      const editBtns = document.querySelectorAll('.edit-btn');
-        //      editBtns.forEach(btn => {
-        //          btn.addEventListener('click', function() {
-        //              const row = this.closest('tr');
-        //              const discountName = row.cells[0].textContent;
+                    <div class="form-group">
+                        <label>Status:</label>
+                        <select name="status" id="discountStatus" required>
+                            <option value="1">Active</option>
+                            <option value="0">Expired</option>
+                        </select>
+                    </div>
 
-        //              // In a real app, this would load the discount data into the form
-        //              alert(`Editing discount: ${discountName}`);
-        //              document.getElementById('discountName').value = discountName;
-        //              document.querySelector('.discount-form h2').textContent = 'Edit Discount';
-        //              document.querySelector('.btn-primary').textContent = 'Update Discount';
-        //          });
-        //      });
+                    <div class="form-actions">
+                        <button type="reset" class="btn btn-outline" id="cancelBtn">Cancel</button>
+                        <button type="submit" class="btn btn-primary" id="submitBtn">Create Discount</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+@endsection
 
-        //      // Delete button functionality
-        //      const deleteBtns = document.querySelectorAll('.delete-btn');
-        //      deleteBtns.forEach(btn => {
-        //          btn.addEventListener('click', function() {
-        //              const row = this.closest('tr');
-        //              const discountName = row.cells[0].textContent;
+@push('script')
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.getElementById("discountForm");
+            const formTitle = document.getElementById("formTitle");
+            const submitBtn = document.getElementById("submitBtn");
+            const cancelBtn = document.getElementById("cancelBtn");
+            const idInput = document.getElementById("discountId");
 
-        //              if (confirm(`Are you sure you want to delete the discount: ${discountName}?`)) {
-        //                  row.remove();
-        //                  alert('Discount deleted successfully!');
-        //              }
-        //          });
-        //      });
-        //  });
-     </script>
- @endpush
+            // ✅ Reset to Create Mode
+            function resetForm() {
+                form.reset();
+                idInput.value = "";
+                form.action = "{{ route('discounts.store') }}";
+                form.method = "POST";
+                formTitle.textContent = "Create New Discount";
+                submitBtn.textContent = "Create Discount";
+            }
+
+            function formatDate(dateString) {
+                if (!dateString) return "";
+                return dateString.split(" ")[0]; // Take only YYYY-MM-DD
+            }
+
+            cancelBtn.addEventListener("click", function() {
+                resetForm();
+            });
+
+            // ✅ Handle Edit
+            document.querySelectorAll(".edit-btn").forEach(btn => {
+                btn.addEventListener("click", function() {
+                    const row = this.closest("tr");
+                    const id = row.dataset.id;
+
+                    // Populate form
+                    idInput.value = id;
+                    document.getElementById("discountName").value = row.dataset.name;
+                    document.getElementById("discountCode").value = row.dataset.code;
+                    document.getElementById("discountValue").value = row.dataset.value;
+                    document.getElementById("startDate").value = formatDate(row.dataset.start);
+                    document.getElementById("endDate").value = formatDate(row.dataset.end);
+                    document.getElementById("Usage").value = row.dataset.usage ?? "";
+
+                    document.querySelectorAll("input[name='discount_type']").forEach(radio => {
+                        radio.checked = (radio.value === row.dataset.type);
+                    });
+
+                    // ✅ Ensure it's always "1" or "0"
+                    const statusValue = row.dataset.status === "1" || row.dataset.status === 1 ?
+                        "1" : "0";
+                    document.getElementById("discountStatus").value = statusValue;
+
+
+                    // Switch to Update Mode
+                    form.action = `{{ route('discounts.update', ':id') }}`.replace(':id', id);
+                    form.method = "POST";
+
+                    // Add hidden _method input for PUT
+                    let methodInput = form.querySelector("input[name='_method']");
+                    if (!methodInput) {
+                        methodInput = document.createElement("input");
+                        methodInput.type = "hidden";
+                        methodInput.name = "_method";
+                        form.appendChild(methodInput);
+                    }
+                    methodInput.value = "PUT";
+
+                    formTitle.textContent = "Edit Discount";
+                    submitBtn.textContent = "Update Discount";
+                });
+            });
+
+            // ✅ Handle Delete
+            document.querySelectorAll(".delete").forEach(btn => {
+                btn.addEventListener("click", function() {
+                    const row = this.closest("tr");
+                    const id = row.dataset.id;
+
+                    if (confirm("Are you sure you want to delete this discount?")) {
+                        const formDelete = document.createElement("form");
+                        formDelete.method = "POST";
+                        formDelete.action = `{{ route('discounts.delete', ':id') }}`.replace(':id',
+                            id);
+                        formDelete.innerHTML =
+                            `@csrf <input type="hidden" name="_method" value="DELETE">`;
+                        document.body.appendChild(formDelete);
+                        formDelete.submit();
+                    }
+                });
+            });
+        });
+    </script>
+@endpush

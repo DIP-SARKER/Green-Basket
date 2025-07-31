@@ -41,7 +41,22 @@
             </div>
         </div>
 
-
+        <div class="alert">
+            @if (session('success'))
+                <div class="success-msg alert-msg">
+                    <span>{{ session('success') }}</span>
+                </div>
+            @endif
+            @if ($errors->any())
+                <div class="error-msg alert-msg">
+                    <ol>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ol>
+                </div>
+            @endif
+        </div>
         <!-- Dynamic Page Content -->
         @yield('dashboard-content')
     </div>

@@ -188,6 +188,24 @@ body {
     color: var(--text-light);
 }
 
+.status-badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.status-active {
+    background: rgba(76, 175, 80, 0.15);
+    color: var(--success);
+}
+
+.status-inactive {
+    background: rgba(158, 158, 158, 0.15);
+    color: #757575;
+}
+
 .action-btn {
     width: 32px;
     height: 32px;
@@ -247,6 +265,56 @@ body {
 .btn-outline:hover {
     background: rgba(46, 125, 50, 0.05);
 }
+
+.alert-msg {
+    padding: 1rem 2rem;
+    position: absolute;
+    top: 0rem;
+    right: 5rem;
+    text-align: center;
+    align-items: center;
+    font-weight: 600;
+    height: max-content;
+    width: max-content;
+    z-index: 10;
+    border-radius: 0.6rem;
+    transform: translateY(-100%);
+    opacity: 0;
+}
+.success-msg {
+    background: rgba(76, 175, 80, 0.7);
+    color: var(--primary-dark);
+    animation: msgpop 6s linear;
+}
+.error-msg {
+    background: rgba(238, 150, 139, 0.5);
+    color: var(--danger);
+    animation: msgpop 10s linear;
+    padding: 1rem 4rem;
+}
+
+@keyframes msgpop {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    35% {
+        transform: translateY(100%);
+        opacity: 0.6;
+    }
+    70% {
+        transform: translateY(300%);
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(300%);
+        opacity: 0;
+    }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .sidebar {
