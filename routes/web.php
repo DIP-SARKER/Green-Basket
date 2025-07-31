@@ -181,7 +181,6 @@ Route::post('/seller/logout', [SellerAuthController::class, 'logout'])->name('se
 
 
 
-<<<<<<< HEAD
 use App\Http\Controllers\Seller\SellerDashboardController;
 
 Route::prefix('seller')->name('seller.')->middleware([AuthSeller::class])->group(function () {
@@ -198,7 +197,7 @@ Route::prefix('seller')->name('seller.')->middleware([AuthSeller::class])->group
 
     // Profile or other routes
     Route::get('/profile', [SellerAuthController::class, 'showProfile'])->name('profile');
-=======
+});
 Route::get('/seller/profile', [SellerAuthController::class, 'showProfile'])->name('sellerProfile');
 // Route::middleware([AuthSeller::class])->group(function () {
 //     Route::get('/products/create', [SellerProductController::class, 'create'])->name('seller.products.create');
@@ -206,10 +205,8 @@ Route::get('/seller/profile', [SellerAuthController::class, 'showProfile'])->nam
 // });
 Route::middleware(['auth:seller'])->prefix('seller')->name('seller.')->group(function () {
     Route::resource('products', SellerProductController::class);
->>>>>>> dip
 });
 
 Route::get('/seller/dashboard', function () {
     return view('seller.dashboard.sellerdashboard');
 })->name('seller-overview');
-
