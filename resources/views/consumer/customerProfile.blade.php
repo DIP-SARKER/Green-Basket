@@ -533,18 +533,18 @@
 @endpush
 
 @section('main-content')
-    <div class="profile-container">
+  <div class="profile-container">
         <div class="profile-header">
-            <h1 class="profile-title">My Profile</h1>
-            <p class="welcome-message">Welcome back, <span>{{ $customer->name }}</span>!</p>
+            <h1 class="profile-title">আমার প্রোফাইল</h1>
+            <p class="welcome-message">ফিরে আসার জন্য স্বাগতম, <span>{{ $customer->name }}</span>!</p>
         </div>
 
         @if(Auth::guard('customer')->check())
             <div class="profile-tabs">
-                <div class="tab active" onclick="switchTab('overview')">Overview</div>
-                <div class="tab" onclick="switchTab('orders')">My Orders</div>
-                <div class="tab" onclick="switchTab('carts')">My Cart</div> <!-- Add this line -->
-                <div class="tab" onclick="switchTab('settings')">Settings</div>
+                <div class="tab active" onclick="switchTab('overview')">ওভারভিউ</div>
+                <div class="tab" onclick="switchTab('orders')">আমার অর্ডারসমূহ</div>
+                <div class="tab" onclick="switchTab('carts')">আমার কার্ট</div>
+                <div class="tab" onclick="switchTab('settings')">সেটিংস</div>
             </div>
 
             <!-- Overview Tab -->
@@ -552,44 +552,44 @@
                 <div class="profile-card">
                     <div class="profile-info">
                         <div class="info-item">
-                            <span class="info-label">Full Name:</span>
+                            <span class="info-label">পূর্ণ নাম:</span>
                             <span class="info-value">{{ $customer->name }}</span>
                         </div>
                         <div class="info-item">
-                            <span class="info-label">Email:</span>
+                            <span class="info-label">ইমেইল:</span>
                             <span class="info-value">{{ $customer->email }}</span>
                         </div>
                         <div class="info-item">
-                            <span class="info-label">Phone:</span>
-                            <span class="info-value">{{ $customer->phone ?? 'Not provided' }}</span>
+                            <span class="info-label">ফোন:</span>
+                            <span class="info-value">{{ $customer->phone ?? 'প্রদত্ত নয়' }}</span>
                         </div>
                         <div class="info-item">
-                            <span class="info-label">Address:</span>
-                            <span class="info-value">{{ $customer->address ?? 'Not provided' }}</span>
+                            <span class="info-label">ঠিকানা:</span>
+                            <span class="info-value">{{ $customer->address ?? 'প্রদত্ত নয়' }}</span>
                         </div>
                         <div class="info-item">
-                            <span class="info-label">Member Since:</span>
+                            <span class="info-label">সদস্য হয়েছেন:</span>
                             <span class="info-value">{{ $customer->created_at->format('M d, Y') }}</span>
                         </div>
                         <div class="info-item">
-                            <span class="info-label">LoyaltyPoint:</span>
+                            <span class="info-label">লয়ালটি পয়েন্ট:</span>
                             <span class="info-value">{{ $customer->loyaltyPoints()->sum('points')}}</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="action-buttons">
-                    <a href="" class="btn btn-outline">Edit Profile</a>
+                    <a href="" class="btn btn-outline">প্রোফাইল সম্পাদনা করুন</a>
                     <form action="{{ route('customer_logout') }}" method="POST" style="width: 100%;">
                         @csrf
-                        <button type="submit" class="btn btn-primary">Logout</button>
+                        <button type="submit" class="btn btn-primary">লগআউট</button>
                     </form>
                 </div>
             </div>
 
             <!-- Orders Tab -->
             <div id="orders" class="tab-content">
-                <h3 class="section-title">Recent Orders</h3>
+                <h3 class="section-title">সাম্প্রতিক অর্ডারসমূহ</h3>
 
                 @if($orders->isNotEmpty())
                     <div class="orders-grid">
@@ -597,7 +597,7 @@
                             <div class="order-card">
                                 <div class="order-header">
                                     <div class="order-meta">
-                                        <strong class="order-number">Order #{{ $order->id }}</strong>
+                                        <strong class="order-number">অর্ডার #{{ $order->id }}</strong>
                                         <p class="order-date">{{ $order->created_at->format('M d, Y') }}</p>
                                     </div>
                                     <div class="order-status-container">
@@ -609,13 +609,13 @@
 
                                 <div class="order-body">
                                     <div class="order-summary">
-                                        <p class="order-total">Total: ৳{{ number_format($order->total_price, 2) }}</p>
-                                        <p class="order-items">{{ $order->orderItems->count() }} items</p>
+                                        <p class="order-total">মোট: ৳{{ number_format($order->total_price, 2) }}</p>
+                                        <p class="order-items">{{ $order->orderItems->count() }} টি আইটেম</p>
                                     </div>
 
                                     <div class="order-actions">
                                         <a href="{{ route('orders.show', $order->id) }}" class="order-details-btn">
-                                            View Details
+                                            বিস্তারিত দেখুন
                                         </a>
                                     </div>
                                 </div>
@@ -624,16 +624,15 @@
                     </div>
                 @else
                     <div class="no-orders">
-                        <p class="empty-message">You haven't placed any orders yet.</p>
-                        <a href="{{ route('shop') }}" class="btn btn-primary">Start Shopping</a>
+                        <p class="empty-message">আপনি এখনও কোনো অর্ডার করেননি।</p>
+                        <a href="{{ route('shop') }}" class="btn btn-primary">শপিং শুরু করুন</a>
                     </div>
                 @endif
             </div>
 
-
             <!-- Carts Tab -->
             <div id="carts" class="tab-content">
-                <h3 class="section-title">Your Cart</h3>
+                <h3 class="section-title">আপনার কার্ট</h3>
 
                 @if($cartItems->isNotEmpty())
                     <div class="cart-grid">
@@ -649,7 +648,7 @@
                                                 <p class="cart-product-price">৳{{ number_format($item->product->price, 2) }}</p>
                                             </div>
                                         @else
-                                            <strong class="cart-product-name">Product no longer available</strong>
+                                            <strong class="cart-product-name">পণ্যটি আর উপলব্ধ নেই</strong>
                                         @endif
                                     </div>
                                     <div class="cart-quantity-container">
@@ -659,7 +658,7 @@
 
                                 <div class="cart-body">
                                     <div class="cart-summary">
-                                        <p class="cart-subtotal">Subtotal:
+                                        <p class="cart-subtotal">সাবটোটাল:
                                             ৳{{ number_format($item->product ? $item->product->price * $item->quantity : 0, 2) }}</p>
                                     </div>
                                 </div>
@@ -667,14 +666,14 @@
                         @endforeach
 
                         <div class="cart-total">
-                            <strong>Total: ৳{{ number_format($cartTotal, 2) }}</strong>
-                            <a href="{{ route('cart.index') }}" class="checkout-btn">Go to Cart Page</a>
+                            <strong>মোট: ৳{{ number_format($cartTotal, 2) }}</strong>
+                            <a href="{{ route('cart.index') }}" class="checkout-btn">কার্ট পেজে যান</a>
                         </div>
                     </div>
                 @else
                     <div class="empty-cart">
-                        <p class="empty-message">Your cart is empty</p>
-                        <a href="{{ route('shop') }}" class="btn btn-primary">Continue Shopping</a>
+                        <p class="empty-message">আপনার কার্ট খালি</p>
+                        <a href="{{ route('shop') }}" class="btn btn-primary">শপিং চালিয়ে যান</a>
                     </div>
                 @endif
             </div>
@@ -682,27 +681,27 @@
             <!-- Settings Tab -->
             <div id="settings" class="tab-content">
                 <div class="profile-card">
-                    <h3>Account Settings</h3>
+                    <h3>অ্যাকাউন্ট সেটিংস</h3>
                     <div class="profile-info">
                         <div class="info-item">
-                            <span class="info-label">Notifications:</span>
-                            <span class="info-value">Enabled</span>
+                            <span class="info-label">নোটিফিকেশন:</span>
+                            <span class="info-value">সক্রিয়</span>
                         </div>
                         <div class="info-item">
-                            <span class="info-label">Newsletter:</span>
-                            <span class="info-value">Subscribed</span>
+                            <span class="info-label">নিউজলেটার:</span>
+                            <span class="info-value">সাবস্ক্রাইব করা হয়েছে</span>
                         </div>
                     </div>
                 </div>
                 <div class="action-buttons">
-                    <button class="btn btn-outline">Change Password</button>
-                    <button class="btn btn-outline">Delete Account</button>
+                    <button class="btn btn-outline">পাসওয়ার্ড পরিবর্তন করুন</button>
+                    <button class="btn btn-outline">অ্যাকাউন্ট মুছে দিন</button>
                 </div>
             </div>
         @else
             <div class="profile-card" style="text-align: center;">
-                <p>You need to login to view your profile.</p>
-                <a href="{{ route('customer_auth') }}" class="btn btn-primary">Login/Sign Up</a>
+                <p>আপনার প্রোফাইল দেখার জন্য লগইন করুন।</p>
+                <a href="{{ route('customer_auth') }}" class="btn btn-primary">লগইন/সাইন আপ</a>
             </div>
         @endif
     </div>
