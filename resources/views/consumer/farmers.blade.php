@@ -1,23 +1,21 @@
 @extends('index')
 @push('style')
-<title>Farmers | Green Basket</title>
+<title>কৃষকবৃন্দ | গ্রীন বাস্কেট</title>
 <link rel="stylesheet" href="{{ asset('css/hridoy/farmers.css') }}">
 @endpush
 
 @section('main-content')
 <main>
     <section class="hero-farmer">
-        <h1>Meet Our Farmers</h1>
-        <p>Get to know the hardworking individuals who grow the fresh, sustainable food you love</p>
-        <a href="#farmers" class="cta-button">Explore Their Stories</a>
+        <h1>আমাদের কৃষকদের সাথে পরিচিত হন</h1>
+        <p>পরিচিত হন সেই শ্রমনিষ্ঠ ব্যক্তিদের সাথে যারা আপনাকে সতেজ এবং টেকসই খাদ্য সরবরাহ করেন</p>
+        <a href="#farmers" class="cta-button">তাদের গল্প জানুন</a>
     </section>
 
     <section class="container" id="farmers">
         <div class="farmers-intro">
-            <h2>Locally Grown, Farmer First</h2>
-            <p>At Green Basket Bangladesh, we collaborate directly with smallholder farmers across the country who
-                are committed to sustainable agriculture and ethical farming. Every farmer in our network
-                contributes deep knowledge and heartfelt care to the produce they grow.</p>
+            <h2>স্থানীয়ভাবে চাষ করা, কৃষক প্রথম</h2>
+            <p>গ্রীন বাস্কেট বাংলাদেশে, আমরা দেশের ছোট কৃষকদের সাথে সরাসরি সহযোগিতা করি যারা টেকসই কৃষি ও নৈতিক চাষাবাদে নিবেদিত। আমাদের নেটওয়ার্কের প্রতিটি কৃষক তাদের গভীর জ্ঞান ও আন্তরিক যত্ন দিয়ে চাষজাত পণ্য উৎপাদন করে।</p>
         </div>
 
         <div class="farmers-grid">
@@ -27,21 +25,18 @@
                         alt="Farmer Abdul Karim">
                 </div>
                 <div class="farmer-info">
-                    <h3>Abdul & Rokeya Karim</h3>
+                    <h3>আব্দুল ও রোকেয়া করিম</h3>
                     <div class="farmer-location">
-                        <!-- Location Icon -->
                         <svg width="12" height="12" ...></svg>
-                        Rangpur Organic Farm, 70 km away
+                        রংপুর অর্গানিক ফার্ম, ৭০ কিমি দূরে
                     </div>
-                    <p class="farmer-bio">A husband-and-wife duo with a passion for organic farming. They have
-                        dedicated the past two decades to cultivating seasonal vegetables without harmful chemicals.
-                    </p>
+                    <p class="farmer-bio">দম্পতি যারা অর্গানিক চাষের প্রতি গভীর আগ্রহী। গত দুই দশক ধরে তারা মৌসুমী সবজি ক্ষতিকর রসায়ন ছাড়া চাষ করছেন।</p>
                     <div class="farmer-products">
-                        <span class="product-tag">Red Amaranth</span>
-                        <span class="product-tag">Bottle Gourd</span>
-                        <span class="product-tag">Deshi Spinach</span>
+                        <span class="product-tag">লাল শাক</span>
+                        <span class="product-tag">লাউ</span>
+                        <span class="product-tag">দেশি পালং শাক</span>
                     </div>
-                    <a href="#" class="farmer-button">View Their Products</a>
+                    <a href="#" class="farmer-button">তাদের পণ্য দেখুন</a>
                 </div>
             </div>
 
@@ -51,20 +46,19 @@
                         alt="Farmer Amina Khatun">
                 </div>
                 <div class="farmer-info">
-                    <h3>Amina Khatun</h3>
+                    <h3>আমিনা খাতুন</h3>
                     <div class="farmer-location">
                         <svg width="12" height="12" ...></svg>
-                        Kushtia Green Fields, 40 km away
+                        কুষ্টিয়া গ্রিন ফিল্ডস, ৪০ কিমি দূরে
                     </div>
-                    <p class="farmer-bio">Amina transformed her ancestral land into a vibrant organic farm
-                        specializing in native Bangladeshi herbs and vegetables using eco-friendly techniques.</p>
+                    <p class="farmer-bio">আমিনা তার পৈতৃক জমিকে রূপান্তরিত করেছেন একটি জীবন্ত অর্গানিক ফার্মে, যেখানে প্রাকৃতিক এবং পরিবেশ বান্ধব পদ্ধতিতে দেশীয় শাকসবজি ও হার্বস চাষ করা হয়।</p>
                     <div class="farmer-products">
-                        <span class="product-tag">Pui Shak</span>
-                        <span class="product-tag">Green Chili</span>
-                        <span class="product-tag">Lau (Bottle Gourd)</span>
-                        <span class="product-tag">Lemon Basil</span>
+                        <span class="product-tag">পুঁই শাক</span>
+                        <span class="product-tag">কাঁচা মরিচ</span>
+                        <span class="product-tag">লাউ</span>
+                        <span class="product-tag">লেবুর তুলসি</span>
                     </div>
-                    <a href="#" class="farmer-button">View Their Products</a>
+                    <a href="#" class="farmer-button">তাদের পণ্য দেখুন</a>
                 </div>
             </div>
 
@@ -74,20 +68,19 @@
                         alt="Farmer Rezaul & Nasima">
                 </div>
                 <div class="farmer-info">
-                    <h3>Nasima Haque</h3>
+                    <h3>নাসিমা হক</h3>
                     <div class="farmer-location">
                         <svg width="12" height="12" ...></svg>
-                        Jashore Agro Valley, 90 km away
+                        যশোর অ্যাগ্রো ভ্যালি, ৯০ কিমি দূরে
                     </div>
-                    <p class="farmer-bio">This dedicated couple blends traditional farming wisdom with modern
-                        organic practices, producing high-demand vegetables popular in Bengali kitchens.</p>
+                    <p class="farmer-bio">প্রথাগত চাষের জ্ঞানকে আধুনিক অর্গানিক পদ্ধতির সাথে মিলিয়ে এই দম্পতি উচ্চ চাহিদার সবজি উৎপাদন করছেন।</p>
                     <div class="farmer-products">
-                        <span class="product-tag">Okra</span>
-                        <span class="product-tag">Eggplant (Begun)</span>
-                        <span class="product-tag">Bitter Gourd</span>
-                        <span class="product-tag">Turmeric Root</span>
+                        <span class="product-tag">ঢেঁড়স</span>
+                        <span class="product-tag">বেগুন</span>
+                        <span class="product-tag">করলা</span>
+                        <span class="product-tag">হলুদ মূল</span>
                     </div>
-                    <a href="#" class="farmer-button">View Their Products</a>
+                    <a href="#" class="farmer-button">তাদের পণ্য দেখুন</a>
                 </div>
             </div>
 
@@ -97,20 +90,19 @@
                         alt="Farmer Harun Mia">
                 </div>
                 <div class="farmer-info">
-                    <h3>Abul Mia</h3>
+                    <h3>আবুল মিয়া</h3>
                     <div class="farmer-location">
                         <svg width="12" height="12" ...></svg>
-                        Narsingdi Dairy Farm, 35 km away
+                        নারসিংদী ডেইরি ফার্ম, ৩৫ কিমি দূরে
                     </div>
-                    <p class="farmer-bio">A leader in ethical dairy farming, Harun raises his cows in open pastures
-                        and produces premium quality milk, ghee, and yogurt for nearby communities.</p>
+                    <p class="farmer-bio">নৈতিক দুধ চাষে নেতা, আবুল মিয়া খোলা চারণভূমিতে গরু পালন করেন এবং প্রিমিয়াম দুধ, ঘি ও দই উৎপাদন করেন।</p>
                     <div class="farmer-products">
-                        <span class="product-tag">Fresh Milk</span>
-                        <span class="product-tag">Ghee</span>
-                        <span class="product-tag">Doi (Yogurt)</span>
-                        <span class="product-tag">Paneer</span>
+                        <span class="product-tag">তাজা দুধ</span>
+                        <span class="product-tag">ঘি</span>
+                        <span class="product-tag">দই</span>
+                        <span class="product-tag">পনির</span>
                     </div>
-                    <a href="#" class="farmer-button">View Their Products</a>
+                    <a href="#" class="farmer-button">তাদের পণ্য দেখুন</a>
                 </div>
             </div>
 
@@ -120,20 +112,19 @@
                         alt="Farmer Laila Begum">
                 </div>
                 <div class="farmer-info">
-                    <h3>Laila Begum</h3>
+                    <h3>লাইলা বেগম</h3>
                     <div class="farmer-location">
                         <svg width="12" height="12" ...></svg>
-                        Sylhet Berry Garden, 20 km away
+                        সিলেট বেরি গার্ডেন, ২০ কিমি দূরে
                     </div>
-                    <p class="farmer-bio">Laila runs a thriving small-scale fruit farm, producing organic berries
-                        with regenerative techniques that protect the soil and water sources.</p>
+                    <p class="farmer-bio">লাইলা একটি ছোট স্কেলের ফলের ফার্ম পরিচালনা করেন, অর্গানিক বেরি উৎপাদন করে যা মাটির ও পানির সংরক্ষণে সহায়ক।</p>
                     <div class="farmer-products">
-                        <span class="product-tag">Strawberries</span>
-                        <span class="product-tag">Mulberries</span>
-                        <span class="product-tag">Blueberries</span>
-                        <span class="product-tag">Jamun (Java Plum)</span>
+                        <span class="product-tag">স্ট্রবেরি</span>
+                        <span class="product-tag">মালবেরি</span>
+                        <span class="product-tag">ব্লুবেরি</span>
+                        <span class="product-tag">জামুন</span>
                     </div>
-                    <a href="#" class="farmer-button">View Their Products</a>
+                    <a href="#" class="farmer-button">তাদের পণ্য দেখুন</a>
                 </div>
             </div>
 
@@ -143,19 +134,18 @@
                         alt="Farmer Sona Mia">
                 </div>
                 <div class="farmer-info">
-                    <h3>Sona Mia</h3>
+                    <h3>সোনা মিয়া</h3>
                     <div class="farmer-location">
                         <svg width="12" height="12" ...></svg>
-                        Natore Mango Estate, 60 km away
+                        নাটোর ম্যাঙ্গো এস্টেট, ৬০ কিমি দূরে
                     </div>
-                    <p class="farmer-bio">Preserving local mango varieties like Himsagar and Langra, Kamal maintains
-                        one of the oldest mango orchards in northern Bangladesh.</p>
+                    <p class="farmer-bio">স্থানীয় আমের জাত যেমন হিমসাগর ও লংরা সংরক্ষণ করে, সোনা বাংলাদেশের উত্তরাঞ্চলের প্রাচীনতম বাগানগুলোর একটি রক্ষণাবেক্ষণ করেন।</p>
                     <div class="farmer-products">
-                        <span class="product-tag">Himsagar Mangoes</span>
-                        <span class="product-tag">Langra Mangoes</span>
-                        <span class="product-tag">Mango Pulp</span>
+                        <span class="product-tag">হিমসাগর আম</span>
+                        <span class="product-tag">লংরা আম</span>
+                        <span class="product-tag">আমের পলপ</span>
                     </div>
-                    <a href="#" class="farmer-button">View Their Products</a>
+                    <a href="#" class="farmer-button">তাদের পণ্য দেখুন</a>
                 </div>
             </div>
         </div>
@@ -163,35 +153,29 @@
 
     <section class="testimonials">
         <div class="container">
-            <h2 class="section-title">What Our Farmers Say</h2>
+            <h2 class="section-title">আমাদের কৃষকরা যা বলেন</h2>
             <div class="testimonial-grid">
                 <div class="testimonial-card">
-                    <p class="testimonial-text">Green Basket Bangladesh helped us connect with customers in Dhaka
-                        and beyond. We now spend more time on our fields, and our income has increased
-                        significantly.</p>
-                    <p class="testimonial-author">— Abdul Karim, Rangpur Organic Farm</p>
+                    <p class="testimonial-text">গ্রীন বাস্কেট বাংলাদেশের মাধ্যমে আমরা ঢাকা এবং এর বাইরে গ্রাহকদের সাথে সংযোগ স্থাপন করতে পারি। এখন আমরা বেশি সময় আমাদের মাঠে দিতে পারি, এবং আমাদের আয় উল্লেখযোগ্যভাবে বৃদ্ধি পেয়েছে।</p>
+                    <p class="testimonial-author">— আব্দুল করিম, রংপুর অর্গানিক ফার্ম</p>
                 </div>
                 <div class="testimonial-card">
-                    <p class="testimonial-text">As a small farm, I had trouble accessing a steady market. Now, my
-                        berries are reaching eco-conscious buyers who value what I grow.</p>
-                    <p class="testimonial-author">— Laila Begum, Sylhet Berry Garden</p>
+                    <p class="testimonial-text">ছোট ফার্ম হিসেবে স্থিতিশীল বাজারে প্রবেশ করা কঠিন ছিল। এখন আমাদের বেরি পরিবেশ সচেতন ক্রেতাদের কাছে পৌঁছাচ্ছে যারা আমাদের চাষকৃত পণ্যকে মূল্যায়ন করে।</p>
+                    <p class="testimonial-author">— লাইলা বেগম, সিলেট বেরি গার্ডেন</p>
                 </div>
                 <div class="testimonial-card">
-                    <p class="testimonial-text">Fair prices and timely payments — that’s what Green Basket promised,
-                        and they’ve delivered. My family is finally seeing stability through our farm.</p>
-                    <p class="testimonial-author">— Rezaul Haque, Jashore Agro Valley</p>
+                    <p class="testimonial-text">ন্যায্য দাম এবং সময়মতো পেমেন্ট — গ্রীন বাস্কেট যা প্রতিশ্রুতি দিয়েছে, তা পূরণ করেছে। আমাদের পরিবার অবশেষে আমাদের ফার্মের মাধ্যমে স্থিতিশীলতা দেখছে।</p>
+                    <p class="testimonial-author">— রেজাউল হক, যশোর অ্যাগ্রো ভ্যালি</p>
                 </div>
             </div>
         </div>
     </section>
 
-
     <section class="join-section">
         <div class="container">
-            <h2>Become a Green Basket Farmer</h2>
-            <p>We're always looking to partner with local farmers who share our values of sustainability, quality,
-                and ethical practices.</p>
-            <a href="#" class="cta-button">Learn About Partnering With Us</a>
+            <h2>গ্রীন বাস্কেটের কৃষক হন</h2>
+            <p>আমরা সবসময় স্থানীয় কৃষকদের সাথে অংশীদারিত্ব করতে আগ্রহী যারা আমাদের টেকসই, মানসম্পন্ন ও নৈতিক চাষের মূল্যবোধ ভাগ করে।</p>
+            <a href="#" class="cta-button">আমাদের সাথে অংশীদারিত্ব সম্পর্কে জানুন</a>
         </div>
     </section>
 </main>
