@@ -214,7 +214,7 @@ Route::prefix('seller')->name('seller.')->middleware([AuthSeller::class])->group
     // Profile or other routes
     Route::get('/profile', [SellerAuthController::class, 'showProfile'])->name('profile');
 });
-Route::get('/seller/profile', [SellerAuthController::class, 'showProfile'])->name('sellerProfile');
+
 // Route::middleware([AuthSeller::class])->group(function () {
 //     Route::get('/products/create', [SellerProductController::class, 'create'])->name('seller.products.create');
 //     Route::post('/products', [SellerProductController::class, 'store'])->name('seller.products.store');
