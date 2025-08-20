@@ -397,70 +397,7 @@
     color: var(--earth);
 }
 
-/* Pagination Wrapper */
-.pagination {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 1.5rem;
-    border-top: 1px solid var(--border);
-}
 
-/* Info text */
-.pagination-info {
-    color: var(--text-light);
-    font-size: 0.9rem;
-}
-
-/* Pagination links container */
-.pagination .pagination {
-    display: flex;
-    gap: 0.5rem;
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
-}
-
-/* Individual page items */
-.pagination .page-item {
-    margin: 0;
-    gap: 2rem;
-}
-
-/* Page links */
-.pagination .page-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 80px;
-    height: 32px;
-    border-radius: 4px;
-    background: rgba(46, 125, 50, 0.05);
-    color: var(--primary);
-    font-size: 0.9rem;
-    text-decoration: none;
-    transition: all 0.2s;
-    border: none;
-}
-
-/* Active page */
-.pagination .page-item.active .page-link {
-    background: var(--primary);
-    color: white;
-}
-
-/* Hover */
-.pagination .page-link:hover:not(.active) {
-    background: rgba(46, 125, 50, 0.15);
-    color: var(--primary);
-}
-
-/* Disabled */
-.pagination .page-item.disabled .page-link {
-    background: rgba(0, 0, 0, 0.03);
-    color: #aaa;
-    cursor: default;
-}
 
 /* Responsive */
 @media (max-width: 1200px) {

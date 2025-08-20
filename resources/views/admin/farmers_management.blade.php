@@ -166,75 +166,67 @@
  @push('script')
      <script>
          document.addEventListener('DOMContentLoaded', function() {
-             const tableRows = document.querySelectorAll('.farmers-table tbody tr');
+             const tableBody = document.querySelector('.farmers-table tbody');
+             const editFormWrapper = document.getElementById('editFormWrapper');
+             const editForm = document.getElementById('editFarmerForm');
+             const cancelEditBtn = document.getElementById('cancelEdit');
 
-             // Search functionality
+             // 🔹 Search functionality (optional, if you have a search box)
              const searchInput = document.querySelector('.search-box input');
-             searchInput.addEventListener('input', function() {
-                 const term = this.value.toLowerCase();
-                 tableRows.forEach(row => {
-                     const id = row.querySelector('.farmer-id').textContent.toLowerCase();
-                     const name = row.querySelector('.farmer-name').textContent.toLowerCase();
-                     row.style.display = id.includes(term) || name.includes(term) ? '' : 'none';
+             if (searchInput) {
+                 searchInput.addEventListener('input', function() {
+                     const term = this.value.toLowerCase();
+                     tableBody.querySelectorAll('tr').forEach(row => {
+                         const id = row.querySelector('.farmer-id').textContent.toLowerCase();
+                         const name = row.querySelector('.farmer-name').textContent.toLowerCase();
+                         row.style.display = id.includes(term) || name.includes(term) ? '' : 'none';
+                     });
                  });
-             });
+             }
 
-             // Confirm toggle & delete
-             document.querySelectorAll('.action-btn').forEach(button => {
-                 button.addEventListener('click', function(e) {
-                     const action = this.querySelector('i').className;
-                     const row = this.closest('tr');
-                     const farmerName = row.querySelector('.farmer-name').textContent.trim();
-                     if (action.includes('trash')) {
-                         if (!confirm(`Are you sure you want to delete farmer: ${farmerName}?`)) {
-                             e.preventDefault();
-                         }
-                     }
-                 });
-             });
+             // 🔹 Event delegation for Edit & Delete buttons
+             tableBody.addEventListener('click', function(e) {
+                 const editBtn = e.target.closest('.edit-btn');
+                 const deleteBtn = e.target.closest('.delete');
 
-             // ✅ Edit button functionality
-             document.querySelectorAll('.edit-btn').forEach(button => {
-                 button.addEventListener('click', function() {
-                     const row = this.closest('tr');
+                 if (editBtn) {
+                     const row = editBtn.closest('tr');
                      const id = row.dataset.id;
                      const farmerName = row.querySelector('.farmer-name').textContent.trim();
 
-                     // ✅ Confirmation before editing
-                     if (!confirm(`Do you want to edit farmer: ${farmerName}?`)) {
-                         return; // Stop if user cancels
-                     }
+                     if (!confirm(`Do you want to edit farmer: ${farmerName}?`)) return;
 
-                     // ✅ Populate form
-                     const form = document.getElementById('editFarmerForm');
-                     form.name.value = row.querySelector('.farmer-name').textContent.trim();
-                     form.email.value = row.querySelector('.farmer-email').textContent.trim() !==
-                         'N/A' ?
+                     // Populate edit form
+                     editForm.name.value = row.querySelector('.farmer-name').textContent.trim();
+                     editForm.email.value = row.querySelector('.farmer-email').textContent.trim() !== 'N/A' ?
                          row.querySelector('.farmer-email').textContent.trim() :
                          '';
-                     form.phone.value = row.querySelector('.phone').textContent.trim();
-                     form.address.value = row.querySelector('.location').textContent.replace(
-                         /^📍\s*/, '').trim();
-                     form.products.value = row.querySelector('.products-count').textContent.trim();
-                     form.status.value = row.querySelector('.status-badge').classList.contains(
-                             'status-active') ?
-                         '1' :
-                         '0';
+                     editForm.phone.value = row.querySelector('.phone').textContent.trim();
+                     editForm.address.value = row.querySelector('.location').textContent.replace(/^📍\s*/,
+                         '').trim();
+                     editForm.products.value = row.querySelector('.products-count').textContent.trim();
+                     editForm.status.value = row.querySelector('.status-badge').classList.contains(
+                         'status-active') ? '1' : '0';
 
                      document.getElementById('editSellerId').value = id;
+                     editForm.action = `{{ route('sellers.update', ':id') }}`.replace(':id', id);
 
+                     editFormWrapper.style.display = 'block';
+                 }
 
-                     form.action = `{{ route('sellers.update', ':id') }}`.replace(':id', id);
+                 if (deleteBtn) {
+                     const row = deleteBtn.closest('tr');
+                     const farmerName = row.querySelector('.farmer-name').textContent.trim();
 
-
-                     document.getElementById('editFormWrapper').style.display = 'block';
-                 });
+                     if (!confirm(`Are you sure you want to delete farmer: ${farmerName}?`)) {
+                         e.preventDefault(); // Stop form submission
+                     }
+                 }
              });
 
-
-             // Cancel Edit
-             document.getElementById('cancelEdit').addEventListener('click', () => {
-                 document.getElementById('editFormWrapper').style.display = 'none';
+             // 🔹 Cancel Edit
+             cancelEditBtn.addEventListener('click', () => {
+                 editFormWrapper.style.display = 'none';
              });
          });
      </script>
