@@ -1,6 +1,6 @@
 @extends('index')
 @push('style')
-    <title>{{ $product->name }} | Green Basket</title>
+    <title>{{ $product->name }} | গ্রিন বাস্কেট</title>
     <link rel="stylesheet" href="{{ asset('css/hridoy/product-details.css') }}">
 @endpush
 
@@ -12,37 +12,62 @@
 
             <div class="product-info-detail">
                 <h1>{{ $product->name }}</h1>
-                <p>By: {{ $product->seller->name ?? 'Local Farmer' }}</p>
+                <p>বিক্রেতা: {{ $product->seller->name ?? 'স্থানীয় কৃষক' }}</p>
                 <p>{{ $product->description }}</p>
-                <p class="price">৳<span id="total-price">{{ $product->price }}</span> for <span id="item-count">1</span>
-                    item(s)</p>
+                <p class="price">৳<span id="total-price">{{ $product->price }}</span> প্রতি <span id="item-count">1</span>
+                    টি</p>
                 <input type="hidden" id="unit-price" value="{{ $product->price }}">
-                <p class="stock">Available: {{ $product->stock_quantity }} items in stock.</p>
+                <p class="stock">স্টকে আছে: {{ $product->stock_quantity }} টি।</p>
 
-                <!-- Quantity Selector -->
-                <form action="{{ route('cart.add',$product->id) }}" method="POST">
+                <!-- পরিমাণ সিলেক্টর -->
+                <form action="{{ route('cart.add', $product->id) }}" method="POST">
                     @csrf
-                    <label for="quantity">Quantity:</label>
-                    <input type="number" name="quantity" id="quantity" value="1" min="1" max="{{ $product->stock_quantity }}">
-                    <button type="submit" class="add-to-cart-btn">Add to Cart</button>
+                    <label for="quantity">পরিমাণ:</label>
+                    <input type="number" name="quantity" id="quantity" value="1" min="1"
+                        max="{{ $product->stock_quantity }}">
+                    <button type="submit" class="add-to-cart-btn">কার্টে যোগ করুন</button>
                 </form>
-                
             </div>
         </section>
 
-        <!-- User Reviews -->
+        <!-- Review Section -->
         <section class="reviews">
-            <h2>Customer Reviews</h2>
-            @forelse($reviews as $review)
+            <h2>ক্রেতাদের রিভিউ</h2>
+
+            {{-- রিভিউ তালিকা --}}
+            @forelse($product->reviews as $review)
                 <div class="review-card">
                     <strong>{{ $review->customer->name }}</strong>
+                    <p>⭐ {{ $review->rating }}</p>
                     <p>{{ $review->comment }}</p>
                 </div>
             @empty
-                <p>No reviews yet.</p>
+                <p>এখনও কোনো রিভিউ নেই।</p>
             @endforelse
+            @auth('customer')
+                <form action="{{ route('reviews.store', $product->id) }}" method="POST">
+                    @csrf
+                    <label for="rating">রেটিং দিন:</label>
+                    <select name="rating" id="rating" required>
+                        <option value="1">⭐</option>
+                        <option value="2">⭐⭐</option>
+                        <option value="3">⭐⭐⭐</option>
+                        <option value="4">⭐⭐⭐⭐</option>
+                        <option value="5">⭐⭐⭐⭐⭐</option>
+                    </select>
+
+                    <label for="comment">মতামত লিখুন:</label>
+                    <textarea name="comment" id="comment" rows="3"></textarea>
+
+                    <button type="submit">রিভিউ দিন</button>
+                </form>
+            @else
+                <p>রিভিউ দিতে হলে <a href="{{ route('customer_auth') }}">লগইন করুন</a></p>
+            @endauth
+
         </section>
     </main>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const quantityInput = document.getElementById('quantity');
@@ -50,11 +75,13 @@
             const totalPriceSpan = document.getElementById('total-price');
 
             function updateTotalPrice() {
-                const quantity = parseInt(quantityInput.value) || 1;
+                let quantity = parseInt(quantityInput.value) || 1;
+                if (quantity < 1) quantity = 1;
+                if (quantity > {{ $product->stock_quantity }}) quantity = {{ $product->stock_quantity }};
+                quantityInput.value = quantity;
                 const total = (unitPrice * quantity).toFixed(2);
                 totalPriceSpan.textContent = total;
                 document.getElementById('item-count').textContent = quantity;
-                totalPriceSpan.textContent = total;
             }
 
             quantityInput.addEventListener('input', updateTotalPrice);

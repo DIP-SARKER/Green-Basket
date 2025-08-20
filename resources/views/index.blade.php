@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 
 <head>
     <meta charset="UTF-8">
@@ -28,17 +28,17 @@
                 </div>
                 <a href="{{ route('home') }}" class="logo">green<span>basket</span></a>
                 <div class="nav-links">
-                    <a href="{{ route('shop') }}">Shop</a>
-                    <a href="{{ route("farmers") }}">Farmers</a>
-                    <a href="{{ route('seasonal') }}">Seasonal</a>
-                    <a href="{{ route("recipes") }}">Recipes</a>
-                    <a href="{{ route("about") }}">About</a>
+                    <a href="{{ route('shop') }}">কেনাকাটা করুন</a>
+                    <a href="{{ route("farmers") }}">কৃষক</a>
+                    <a href="{{ route('seasonal') }}">মৌসুমি পণ্য</a>
+                    <a href="{{ route("recipes") }}">রেসিপি</a>
+                    <a href="{{ route("about") }}">আমাদের সম্পর্কে</a>
                     @if(Auth::guard('customer')->check())
+                        <a href="{{ route('cart.index') }}">কার্ট</a>
+                        <a href="{{ route('orders.index') }}">অর্ডার</a>
                         <a href="{{ route('cprofile') }}">{{ Auth::guard('customer')->user()->name }}</a>
-                        <a href="{{ route('cart.index') }}">Cart</a>
-                        <a href="{{ route('orders.index') }}">Orders</a>
                     @else
-                        <a href="{{ route('customer_auth') }}">Login/SignUp</a>
+                        <a href="{{ route('customer_auth') }}">লগইন / সাইন আপ</a>
                     @endif
                 </div>
             </nav>
@@ -51,37 +51,37 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-column">
-                    <h3>Green Basket</h3>
-                    <p>Farm fresh groceries,
-                        delivered simple.</p>
+                    <h3>গ্রিন বাস্কেট</h3>
+                    <p>খামার থেকে তাজা মুদি সামগ্রী,  
+                        সহজেই পৌঁছে যাবে।</p>
                 </div>
                 <div class="footer-column">
-                    <h3>About</h3>
+                    <h3>আমাদের সম্পর্কে</h3>
                     <ul>
-                        <li><a href="#">Our Farmers</a></li>
-                        <li><a href="{{ route('sustainability') }}">Sustainability</a></li>
-                        <li><a href="{{ route('referfriends') }}">Refer Friends</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="{{ route('privacypolicy') }}">Privacy Policy</a></li>
-                        <li><a href="{{ route('termsandcondition') }}">Terms & Condition</a></li>
+                        <li><a href="#">আমাদের কৃষক</a></li>
+                        <li><a href="{{ route('sustainability') }}">টেকসই উন্নয়ন</a></li>
+                        <li><a href="{{ route('referfriends') }}">বন্ধু রেফার করুন</a></li>
+                        <li><a href="#">ব্লগ</a></li>
+                        <li><a href="{{ route('privacypolicy') }}">গোপনীয়তা নীতি</a></li>
+                        <li><a href="{{ route('termsandcondition') }}">শর্তাবলী</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-column">
-                    <h3>Help</h3>
+                    <h3>সহায়তা</h3>
                     <ul>
-                        <li><a href="{{ route('contact') }}">Contact</a></li>
-                        <li><a href="{{ route('faq') }}">FAQs</a></li>
-                        <li><a href="{{ route('deliveryinfo') }}">Delivery Info</a></li>
-                        <li><a href="{{ route('returnaproduct') }}">Returns</a></li>
-                        <li><a href="{{ route('loyaltyprogram') }}">Loyalty Program</a></li>
-                        <li><a href="{{ route('paymentsecurity') }}">Payment Security</a></li>
+                        <li><a href="{{ route('contact') }}">যোগাযোগ</a></li>
+                        <li><a href="{{ route('faq') }}">প্রশ্নোত্তর</a></li>
+                        <li><a href="{{ route('deliveryinfo') }}">ডেলিভারি তথ্য</a></li>
+                        <li><a href="{{ route('returnaproduct') }}">রিটার্ন</a></li>
+                        <li><a href="{{ route('loyaltyprogram') }}">লয়ালটি প্রোগ্রাম</a></li>
+                        <li><a href="{{ route('paymentsecurity') }}">পেমেন্ট নিরাপত্তা</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="copyright">
-                <p>&copy; 2025 Green Basket. All rights reserved.</p>
+                <p>&copy; ২০২৫ গ্রিন বাস্কেট। সর্বস্বত্ব সংরক্ষিত।</p>
             </div>
         </div>
     </footer>

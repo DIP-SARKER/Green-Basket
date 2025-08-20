@@ -117,18 +117,18 @@
     margin-bottom: 1rem;
 }
 
-.add-to-cart {
-    width: 100%;
-    padding: 0.5rem;
+.add-to-cart-btn {
     background-color: var(--primary);
     color: var(--white);
+    padding: 0.6rem 1.2rem;
     border: none;
-    border-radius: 0.25rem;
+    border-radius: 4px;
     cursor: pointer;
-    transition: all 0.2s;
+    margin-top: 0.5rem;
+    transition: background-color 0.3s ease;
 }
 
-.add-to-cart:hover {
+.add-to-cart-btn:hover {
     background-color: var(--primary-dark);
 }
 

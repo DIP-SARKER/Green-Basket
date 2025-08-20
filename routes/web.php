@@ -210,3 +210,11 @@ Route::middleware(['auth:seller'])->prefix('seller')->name('seller.')->group(fun
 Route::get('/seller/dashboard', function () {
     return view('seller.dashboard.sellerdashboard');
 })->name('seller-overview');
+
+
+use App\Http\Controllers\ReviewController;
+
+Route::post('/products/{product}/reviews', [ReviewController::class, 'store'])
+    ->middleware([AuthCustomer::class]) // if you registered it as 'auth.customer' in Kernel
+    ->name('reviews.store');
+
