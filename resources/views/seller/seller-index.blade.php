@@ -32,7 +32,7 @@
                         <a href="{{ route('seller.allProducts') }}"
                             class="nav-link {{ Request::routeIs('seller.products.*') ? 'active' : '' }}">
                             <span class="nav-icon">📦</span>
-                            Products
+                            Inventory
                         </a>
                     </div>
                     <div class="nav-item">
@@ -41,12 +41,7 @@
                             Orders
                         </a>
                     </div>
-                    <div class="nav-item">
-                        <a href="" class="nav-link {{ Request::routeIs('seller.customers.*') ? 'active' : '' }}">
-                            <span class="nav-icon">👥</span>
-                            Customers
-                        </a>
-                    </div>
+                    
                 </div>
 
                 <div class="nav-section">
@@ -63,22 +58,12 @@
                             Revenue
                         </a>
                     </div>
-                    <div class="nav-item">
-                        <a href="" class="nav-link {{ Request::routeIs('seller.inventory.*') ? 'active' : '' }}">
-                            <span class="nav-icon">📋</span>
-                            Inventory
-                        </a>
-                    </div>
+                    
                 </div>
 
                 <div class="nav-section">
                     <div class="nav-section-title">Settings</div>
-                    <div class="nav-item">
-                        <a href="" class="nav-link {{ Request::routeIs('seller.settings.*') ? 'active' : '' }}">
-                            <span class="nav-icon">⚙️</span>
-                            Store Settings
-                        </a>
-                    </div>
+                    
                     <div class="nav-item">
                         <a href="{{ route('seller.profile') }}" class="nav-link {{ Request::routeIs('seller.profile.*') ? 'active' : '' }}">
                             <span class="nav-icon">👤</span>

@@ -591,19 +591,11 @@
         </div>
         <div class="nav-item">
             <i class="fas fa-shopping-basket"></i>
-            <span class="nav-text">Products</span>
+            <span class="nav-text">Inventory</span>
         </div>
         <div class="nav-item">
             <i class="fas fa-file-invoice-dollar"></i>
             <span class="nav-text">Orders</span>
-        </div>
-        <div class="nav-item">
-            <i class="fas fa-chart-line"></i>
-            <span class="nav-text">Analytics</span>
-        </div>
-        <div class="nav-item">
-            <i class="fas fa-truck"></i>
-            <span class="nav-text">Delivery</span>
         </div>
         <div class="nav-item">
             <i class="fas fa-comments"></i>
