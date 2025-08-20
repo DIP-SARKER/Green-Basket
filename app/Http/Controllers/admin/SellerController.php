@@ -26,7 +26,7 @@ class SellerController extends Controller
             $query->where('status', $request->status);
         }
 
-        $sellers = $query->paginate(3)->withQueryString();
+        $sellers = $query->paginate(5)->withQueryString();
         // Add pagination if needed
 
         return view('admin.farmers_management', compact('sellers'));

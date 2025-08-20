@@ -85,7 +85,7 @@
                 <button class="close-modal" id="closeModal">&times;</button>
             </div>
             <div class="modal-content">
-                <ul id="modalOrderItemsList"></ul>
+                <ol id="modalOrderItemsList"></ol>
             </div>
         </div>
     </div>
@@ -101,7 +101,8 @@
 
                 items.forEach(item => {
                     const li = document.createElement('li');
-                    li.textContent = `${item.product} × ${item.quantity} @ ${item.price} BDT`;
+                    li.textContent =
+                        `${item.product} => ${item.quantity} × ${item.price} = ${item.price*item.quantity}BDT`;
                     list.appendChild(li);
                 });
 

@@ -15,6 +15,7 @@ use App\Http\Controllers\admin\SellerController as AdminSellerController;
 use App\Http\Controllers\admin\CustomerController as AdminCustomerController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\DiscountController as AdminDiscountController;
 
 
@@ -126,12 +127,6 @@ Route::get('/admin', function () {
     return view('admin.login');
 })->name('admin-login');
 
-
-Route::get('/admin/dashboard', function () {
-    return view('admin.overview');
-})->name('admin-overview');
-
-
 // Route::prefix('admin')->middleware('auth')->group(function () {
 //     Route::get('/support-tickets/{id}', [SupportTicketController::class, 'show']);
 //     Route::post('/support-tickets/{id}/reply', [SupportTicketController::class, 'reply'])->name('support.reply');
@@ -139,6 +134,9 @@ Route::get('/admin/dashboard', function () {
 // });
 
 Route::prefix('admin')->group(function () {
+
+    Route::get('/overview', [AdminController::class, 'index'])->name('admin-overview');
+
 
     Route::get('/products', [AdminProductController::class, 'index'])->name('products-management');
     Route::patch('/products/{id}/toggle-activity', [AdminProductController::class, 'toggleActivity'])->name('products.toggleStatus');
@@ -172,9 +170,6 @@ Route::prefix('admin')->group(function () {
 
 Route::post('/contact-submit', [SupportTicketController::class, 'storeFromCustomer'])->name('support.create');
 
-// Route::get('/admin/orders', function () {
-//     return view('admin.orders_management');
-// })->name('orders-management');
 
 Route::get('/admin/analytics', function () {
     return view('admin.analytics');

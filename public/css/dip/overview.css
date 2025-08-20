@@ -1,7 +1,7 @@
 /* Stats Cards */
 .stats-row {
     display: grid;
-    grid-template-columns: repeat(5, minmax(240px, 1fr));
+    grid-template-columns: repeat(4, minmax(240px, 1fr));
     gap: 1.5rem;
     margin-bottom: 2rem;
 }

@@ -23,6 +23,8 @@ class DatabaseSeeder extends Seeder
             DiscountsTableSeeder::class,
             ReviewsTableSeeder::class,
             SupportTicketTableSeeder::class,
+            OrdersTableSeeder::class,
+            OrderItemsTableSeeder::class
         ]);
 
         // User::factory()->create([
