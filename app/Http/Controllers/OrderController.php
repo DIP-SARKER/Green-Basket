@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use illuminate\Support\Facades\Auth;
 use App\Models\Cart;
 use App\Models\Product;
+use App\Models\LoyaltyPoint;
 use App\Models\Order;
 use App\Models\OrderItem;
 use Illuminate\Support\Facades\DB;
@@ -69,6 +70,14 @@ class OrderController extends Controller
                 ]);
 
                 $item->product->decrement('stock_quantity', $item->quantity);
+                $points = floor($order->total_price / 100) * 10;
+
+                // Save points
+                LoyaltyPoint::create([
+                    'customer_id' => $order->customer_id,
+                    'order_id' => $order->id,
+                    'points' => $points,
+                ]);
             }
 
             // Only delete selected items

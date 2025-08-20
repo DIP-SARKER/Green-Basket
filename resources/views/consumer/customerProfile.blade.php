@@ -571,6 +571,10 @@
                             <span class="info-label">Member Since:</span>
                             <span class="info-value">{{ $customer->created_at->format('M d, Y') }}</span>
                         </div>
+                        <div class="info-item">
+                            <span class="info-label">LoyaltyPoint:</span>
+                            <span class="info-value">{{ $customer->loyaltyPoints()->sum('points')}}</span>
+                        </div>
                     </div>
                 </div>
 

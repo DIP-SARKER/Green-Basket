@@ -25,4 +25,10 @@ class Order extends Model
     {
         return $this->belongsTo(Customer::class);
     }
+
+    public function loyaltyPoint()
+    {
+        return $this->hasOne(LoyaltyPoint::class);
+    }
+
 }

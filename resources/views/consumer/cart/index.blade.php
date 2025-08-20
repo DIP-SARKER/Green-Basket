@@ -124,20 +124,20 @@
 
 @section('main-content')
 <div class="cart-wrapper">
-    <h2 class="cart-title">Your Cart</h2>
+    <h2 class="cart-title">আপনার কার্ট</h2>
 
     @if($cartItems->isEmpty())
-        <p class="empty-message">Your cart is empty.</p>
+        <p class="empty-message">আপনার কার্ট খালি।</p>
     @else
         <table class="cart-table">
             <thead class="cart-header">
                 <tr>
-                    <th class="cart-th">Select</th>
-                    <th class="cart-th">Product</th>
-                    <th class="cart-th">Qty</th>
-                    <th class="cart-th">Price</th>
-                    <th class="cart-th">Subtotal</th>
-                    <th class="cart-th">Remove</th>
+                    <th class="cart-th">নির্বাচন</th>
+                    <th class="cart-th">পণ্য</th>
+                    <th class="cart-th">পরিমাণ</th>
+                    <th class="cart-th">মূল্য</th>
+                    <th class="cart-th">মোট</th>
+                    <th class="cart-th">মুছে ফেলুন</th>
                 </tr>
             </thead>
             <tbody class="cart-body">
@@ -160,19 +160,19 @@
                                     style="width: 60px; padding: 5px; margin-right: 6px; text-align: center;" />
                                 <button type="submit"
                                     style="background: #2a6538; color: white; border: none; padding: 5px 10px; border-radius: 4px; font-size: 13px; cursor: pointer;">
-                                    Update
+                                    আপডেট
                                 </button>
                             </form>
                         </td>
                         <td class="cart-td">৳{{ number_format($item->product->price, 2) }}</td>
                         <td class="cart-td">৳{{ number_format($subtotal, 2) }}</td>
                         <td class="cart-td">
-                            <a href="{{ route('cart.remove', $item->product_id) }}" class="btn-remove">Remove</a>
+                            <a href="{{ route('cart.remove', $item->product_id) }}" class="btn-remove">মুছে ফেলুন</a>
                         </td>
                     </tr>
                 @endforeach
                 <tr class="cart-total-row">
-                    <td colspan="3" class="cart-total-label">Total:</td>
+                    <td colspan="3" class="cart-total-label">মোট:</td>
                     <td class="cart-total-amount">৳{{ number_format($total, 2) }}</td>
                 </tr>
             </tbody>
@@ -183,10 +183,11 @@
             @csrf
             <button type="submit"
                 style="background-color: #2a6538; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-weight: bold; font-size: 16px; cursor: pointer;">
-                Proceed to Checkout (Selected Items Only)
+                চেকআউটে যান (শুধু নির্বাচিত পণ্যসমূহ)
             </button>
         </form>
     @endif
 </div>
+
 
 @endsection

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Customer;
+use App\Models\LoyaltyPoint;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\OrderController;
 use App\Models\Order;
@@ -73,8 +74,11 @@ class CustomerAuthController extends Controller
     $cartTotal = $cartItems->sum(function($item) {
         return $item->product ? $item->product->price * $item->quantity : 0;
     });
+    $totalPoints = $customer->loyaltyPoints()->sum('points');
+
+
     
-    return view('consumer.customerProfile', compact('customer', 'orders', 'cartItems', 'cartTotal'));
+    return view('consumer.customerProfile', compact('customer', 'orders', 'cartItems', 'cartTotal','totalPoints'));
 }
 
 

@@ -1,124 +1,124 @@
 @extends('index')
 @push('style')
-<title>FAQ | Green Basket</title>
+<title>প্রায়শই জিজ্ঞাসিত প্রশ্ন | গ্রিন বাস্কেট</title>
 <link rel="stylesheet" href="{{ asset('css/moshiur/faq.css') }}">
 @endpush
 
 @section('main-content')
 <section class="faq-section">
     <div class="container">
-        <h1 class="section-title">Frequently Asked Questions</h1>
-        <p class="section-subtitle">Find answers to common questions about Green Basket</p>
+        <h1 class="section-title">প্রায়শই জিজ্ঞাসিত প্রশ্ন</h1>
+        <p class="section-subtitle">গ্রিন বাস্কেট সম্পর্কিত সাধারণ প্রশ্নের উত্তর খুঁজুন</p>
         
         <div class="faq-container">
             <div class="faq-category">
-                <h2>General Questions</h2>
+                <h2>সাধারণ প্রশ্ন</h2>
                 <div class="faq-item">
-                    <button class="faq-question">What is Green Basket?<span class="faq-toggle">+</span></button>
+                    <button class="faq-question">গ্রিন বাস্কেট কি?<span class="faq-toggle">+</span></button>
                     <div class="faq-answer">
-                        <p>Green Basket is a Bangladeshi direct-to-consumer (D2C) ecommerce platform that connects farmers directly with consumers. We deliver fresh, organic, and locally sourced agricultural products straight from farms to your doorstep.</p>
+                        <p>গ্রিন বাস্কেট হলো একটি বাংলাদেশি ডাইরেক্ট-টু-কনজিউমার (D2C) ইকমার্স প্ল্যাটফর্ম যা কৃষকদের সরাসরি গ্রাহকের সঙ্গে সংযুক্ত করে। আমরা তাজা, অর্গানিক এবং স্থানীয়ভাবে উৎপাদিত কৃষি পণ্য সরাসরি ফার্ম থেকে আপনার দোরগোড়ায় পৌঁছে দেই।</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <button class="faq-question">Where does Green Basket operate?<span class="faq-toggle">+</span></button>
+                    <button class="faq-question">গ্রিন বাস্কেট কোথায় সেবা প্রদান করে?<span class="faq-toggle">+</span></button>
                     <div class="faq-answer">
-                        <p>Currently, we operate in Dhaka, Chittagong, Sylhet, and Khulna metropolitan areas. We're expanding to other cities soon!</p>
+                        <p>বর্তমানে আমরা ঢাকা, চট্টগ্রাম, সিলেট এবং খুলনা মহানগর এলাকায় সেবা প্রদান করি। শীঘ্রই অন্যান্য শহরেও সম্প্রসারণ করা হবে!</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <button class="faq-question">How does Green Basket support farmers?<span class="faq-toggle">+</span></button>
+                    <button class="faq-question">গ্রিন বাস্কেট কৃষকদের কীভাবে সমর্থন করে?<span class="faq-toggle">+</span></button>
                     <div class="faq-answer">
-                        <p>We work directly with local farmers, eliminating middlemen to ensure they receive fair prices for their produce. We also provide training on sustainable farming practices and help them access better markets.</p>
+                        <p>আমরা স্থানীয় কৃষকদের সঙ্গে সরাসরি কাজ করি এবং মধ্যস্বত্বভোগীদের বাদ দিয়ে তাদের উৎপাদনের জন্য ন্যায্য মূল্য নিশ্চিত করি। এছাড়াও আমরা টেকসই চাষাবাদের প্রশিক্ষণ প্রদান করি এবং তাদের জন্য ভালো বাজারে পৌঁছানোর সুযোগ তৈরি করি।</p>
                     </div>
                 </div>
             </div>
             
             <div class="faq-category">
-                <h2>Ordering & Delivery</h2>
+                <h2>অর্ডার ও ডেলিভারি</h2>
                 <div class="faq-item">
-                    <button class="faq-question">What are your delivery hours?<span class="faq-toggle">+</span></button>
+                    <button class="faq-question">আপনার ডেলিভারি সময় কত?<span class="faq-toggle">+</span></button>
                     <div class="faq-answer">
-                        <p>We deliver from 8:00 AM to 10:00 PM, seven days a week. You can choose your preferred delivery slot during checkout.</p>
+                        <p>আমরা সকাল ৮টা থেকে রাত ১০টা পর্যন্ত, সপ্তাহের সাত দিন ডেলিভারি করি। চেকআউটের সময় আপনি আপনার পছন্দের ডেলিভারি স্লট নির্বাচন করতে পারবেন।</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <button class="faq-question">What is your delivery charge?<span class="faq-toggle">+</span></button>
+                    <button class="faq-question">ডেলিভারি চার্জ কত?<span class="faq-toggle">+</span></button>
                     <div class="faq-answer">
-                        <p>Delivery is free for orders over ৳500. For orders below ৳500, we charge a nominal delivery fee of ৳50.</p>
+                        <p>৳500 এর বেশি অর্ডারে ডেলিভারি ফ্রি। ৳500 এর নিচের অর্ডারের জন্য আমরা ন্যূনতম ৳50 ডেলিভারি চার্জ করি।</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <button class="faq-question">Can I schedule delivery for a specific time?<span class="faq-toggle">+</span></button>
+                    <button class="faq-question">নির্দিষ্ট সময়ের জন্য ডেলিভারি নির্ধারণ করা কি সম্ভব?<span class="faq-toggle">+</span></button>
                     <div class="faq-answer">
-                        <p>Yes! During checkout, you can select from available time slots for delivery. We recommend ordering at least 12 hours in advance for time-specific deliveries.</p>
+                        <p>হ্যাঁ! চেকআউটের সময় আপনি ডেলিভারির জন্য উপলব্ধ সময় স্লট থেকে নির্বাচন করতে পারবেন। নির্দিষ্ট সময়ে ডেলিভারির জন্য আমরা অন্তত ১২ ঘণ্টা আগে অর্ডার করার পরামর্শ দেই।</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <button class="faq-question">What if I'm not available to receive my order?<span class="faq-toggle">+</span></button>
+                    <button class="faq-question">যদি আমি অর্ডার গ্রহণ করতে না পারি তবে কী হবে?<span class="faq-toggle">+</span></button>
                     <div class="faq-answer">
-                        <p>If you're not available, we'll attempt to contact you. If we can't reach you, we'll leave your order with a neighbor or security (with their permission) or bring it back to our facility for later delivery.</p>
+                        <p>যদি আপনি উপস্থিত না থাকেন, আমরা আপনাকে যোগাযোগ করার চেষ্টা করব। যদি যোগাযোগ সম্ভব না হয়, আমরা অর্ডারটি প্রতিবেশী বা সিকিউরিটির কাছে (তাদের অনুমতি নিয়ে) রেখে দিতে পারি অথবা পরবর্তীতে ডেলিভারির জন্য আমাদের ফ্যাসিলিটিতে ফিরিয়ে আনব।</p>
                     </div>
                 </div>
             </div>
             
             <div class="faq-category">
-                <h2>Products & Quality</h2>
+                <h2>পণ্য ও মান</h2>
                 <div class="faq-item">
-                    <button class="faq-question">Are your products organic?<span class="faq-toggle">+</span></button>
+                    <button class="faq-question">আপনার পণ্য কি অর্গানিক?<span class="faq-toggle">+</span></button>
                     <div class="faq-answer">
-                        <p>Most of our products are organically grown, though not all are certified organic. We work with farmers who use sustainable, chemical-free practices. Products that are certified organic are clearly labeled.</p>
+                        <p>আমাদের অধিকাংশ পণ্য অর্গানিকভাবে চাষ করা হয়, যদিও সব পণ্য সার্টিফাইড অর্গানিক নয়। আমরা এমন কৃষকদের সঙ্গে কাজ করি যারা টেকসই এবং রাসায়নিক মুক্ত চাষাবাদ করে। সার্টিফাইড অর্গানিক পণ্য স্পষ্টভাবে লেবেল করা থাকে।</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <button class="faq-question">How do you ensure product quality?<span class="faq-toggle">+</span></button>
+                    <button class="faq-question">আপনি কীভাবে পণ্যের মান নিশ্চিত করেন?<span class="faq-toggle">+</span></button>
                     <div class="faq-answer">
-                        <p>Our quality team personally inspects all products before dispatch. We have strict quality standards and work closely with farmers to maintain consistency. If you're ever unsatisfied, we offer a 100% satisfaction guarantee.</p>
+                        <p>আমাদের মান যাচাই টিম প্রেরণের আগে সব পণ্য ব্যক্তিগতভাবে পরিদর্শন করে। আমরা কঠোর মানদণ্ড অনুসরণ করি এবং consistency বজায় রাখতে কৃষকদের সঙ্গে ঘনিষ্ঠভাবে কাজ করি। যদি কখনও সন্তুষ্ট না হন, আমরা ১০০% সন্তুষ্টি গ্যারান্টি দিই।</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <button class="faq-question">Why are some products seasonal?<span class="faq-toggle">+</span></button>
+                    <button class="faq-question">কেন কিছু পণ্য মৌসুমি?<span class="faq-toggle">+</span></button>
                     <div class="faq-answer">
-                        <p>We believe in offering fresh, naturally grown produce. Many fruits and vegetables have natural growing seasons in Bangladesh. This ensures you get the freshest, most flavorful produce at its peak.</p>
+                        <p>আমরা বিশ্বাস করি তাজা, প্রাকৃতিকভাবে উৎপাদিত পণ্য দেওয়া গুরুত্বপূর্ণ। বাংলাদেশে অনেক ফল এবং সবজির নির্দিষ্ট মৌসুম থাকে। এটি নিশ্চিত করে যে আপনি সর্বাধিক তাজা এবং স্বাদযুক্ত পণ্য পাবেন।</p>
                     </div>
                 </div>
             </div>
             
             <div class="faq-category">
-                <h2>Payments & Returns</h2>
+                <h2>পেমেন্ট ও রিটার্ন</h2>
                 <div class="faq-item">
-                    <button class="faq-question">What payment methods do you accept?<span class="faq-toggle">+</span></button>
+                    <button class="faq-question">আপনি কোন পেমেন্ট পদ্ধতি গ্রহণ করেন?<span class="faq-toggle">+</span></button>
                     <div class="faq-answer">
-                        <p>We accept cash on delivery, bKash, Nagad, Rocket, and credit/debit cards through SSLCommerz secure payment gateway.</p>
+                        <p>আমরা ক্যাশ অন ডেলিভারি, বিকাশ, নগদ, রকেট এবং SSLCommerz-secure পেমেন্ট গেটওয়ে মাধ্যমে ক্রেডিট/ডেবিট কার্ড গ্রহণ করি।</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <button class="faq-question">What is your return policy?<span class="faq-toggle">+</span></button>
+                    <button class="faq-question">আপনার রিটার্ন পলিসি কী?<span class="faq-toggle">+</span></button>
                     <div class="faq-answer">
-                        <p>If you receive damaged or spoiled products, please contact us within 24 hours with photos. We'll either replace the items or issue a refund. Due to the perishable nature of our products, we can't accept returns for change of mind.</p>
+                        <p>যদি আপনি ক্ষতিগ্রস্ত বা নষ্ট পণ্য পান, ২৪ ঘণ্টার মধ্যে ছবি সহ আমাদের জানান। আমরা পণ্য পরিবর্তন বা অর্থ ফেরত প্রদান করব। পণ্য নাশওয়ানযোগ্য হওয়ার কারণে, মনের পরিবর্তনের জন্য রিটার্ন গ্রহণযোগ্য নয়।</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <button class="faq-question">How long does refund processing take?<span class="faq-toggle">+</span></button>
+                    <button class="faq-question">রিফান্ড প্রক্রিয়ায় কত সময় লাগে?<span class="faq-toggle">+</span></button>
                     <div class="faq-answer">
-                        <p>Refunds are processed within 3-5 business days. For digital payments, the refund will reflect in your account within 7-10 business days depending on your bank or mobile financial service provider.</p>
+                        <p>রিফান্ড ৩-৫ ব্যবসায়িক দিনের মধ্যে প্রক্রিয়াকৃত হয়। ডিজিটাল পেমেন্টের ক্ষেত্রে, আপনার ব্যাংক বা মোবাইল ফিনান্সিয়াল সার্ভিস প্রদানকারীর উপর নির্ভর করে ৭-১০ ব্যবসায়িক দিনের মধ্যে রিফান্ড আপনার অ্যাকাউন্টে প্রতিফলিত হবে।</p>
                     </div>
                 </div>
             </div>
         </div>
         
         <div class="faq-contact">
-            <h3>Still have questions?</h3>
-            <p>Our customer care team is happy to help!</p>
-            <a href="{{ route('contact') }}" class="cta-button">Contact Us</a>
+            <h3>অবশ্যই আরও প্রশ্ন আছে?</h3>
+            <p>আমাদের কাস্টমার কেয়ার টিম সাহায্য করতে সদা প্রস্তুত!</p>
+            <a href="{{ route('contact') }}" class="cta-button">যোগাযোগ করুন</a>
         </div>
     </div>
 </section>
