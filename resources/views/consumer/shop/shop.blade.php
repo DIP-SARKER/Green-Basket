@@ -14,6 +14,10 @@
 
 
 
+
+
+
+
         <!-- Category Filter -->
         <section class="category-banner">
             <div class="category-filter">
@@ -33,7 +37,15 @@
                     </a>
                 @endforeach
             </div>
+
+            <form action="{{ route('shop') }}" method="GET" class="search-form">
+                <input type="text" name="q" value="{{ request('q') }}" placeholder="Search for products or farmers...">
+                <button type="submit">Search</button>
+            </form>
         </section>
+
+
+
 
 
         <!-- Featured Products -->

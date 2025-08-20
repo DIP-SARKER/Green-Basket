@@ -1,4 +1,30 @@
 /* shop.css */
+.search-bar {
+    margin: 20px 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.search-form input {
+    padding: 8px 12px;
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.search-form button {
+    padding: 8px 16px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.search-form button:hover {
+    background: #218838;
+}
 
 .category-banner {
     margin-bottom: 2rem;

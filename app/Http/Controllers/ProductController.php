@@ -9,16 +9,30 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::where('status', 1)
-            ->latest()
-            ->paginate(12);
+        $query = Product::with('seller')
+            ->where('status', 1);
 
-        $categories = Category::all(); 
+        // ✅ Search filter
+        if ($request->filled('q')) {
+            $search = $request->q;
+            $query->where(function ($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%")
+                    ->orWhereHas('seller', function ($q2) use ($search) {
+                        $q2->where('name', 'like', "%{$search}%");
+                    });
+            });
+        }
 
-        return view('consumer.shop.shop', compact('products', 'categories'));
+        $products = $query->latest()->paginate(12);
+
+        $categories = Category::all();
+
+        return view('consumer.shop.shop', compact('products', 'categories'))
+            ->with('search', $request->q); // so blade can use it
     }
+
 
     public function category($id)
     {
