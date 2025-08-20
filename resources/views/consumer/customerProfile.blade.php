@@ -658,28 +658,13 @@
                                         <p class="cart-subtotal">Subtotal:
                                             ৳{{ number_format($item->product ? $item->product->price * $item->quantity : 0, 2) }}</p>
                                     </div>
-
-                                    <div class="cart-actions">
-                                        <form action="{{ route('cart.update', $item->product_id) }}" method="POST"
-                                            style="display: inline-flex;">
-                                            @csrf
-                                            @method('PUT')
-                                            <input type="number" name="quantity" value="{{ $item->quantity }}" min="1"
-                                                style="width: 60px; padding: 5px; margin-right: 6px; text-align: center;" />
-                                            <button type="submit"
-                                                style="background: #2a6538; color: white; border: none; padding: 5px 10px; border-radius: 4px; font-size: 13px; cursor: pointer;">
-                                                Update
-                                            </button>
-                                        </form>
-                                        <a href="{{ route('cart.remove', $item->product_id) }}" class="btn-remove">Remove</a>
-                                    </div>
                                 </div>
                             </div>
                         @endforeach
 
                         <div class="cart-total">
                             <strong>Total: ৳{{ number_format($cartTotal, 2) }}</strong>
-                            <a href="{{ route('checkout') }}" class="checkout-btn">Proceed to Checkout</a>
+                            <a href="{{ route('cart.index') }}" class="checkout-btn">Go to Cart Page</a>
                         </div>
                     </div>
                 @else

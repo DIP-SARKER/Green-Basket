@@ -35,6 +35,7 @@
                     <a href="{{ route("about") }}">About</a>
                     @if(Auth::guard('customer')->check())
                         <a href="{{ route('cprofile') }}">{{ Auth::guard('customer')->user()->name }}</a>
+                        <a href="{{ route('cart.index') }}">Cart</a>
                     @else
                         <a href="{{ route('customer_auth') }}">Login/SignUp</a>
                     @endif
