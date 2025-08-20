@@ -25,10 +25,10 @@ Route::get('/', function () {
 })->name('home');
 
 
-Route::get('/register', [CustomerAuthController::class, 'showForm']);
+Route::get('/register', [CustomerAuthController::class, 'showFormRegister'])->name('customer_register');
 Route::post('/register', [CustomerAuthController::class, 'register'])->name('registerbutton');
 
-Route::get('/customer/login', [CustomerAuthController::class, 'showForm'])->name('customer_auth');
+Route::get('/customer/login', [CustomerAuthController::class, 'showFormLogin'])->name('customer_auth');
 Route::post('/customer/login', [CustomerAuthController::class, 'login']);
 Route::post('/customer/logout', [CustomerAuthController::class, 'logout'])->name('customer_logout');
 Route::get('/customer/profile', [CustomerAuthController::class, 'showProfile'])->name('cprofile');

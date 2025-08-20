@@ -15,7 +15,11 @@ use App\Http\Controllers\CartController;
 class CustomerAuthController extends Controller
 {
     //
-    public function showForm()
+    public function showFormLogin()
+    {
+        return view('consumer.loginsignup.customer_login');
+    }
+    public function showFormRegister()
     {
         return view('consumer.loginsignup.customer_authentication');
     }
@@ -24,18 +28,23 @@ class CustomerAuthController extends Controller
     {
 
         $request->validate([
-            'name' => 'required',
-            'phone' => 'required|regex:/^01[3-9]\d{8}$/',
-            'email'=> 'required|email',
-            'address' => 'required',
+            'name' => 'required|string|max:100',
+            'phone' => 'required|regex:/^01[3-9]\d{8}$/|unique:customers,phone',
+            'email' => 'required|email|max:80|unique:customers,email',
+            'address' => 'required|string',
             'password' => 'required|confirmed|min:8'
+        ], [
+            'phone.unique' => 'ফোন নম্বরটি ইতিমধ্যেই ব্যবহৃত হয়েছে।',
+            'email.unique' => 'ইমেইলটি ইতিমধ্যেই ব্যবহৃত হয়েছে।',
         ]);
+
+
 
         $customer = Customer::create([
             'name' => $request->name,
             'phone' => $request->phone,
-            'email'=> $request->email,
-            'address'=> $request->address,
+            'email' => $request->email,
+            'address' => $request->address,
             'password' => Hash::make($request->password),
         ]);
 
@@ -61,25 +70,26 @@ class CustomerAuthController extends Controller
         }
 
         return back()->withErrors([
-            'phone' => 'Invalid Credentials'
+            'phone' => 'ফোন নম্বর বা পাসওয়ার্ড সঠিক নয়।'
+
         ]);
     }
 
     public function showProfile(Request $request)
-{
-    $customer = Auth::guard('customer')->user();
-    
-    $orders = $customer->orders()->orderBy('created_at', 'desc')->get();
-    $cartItems = $customer->cartItems()->with('product')->get();
-    $cartTotal = $cartItems->sum(function($item) {
-        return $item->product ? $item->product->price * $item->quantity : 0;
-    });
-    $totalPoints = $customer->loyaltyPoints()->sum('points');
+    {
+        $customer = Auth::guard('customer')->user();
+
+        $orders = $customer->orders()->orderBy('created_at', 'desc')->get();
+        $cartItems = $customer->cartItems()->with('product')->get();
+        $cartTotal = $cartItems->sum(function ($item) {
+            return $item->product ? $item->product->price * $item->quantity : 0;
+        });
+        $totalPoints = $customer->loyaltyPoints()->sum('points');
 
 
-    
-    return view('consumer.customerProfile', compact('customer', 'orders', 'cartItems', 'cartTotal','totalPoints'));
-}
+
+        return view('consumer.customerProfile', compact('customer', 'orders', 'cartItems', 'cartTotal', 'totalPoints'));
+    }
 
 
     public function logout(Request $request)

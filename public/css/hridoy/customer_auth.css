@@ -8,6 +8,19 @@
     background: #f9f9f9;
 }
 
+.error {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+.success {
+    color: green;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+}
+
+
 .auth-container h2 {
     margin-bottom: 20px;
 }
