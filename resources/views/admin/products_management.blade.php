@@ -16,9 +16,6 @@
                      <i class="fas fa-search"></i>
                      <input type="text" placeholder="Search products...">
                  </div>
-                 <button class="filter-btn">
-                     <i class="fas fa-filter"></i> Filters
-                 </button>
              </div>
          </div>
 
@@ -135,13 +132,13 @@
                      const row = this.closest('tr');
                      const productName = row.querySelector('.product-name').textContent.trim();
                      const productStatus = row.dataset.status ===
-                     '1'; // Convert "1" or "0" to boolean
+                         '1'; // Convert "1" or "0" to boolean
 
                      if (action.includes('toggle')) {
                          if (productStatus) {
                              if (!confirm(
                                      `Do you want to remove listing of the product: ${productName}?`
-                                     )) {
+                                 )) {
                                  event.preventDefault(); // Prevent if user cancels
                              }
                          } else {

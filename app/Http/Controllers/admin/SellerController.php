@@ -17,13 +17,21 @@ class SellerController extends Controller
     //     $this->middleware('auth:admin');
     // }
 
-    public function index()
+    public function index(Request $request)
     {
-        $sellers = Seller::all();
-        return view('admin.farmers_management', compact(
-            'sellers',
-        ));
+        $query = Seller::query();
+
+        // Apply status filter
+        if ($request->has('status') && $request->status !== null) {
+            $query->where('status', $request->status);
+        }
+
+        $sellers = $query->paginate(3)->withQueryString();
+        // Add pagination if needed
+
+        return view('admin.farmers_management', compact('sellers'));
     }
+
 
     public function update(Request $request, $id)
     {

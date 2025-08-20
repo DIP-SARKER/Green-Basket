@@ -144,9 +144,9 @@ Route::prefix('admin')->group(function () {
     Route::patch('/products/{id}/toggle-activity', [AdminProductController::class, 'toggleActivity'])->name('products.toggleStatus');
     Route::delete('/products/{id}/delete', [AdminProductController::class, 'delete'])->name('products.delete');
 
+
     Route::get('/orders', [AdminOrderController::class, 'index'])->name('orders-management');
-    Route::patch('/orders/{id}/toggle-activity', [AdminOrderController::class, 'toggleActivity'])->name('orders.toggleStatus');
-    Route::delete('/orders/{id}/delete', [AdminOrderController::class, 'delete'])->name('orders.delete');
+    Route::post('/orders/{id}/toggle-status', [AdminOrderController::class, 'toggleStatus'])->name('orders.toggleStatus');
 
     Route::get('/farmers', [AdminSellerController::class, 'index'])->name('sellers-management');
     Route::put('/farmers/{id}/update', [AdminSellerController::class, 'update'])->name('sellers.update');

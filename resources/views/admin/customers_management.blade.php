@@ -6,59 +6,6 @@
     <h1>Customer Management</h1>
 @endpush
 @section('dashboard-content')
-    <!-- Filters Panel -->
-    <div class="filters-panel">
-        <div class="filters-header">
-            <div class="filters-title">Filter Customers</div>
-        </div>
-        <div class="filters-row">
-            <div class="filter-group">
-                <label class="filter-label">Account Status</label>
-                <select class="filter-select">
-                    <option value="">All Statuses</option>
-                    <option value="active">Active</option>
-                    <option value="pending">Pending Verification</option>
-                    <option value="inactive">Inactive</option>
-                </select>
-            </div>
-
-            <div class="filter-group">
-                <label class="filter-label">Registration Date</label>
-                <select class="filter-select">
-                    <option value="">All Dates</option>
-                    <option value="week">This Week</option>
-                    <option value="month">This Month</option>
-                    <option value="quarter">This Quarter</option>
-                    <option value="year">This Year</option>
-                </select>
-            </div>
-
-            <div class="filter-group">
-                <label class="filter-label">Location</label>
-                <input type="text" class="filter-input" placeholder="City or region...">
-            </div>
-
-            <div class="filter-group">
-                <label class="filter-label">Orders Range</label>
-                <select class="filter-select">
-                    <option value="">All Ranges</option>
-                    <option value="0-5">0-5 orders</option>
-                    <option value="6-20">6-20 orders</option>
-                    <option value="21-50">21-50 orders</option>
-                    <option value="50+">50+ orders</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="filter-actions">
-            <button class="btn btn-outline">
-                <i class="fas fa-times"></i> Reset Filters
-            </button>
-            <button class="btn btn-primary">
-                <i class="fas fa-filter"></i> Apply Filters
-            </button>
-        </div>
-    </div>
     <!-- Customers Section -->
     <div class="customers-container">
         <div class="table-wrapper">
@@ -101,20 +48,6 @@
                     @endforeach
                 </tbody>
             </table>
-        </div>
-        <div class="pagination">
-            <div class="pagination-info">
-                Showing 1 to 7 of 1,824 customers
-            </div>
-            <div class="pagination-controls">
-                <button class="page-btn"><i class="fas fa-chevron-left"></i></button>
-                <button class="page-btn active">1</button>
-                <button class="page-btn">2</button>
-                <button class="page-btn">3</button>
-                <button class="page-btn">4</button>
-                <button class="page-btn">5</button>
-                <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
-            </div>
         </div>
     </div>
 @endsection

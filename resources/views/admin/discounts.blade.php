@@ -13,18 +13,6 @@
         <div class="discounts-container">
             <!-- ✅ Table Section -->
             <div class="discounts-list">
-                <div class="discounts-filters">
-                    <div class="filter-group">
-                        <button class="filter-btn active" data-status="all">All Discounts</button>
-                        <button class="filter-btn" data-status="active">Active</button>
-                        <button class="filter-btn" data-status="expired">Expired</button>
-                    </div>
-                    <div class="search-box">
-                        <i class="fas fa-search"></i>
-                        <input type="text" id="searchDiscount" placeholder="Search discounts...">
-                    </div>
-                </div>
-
                 <table class="discounts-table">
                     <thead>
                         <tr>

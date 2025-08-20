@@ -6,75 +6,36 @@
      <h1>Farmers Management</h1>
  @endpush
  @section('dashboard-content')
-     
-
      <!-- Filters Panel -->
-     <div class="filters-panel">
+     <form action="{{ route('sellers-management') }}" method="GET" class="filters-panel">
          <div class="filters-header">
              <div class="filters-title">Filter Farmers</div>
          </div>
          <div class="filters-row">
              <div class="filter-group">
                  <label class="filter-label">Account Status</label>
-                 <select class="filter-select">
+                 <select class="filter-select" name="status">
                      <option value="">All Statuses</option>
-                     <option value="active">Active</option>
-                     <option value="pending">Pending Approval</option>
-                     <option value="inactive">Inactive</option>
+                     <option value="1" {{ request('status') === '1' ? 'selected' : '' }}>Active</option>
+                     <option value="0" {{ request('status') === '0' ? 'selected' : '' }}>Inactive</option>
                  </select>
              </div>
-
-             <div class="filter-group">
-                 <label class="filter-label">Registration Date</label>
-                 <select class="filter-select">
-                     <option value="">All Dates</option>
-                     <option value="week">This Week</option>
-                     <option value="month">This Month</option>
-                     <option value="quarter">This Quarter</option>
-                     <option value="year">This Year</option>
-                 </select>
-             </div>
-
-             <div class="filter-group">
-                 <label class="filter-label">Location</label>
-                 <input type="text" class="filter-input" placeholder="City or region...">
-             </div>
-
-             <div class="filter-group">
-                 <label class="filter-label">Products Range</label>
-                 <select class="filter-select">
-                     <option value="">All Ranges</option>
-                     <option value="0-10">0-10 products</option>
-                     <option value="11-30">11-30 products</option>
-                     <option value="31-50">31-50 products</option>
-                     <option value="50+">50+ products</option>
-                 </select>
+             <div class="filter-actions">
+                 <a href="{{ route('sellers-management') }}" class="btn btn-outline">
+                     <i class="fas fa-times"></i> Reset Filters
+                 </a>
+                 <button type="submit" class="btn btn-primary">
+                     <i class="fas fa-filter"></i> Apply Filters
+                 </button>
              </div>
          </div>
+     </form>
 
-         <div class="filter-actions">
-             <button class="btn btn-outline">
-                 <i class="fas fa-times"></i> Reset Filters
-             </button>
-             <button class="btn btn-primary">
-                 <i class="fas fa-filter"></i> Apply Filters
-             </button>
-         </div>
-     </div>
 
      <!-- Farmers Section -->
      <div class="farmers-section">
          <div class="section-header">
              <h2>Registered Farmers</h2>
-             <div class="controls">
-                 <div class="search-box">
-                     <i class="fas fa-search"></i>
-                     <input type="text" placeholder="Search farmers...">
-                 </div>
-                 <button class="filter-btn">
-                     <i class="fas fa-download"></i> Export
-                 </button>
-             </div>
          </div>
 
          <div class="farmers-container">
@@ -191,18 +152,15 @@
 
          <div class="pagination">
              <div class="pagination-info">
-                 Showing 1 to 7 of 286 farmers
+                 Showing {{ $sellers->firstItem() ?? 0 }} to {{ $sellers->lastItem() ?? 0 }} of
+                 {{ $sellers->total() ?? 0 }} farmers
              </div>
              <div class="pagination-controls">
-                 <button class="page-btn"><i class="fas fa-chevron-left"></i></button>
-                 <button class="page-btn active">1</button>
-                 <button class="page-btn">2</button>
-                 <button class="page-btn">3</button>
-                 <button class="page-btn">4</button>
-                 <button class="page-btn">5</button>
-                 <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+                 {{ $sellers->links('vendor.pagination.simple-bootstrap-4') }}
              </div>
          </div>
+
+
      </div>
  @endsection
  @push('script')
