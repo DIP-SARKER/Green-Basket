@@ -1,5 +1,3 @@
-
-
 /* Farmers Section */
 .farmers-section {
     background: var(--white);
@@ -39,12 +37,6 @@
     border-radius: 4px;
     font-size: 0.9rem;
     width: 250px;
-}
-
-.search-box i {
-    position: absolute;
-    left: 1rem;
-    color: var(--text-light);
 }
 
 .filter-btn {
@@ -280,9 +272,10 @@
 
 .filters-row {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: .2fr 1fr;
     gap: 1rem;
     margin-bottom: 1rem;
+    align-items: end;
 }
 
 .filter-group {
@@ -314,9 +307,13 @@
 }
 
 .filter-actions {
+    height: max-content;
     display: flex;
     justify-content: flex-end;
     gap: 0.75rem;
+}
+.filter-actions a {
+    text-decoration: none;
 }
 
 /* Stats */
@@ -400,47 +397,69 @@
     color: var(--earth);
 }
 
-/* Pagination */
+/* Pagination Wrapper */
 .pagination {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem;
+    padding: 1rem 1.5rem;
     border-top: 1px solid var(--border);
 }
 
+/* Info text */
 .pagination-info {
     color: var(--text-light);
     font-size: 0.9rem;
 }
 
-.pagination-controls {
+/* Pagination links container */
+.pagination .pagination {
     display: flex;
     gap: 0.5rem;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
 }
 
-.page-btn {
-    width: 32px;
-    height: 32px;
-    border-radius: 4px;
+/* Individual page items */
+.pagination .page-item {
+    margin: 0;
+    gap: 2rem;
+}
+
+/* Page links */
+.pagination .page-link {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 80px;
+    height: 32px;
+    border-radius: 4px;
     background: rgba(46, 125, 50, 0.05);
     color: var(--primary);
-    cursor: pointer;
+    font-size: 0.9rem;
+    text-decoration: none;
     transition: all 0.2s;
     border: none;
-    font-size: 0.9rem;
 }
 
-.page-btn.active {
+/* Active page */
+.pagination .page-item.active .page-link {
     background: var(--primary);
     color: white;
 }
 
-.page-btn:hover:not(.active) {
+/* Hover */
+.pagination .page-link:hover:not(.active) {
     background: rgba(46, 125, 50, 0.15);
+    color: var(--primary);
+}
+
+/* Disabled */
+.pagination .page-item.disabled .page-link {
+    background: rgba(0, 0, 0, 0.03);
+    color: #aaa;
+    cursor: default;
 }
 
 /* Responsive */

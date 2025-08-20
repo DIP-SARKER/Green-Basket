@@ -9,41 +9,6 @@
      <!-- Settings Content - All sections integrated -->
      <div class="settings-content">
          <!-- Store Information Section -->
-         <div class="settings-section">
-             <h2><i class="fas fa-store"></i> Store Information</h2>
-             <div class="form-grid">
-                 <div class="form-group">
-                     <label for="storeName">Store Name</label>
-                     <input type="text" id="storeName" class="form-control" value="GreenBasket"
-                         placeholder="Enter store name">
-                 </div>
-
-                 <div class="form-group">
-                     <label for="storeEmail">Store Email</label>
-                     <input type="email" id="storeEmail" class="form-control" value="info@greenbasket.com"
-                         placeholder="Enter store email">
-                 </div>
-
-                 <div class="form-group">
-                     <label for="storePhone">Store Phone</label>
-                     <input type="tel" id="storePhone" class="form-control" value="+880 1234 567890"
-                         placeholder="Enter store phone">
-                 </div>
-
-                 <div class="form-group">
-                     <label for="storeAddress">Store Address</label>
-                     <textarea id="storeAddress" class="form-control" rows="2" placeholder="Enter store address">Farmgate, Dhaka 1215, Bangladesh</textarea>
-                 </div>
-                 <div class="form-group">
-                     <label>Maintenance Mode</label>
-                     <div class="checkbox-group">
-                         <input type="checkbox" id="maintenanceMode">
-                         <label for="maintenanceMode">Enable maintenance mode</label>
-                     </div>
-                     <div class="label-hint">When enabled, only administrators can access the store</div>
-                 </div>
-             </div>
-         </div>
 
          <!-- Currency Settings Section -->
          <div class="settings-section">
@@ -72,22 +37,7 @@
                              <div class="code">EUR</div>
                              <div class="name">Euro</div>
                          </div>
-                         <div class="currency-option">
-                             <div class="symbol">£</div>
-                             <div class="code">GBP</div>
-                             <div class="name">Pound</div>
-                         </div>
                      </div>
-                 </div>
-
-
-                 <div class="form-group">
-                     <label for="decimalPlaces">Number of Decimals</label>
-                     <select id="decimalPlaces" class="form-control">
-                         <option>2 (৳99.99)</option>
-                         <option>1 (৳99.9)</option>
-                         <option>0 (৳100)</option>
-                     </select>
                  </div>
 
              </div>
