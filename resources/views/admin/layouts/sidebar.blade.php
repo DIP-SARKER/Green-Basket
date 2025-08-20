@@ -54,8 +54,8 @@
             </a>
         </li>
 
-        <li class="{{ request()->routeIs('settings') ? 'active' : '' }}">
-            <a href="{{ route('settings') }}">
+        <li class="{{ request()->routeIs('admin-settings') ? 'active' : '' }}">
+            <a href="{{ route('admin-settings') }}">
                 <i class="fas fa-cog"></i> <span class="nav-text">Settings</span>
             </a>
         </li>

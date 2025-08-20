@@ -16,6 +16,7 @@ use App\Http\Controllers\admin\CustomerController as AdminCustomerController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\admin\AdminController;
+use App\Http\Controllers\admin\SettingsController;
 use App\Http\Controllers\admin\DiscountController as AdminDiscountController;
 
 
@@ -164,6 +165,11 @@ Route::prefix('admin')->group(function () {
     Route::post('/support-tickets/{id}/resolve', [SupportTicketController::class, 'resolve'])->name('support.resolve');
 
 
+    Route::get('/settings', [SettingsController::class, 'index'])->name('admin-settings');
+    Route::post('/NewAdmin', [SettingsController::class, 'store'])->name('admin.staff.store');
+
+
+
 
 });
 
@@ -174,11 +180,6 @@ Route::post('/contact-submit', [SupportTicketController::class, 'storeFromCustom
 Route::get('/admin/analytics', function () {
     return view('admin.analytics');
 })->name('analytics-dashboard');
-
-Route::get('/admin/settings', function () {
-    return view('admin.settings');
-})->name('settings');
-
 
 
 

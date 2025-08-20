@@ -14,8 +14,13 @@
 
                  <div class="search-box">
                      <i class="fas fa-search"></i>
-                     <input type="text" placeholder="Search products...">
+                     <form method="GET" action="{{ route('products-management') }}">
+                         <input type="text" name="search" value="{{ request('search') }}"
+                             placeholder="Search products...">
+                     </form>
                  </div>
+
+
              </div>
          </div>
 
@@ -90,73 +95,56 @@
 
          <div class="pagination">
              <div class="pagination-info">
-                 Showing 1 to 10 of 42 products
+                 Showing {{ $products->firstItem() ?? 0 }} to {{ $products->lastItem() ?? 0 }} of
+                 {{ $products->total() ?? 0 }} products
              </div>
              <div class="pagination-controls">
-                 <button class="page-btn"><i class="fas fa-chevron-left"></i></button>
-                 <button class="page-btn active">1</button>
-                 <button class="page-btn">2</button>
-                 <button class="page-btn">3</button>
-                 <button class="page-btn">4</button>
-                 <button class="page-btn">5</button>
-                 <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+                 {{ $products->links('vendor.pagination.simple-bootstrap-4') }}
              </div>
          </div>
+
      </div>
  @endsection
  @push('script')
      <script>
-         // Simple search functionality
          document.addEventListener('DOMContentLoaded', function() {
-             const searchInput = document.querySelector('.search-box input');
-             const tableRows = document.querySelectorAll('.products-table tbody tr');
+             // 🔹 Event delegation for action buttons
+             const tableBody = document.querySelector('.products-table tbody');
 
-             searchInput.addEventListener('input', function() {
-                 const searchTerm = this.value.toLowerCase();
+             tableBody.addEventListener('click', function(e) {
+                 const toggleBtn = e.target.closest('button[action="toggle"]') || e.target.closest(
+                     '.action-btn');
+                 const deleteBtn = e.target.closest('.delete');
 
-                 tableRows.forEach(row => {
-                     const productName = row.querySelector('.product-name').textContent
-                         .toLowerCase();
-                     if (productName.includes(searchTerm)) {
-                         row.style.display = '';
-                     } else {
-                         row.style.display = 'none';
-                     }
-                 });
-             });
-
-             // Action buttons event listeners
-             document.querySelectorAll('.action-btn').forEach(button => {
-                 button.addEventListener('click', function(event) {
-                     const action = this.querySelector('i').className;
-                     const row = this.closest('tr');
+                 // Toggle Status button
+                 if (toggleBtn && toggleBtn.closest('form[action*="toggleStatus"]')) {
+                     const row = toggleBtn.closest('tr');
                      const productName = row.querySelector('.product-name').textContent.trim();
-                     const productStatus = row.dataset.status ===
-                         '1'; // Convert "1" or "0" to boolean
+                     const productStatus = row.dataset.status === '1'; // true/false
 
-                     if (action.includes('toggle')) {
-                         if (productStatus) {
-                             if (!confirm(
-                                     `Do you want to remove listing of the product: ${productName}?`
-                                 )) {
-                                 event.preventDefault(); // Prevent if user cancels
-                             }
-                         } else {
-                             if (!confirm(`Do you want to list the product: ${productName}?`)) {
-                                 event.preventDefault();
-                             }
+                     if (productStatus) {
+                         if (!confirm(`Do you want to remove listing of the product: ${productName}?`)) {
+                             e.preventDefault(); // Stop form submission
                          }
-                     } else if (action.includes('trash')) {
-                         if (!confirm(`Are you sure you want to delete ${productName}?`)) {
-                             event.preventDefault();
-                         } else {
-                             alert(`${productName} has been successfully deleted.`);
+                     } else {
+                         if (!confirm(`Do you want to list the product: ${productName}?`)) {
+                             e.preventDefault();
                          }
                      }
-                 });
+                 }
+
+                 // Delete button
+                 if (deleteBtn) {
+                     const row = deleteBtn.closest('tr');
+                     const productName = row.querySelector('.product-name').textContent.trim();
+
+                     if (!confirm(`Are you sure you want to delete ${productName}?`)) {
+                         e.preventDefault(); // Stop form submission
+                     } else {
+                         alert(`${productName} has been successfully deleted.`);
+                     }
+                 }
              });
-
-
          });
      </script>
  @endpush

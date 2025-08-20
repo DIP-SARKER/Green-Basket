@@ -16,9 +16,21 @@ class ProductController extends Controller
     //     $this->middleware('auth:admin');
     // }
 
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::with('category')->get(); // eager loading categories
+        $query = Product::with('category');
+
+        // Server-side search
+        if ($request->filled('search')) {
+            $search = $request->input('search');
+            $query->where('name', 'like', "%{$search}%");
+        }
+
+        $products = $query->orderBy('id', 'desc')->paginate(10);
+        $products->appends($request->all());
+
+        // Preserve query parameters in pagination links
+        $products->appends($request->all());
         return view('admin.products_management', compact('products'));
     }
 

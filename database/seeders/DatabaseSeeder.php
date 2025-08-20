@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             DiscountsTableSeeder::class,
             ReviewsTableSeeder::class,
             SupportTicketTableSeeder::class,
+            SupportRepliesTableSeeder::class,
             OrdersTableSeeder::class,
             OrderItemsTableSeeder::class
         ]);
