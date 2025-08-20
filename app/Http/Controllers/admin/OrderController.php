@@ -34,7 +34,8 @@ class OrderController extends Controller
             'pending' => 'paid',
             'paid' => 'shipped',
             'shipped' => 'delivered',
-            'delivered' => 'pending',
+            'delivered' => 'cancelled',
+            'cancelled' => 'pending',
             default => 'pending',
         };
 

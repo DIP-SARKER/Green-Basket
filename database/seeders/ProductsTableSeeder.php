@@ -21,7 +21,7 @@ class ProductsTableSeeder extends Seeder
                 'name' => 'আলু',
                 'description' => 'আলু একটি বহুল ব্যবহৃত সবজি যা প্রতিদিনের রান্নায় ব্যবহার করা হয়। এটি ভাজি, ভর্তা, কারি ইত্যাদি বিভিন্ন রেসিপিতে ব্যবহৃত হয় এবং পুষ্টিগুণেও সমৃদ্ধ।',
                 'price' => 25,
-                'stock_quantity' => 100,
+                'stock_quantity' => 0,
                 'image_url' => 'https://images.unsplash.com/photo-1590165482129-1b8b27698780?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
                 'status' => true,
                 'created_at' => now(),
