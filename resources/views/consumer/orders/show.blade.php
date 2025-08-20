@@ -204,39 +204,40 @@
 
 @section('main-content')
     <div class="order-details-container">
-        <h2 class="order-title">Order #{{ $order->id }}</h2>
+    <h2 class="order-title">অর্ডার #{{ $order->id }}</h2>
 
-        <div class="order-summary">
-            <p><span class="label">Date:</span> {{ $order->created_at->format('d M Y, h:i A') }}</p>
-            <p><span class="label">Status:</span> <span class="status-badge status-{{ $order->status }}">{{ $order->status }}</span></p>
-            <p><span class="label">Total:</span> ৳{{ number_format($order->total_price, 2) }}</p>
-        </div>
-
-        <div class="order-table-container">
-            <table class="order-table">
-                <thead class="order-table-header">
-                    <tr>
-                        <th>Product</th>
-                        <th>Quantity</th>
-                        <th>Unit Price</th>
-                        <th>Total</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($order->orderItems as $item)
-                        <tr class="order-table-row">
-                            <td data-label="Product">{{ $item->product->name ?? 'Deleted Product' }}</td>
-                            <td data-label="Quantity">{{ $item->quantity }}</td>
-                            <td data-label="Unit Price">৳{{ number_format($item->price_at_purchase, 2) }}</td>
-                            <td data-label="Total">৳{{ number_format($item->price_at_purchase * $item->quantity, 2) }}</td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
-
-        <div class="back-link">
-            <a href="{{ route('orders.index') }}">&larr; Back to Orders</a>
-        </div>
+    <div class="order-summary">
+        <p><span class="label">তারিখ:</span> {{ $order->created_at->format('d M Y, h:i A') }}</p>
+        <p><span class="label">স্ট্যাটাস:</span> <span class="status-badge status-{{ $order->status }}">{{ ucfirst($order->status) }}</span></p>
+        <p><span class="label">মোট:</span> ৳{{ number_format($order->total_price, 2) }}</p>
     </div>
+
+    <div class="order-table-container">
+        <table class="order-table">
+            <thead class="order-table-header">
+                <tr>
+                    <th>প্রোডাক্ট</th>
+                    <th>পরিমাণ</th>
+                    <th>একক মূল্য</th>
+                    <th>মোট</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($order->orderItems as $item)
+                    <tr class="order-table-row">
+                        <td data-label="Product">{{ $item->product->name ?? 'মুছে ফেলা প্রোডাক্ট' }}</td>
+                        <td data-label="Quantity">{{ $item->quantity }}</td>
+                        <td data-label="Unit Price">৳{{ number_format($item->price_at_purchase, 2) }}</td>
+                        <td data-label="Total">৳{{ number_format($item->price_at_purchase * $item->quantity, 2) }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+
+    <div class="back-link">
+        <a href="{{ route('orders.index') }}">&larr; অর্ডারসমূহে ফিরে যান</a>
+    </div>
+</div>
+
 @endsection

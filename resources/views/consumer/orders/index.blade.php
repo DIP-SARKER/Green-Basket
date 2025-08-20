@@ -213,48 +213,49 @@
 @section('title', 'My Orders')
 
 @section('main-content')
-    <div class="container">
-        <h2 class="page-heading">My Orders</h2>
+<div class="container">
+    <h2 class="page-heading">আমার অর্ডারসমূহ</h2>
 
-        @if ($orders->isEmpty())
-            <p class="no-orders">You haven't placed any orders yet.</p>
-        @else
-            <div class="orders-box">
-                <table class="orders-table">
-                    <thead>
+    @if ($orders->isEmpty())
+        <p class="no-orders">আপনি এখনো কোনো অর্ডার দেননি।</p>
+    @else
+        <div class="orders-box">
+            <table class="orders-table">
+                <thead>
+                    <tr>
+                        <th>অর্ডার আইডি</th>
+                        <th>তারিখ</th>
+                        <th>মোট</th>
+                        <th>স্ট্যাটাস</th>
+                        <th>বিস্তারিত</th>
+                        <th>পেমেন্ট</th> {{-- ✅ নতুন কলাম --}}
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach ($orders as $order)
                         <tr>
-                            <th>Order ID</th>
-                            <th>Date</th>
-                            <th>Total</th>
-                            <th>Status</th>
-                            <th>Details</th>
-                            <th>Payment</th> {{-- ✅ New column --}}
+                            <td>#{{ $order->id }}</td>
+                            <td>{{ $order->created_at->format('d M Y') }}</td>
+                            <td>৳{{ number_format($order->total_price, 2) }}</td>
+                            <td class="status" data-status="{{ strtolower($order->status) }}">{{ ucfirst($order->status) }}</td>
+                            <td>
+                                <a href="{{ route('orders.show', $order->id) }}" class="details-link">দেখুন</a>
+                            </td>
+                            <td>
+                                @if ($order->status === 'pending')
+                                    <a href="{{ route('payment.pay', $order->id) }}" class="pay-now-btn">এখনই পেমেন্ট করুন</a>
+                                @else
+                                    <span class="paid-badge">পেইড</span>
+                                @endif
+                            </td>
                         </tr>
-                    </thead>
+                    @endforeach
+                </tbody>
 
-                    <tbody>
-                        @foreach ($orders as $order)
-                            <tr>
-                                <td>#{{ $order->id }}</td>
-                                <td>{{ $order->created_at->format('d M Y') }}</td>
-                                <td>৳{{ number_format($order->total_price, 2) }}</td>
-                                <td class="status" data-status="{{ strtolower($order->status) }}">{{ ucfirst($order->status) }}</td>
-                                <td>
-                                    <a href="{{ route('orders.show', $order->id) }}" class="details-link">View</a>
-                                </td>
-                                <td>
-                                    @if ($order->status === 'pending')
-                                        <a href="{{ route('payment.pay', $order->id) }}" class="pay-now-btn">Pay Now</a>
-                                    @else
-                                        <span class="paid-badge">Paid</span>
-                                    @endif
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
+            </table>
+        </div>
+    @endif
+</div>
 
-                </table>
-            </div>
-        @endif
-    </div>
 @endsection
