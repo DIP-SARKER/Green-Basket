@@ -86,171 +86,52 @@
                  </tr>
              </thead>
              <tbody>
-                 <tr>
-                     <td class="order-id">#ORD-7841</td>
-                     <td>
-                         <div class="customer-info">
-                             <div class="customer-avatar">
-                                 <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson">
+                 @forelse ($orders as $order)
+                     <tr>
+                         <td class="order-id">#ORD-{{ str_pad($order->id, 4, '0', STR_PAD_LEFT) }}</td>
+                         <td>
+                             <div class="customer-info">
+                                 <div class="customer-avatar">
+                                     <img src="https://ui-avatars.com/api/?name={{ urlencode($order->customer->name ?? 'N/A') }}"
+                                         alt="{{ $order->customer->name ?? 'N/A' }}">
+                                 </div>
+                                 <div>
+                                     <div class="customer-name">{{ $order->customer->name ?? 'Unknown' }}</div>
+                                     <div class="customer-email">{{ $order->customer->email ?? 'No Email' }}</div>
+                                 </div>
                              </div>
-                             <div>
-                                 <div class="customer-name">Sarah Johnson</div>
-                                 <div class="customer-email">sarah@example.com</div>
+                         </td>
+                         <td class="order-date">{{ \Carbon\Carbon::parse($order->created_at)->format('M d, Y') }}</td>
+                         <td class="order-amount">৳{{ number_format($order->total_price, 2) }}</td>
+                         <td>
+                             <span
+                                 class="status-badge status-{{ strtolower($order->status) }}">{{ ucfirst($order->status) }}</span>
+                         </td>
+                         <td>
+                             <div class="actions">
+                                 <button class="action-btn view" title="View"><i class="fas fa-eye"></i></button>
+                                 @if ($order->status === 'pending' || $order->status === 'processing')
+                                     <button class="action-btn" title="Mark as Processed"><i
+                                             class="fas fa-check"></i></button>
+                                     <button class="action-btn cancel" title="Cancel Order"><i
+                                             class="fas fa-times"></i></button>
+                                 @elseif($order->status === 'delivered')
+                                     <button class="action-btn" title="Print"><i class="fas fa-print"></i></button>
+                                 @elseif($order->status === 'shipped')
+                                     <button class="action-btn" title="Track"><i class="fas fa-truck"></i></button>
+                                 @elseif($order->status === 'cancelled')
+                                     <button class="action-btn" title="Restore"><i class="fas fa-redo"></i></button>
+                                 @endif
                              </div>
-                         </div>
-                     </td>
-                     <td class="order-date">Oct 15, 2023</td>
-                     <td class="order-amount">৳1,285.50</td>
-                     <td><span class="status-badge status-delivered">Delivered</span></td>
-                     <td>
-                         <div class="actions">
-                             <button class="action-btn view"><i class="fas fa-eye"></i></button>
-                             <button class="action-btn"><i class="fas fa-print"></i></button>
-                         </div>
-                     </td>
-                 </tr>
-                 <tr>
-                     <td class="order-id">#ORD-7840</td>
-                     <td>
-                         <div class="customer-info">
-                             <div class="customer-avatar">
-                                 <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Michael Brown">
-                             </div>
-                             <div>
-                                 <div class="customer-name">Michael Brown</div>
-                                 <div class="customer-email">michael@example.com</div>
-                             </div>
-                         </div>
-                     </td>
-                     <td class="order-date">Oct 14, 2023</td>
-                     <td class="order-amount">৳752.25</td>
-                     <td><span class="status-badge status-processing">Processing</span></td>
-                     <td>
-                         <div class="actions">
-                             <button class="action-btn view"><i class="fas fa-eye"></i></button>
-                             <button class="action-btn"><i class="fas fa-check"></i></button>
-                             <button class="action-btn cancel"><i class="fas fa-times"></i></button>
-                         </div>
-                     </td>
-                 </tr>
-                 <tr>
-                     <td class="order-id">#ORD-7839</td>
-                     <td>
-                         <div class="customer-info">
-                             <div class="customer-avatar">
-                                 <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Emma Davis">
-                             </div>
-                             <div>
-                                 <div class="customer-name">Emma Davis</div>
-                                 <div class="customer-email">emma@example.com</div>
-                             </div>
-                         </div>
-                     </td>
-                     <td class="order-date">Oct 14, 2023</td>
-                     <td class="order-amount">৳2,100.00</td>
-                     <td><span class="status-badge status-pending">Pending</span></td>
-                     <td>
-                         <div class="actions">
-                             <button class="action-btn view"><i class="fas fa-eye"></i></button>
-                             <button class="action-btn"><i class="fas fa-check"></i></button>
-                             <button class="action-btn cancel"><i class="fas fa-times"></i></button>
-                         </div>
-                     </td>
-                 </tr>
-                 <tr>
-                     <td class="order-id">#ORD-7838</td>
-                     <td>
-                         <div class="customer-info">
-                             <div class="customer-avatar">
-                                 <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="James Wilson">
-                             </div>
-                             <div>
-                                 <div class="customer-name">James Wilson</div>
-                                 <div class="customer-email">james@example.com</div>
-                             </div>
-                         </div>
-                     </td>
-                     <td class="order-date">Oct 13, 2023</td>
-                     <td class="order-amount">৳899.99</td>
-                     <td><span class="status-badge status-delivered">Delivered</span></td>
-                     <td>
-                         <div class="actions">
-                             <button class="action-btn view"><i class="fas fa-eye"></i></button>
-                             <button class="action-btn"><i class="fas fa-print"></i></button>
-                         </div>
-                     </td>
-                 </tr>
-                 <tr>
-                     <td class="order-id">#ORD-7837</td>
-                     <td>
-                         <div class="customer-info">
-                             <div class="customer-avatar">
-                                 <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Olivia Taylor">
-                             </div>
-                             <div>
-                                 <div class="customer-name">Olivia Taylor</div>
-                                 <div class="customer-email">olivia@example.com</div>
-                             </div>
-                         </div>
-                     </td>
-                     <td class="order-date">Oct 12, 2023</td>
-                     <td class="order-amount">৳1,567.75</td>
-                     <td><span class="status-badge status-cancelled">Cancelled</span></td>
-                     <td>
-                         <div class="actions">
-                             <button class="action-btn view"><i class="fas fa-eye"></i></button>
-                             <button class="action-btn"><i class="fas fa-redo"></i></button>
-                         </div>
-                     </td>
-                 </tr>
-                 <tr>
-                     <td class="order-id">#ORD-7836</td>
-                     <td>
-                         <div class="customer-info">
-                             <div class="customer-avatar">
-                                 <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="William Martinez">
-                             </div>
-                             <div>
-                                 <div class="customer-name">William Martinez</div>
-                                 <div class="customer-email">william@example.com</div>
-                             </div>
-                         </div>
-                     </td>
-                     <td class="order-date">Oct 12, 2023</td>
-                     <td class="order-amount">৳1,425.50</td>
-                     <td><span class="status-badge status-shipped">Shipped</span></td>
-                     <td>
-                         <div class="actions">
-                             <button class="action-btn view"><i class="fas fa-eye"></i></button>
-                             <button class="action-btn"><i class="fas fa-truck"></i></button>
-                         </div>
-                     </td>
-                 </tr>
-                 <tr>
-                     <td class="order-id">#ORD-7835</td>
-                     <td>
-                         <div class="customer-info">
-                             <div class="customer-avatar">
-                                 <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Sophia Anderson">
-                             </div>
-                             <div>
-                                 <div class="customer-name">Sophia Anderson</div>
-                                 <div class="customer-email">sophia@example.com</div>
-                             </div>
-                         </div>
-                     </td>
-                     <td class="order-date">Oct 11, 2023</td>
-                     <td class="order-amount">৳2,850.00</td>
-                     <td><span class="status-badge status-processing">Processing</span></td>
-                     <td>
-                         <div class="actions">
-                             <button class="action-btn view"><i class="fas fa-eye"></i></button>
-                             <button class="action-btn"><i class="fas fa-check"></i></button>
-                             <button class="action-btn cancel"><i class="fas fa-times"></i></button>
-                         </div>
-                     </td>
-                 </tr>
+                         </td>
+                     </tr>
+                 @empty
+                     <tr>
+                         <td colspan="6">No orders found.</td>
+                     </tr>
+                 @endforelse
              </tbody>
+
          </table>
 
          <div class="pagination">
