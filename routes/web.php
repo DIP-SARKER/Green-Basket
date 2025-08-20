@@ -10,11 +10,14 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SupportTicketController;
 use App\Http\Controllers\Seller\ProductController as SellerProductController;
 use App\Http\Controllers\admin\ProductController as AdminProductController;
+use App\Http\Controllers\admin\OrderController as AdminOrderController;
 use App\Http\Controllers\admin\SellerController as AdminSellerController;
 use App\Http\Controllers\admin\CustomerController as AdminCustomerController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\admin\DiscountController as AdminDiscountController;
+
+
 
 
 Route::get('/', function () {
@@ -129,11 +132,21 @@ Route::get('/admin/dashboard', function () {
 })->name('admin-overview');
 
 
+// Route::prefix('admin')->middleware('auth')->group(function () {
+//     Route::get('/support-tickets/{id}', [SupportTicketController::class, 'show']);
+//     Route::post('/support-tickets/{id}/reply', [SupportTicketController::class, 'reply'])->name('support.reply');
+//     Route::post('/support-tickets/{id}/resolve', [SupportTicketController::class, 'resolve'])->name('support.resolve');
+// });
+
 Route::prefix('admin')->group(function () {
 
     Route::get('/products', [AdminProductController::class, 'index'])->name('products-management');
     Route::patch('/products/{id}/toggle-activity', [AdminProductController::class, 'toggleActivity'])->name('products.toggleStatus');
     Route::delete('/products/{id}/delete', [AdminProductController::class, 'delete'])->name('products.delete');
+
+    Route::get('/orders', [AdminOrderController::class, 'index'])->name('orders-management');
+    Route::patch('/orders/{id}/toggle-activity', [AdminOrderController::class, 'toggleActivity'])->name('orders.toggleStatus');
+    Route::delete('/orders/{id}/delete', [AdminOrderController::class, 'delete'])->name('orders.delete');
 
     Route::get('/farmers', [AdminSellerController::class, 'index'])->name('sellers-management');
     Route::put('/farmers/{id}/update', [AdminSellerController::class, 'update'])->name('sellers.update');
@@ -147,18 +160,21 @@ Route::prefix('admin')->group(function () {
     Route::put('/discounts/{discount}', [AdminDiscountController::class, 'update'])->name('discounts.update');
     Route::delete('/discounts/{discount}', [AdminDiscountController::class, 'destroy'])->name('discounts.delete');
 
-    Route::get('/support', [SupportTicketController::class, 'index'])->name('support-management');
-    Route::get('/support/{ticket_id}', [SupportTicketController::class, 'show'])->name('support.show');
-    Route::post('/support/{ticket_id}/reply', [SupportTicketController::class, 'reply'])->name('support.reply');
-    Route::post('/support/{ticket_id}/resolve', [SupportTicketController::class, 'resolve'])->name('support.resolve');
+    Route::get('support-tickets', [SupportTicketController::class, 'index'])->name('support-management');
+    Route::get('/support-tickets/{id}', [SupportTicketController::class, 'show'])->name('support.show');
+    Route::post('/support-tickets/{id}/reply', [SupportTicketController::class, 'reply'])->name('support.reply');
+    Route::post('/support-tickets/{id}/resolve', [SupportTicketController::class, 'resolve'])->name('support.resolve');
+
+
 
 });
 
 
+Route::post('/contact-submit', [SupportTicketController::class, 'storeFromCustomer'])->name('support.create');
 
-Route::get('/admin/orders', function () {
-    return view('admin.orders_management');
-})->name('orders-management');
+// Route::get('/admin/orders', function () {
+//     return view('admin.orders_management');
+// })->name('orders-management');
 
 Route::get('/admin/analytics', function () {
     return view('admin.analytics');

@@ -12,6 +12,7 @@ class SupportTicketTableSeeder extends Seeder
     {
         SupportTicket::insert([
             [
+                'customer_id' => 1,
                 'ticket_id' => 'TKT-7841',
                 'subject' => 'Order Not Delivered',
                 'priority' => 'high',
@@ -25,6 +26,7 @@ class SupportTicketTableSeeder extends Seeder
                 'submitted_at' => now()->subHours(2),
             ],
             [
+                'customer_id' => 2,
                 'ticket_id' => 'TKT-7839',
                 'subject' => 'Product Quality Issue',
                 'priority' => 'medium',
