@@ -34,11 +34,22 @@ return new class extends Migration {
             $table->foreign('support_ticket_id')->references('id')->on('support_tickets')->onDelete('cascade');
         });
 
+        Schema::create('contact_messages', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('email');
+            $table->string('subject');
+            $table->text('message');
+            $table->timestamps();
+        });
+
+
     }
 
     public function down(): void
     {
         Schema::dropIfExists('support_tickets');
         Schema::dropIfExists('support_replies');
+        Schema::dropIfExists('contact_messages');
     }
 };

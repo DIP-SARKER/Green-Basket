@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CustomerAuthController;
 use App\Http\Controllers\SellerAuthController;
+use App\Http\Middleware\AuthAdmin;
 use App\Http\Middleware\AuthCustomer;
 use App\Http\Middleware\AuthSeller;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +20,13 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\SettingsController;
 use App\Http\Controllers\admin\DiscountController as AdminDiscountController;
+use App\Http\Controllers\CustomerSupportTicketController;
+use App\Http\Controllers\ContactController;
+
+
+// Guests submit regular contact messages
+Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
+
 
 
 
@@ -36,6 +45,12 @@ Route::post('/customer/logout', [CustomerAuthController::class, 'logout'])->name
 Route::get('/customer/profile', [CustomerAuthController::class, 'showProfile'])->name('cprofile');
 
 Route::middleware([AuthCustomer::class])->group(function () {
+    Route::get('/support-tickets', [CustomerSupportTicketController::class, 'index'])->name('support.index');
+    Route::post('/support-tickets', [CustomerSupportTicketController::class, 'store'])->name('support.store');
+    Route::get('/support-tickets/{id}', [CustomerSupportTicketController::class, 'show']);
+    Route::post('/support-tickets/{id}/reply', [CustomerSupportTicketController::class, 'reply'])->name('support.reply');
+
+
     Route::get('/cart', [CartController::class, 'showCart'])->name('cart.index');
     Route::post('/cart/add/{id}', [CartController::class, 'addToCart'])->name('cart.add');
     Route::get('/cart/remove/{id}', [CartController::class, 'removeFromCart'])->name('cart.remove');
@@ -128,13 +143,10 @@ Route::get('/admin', function () {
     return view('admin.login');
 })->name('admin-login');
 
-// Route::prefix('admin')->middleware('auth')->group(function () {
-//     Route::get('/support-tickets/{id}', [SupportTicketController::class, 'show']);
-//     Route::post('/support-tickets/{id}/reply', [SupportTicketController::class, 'reply'])->name('support.reply');
-//     Route::post('/support-tickets/{id}/resolve', [SupportTicketController::class, 'resolve'])->name('support.resolve');
-// });
+Route::post('/admin/login', [AdminAuthController::class, 'login'])->name('admin.login');
 
-Route::prefix('admin')->group(function () {
+
+Route::prefix('admin')->middleware([AuthAdmin::class])->group(function () {
 
     Route::get('/overview', [AdminController::class, 'index'])->name('admin-overview');
 
@@ -168,18 +180,14 @@ Route::prefix('admin')->group(function () {
     Route::get('/settings', [SettingsController::class, 'index'])->name('admin-settings');
     Route::post('/NewAdmin', [SettingsController::class, 'store'])->name('admin.staff.store');
 
-
-
-
 });
-
-
-Route::post('/contact-submit', [SupportTicketController::class, 'storeFromCustomer'])->name('support.create');
-
 
 Route::get('/admin/analytics', function () {
     return view('admin.analytics');
 })->name('analytics-dashboard');
+
+Route::post('/contact-submit', [SupportTicketController::class, 'storeFromCustomer'])->name('support.create');
+
 
 
 

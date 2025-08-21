@@ -533,13 +533,13 @@
 @endpush
 
 @section('main-content')
-  <div class="profile-container">
+    <div class="profile-container">
         <div class="profile-header">
             <h1 class="profile-title">আমার প্রোফাইল</h1>
             <p class="welcome-message">ফিরে আসার জন্য স্বাগতম, <span>{{ $customer->name }}</span>!</p>
         </div>
 
-        @if(Auth::guard('customer')->check())
+        @if (Auth::guard('customer')->check())
             <div class="profile-tabs">
                 <div class="tab active" onclick="switchTab('overview')">ওভারভিউ</div>
                 <div class="tab" onclick="switchTab('orders')">আমার অর্ডারসমূহ</div>
@@ -573,7 +573,7 @@
                         </div>
                         <div class="info-item">
                             <span class="info-label">লয়ালটি পয়েন্ট:</span>
-                            <span class="info-value">{{ $customer->loyaltyPoints()->sum('points')}}</span>
+                            <span class="info-value">{{ $customer->loyaltyPoints()->sum('points') }}</span>
                         </div>
                     </div>
                 </div>
@@ -591,9 +591,9 @@
             <div id="orders" class="tab-content">
                 <h3 class="section-title">সাম্প্রতিক অর্ডারসমূহ</h3>
 
-                @if($orders->isNotEmpty())
+                @if ($orders->isNotEmpty())
                     <div class="orders-grid">
-                        @foreach($orders as $order)
+                        @foreach ($orders as $order)
                             <div class="order-card">
                                 <div class="order-header">
                                     <div class="order-meta">
@@ -634,18 +634,19 @@
             <div id="carts" class="tab-content">
                 <h3 class="section-title">আপনার কার্ট</h3>
 
-                @if($cartItems->isNotEmpty())
+                @if ($cartItems->isNotEmpty())
                     <div class="cart-grid">
-                        @foreach($cartItems as $item)
+                        @foreach ($cartItems as $item)
                             <div class="cart-card">
                                 <div class="cart-header">
                                     <div class="cart-product-info">
-                                        @if($item->product)
+                                        @if ($item->product)
                                             <img src="{{ $item->product->image_url }}" alt="{{ $item->product->name }}"
                                                 class="cart-product-image">
                                             <div>
                                                 <strong class="cart-product-name">{{ $item->product->name }}</strong>
-                                                <p class="cart-product-price">৳{{ number_format($item->product->price, 2) }}</p>
+                                                <p class="cart-product-price">
+                                                    ৳{{ number_format($item->product->price, 2) }}</p>
                                             </div>
                                         @else
                                             <strong class="cart-product-name">পণ্যটি আর উপলব্ধ নেই</strong>
@@ -659,7 +660,8 @@
                                 <div class="cart-body">
                                     <div class="cart-summary">
                                         <p class="cart-subtotal">সাবটোটাল:
-                                            ৳{{ number_format($item->product ? $item->product->price * $item->quantity : 0, 2) }}</p>
+                                            ৳{{ number_format($item->product ? $item->product->price * $item->quantity : 0, 2) }}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -696,6 +698,8 @@
                 <div class="action-buttons">
                     <button class="btn btn-outline">পাসওয়ার্ড পরিবর্তন করুন</button>
                     <button class="btn btn-outline">অ্যাকাউন্ট মুছে দিন</button>
+                    <a href="{{ route('support.index') }}" class="btn btn-outline">সাপোর্টে যোগাযোগ করুন</a>
+
                 </div>
             </div>
         @else

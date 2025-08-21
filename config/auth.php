@@ -44,13 +44,17 @@ return [
         ],
 
         'customer' => [
-            'driver'=> 'session',
-            'provider'=> 'customers',
+            'driver' => 'session',
+            'provider' => 'customers',
         ],
 
-        'seller'=> [
-            'driver'=> 'session',
-            'provider'=> 'sellers',
+        'seller' => [
+            'driver' => 'session',
+            'provider' => 'sellers',
+        ],
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
         ],
     ],
 
@@ -81,14 +85,18 @@ return [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
-        'customers'=> [
+        'customers' => [
             'driver' => 'eloquent',
             'model' => App\Models\Customer::class,
         ],
 
-        'sellers'=> [
-            'driver'=> 'eloquent',
-            'model'=> App\Models\Seller::class,
+        'sellers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Seller::class,
+        ],
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
         ],
     ],
 

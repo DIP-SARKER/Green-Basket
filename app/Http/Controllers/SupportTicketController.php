@@ -6,6 +6,9 @@ namespace App\Http\Controllers;
 use App\Models\SupportTicket;
 use App\Models\SupportReply;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class SupportTicketController extends Controller
 {
@@ -46,32 +49,5 @@ class SupportTicketController extends Controller
 
         return back()->with('success', 'Ticket marked as resolved.');
     }
-
-    public function storeFromCustomer(Request $request)
-    {
-        $request->validate([
-            'customer_name' => 'required|string|max:255',
-            'email' => 'required|email',
-            'subject' => 'required|string|max:255',
-            'message' => 'required|string',
-        ]);
-
-        $ticket = SupportTicket::create([
-            'customer_id' => 1,
-            'ticket_id' => 'TKT-' . strtoupper(uniqid()),
-            'subject' => $request->subject,
-            'priority' => 'medium',
-            'status' => 'open',
-            'customer_name' => $request->customer_name,
-            'customer_image' => 'https://randomuser.me/api/portraits/lego/1.jpg',
-            'tag' => 'Customer Contact',
-            'excerpt' => \Str::limit($request->message, 100),
-            'full_message' => $request->message,
-            'submitted_at' => now(),
-        ]);
-
-        return back()->with('success', 'Your message has been submitted. We will get back to you soon.');
-    }
-
 
 }
