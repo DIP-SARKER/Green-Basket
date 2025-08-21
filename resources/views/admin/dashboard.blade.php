@@ -43,8 +43,12 @@
                             </div>
                         </div>
                     @endif
-
-
+                    <form method="POST" action="{{ route('admin.logout') }}" class="logout-form">
+                        @csrf
+                        <button type="submit" class="logout-button" title="Logout">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>

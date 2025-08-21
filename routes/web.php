@@ -139,9 +139,9 @@ Route::get('/termsandcondition', function () {
 })->name('termsandcondition');
 
 
-Route::get('/admin', function () {
-    return view('admin.login');
-})->name('admin-login');
+
+Route::get('/admin/login', [AdminAuthController::class, 'showLoginForm'])->name('admin-login');
+
 
 Route::post('/admin/login', [AdminAuthController::class, 'login'])->name('admin.login');
 
@@ -149,6 +149,8 @@ Route::post('/admin/login', [AdminAuthController::class, 'login'])->name('admin.
 Route::prefix('admin')->middleware([AuthAdmin::class])->group(function () {
 
     Route::get('/overview', [AdminController::class, 'index'])->name('admin-overview');
+
+    Route::post('/admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
 
 
     Route::get('/products', [AdminProductController::class, 'index'])->name('products-management');

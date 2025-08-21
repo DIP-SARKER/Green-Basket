@@ -8,6 +8,10 @@ use App\Models\Review;
 
 class AdminAuthController extends Controller
 {
+    public function showLoginForm()
+    {
+        return view('admin.login'); // adjust view path if needed
+    }
     public function login(Request $request)
     {
         $credentials = $request->validate([
