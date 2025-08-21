@@ -30,13 +30,21 @@
                         <i class="fas fa-bell"></i>
                         <span class="badge">3</span>
                     </div>
-                    <div class="user-profile">
-                        <img src="https://dip-sarker.github.io/DIP_SARKER/images/home.png" alt="Admin">
-                        <div class="info">
-                            <div class="name">DIP SARKER</div>
-                            <div class="role">Administrator</div>
+                    @php
+                        $admin = Auth::guard('admin')->user();
+                    @endphp
+
+                    @if ($admin)
+                        <div class="user-profile">
+                            <img src="{{ asset($admin->avatar ?? 'default/avatar.png') }}" alt="{{ $admin->name }}">
+                            <div class="info">
+                                <div class="name">{{ $admin->name }}</div>
+                                <div class="role">{{ $admin->role ?? 'Administrator' }}</div>
+                            </div>
                         </div>
-                    </div>
+                    @endif
+
+
                 </div>
             </div>
         </div>

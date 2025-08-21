@@ -299,9 +299,7 @@
         <div class="left-section">
             <div>
                 <h1>Welcome Back!</h1>
-                <p>
-                    Manage your dashboard with ease.
-                </p>
+                <p>Manage your dashboard with ease.</p>
                 <i class="fas fa-store"></i>
             </div>
         </div>
@@ -310,11 +308,20 @@
         <div class="right-section">
             <h2>Admin Login</h2>
 
-            <form>
+            <!-- Show error message -->
+            @if ($errors->any())
+                <div style="margin-bottom: 1rem; color: var(--danger); text-align: center;">
+                    {{ $errors->first() }}
+                </div>
+            @endif
+
+            <form method="POST" action="{{ route('admin.login') }}">
+                @csrf
+
                 <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="you@example.com"
-                        class="input-field" required>
+                    <label for="phone">Phone Number</label>
+                    <input type="text" id="phone" name="phone" placeholder="01XXXXXXXXX" class="input-field"
+                        required>
                 </div>
 
                 <div class="form-group">
@@ -325,10 +332,9 @@
 
                 <div class="form-options">
                     <div class="remember-me">
-                        <input id="remember_me" name="remember_me" type="checkbox">
+                        <input id="remember_me" name="remember" type="checkbox">
                         <label for="remember_me">Remember me</label>
                     </div>
-
                     <a href="#" class="forgot-password-link">Forgot Password?</a>
                 </div>
 
@@ -344,19 +350,6 @@
             </p>
         </div>
     </div>
-
-    <script>
-        document.querySelector('.btn-primary').addEventListener('click', function(event) {
-            event.preventDefault();
-            if (document.getElementById('email').value === 'admin' || document.getElementById('password').value ===
-                'admin') {
-                window.location.href = "{{ route('admin-overview') }}";
-            } else {
-                alert('Invalid credentials! Please try again.');
-            }
-        });
-    </script>
-
 </body>
 
 </html>

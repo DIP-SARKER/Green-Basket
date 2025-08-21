@@ -24,7 +24,7 @@ class SettingsController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
             'phone' => 'required|string|max:20',
-            'avatar' => 'nullable|image|max:2048',
+            'avatar' => 'nullable',
         ]);
 
         Admin::create([

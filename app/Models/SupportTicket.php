@@ -17,6 +17,7 @@ class SupportTicket extends Model
         'subject',
         'priority',
         'status',
+        'customer_id',
         'customer_name',
         'customer_image',
         'order_id',

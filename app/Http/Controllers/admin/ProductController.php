@@ -26,7 +26,7 @@ class ProductController extends Controller
             $query->where('name', 'like', "%{$search}%");
         }
 
-        $products = $query->orderBy('id', 'desc')->paginate(10);
+        $products = $query->orderBy('id', 'desc')->paginate(6);
         $products->appends($request->all());
 
         // Preserve query parameters in pagination links
