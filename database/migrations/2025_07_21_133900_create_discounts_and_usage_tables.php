@@ -11,15 +11,15 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('discounts', function (Blueprint $table) {
-            $table->id();
-            $table->string('code', 20)->unique();
-            $table->string('name', 50);
-            $table->enum('discount_type', ['percentage', 'fixed']);
-            $table->integer('value');
-            $table->timestamp('start_date');
-            $table->timestamp('end_date');
+            $table->id()->nullable();
+            $table->string('code', 20)->unique()->nullable();
+            $table->string('name', 50)->nullable();
+            $table->enum('discount_type', ['percentage', 'fixed'])->nullable();
+            $table->integer('value')->nullable();
+            $table->timestamp('start_date')->nullable();
+            $table->timestamp('end_date')->nullable();
             $table->integer('usage_limit')->nullable();
-            $table->boolean('status')->default(false);
+            $table->boolean('status')->default(false)->nullable();
             $table->timestamps();
         });
     }
